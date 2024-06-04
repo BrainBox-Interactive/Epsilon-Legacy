@@ -1,0 +1,15 @@
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\Epsilon.deps.json
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\Epsilon.dll
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\Epsilon.pdb
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.csproj.AssemblyReference.cache
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.AssemblyInfoInputs.cache
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.AssemblyInfo.cs
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.csproj.CoreCompileInputs.cache
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.dll
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\refint\Epsilon.dll
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.pdb
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\ref\Epsilon.dll
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\Default.bmp
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Cursors\Default.bmp
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\arial.ttf
