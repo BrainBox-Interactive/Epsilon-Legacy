@@ -43,8 +43,8 @@ namespace Epsilon.Applications.System
                 );
 
                 if (MouseManager.MouseState == MouseState.Left 
-                    && !GUI.clicked
-                    && (Manager.toUpdate == this || Manager.toUpdate == null))
+                    && !GUI.clicked)
+                    //&& (Manager.toUpdate == this || Manager.toUpdate == null))
                 {
                     if (GUI.mx >= x + ((w / 2) - 16)
                         && GUI.mx <= x + ((w / 2) - 16) + 32)

@@ -6,6 +6,7 @@ using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.Interface.System.Shell.Screen;
 using System.Drawing;
+using Epsilon.Applications.Base;
 
 namespace Epsilon.Interface
 {
@@ -53,14 +54,22 @@ namespace Epsilon.Interface
 
             Manager.Start(new MessageBox
             {
-                wData = new WindowData
-                {
+                wData = new WindowData {
                     Position = new Rectangle(400, 800, 250, 75),
                     Moveable = true
                 },
                 Name = "Message Box Test 2",
                 Special = false,
                 Button = true
+            });
+
+            Manager.Start(new Notepad {
+                wData = new WindowData {
+                    Position = new Rectangle(800, 100, 450, 475),
+                    Moveable = true
+                },
+                Special = false,
+                Name = "Notepad"
             });
 
             Manager.Start(new ControlBar {
@@ -73,10 +82,11 @@ namespace Epsilon.Interface
             });
         }
 
-        static int ofs = 2;
+        static int ofs = 5;
         public static void Move()
         {
-            if (cProc != null
+            if (cProc != null && Manager.pList.Contains(cProc)
+                && Manager.toUpdate == cProc
                 && cProc.wData.Moveable)
             {
                 cProc.wData.Position.X = (int)MouseManager.X - ox;
@@ -135,8 +145,8 @@ namespace Epsilon.Interface
             }
 
             canv.DrawString("P:curProc", dFont, colors.txtColor, 0, dFont.Height * 12);
-            if (Manager.toUpdate != null)
-                canv.DrawString("[" + Manager.toUpdate.Name + "]",
+            if (cProc != null)
+                canv.DrawString("[" + cProc.Name + "]",
                     dFont,
                     colors.txtColor,
                     0,
@@ -150,8 +160,9 @@ namespace Epsilon.Interface
                     dFont.Height * 13
                 );
 
-            // canv.DrawString("LhC:" + Kernel.lastHCol, dFont, colors.txtColor, 0, dFont.Height * 15);
+            canv.DrawString("LhC:" + Kernel.lastHCol, dFont, colors.txtColor, 0, dFont.Height * 15);
             canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, dFont.Height * 16);
+            canv.DrawString("c:" + clicked, dFont, colors.txtColor, 0, dFont.Height * 18);
 
             canv.DrawString("Build Information:", dFont, colors.txtColor, width - dFont.Width * "Build Information:".Length, height - (32 + dFont.Height * 2));
             canv.DrawString(

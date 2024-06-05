@@ -5,12 +5,13 @@ using Cosmos.System.FileSystem;
 using System.Threading;
 using Cosmos.Core.Memory;
 using Cosmos.HAL;
+using Epsilon.System.Critical.Processing;
 
 namespace Epsilon
 {
     public class Kernel : Sys.Kernel
     {
-        public static string curPath = @"0:\", version = "M-1.0";
+        public static string curPath = @"0:\", version = "b.0011";
         public static CosmosVFS vfs;
         public static bool isGUI;
 
@@ -45,19 +46,22 @@ namespace Epsilon
             if (isGUI)
                 try
                 {
-                    Interface.GUI.Update();
+                    if (lastHCol < 15) {
+                        Interface.GUI.Update();
 
-                    if (_deltaT != RTC.Second)
-                    {
-                        _fps = _frames;
-                        _frames = 0;
-                        _deltaT = RTC.Second;
+                        if (_deltaT != RTC.Second)
+                        {
+                            _fps = _frames;
+                            _frames = 0;
+                            _deltaT = RTC.Second;
+                        }
+                        _frames++;
                     }
-                    _frames++;
                 }
                 catch (Exception ex)
                 {
                     Interface.GUI.canv.Disable();
+                    Manager.pList.Clear();
                     Heap.Collect();
 
                     Console.Clear();
@@ -78,7 +82,7 @@ namespace Epsilon
                 Commands.Run(input);
             }
 
-            if (lastHCol >= 15)
+            if (lastHCol >= 8)
             {
                 Heap.Collect();
                 lastHCol = 0;

@@ -13,3 +13,4 @@ C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\ref\Epsilon.dll
 C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\Default.bmp
 C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Cursors\Default.bmp
 C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\arial.ttf
+C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.sourcelink.json
