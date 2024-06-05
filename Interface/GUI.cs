@@ -12,8 +12,8 @@ namespace Epsilon.Interface
 {
     public static class GUI
     {
-        public static int width = 1920,
-            height = 1080,
+        public static int width = 640,
+            height = 480,
             mx = 0,
             my = 0;
         public static SVGAIICanvas canv;
@@ -52,25 +52,25 @@ namespace Epsilon.Interface
                 Button = false
             });
 
-            Manager.Start(new MessageBox
-            {
-                wData = new WindowData {
-                    Position = new Rectangle(400, 800, 250, 75),
-                    Moveable = true
-                },
-                Name = "Message Box Test 2",
-                Special = false,
-                Button = true
-            });
+            //Manager.Start(new MessageBox
+            //{
+            //    wData = new WindowData {
+            //        Position = new Rectangle(400, 800, 250, 75),
+            //        Moveable = true
+            //    },
+            //    Name = "Message Box Test 2",
+            //    Special = false,
+            //    Button = true
+            //});
 
-            Manager.Start(new Notepad {
-                wData = new WindowData {
-                    Position = new Rectangle(800, 100, 450, 475),
-                    Moveable = true
-                },
-                Special = false,
-                Name = "Notepad"
-            });
+            //Manager.Start(new Notepad {
+            //    wData = new WindowData {
+            //        Position = new Rectangle(800, 100, 450, 475),
+            //        Moveable = true
+            //    },
+            //    Special = false,
+            //    Name = "Notepad"
+            //});
 
             Manager.Start(new ControlBar {
                 wData = new WindowData {
@@ -110,13 +110,13 @@ namespace Epsilon.Interface
                     }
 
                     if (p.Special) continue;
-                    if (mx >= p.wData.Position.X + p.wData.Position.Width - Window.cbofs - ofs
-                        && mx <= p.wData.Position.X + p.wData.Position.Width + Window.r * 2 - ofs)
-                    {
-                        if (my >= p.wData.Position.Y + Window.ofs - ofs
-                            && my <= p.wData.Position.Y + Window.ofs + Window.r * 2)
-                            Manager.pList.Remove(p);
-                    }
+                    //if (mx >= p.wData.Position.X + p.wData.Position.Width - Window.cbofs - ofs
+                    //    && mx <= p.wData.Position.X + p.wData.Position.Width + Window.r * 2 - ofs)
+                    //{
+                    //    if (my >= p.wData.Position.Y + Window.ofs - ofs
+                    //        && my <= p.wData.Position.Y + Window.ofs + Window.r * 2)
+                    //        Manager.pList.Remove(p);
+                    //}
                 }
             }
         }

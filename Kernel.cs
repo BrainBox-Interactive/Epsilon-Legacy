@@ -6,6 +6,7 @@ using System.Threading;
 using Cosmos.Core.Memory;
 using Cosmos.HAL;
 using Epsilon.System.Critical.Processing;
+using Epsilon.System.Critical;
 
 namespace Epsilon
 {
@@ -63,15 +64,7 @@ namespace Epsilon
                     Interface.GUI.canv.Disable();
                     Manager.pList.Clear();
                     Heap.Collect();
-
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine("Error!");
-
-                    Console.ResetColor();
-                    Console.WriteLine(ex + "\n");
-
-                    Console.WriteLine("Please report this error on the message board.");
+                    Crash.Message(ex);
                     isGUI = false;
                 }
             else
@@ -82,7 +75,7 @@ namespace Epsilon
                 Commands.Run(input);
             }
 
-            if (lastHCol >= 8)
+            if (lastHCol >= 10)
             {
                 Heap.Collect();
                 lastHCol = 0;

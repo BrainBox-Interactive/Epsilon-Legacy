@@ -30,35 +30,6 @@ namespace Epsilon.Interface.System.Shell.Screen
                 if (MouseManager.MouseState == MouseState.Left
                     && !GUI.clicked)
                     Manager.pList.Remove(this);
-
-            //Drawing.DrawButton(x + 16, y + 16, w - 64, 32, "Test");
-
-            //// Close Button
-            //int cbx = wData.Position.X
-            //    + wData.Position.Width
-            //    - cbofs;
-            //by = wData.Position.Y + 16;
-            //if (GUI.mx >= cbx - r
-            //    && GUI.mx <= cbx + r
-            //    && GUI.my >= by - r
-            //    && GUI.my <= by + r)
-            //{
-            //    GUI.canv.DrawFilledCircle(
-            //        GUI.colors.qbhColor,
-            //        cbx,
-            //        by,
-            //        r
-            //    );
-            //    if (MouseManager.MouseState == MouseState.Left)
-            //        Manager.pList.Remove(this);
-            //}
-            //else
-            //    GUI.canv.DrawFilledCircle(
-            //        GUI.colors.qbColor,
-            //        cbx,
-            //        by,
-            //        r
-            //    );
         }
     }
 }

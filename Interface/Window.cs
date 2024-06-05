@@ -31,33 +31,14 @@ namespace Epsilon.Interface
             );
 
             // Close Button
-            int cbx = p.wData.Position.X
-                + p.wData.Position.Width
-                - cbofs;
-            //GUI.canv.DrawFilledCircle(
-            //    GUI.colors.qbColor,
-            //    cbx,
-            //    by,
-            //    r
-            //);
-            if (GUI.mx >= cbx - r
-                && GUI.mx <= cbx + r
-                && GUI.my >= by - r
-                && GUI.my <= by + r)
-            {
-                GUI.canv.DrawFilledCircle(
-                    GUI.colors.qbhColor,
-                    cbx,
-                    by,
-                    r
-                );
-            } else
-                GUI.canv.DrawFilledCircle(
-                    GUI.colors.qbColor,
-                    cbx,
-                    by,
-                    r
-                );
+            //if (GUI.mx >= cbx - r
+            //    && GUI.mx <= cbx + r
+            //    && GUI.my >= by - r
+            //    && GUI.my <= by + r)
+            //{
+
+            //} else
+
 
             // Title
             GUI.canv.DrawString(
