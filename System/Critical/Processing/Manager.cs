@@ -14,7 +14,8 @@ namespace Epsilon.System.Critical.Processing
             = new List<Process>();
         public static Process toUpdate;
 
-        static List<Process> spList = new List<Process>();
+        public static List<Process> spList
+            = new List<Process>();
         public static void Update()
         {
             spList = new List<Process>();

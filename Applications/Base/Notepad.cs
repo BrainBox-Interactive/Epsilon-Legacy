@@ -10,17 +10,12 @@ namespace Epsilon.Applications.Base
         string data = null;
         public override void Run()
         {
-            Window.DrawT(this);
+            wData.Position.Width = 450;
+            wData.Position.Height = 475;
+            Window.DrawT(this); Window.DrawB(this);
 
-            int x = wData.Position.X, y = wData.Position.Y;
-            int w = 450, h = 475;
-            Drawing.DrawBottomRoundedRectangle(
-                x, y + Window.tSize,
-                w, h - Window.tSize,
-                4,
-                GUI.colors.mColor
-            );
-
+            int x = wData.Position.X, y = wData.Position.Y,
+                w = wData.Position.Width, h = wData.Position.Height;
             if (Manager.toUpdate == this)
             {
                 // add to data with keyboard

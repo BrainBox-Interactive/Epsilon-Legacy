@@ -5,10 +5,13 @@ namespace Epsilon.Interface.System
     public class Colors
     {
         public Color mColor = Color.FromArgb(255, 50, 50, 50);
-        public Color tbColor = Color.FromArgb(200, 40, 40, 40);
+        public Color moColor = Color.FromArgb(255, 30, 30, 30);
+        public Color tbColor = Color.FromArgb(255, 40, 40, 40);
+        public Color tboColor = Color.FromArgb(255, 15, 15, 15);
         public Color txtColor = Color.FromArgb(255, 255, 255, 255);
 
-        public Color bColor = Color.FromArgb(200, 60, 60, 60);
+        public Color bColor = Color.FromArgb(255, 60, 60, 60);
+        public Color boColor = Color.FromArgb(255, 40, 40, 40);
 
         public Color btColor = Color.FromArgb(255, 200, 200, 200);
         public Color btsColor = Color.FromArgb(255, 140, 140, 140);

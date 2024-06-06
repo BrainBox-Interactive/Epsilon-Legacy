@@ -15,6 +15,13 @@ namespace Epsilon.Interface.System.Shell.Screen
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             GUI.canv.DrawFilledRectangle(
+                GUI.colors.boColor,
+                x,
+                y - 1,
+                w,
+                1
+            );
+            GUI.canv.DrawFilledRectangle(
                 GUI.colors.bColor,
                 x,
                 y,
@@ -22,16 +29,13 @@ namespace Epsilon.Interface.System.Shell.Screen
                 h
             );
 
-            // debug
-            /*GUI.canv.DrawFilledRectangle(
-                Color.Blue,
-                wData.Position.X + (35 - 20),
-                wData.Position.Y + (15 - 20),
-                40,
-                40
-            );*/
-
             // Menu Button
+            GUI.canv.DrawFilledCircle(
+                Color.Black,
+                wData.Position.X + 35,
+                wData.Position.Y + 15,
+                21
+            );
             GUI.canv.DrawFilledCircle(
                 Color.White,
                 wData.Position.X + 35,

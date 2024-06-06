@@ -20,6 +20,16 @@ namespace Epsilon.Interface
         {
             by = p.wData.Position.Y + ofs;
 
+            // Outline
+            Drawing.DrawTopRoundedRectangle(
+                p.wData.Position.X - 1,
+                p.wData.Position.Y - 1,
+                p.wData.Position.Width + 2,
+                tSize + 1,
+                4,
+                GUI.colors.tboColor
+            );
+
             // Titlebar
             Drawing.DrawTopRoundedRectangle(
                 p.wData.Position.X,
@@ -37,9 +47,6 @@ namespace Epsilon.Interface
             //    && GUI.my <= by + r)
             //{
 
-            //} else
-
-
             // Title
             GUI.canv.DrawString(
                 p.Name,
@@ -48,6 +55,29 @@ namespace Epsilon.Interface
                 p.wData.Position.X + 8,
                 p.wData.Position.Y + tSize / 2
                 - GUI.dFont.Height / 2
+            );
+        }
+
+        public static void DrawB(Process p)
+        {
+            // Outline
+            Drawing.DrawBottomRoundedRectangle(
+                p.wData.Position.X - 1,
+                p.wData.Position.Y + tSize,
+                p.wData.Position.Width + 2,
+                p.wData.Position.Height - tSize + 1,
+                4,
+                GUI.colors.moColor
+            );
+
+            // Window Bottom
+            Drawing.DrawBottomRoundedRectangle(
+                p.wData.Position.X,
+                p.wData.Position.Y + tSize,
+                p.wData.Position.Width,
+                p.wData.Position.Height - tSize,
+                4,
+                GUI.colors.mColor
             );
         }
     }

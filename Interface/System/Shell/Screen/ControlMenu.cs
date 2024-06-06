@@ -16,6 +16,13 @@ namespace Epsilon.Interface.System.Shell.Screen
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             Drawing.DrawMenuRoundedRectangle(
+                x - 1, y - 1,
+                w + 2, h + 2,
+                16,
+                GUI.colors.moColor
+            );
+
+            Drawing.DrawMenuRoundedRectangle(
                 x, y,
                 w, h,
                 16,

@@ -6,14 +6,13 @@ using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.Interface.System.Shell.Screen;
 using System.Drawing;
-using Epsilon.Applications.Base;
 
 namespace Epsilon.Interface
 {
     public static class GUI
     {
-        public static int width = 640,
-            height = 480,
+        public static int width = 1024,
+            height = 768,
             mx = 0,
             my = 0;
         public static SVGAIICanvas canv;
@@ -49,7 +48,7 @@ namespace Epsilon.Interface
                 Name = "Message Box Test",
                 Content = "Hello World",
                 Special = false,
-                Button = false
+                button = false
             });
 
             //Manager.Start(new MessageBox
@@ -87,25 +86,35 @@ namespace Epsilon.Interface
         {
             if (cProc != null && Manager.pList.Contains(cProc)
                 && Manager.toUpdate == cProc
-                && cProc.wData.Moveable)
+                && cProc.wData.Moveable
+                && Manager.spList.Count <= 1)
             {
+                // TODO: do for all sides
+                // Currently hangs the system
+                // if (cProc.wData.Position.X >= 4 || mx >= cProc.wData.Position.Width/2)
                 cProc.wData.Position.X = (int)MouseManager.X - ox;
+                
+                //if (cProc.wData.Position.Y >= 0
+                //    && cProc.wData.Position.Y <= height - cProc.wData.Position.Height)
                 cProc.wData.Position.Y = (int)MouseManager.Y - oy;
             }
-            else if (MouseManager.MouseState == MouseState.Left && !clicked)
+            else if (MouseManager.MouseState == MouseState.Left) //&& !clicked)
             {
                 foreach (var p in Manager.pList)
                 {
                     if (!p.wData.Moveable) continue;
-                    if (mx >= p.wData.Position.X - ofs
-                        && mx <= p.wData.Position.X + p.wData.Position.Width - ofs)
+                    if (mx >= p.wData.Position.X
+                        && mx <= p.wData.Position.X + p.wData.Position.Width)
                     {
-                        if (my >= p.wData.Position.Y - ofs
+                        if (my >= p.wData.Position.Y
                             && my <= p.wData.Position.Y + Window.tSize)
                         {
-                            cProc = p;
-                            ox = mx - p.wData.Position.X;
-                            oy = my - p.wData.Position.Y;
+                            if (Manager.spList.Count <= 1)
+                            {
+                                cProc = p;
+                                ox = mx - p.wData.Position.X;
+                                oy = my - p.wData.Position.Y;
+                            }
                         }
                     }
 
@@ -192,7 +201,7 @@ namespace Epsilon.Interface
                     Name = "mbPNb::" + Manager.pList.Count,
                     Content = "process" + Manager.pList.Count + " || Cpt=" + Manager.toUpdate,
                     Special = false,
-                    Button = true
+                    button = true
                 });
                 clicked = true;
             }

@@ -9,11 +9,10 @@ namespace Epsilon.System.Critical.Processing
 {
     public class Process
     {
-        public virtual void Run()
-        { }
-
-        public virtual void Start()
-        { }
+        public virtual void Run() { }
+        public virtual void Start() { }
+        public virtual void Remove()
+            => Manager.pList.Remove(this);
 
         public string Name;
         public bool Special;

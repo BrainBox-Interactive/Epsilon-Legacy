@@ -12,7 +12,8 @@ namespace Epsilon
 {
     public class Kernel : Sys.Kernel
     {
-        public static string curPath = @"0:\", version = "b.0011";
+        public static string curPath = @"0:\",
+            version = "a.0012";
         public static CosmosVFS vfs;
         public static bool isGUI;
 
@@ -37,7 +38,7 @@ namespace Epsilon
             Thread.Sleep(750);
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Epsilon Kernel - " + Kernel.version);
+            Console.WriteLine("Epsilon Kernel - " + version);
             Console.WriteLine("June 2024 version // Experimental version\n");
             Console.ForegroundColor = ConsoleColor.White;
         }
@@ -75,7 +76,7 @@ namespace Epsilon
                 Commands.Run(input);
             }
 
-            if (lastHCol >= 10)
+            if (lastHCol >= 50)
             {
                 Heap.Collect();
                 lastHCol = 0;

@@ -31,10 +31,12 @@ namespace Epsilon.Interface.Components
                 OnHover();
 
             if (MouseManager.MouseState == MouseState.Left
-                    && !GUI.clicked)
+                    && !GUI.clicked
+                    && CheckHover())
                 OnClick(0);
             else if (MouseManager.MouseState == MouseState.Right
-                    && !GUI.clicked)
+                    && !GUI.clicked
+                    && CheckHover())
                 OnClick(1);
 
             if (MouseManager.ScrollDelta != 0)
