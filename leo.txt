@@ -1,0 +1,3 @@
+int input less gretter > 1 :
+    make explosion (10000power)
+FIN.

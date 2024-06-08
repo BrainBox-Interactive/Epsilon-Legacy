@@ -45,5 +45,13 @@ namespace Epsilon.System.Critical.Processing
 
         public static void Stop(Process p)
             => pList.Remove(p);
+
+        public static bool IsRunning(string pName)
+        {
+            foreach (Process p in pList)
+                if (p.Name.ToLower() == pName.ToLower())
+                    return true;
+            return false;
+        }
     }
 }

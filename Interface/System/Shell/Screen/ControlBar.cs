@@ -31,10 +31,10 @@ namespace Epsilon.Interface.System.Shell.Screen
 
             // Menu Button
             GUI.canv.DrawFilledCircle(
-                Color.Black,
+                GUI.colors.moColor,
                 wData.Position.X + 35,
                 wData.Position.Y + 15,
-                21
+                22
             );
             GUI.canv.DrawFilledCircle(
                 Color.White,
@@ -58,8 +58,8 @@ namespace Epsilon.Interface.System.Shell.Screen
                         20
                     );
 
-                    // if menu process is not running
-                    if (MouseManager.MouseState == MouseState.Left && !GUI.clicked)
+                    if (MouseManager.MouseState == MouseState.Left
+                        && !Manager.IsRunning("Control Menu"))
                         Manager.Start(new ControlMenu {
                             wData = new WindowData {
                                 Moveable = false,

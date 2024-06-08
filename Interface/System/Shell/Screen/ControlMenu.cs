@@ -9,22 +9,29 @@ namespace Epsilon.Interface.System.Shell.Screen
             by;
 
         static int cbofs = (r / 2) * 2
-                - ((r / 2) - (r + 6));
+                - ((r / 2) - (r + 6)),
+            mts = 64;
 
         public override void Run()
         {
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
-            Drawing.DrawMenuRoundedRectangle(
+            Drawing.DrawFullRoundedRectangle(
                 x - 1, y - 1,
                 w + 2, h + 2,
                 16,
                 GUI.colors.moColor
             );
 
-            Drawing.DrawMenuRoundedRectangle(
+            Drawing.DrawTopRoundedRectangle(
                 x, y,
-                w, h,
+                w, mts,
+                16,
+                GUI.colors.moColor
+            );
+            Drawing.DrawBottomRoundedRectangle(
+                x, y + mts,
+                w, h - mts,
                 16,
                 GUI.colors.mColor
             );

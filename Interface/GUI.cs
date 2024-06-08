@@ -82,6 +82,7 @@ namespace Epsilon.Interface
         }
 
         static int ofs = 5;
+        static Window w = new();
         public static void Move()
         {
             if (cProc != null && Manager.pList.Contains(cProc)
@@ -91,8 +92,12 @@ namespace Epsilon.Interface
             {
                 // TODO: do for all sides
                 // Currently hangs the system
-                // if (cProc.wData.Position.X >= 4 || mx >= cProc.wData.Position.Width/2)
-                cProc.wData.Position.X = (int)MouseManager.X - ox;
+                //if ((cProc.wData.Position.X > 0 && mx < cProc.wData.Position.X  )
+                //    && cProc.wData.Position.X < width - cProc.wData.Position.Width)
+                //if ((cProc.wData.Position.X >= 0 + ofs || mx > cProc.wData.Position.Width / 2)
+                //    && (cProc.wData.Position.X <= width - cProc.wData.Position.Width + ofs
+                //    || mx > cProc.wData.Position.Width / 2))
+                    cProc.wData.Position.X = (int)MouseManager.X - ox;
                 
                 //if (cProc.wData.Position.Y >= 0
                 //    && cProc.wData.Position.Y <= height - cProc.wData.Position.Height)
@@ -107,27 +112,24 @@ namespace Epsilon.Interface
                         && mx <= p.wData.Position.X + p.wData.Position.Width)
                     {
                         if (my >= p.wData.Position.Y
-                            && my <= p.wData.Position.Y + Window.tSize)
+                            && my <= p.wData.Position.Y + w.tSize)
                         {
                             if (Manager.spList.Count <= 1)
                             {
                                 cProc = p;
+                                // if (p.wData.Position.X <= 0 || mx > p.wData.Position.Width / 2)
+                                //if ((p.wData.Position.X >= 0 - ofs || mx > p.wData.Position.Width / 2)
+                                //    && (p.wData.Position.X <= width - p.wData.Position.Width + ofs
+                                //    || mx > p.wData.Position.Width / 2))
                                 ox = mx - p.wData.Position.X;
                                 oy = my - p.wData.Position.Y;
                             }
                         }
                     }
-
-                    if (p.Special) continue;
-                    //if (mx >= p.wData.Position.X + p.wData.Position.Width - Window.cbofs - ofs
-                    //    && mx <= p.wData.Position.X + p.wData.Position.Width + Window.r * 2 - ofs)
-                    //{
-                    //    if (my >= p.wData.Position.Y + Window.ofs - ofs
-                    //        && my <= p.wData.Position.Y + Window.ofs + Window.r * 2)
-                    //        Manager.pList.Remove(p);
-                    //}
                 }
             }
+
+            // DONE
         }
 
         public static void Update()

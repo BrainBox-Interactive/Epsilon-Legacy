@@ -7,6 +7,8 @@ using Cosmos.Core.Memory;
 using Cosmos.HAL;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Critical;
+using Cosmos.System;
+using Console = System.Console;
 
 namespace Epsilon
 {
@@ -58,6 +60,17 @@ namespace Epsilon
                             _deltaT = RTC.Second;
                         }
                         _frames++;
+
+                        KeyEvent k;
+                        bool IsKeyPressed = KeyboardManager.TryReadKey(out k);
+                        if (IsKeyPressed)
+                            if (k.Key == ConsoleKeyEx.F11)
+                            {
+                                Interface.GUI.canv.Disable();
+                                Manager.pList.Clear();
+                                Console.Clear();
+                                isGUI = false;
+                            }
                     }
                 }
                 catch (Exception ex)
