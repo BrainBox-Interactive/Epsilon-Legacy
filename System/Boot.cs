@@ -14,7 +14,7 @@ public static class Boot
 
     private static void SetUpImages()
     {
-        GUI.wp = new Bitmap(Resources.Files.RawDefaultWallpaper);
+        GUI.wp = new Bitmap(Resources.Files.Raw1024x768Wallpaper);
         GUI.crs = new Bitmap(Resources.Files.RawDefaultCursor);
     }
 }

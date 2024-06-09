@@ -24,6 +24,7 @@
     <ItemGroup>
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
+      <None Remove="System\Resources\Images\Wallpapers\1024x768.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\640x480.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Default.bmp" />
     </ItemGroup>
@@ -40,6 +41,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Wallpapers\1024x768.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\640x480.bmp">

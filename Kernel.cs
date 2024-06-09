@@ -45,6 +45,8 @@ namespace Epsilon
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        public static KeyEvent k;
+        public static bool IsKeyPressed;
         protected override void Run()
         {
             if (isGUI)
@@ -61,9 +63,10 @@ namespace Epsilon
                         }
                         _frames++;
 
-                        KeyEvent k;
-                        bool IsKeyPressed = KeyboardManager.TryReadKey(out k);
+                        k = null;
+                        IsKeyPressed = KeyboardManager.TryReadKey(out k);
                         if (IsKeyPressed)
+                        {
                             if (k.Key == ConsoleKeyEx.F11)
                             {
                                 Interface.GUI.canv.Disable();
@@ -71,6 +74,7 @@ namespace Epsilon
                                 Console.Clear();
                                 isGUI = false;
                             }
+                        }
                     }
                 }
                 catch (Exception ex)

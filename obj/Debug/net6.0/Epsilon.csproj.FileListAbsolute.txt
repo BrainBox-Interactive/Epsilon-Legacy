@@ -15,3 +15,4 @@ C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Im
 C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\arial.ttf
 C:\Users\lance\source\repos\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.sourcelink.json
 C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\640x480.bmp
+C:\Users\lance\source\repos\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\1024x768.bmp

@@ -6,6 +6,7 @@ using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.Interface.System.Shell.Screen;
 using System.Drawing;
+using Epsilon.Applications.Base;
 
 namespace Epsilon.Interface
 {
@@ -51,25 +52,28 @@ namespace Epsilon.Interface
                 button = false
             });
 
-            //Manager.Start(new MessageBox
-            //{
-            //    wData = new WindowData {
-            //        Position = new Rectangle(400, 800, 250, 75),
-            //        Moveable = true
-            //    },
-            //    Name = "Message Box Test 2",
-            //    Special = false,
-            //    Button = true
-            //});
+            Manager.Start(new MessageBox
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(400, 800, 250, 75),
+                    Moveable = true
+                },
+                Name = "Message Box Test 2",
+                Special = false,
+                button = true
+            });
 
-            //Manager.Start(new Notepad {
-            //    wData = new WindowData {
-            //        Position = new Rectangle(800, 100, 450, 475),
-            //        Moveable = true
-            //    },
-            //    Special = false,
-            //    Name = "Notepad"
-            //});
+            Manager.Start(new Notepad
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(800, 100, 450, 475),
+                    Moveable = true
+                },
+                Special = false,
+                Name = "Notepad"
+            });
 
             Manager.Start(new ControlBar {
                 wData = new WindowData {
