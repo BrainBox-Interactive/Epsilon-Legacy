@@ -75,7 +75,7 @@ namespace Epsilon.Interface
                 p.wData.Position.X - 1,
                 p.wData.Position.Y + tSize,
                 p.wData.Position.Width + 1,
-                p.wData.Position.Height - tSize + 1
+                p.wData.Position.Height - tSize
             );
 
             // Window Bottom

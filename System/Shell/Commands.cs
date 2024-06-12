@@ -169,6 +169,11 @@ namespace Epsilon.System.Shell
                                 else if (n[1] == "false") Global.topBarActivated = false;
                                 break;
 
+                            case "ctrlb":
+                                if (n[1] == "true") Global.controlBarActivated = true;
+                                else if (n[1] == "false") Global.controlBarActivated = false;
+                                break;
+
                             default:
                                 break;
                         }

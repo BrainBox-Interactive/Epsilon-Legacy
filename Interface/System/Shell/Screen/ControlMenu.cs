@@ -12,7 +12,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 
         static int cbofs = (r / 2) * 2
                 - ((r / 2) - (r + 6)),
-            mts = 64;
+            mts = 24;
 
         public override void Run()
         {
@@ -44,8 +44,8 @@ namespace Epsilon.Interface.System.Shell.Screen
                 "Live User",
                 GUI.dFont,
                 GUI.colors.txtColor,
-                x + mts + 12,
-                y + 8
+                x + mts + 4,
+                y
             );
 
             // if clicks off the menu

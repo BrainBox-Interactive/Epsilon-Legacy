@@ -16,7 +16,9 @@ namespace Epsilon.Interface.Components.Titlebar.Base
         public override void OnClick(int mIndex)
         {
             if (mIndex == 0
-                && this != null)
+                && this != null
+                && GUI.cProc == null
+                && Manager.toUpdate == p)
                 p.Remove();
         }
     }

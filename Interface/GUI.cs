@@ -13,6 +13,7 @@ namespace Epsilon.Interface
 {
     public static class GUI
     {
+        // TODO: IMPORTANT!! MAKE AND USE IsInFront() FUNCTION!!!
         public static int width = 1024,
             height = 768,
             mx = 0,
@@ -64,7 +65,7 @@ namespace Epsilon.Interface
 
             Manager.Start(new Calculator {
                 wData = new WindowData {
-                    Position = new Rectangle(400, 100, 200, 300),
+                    Position = new Rectangle(400, 100, 128, 300),
                     Moveable = true
                 },
                 Special = false,
@@ -81,14 +82,16 @@ namespace Epsilon.Interface
                     Special = false,
                     Name = "Top Bar"
                 });
-            Manager.Start(new ControlBar {
-                wData = new WindowData {
-                    Position = new Rectangle(0, height - 32, width, 32),
-                    Moveable = false
-                },
-                Special = false,
-                Name = "Control Bar"
-            });
+
+            if (Epsilon.System.Global.controlBarActivated)
+                Manager.Start(new ControlBar {
+                    wData = new WindowData {
+                        Position = new Rectangle(0, height - 32, width, 32),
+                        Moveable = false
+                    },
+                    Special = false,
+                    Name = "Control Bar"
+                });
         }
 
         static int ofs = 5;
@@ -107,7 +110,7 @@ namespace Epsilon.Interface
                 //if ((cProc.wData.Position.X >= 0 + ofs || mx > cProc.wData.Position.Width / 2)
                 //    && (cProc.wData.Position.X <= width - cProc.wData.Position.Width + ofs
                 //    || mx > cProc.wData.Position.Width / 2))
-                    cProc.wData.Position.X = (int)MouseManager.X - ox;
+                cProc.wData.Position.X = (int)MouseManager.X - ox;
                 
                 //if (cProc.wData.Position.Y >= 0
                 //    && cProc.wData.Position.Y <= height - cProc.wData.Position.Height)
