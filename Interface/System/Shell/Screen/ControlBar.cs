@@ -31,10 +31,10 @@ namespace Epsilon.Interface.System.Shell.Screen
 
             // Menu Button
             GUI.canv.DrawFilledCircle(
-                GUI.colors.moColor,
+                Color.LightGray,
                 wData.Position.X + 35,
                 wData.Position.Y + 15,
-                22
+                21
             );
             GUI.canv.DrawFilledCircle(
                 Color.White,

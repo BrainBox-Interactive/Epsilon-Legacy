@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lance\\source\\repos\\Epsilon\\Epsilon\\Epsilon.csproj": {}
+    "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lance\\source\\repos\\Epsilon\\Epsilon\\Epsilon.csproj": {
+    "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lance\\source\\repos\\Epsilon\\Epsilon\\Epsilon.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj",
         "projectName": "Epsilon",
-        "projectPath": "C:\\Users\\lance\\source\\repos\\Epsilon\\Epsilon\\Epsilon.csproj",
-        "packagesPath": "C:\\Users\\lance\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lance\\source\\repos\\Epsilon\\Epsilon\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lance\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\lance\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+          "C:\\Users\\User\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -95,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

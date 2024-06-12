@@ -22,8 +22,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="System\Resources\Audio\Shutdown.wav" />
+      <None Remove="System\Resources\Audio\Startup.wav" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
+      <None Remove="System\Resources\Images\Profile\Default.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\1024x768.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\640x480.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Default.bmp" />
@@ -37,10 +40,16 @@
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Include="System\Resources\Audio\Shutdown.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\arial.ttf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Profile\Default.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\1024x768.bmp">
@@ -56,6 +65,12 @@
 
     <ItemGroup>
       <Folder Include="Applications\Widgets\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

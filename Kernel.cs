@@ -9,13 +9,14 @@ using Epsilon.System.Critical.Processing;
 using Epsilon.System.Critical;
 using Cosmos.System;
 using Console = System.Console;
+using Epsilon.System.Resources;
 
 namespace Epsilon
 {
     public class Kernel : Sys.Kernel
     {
         public static string curPath = @"0:\",
-            version = "a.0012";
+            version = "a.0014";
         public static CosmosVFS vfs;
         public static bool isGUI;
 
@@ -43,6 +44,7 @@ namespace Epsilon
             Console.WriteLine("Epsilon Kernel - " + version);
             Console.WriteLine("June 2024 version // Experimental version\n");
             Console.ForegroundColor = ConsoleColor.White;
+            //System.System.PlayAudio(Files.RawStartupAudio);
         }
 
         public static KeyEvent k;

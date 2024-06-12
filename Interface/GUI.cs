@@ -7,6 +7,7 @@ using Epsilon.System.Critical.Processing;
 using Epsilon.Interface.System.Shell.Screen;
 using System.Drawing;
 using Epsilon.Applications.Base;
+using Epsilon.System;
 
 namespace Epsilon.Interface
 {
@@ -52,35 +53,40 @@ namespace Epsilon.Interface
                 button = false
             });
 
-            Manager.Start(new MessageBox
-            {
-                wData = new WindowData
-                {
-                    Position = new Rectangle(400, 800, 250, 75),
-                    Moveable = true
-                },
-                Name = "Message Box Test 2",
-                Special = false,
-                button = true
-            });
-
-            Manager.Start(new Notepad
-            {
-                wData = new WindowData
-                {
-                    Position = new Rectangle(800, 100, 450, 475),
+            Manager.Start(new Notepad {
+                wData = new WindowData {
+                    Position = new Rectangle(400, 100, 450, 475),
                     Moveable = true
                 },
                 Special = false,
                 Name = "Notepad"
             });
 
+            Manager.Start(new Calculator {
+                wData = new WindowData {
+                    Position = new Rectangle(400, 100, 200, 300),
+                    Moveable = true
+                },
+                Special = false,
+                Name = "Calculator"
+            });
+
+            // TODO: deprecate special windowdata parameter
+            if (Epsilon.System.Global.topBarActivated)
+                Manager.Start(new TopBar {
+                    wData = new WindowData {
+                        Position = new Rectangle(0, 0, width, 24),
+                        Moveable = false
+                    },
+                    Special = false,
+                    Name = "Top Bar"
+                });
             Manager.Start(new ControlBar {
                 wData = new WindowData {
                     Position = new Rectangle(0, height - 32, width, 32),
                     Moveable = false
                 },
-                Special = true,
+                Special = false,
                 Name = "Control Bar"
             });
         }
@@ -143,19 +149,15 @@ namespace Epsilon.Interface
             // Back layer
             canv.DrawImage(wp, 0, 0);
 
-            // Middle layer
-            Move();
-            Manager.Update();
-
             // Debug, draw string with all processes name
-            canv.DrawString("Current Processes:", dFont, colors.txtColor, 0, 0);
+            canv.DrawString("Current Processes:", dFont, colors.txtColor, 0, 24);
             for (int i = 0; i < Manager.pList.Count; i++)
             {
                 canv.DrawString("[" + Manager.pList[i].Name + "]",
                     dFont,
                     colors.txtColor,
                     0,
-                    dFont.Height * (Manager.pList.Count - i)
+                    24 + dFont.Height * (Manager.pList.Count - i)
                 );
             }
 
@@ -189,6 +191,10 @@ namespace Epsilon.Interface
                 .Length,
                 height - (32 + dFont.Height)
             );
+
+            // Middle layer
+            Move();
+            Manager.Update();
 
             // Front layer
             canv.DrawImageAlpha(crs, (int)MouseManager.X, (int)MouseManager.Y);

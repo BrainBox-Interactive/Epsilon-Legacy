@@ -18,7 +18,7 @@ namespace Epsilon.System.Shell
                         Console.Clear();
                         break;
 
-                    case "sinfo":
+                    case "si":
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.Write(Log.Center("Epsilon Kernel - " + Kernel.version));
                         Console.WriteLine(Log.Center("May 2024 version // Experimental version"));
@@ -32,7 +32,7 @@ namespace Epsilon.System.Shell
                         Console.ForegroundColor = ConsoleColor.White;
                         break;
 
-                    case "print":
+                    case "p":
                         Console.ForegroundColor = ConsoleColor.Gray;
                         if (str.Length > 1)
                             Console.WriteLine(input.Replace(str[0] + " ", ""));
@@ -156,7 +156,22 @@ namespace Epsilon.System.Shell
                         break;
 
                     case "gui":
-                        Boot.OnBoot();
+                        System.OnBoot();
+                        break;
+
+                    case "set":
+                        if (str.Length != 2) break;
+                        var n = str[1].Split('=');
+                        switch (n[0])
+                        {
+                            case "topb":
+                                if (n[1] == "true") Global.topBarActivated = true;
+                                else if (n[1] == "false") Global.topBarActivated = false;
+                                break;
+
+                            default:
+                                break;
+                        }
                         break;
 
                     default:

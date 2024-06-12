@@ -1,5 +1,7 @@
 ﻿using Cosmos.System;
+using Cosmos.System.Graphics;
 using Epsilon.System.Critical.Processing;
+using Epsilon.System.Resources;
 
 namespace Epsilon.Interface.System.Shell.Screen
 {
@@ -16,24 +18,34 @@ namespace Epsilon.Interface.System.Shell.Screen
         {
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
-            Drawing.DrawFullRoundedRectangle(
+            GUI.canv.DrawRectangle(
+                GUI.colors.moColor,
                 x - 1, y - 1,
-                w + 2, h + 2,
-                16,
-                GUI.colors.moColor
+                w + 1, h + 1
             );
 
-            Drawing.DrawTopRoundedRectangle(
+            GUI.canv.DrawFilledRectangle(
+                GUI.colors.moColor,
                 x, y,
-                w, mts,
-                16,
-                GUI.colors.moColor
+                w, mts
             );
-            Drawing.DrawBottomRoundedRectangle(
+            GUI.canv.DrawFilledRectangle(
+                GUI.colors.mColor,
                 x, y + mts,
-                w, h - mts,
-                16,
-                GUI.colors.mColor
+                w, h - mts
+            );
+
+            GUI.canv.DrawImage(
+                new Bitmap(Files.RawDefaultPFP),
+                x,
+                y
+            );
+            GUI.canv.DrawString(
+                "Live User",
+                GUI.dFont,
+                GUI.colors.txtColor,
+                x + mts + 12,
+                y + 8
             );
 
             // if clicks off the menu

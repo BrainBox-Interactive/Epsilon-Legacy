@@ -37,23 +37,21 @@ namespace Epsilon.Interface
             b_close.Y = by;
 
             // Outline
-            Drawing.DrawTopRoundedRectangle(
+            GUI.canv.DrawRectangle(
+                GUI.colors.tboColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y - 1,
-                p.wData.Position.Width + 2,
-                tSize + 1,
-                4,
-                GUI.colors.tboColor
+                p.wData.Position.Width + 1,
+                tSize + 1
             );
 
             // Titlebar
-            Drawing.DrawTopRoundedRectangle(
+            GUI.canv.DrawFilledRectangle(
+                GUI.colors.tbColor,
                 p.wData.Position.X,
                 p.wData.Position.Y,
                 p.wData.Position.Width,
-                tSize,
-                4,
-                GUI.colors.tbColor
+                tSize
             );
 
             // Title
@@ -72,23 +70,21 @@ namespace Epsilon.Interface
         public void DrawB(Process p)
         {
             // Outline
-            Drawing.DrawBottomRoundedRectangle(
+            GUI.canv.DrawRectangle(
+                GUI.colors.moColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y + tSize,
-                p.wData.Position.Width + 2,
-                p.wData.Position.Height - tSize + 1,
-                4,
-                GUI.colors.moColor
+                p.wData.Position.Width + 1,
+                p.wData.Position.Height - tSize + 1
             );
 
             // Window Bottom
-            Drawing.DrawBottomRoundedRectangle(
+            GUI.canv.DrawFilledRectangle(
+                GUI.colors.mColor,
                 p.wData.Position.X,
                 p.wData.Position.Y + tSize,
                 p.wData.Position.Width,
-                p.wData.Position.Height - tSize,
-                4,
-                GUI.colors.mColor
+                p.wData.Position.Height - tSize
             );
         }
     }

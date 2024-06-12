@@ -14,10 +14,18 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.1024x768.bmp")]
         public static byte[] Raw1024x768Wallpaper;
 
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Profile.Default.bmp")]
+        public static byte[] RawDefaultPFP;
+
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Default.bmp")]
         public static byte[] RawDefaultCursor;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.arial.ttf")]
         public static byte[] RawDefaultFont;
+
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Startup.wav")]
+        public static byte[] RawStartupAudio;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Shutdown.wav")]
+        public static byte[] RawShutdownAudio;
     }
 }
