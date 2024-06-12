@@ -3,8 +3,12 @@ using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
+using System.Collections.Generic;
+using System;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Serialization;
 
 namespace Epsilon.Applications.Base
@@ -105,9 +109,15 @@ namespace Epsilon.Applications.Base
                 clicked = false;
         }
 
+        bool _result = false;
         public void OnClick()
         {
             clicked = true;
+            if (_result)
+            {
+                c = "";
+                _result = false;
+            }
 
             if (one.CheckHover()) c += '1';
             else if (two.CheckHover()) c += '2';
@@ -127,9 +137,116 @@ namespace Epsilon.Applications.Base
             else if (times.CheckHover()) c += '*';
             else if (div.CheckHover()) c += '/';
 
+            else if (enter.CheckHover())
+            {
+                try
+                {
+                    // Evaluate the expression in c using the SimpleEvaluator
+                    var result = Evaluator.Evaluate(c);
+                    c = result.ToString();
+                    _result = true;
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that occur during the computation
+                    c = ex.ToString();
+                    _result = true;
+                }
+            }
             else if (clear.CheckHover()) c = "";
             else if (bksp.CheckHover()
                 && c.Length > 0) c = c.Remove(c.Length - 1);
+        }
+    }
+
+    public static class Evaluator
+    {
+        public static double Evaluate(string expression)
+        {
+            var tokens = new Queue<string>(Tokenize(expression));
+            var value = ParseExpression(tokens);
+            if (tokens.Count > 0)
+                throw new ArgumentException("Invalid expression");
+            return value;
+        }
+
+        private static IEnumerable<string> Tokenize(string expression)
+        {
+            var number = "";
+            foreach (var ch in expression)
+            {
+                if (char.IsDigit(ch) || ch == '.')
+                    number += ch;
+                else
+                {
+                    if (number.Length > 0)
+                    {
+                        yield return number;
+                        number = "";
+                    }
+
+                    if ("+-*/()".Contains(ch))
+                        yield return ch.ToString();
+                }
+            }
+
+            if (number.Length > 0)
+                yield return number;
+        }
+
+        private static double ParseExpression(Queue<string> tokens)
+        {
+            var left = ParseTerm(tokens);
+
+            while (tokens.Count > 0)
+            {
+                var op = tokens.Peek();
+                if (op != "+" && op != "-")
+                    break;
+
+                tokens.Dequeue();
+                var right = ParseTerm(tokens);
+
+                if (op == "+") left += right;
+                else left -= right;
+            }
+
+            return left;
+        }
+
+        private static double ParseTerm(Queue<string> tokens)
+        {
+            var left = ParseFactor(tokens);
+
+            while (tokens.Count > 0)
+            {
+                var op = tokens.Peek();
+                if (op != "*" && op != "/")
+                    break;
+
+                tokens.Dequeue();
+                var right = ParseFactor(tokens);
+
+                if (op == "*") left *= right;
+                else left /= right;
+            }
+
+            return left;
+        }
+
+        private static double ParseFactor(Queue<string> tokens)
+        {
+            var token = tokens.Dequeue();
+
+            if (token == "(")
+            {
+                var value = ParseExpression(tokens);
+                if (tokens.Dequeue() != ")")
+                    throw new ArgumentException("Mismatched parentheses");
+                return value;
+            }
+
+            return double.Parse(token);
         }
     }
 }

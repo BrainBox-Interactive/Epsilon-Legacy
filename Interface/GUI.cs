@@ -49,28 +49,37 @@ namespace Epsilon.Interface
                     Moveable = true
                 },
                 Name = "Message Box Test",
-                Content = "Hello World",
+                Content = "Hello World!",
                 Special = false,
                 button = false
             });
 
-            Manager.Start(new Notepad {
-                wData = new WindowData {
-                    Position = new Rectangle(400, 100, 450, 475),
-                    Moveable = true
-                },
-                Special = false,
-                Name = "Notepad"
-            });
+            //Manager.Start(new Setup {
+            //    wData = new WindowData {
+            //        Position = new Rectangle(width / 2 - 720 / 2, height / 2 - 650 / 2, 720, 650),
+            //        Moveable = false
+            //    },
+            //    Name = "Epsilon Setup",
+            //    Special = true
+            //});
 
-            Manager.Start(new Calculator {
-                wData = new WindowData {
-                    Position = new Rectangle(400, 100, 128, 300),
-                    Moveable = true
-                },
-                Special = false,
-                Name = "Calculator"
-            });
+            //Manager.Start(new Notepad {
+            //    wData = new WindowData {
+            //        Position = new Rectangle(400, 100, 450, 475),
+            //        Moveable = true
+            //    },
+            //    Special = false,
+            //    Name = "Notepad"
+            //});
+
+            //Manager.Start(new Calculator {
+            //    wData = new WindowData {
+            //        Position = new Rectangle(400, 100, 256, 200),
+            //        Moveable = true
+            //    },
+            //    Special = false,
+            //    Name = "Calculator"
+            //});
 
             // TODO: deprecate special windowdata parameter
             if (Epsilon.System.Global.topBarActivated)

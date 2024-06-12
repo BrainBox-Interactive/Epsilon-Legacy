@@ -40,8 +40,9 @@ namespace Epsilon.Applications.Base
                 if (Kernel.k.Key == ConsoleKeyEx.Backspace
                     && Content.Length > 0)
                     Content = Content.Substring(0, Content.Length - 1);
-                else if (Kernel.k.Key != ConsoleKeyEx.Backspace || Kernel.k.Key != ConsoleKeyEx.Enter
-                    || Kernel.k.Key != ConsoleKeyEx.OEM102 || Kernel.k.Key != ConsoleKeyEx.OEM5)
+                else if (Kernel.k.Key != ConsoleKeyEx.Backspace && Kernel.k.Key != ConsoleKeyEx.Enter
+                    && Kernel.k.Key != ConsoleKeyEx.OEM102 && Kernel.k.Key != ConsoleKeyEx.OEM5
+                    && Content.Length > -1)
                     Content += Kernel.k.KeyChar;
             }
             isPressed = Kernel.IsKeyPressed;

@@ -44,8 +44,8 @@ namespace Epsilon.Interface.System.Shell.Screen
                 "Live User",
                 GUI.dFont,
                 GUI.colors.txtColor,
-                x + mts + 4,
-                y
+                x + mts + 12,
+                y + (mts / 2 - GUI.dFont.Height / 2)
             );
 
             // if clicks off the menu

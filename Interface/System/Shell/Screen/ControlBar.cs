@@ -65,9 +65,9 @@ namespace Epsilon.Interface.System.Shell.Screen
                                 Moveable = false,
                                 Position = new Rectangle(
                                     0,
-                                    GUI.height - (32 + 665),
-                                    450,
-                                    650
+                                    GUI.height - (32 + 460),
+                                    350,
+                                    450
                                 )
                             },
                             Name = "Control Menu",
