@@ -21,8 +21,8 @@ public static class System
 
     private static void SetUpImages()
     {
-        GUI.wp = new Bitmap(Files.Raw1024x768Wallpaper);
-        GUI.crs = new Bitmap(Files.RawDefaultCursor);
+        //GUI.wp = new Bitmap(Files.Raw1024x768Wallpaper);
+        //GUI.crs = new Bitmap(Files.RawDefaultCursor);
     }
 
     public static void PlayAudio(byte[] stream)

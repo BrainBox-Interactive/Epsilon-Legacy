@@ -38,30 +38,30 @@ namespace Epsilon.Interface
 
             // Outline
             GUI.canv.DrawRectangle(
-                GUI.colors.tboColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y - 1,
-                p.wData.Position.Width + 1,
-                tSize + 1
+                (ushort)(p.wData.Position.Width + 1),
+                (ushort)(tSize + 1), 0,
+                GUI.colors.tboColor
             );
 
             // Titlebar
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.tbColor,
                 p.wData.Position.X,
                 p.wData.Position.Y,
-                p.wData.Position.Width,
-                tSize
+                (ushort)p.wData.Position.Width,
+                (ushort)tSize, 0,
+                GUI.colors.tbColor
             );
 
             // Title
             GUI.canv.DrawString(
-                p.Name,
-                GUI.dFont,
-                GUI.colors.txtColor,
                 p.wData.Position.X + 8,
                 p.wData.Position.Y + tSize / 2
-                - GUI.dFont.Height / 2
+                - GUI.fsy / 2,
+                p.Name,
+                GUI.dFont,
+                GUI.colors.txtColor
             );
 
             b_close.Update();
@@ -71,20 +71,20 @@ namespace Epsilon.Interface
         {
             // Outline
             GUI.canv.DrawRectangle(
-                GUI.colors.moColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y + tSize,
-                p.wData.Position.Width + 1,
-                p.wData.Position.Height - tSize
+                (ushort)(p.wData.Position.Width + 1),
+                (ushort)(p.wData.Position.Height - tSize), 0,
+                GUI.colors.moColor
             );
 
             // Window Bottom
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.mColor,
                 p.wData.Position.X,
                 p.wData.Position.Y + tSize,
-                p.wData.Position.Width,
-                p.wData.Position.Height - tSize
+                (ushort)p.wData.Position.Width,
+                (ushort)(p.wData.Position.Height - tSize), 0,
+                GUI.colors.mColor
             );
         }
     }

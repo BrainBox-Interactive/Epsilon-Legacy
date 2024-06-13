@@ -41,3 +41,6 @@ C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\refint\Epsilon.
 C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.pdb
 C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\ref\Epsilon.dll
 C:\Users\User\Documents\Project\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Setup.bmp
+C:\Users\User\Documents\Project\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\Malgun_Gothic_32x.psf
+C:\Users\User\Documents\Project\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\zap-ext-light24.psf
+C:\Users\User\Documents\Project\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\zap-vga16.psf

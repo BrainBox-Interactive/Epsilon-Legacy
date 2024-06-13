@@ -1,14 +1,14 @@
 ﻿using Epsilon.Interface;
 using Epsilon.System.Critical.Processing;
-using Cosmos.System.Graphics;
 using Epsilon.System.Resources;
 using Epsilon.Interface.Components;
+using PrismAPI.Graphics;
 
 namespace Epsilon.Applications.System
 {
     public class Setup : Process
     {
-        Bitmap setupImg = new(Files.RawSetupImage);
+        Canvas setupImg = Image.FromBitmap(Files.RawSetupImage);
         Button next;
 
         public override void Start()
@@ -29,8 +29,7 @@ namespace Epsilon.Applications.System
             int w = wData.Position.Width, h = wData.Position.Height;
 
             GUI.canv.DrawImage(
-                setupImg,
-                0, 0
+                0, 0, setupImg
             );
 
             next.Update();

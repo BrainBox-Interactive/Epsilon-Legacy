@@ -16,7 +16,7 @@ namespace Epsilon
     public class Kernel : Sys.Kernel
     {
         public static string curPath = @"0:\",
-            version = "a.0014";
+            version = "1.0_alpha|labs_greenMoth";
         public static CosmosVFS vfs;
         public static bool isGUI;
 
@@ -71,8 +71,6 @@ namespace Epsilon
                         {
                             if (k.Key == ConsoleKeyEx.F11)
                             {
-                                Interface.GUI.canv.Disable();
-                                Manager.pList.Clear();
                                 Console.Clear();
                                 isGUI = false;
                             }
@@ -81,9 +79,8 @@ namespace Epsilon
                 }
                 catch (Exception ex)
                 {
-                    Interface.GUI.canv.Disable();
                     Manager.pList.Clear();
-                    Heap.Collect();
+                    // Heap.Collect();
                     Crash.Message(ex);
                     isGUI = false;
                 }
@@ -95,11 +92,12 @@ namespace Epsilon
                 Commands.Run(input);
             }
 
-            if (lastHCol >= 50)
-            {
-                Heap.Collect();
-                lastHCol = 0;
-            } else lastHCol++;
+            Heap.Collect();
+            //if (lastHCol >= 50)
+            //{
+            //    //Heap.Collect();
+            //    lastHCol = 0;
+            //} else lastHCol++;
         }
     }
 }

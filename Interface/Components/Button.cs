@@ -1,11 +1,4 @@
-﻿using Epsilon.Interface.System;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PrismAPI.Graphics;
 
 namespace Epsilon.Interface.Components
 {
@@ -33,13 +26,14 @@ namespace Epsilon.Interface.Components
         {
             base.Update();
 
-            GUI.canv.DrawRectangle(Color.Black, X, Y, Width, Height);
-            if (CheckHover()) GUI.canv.DrawFilledRectangle(HoverColor, X + 1, Y + 1, Width - 1, Height - 1);
-            else GUI.canv.DrawFilledRectangle(NormalColor, X + 1, Y + 1, Width - 1, Height - 1);
+            GUI.canv.DrawRectangle(X, Y, (ushort)Width, (ushort)Height, 0, Color.Black);
+            if (CheckHover()) GUI.canv.DrawFilledRectangle(X + 1, Y + 1, (ushort)(Width - 1), (ushort)(Height - 1), 0, HoverColor);
+            else GUI.canv.DrawFilledRectangle(X + 1, Y + 1, (ushort)(Width - 1), (ushort)(Height - 1), 0, NormalColor);
 
-            GUI.canv.DrawString(Content, GUI.dFont, GUI.colors.btxtColor,
-                X + (Width / 2 - GUI.dFont.Width * Content.Length / 2),
-                Y + (Height / 2 - GUI.dFont.Height / 2) + 1
+            GUI.canv.DrawString(
+                X + (Width / 2 - GUI.fsx * Content.Length / 2),
+                Y + (Height / 2 - GUI.fsy / 2) + 1,
+                Content, GUI.dFont, GUI.colors.btxtColor
             );
         }
 

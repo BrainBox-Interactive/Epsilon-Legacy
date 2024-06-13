@@ -1,7 +1,7 @@
 ﻿using Cosmos.HAL;
 using Cosmos.System;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
+using PrismAPI.Graphics;
 
 namespace Epsilon.Interface.Components.Titlebar
 {
@@ -24,11 +24,11 @@ namespace Epsilon.Interface.Components.Titlebar
             //GUI.canv.DrawCircle(Color.Black, X, Y, 7);
             if (CheckHover())
             {
-                GUI.canv.DrawFilledCircle(HoverColor, X, Y, 6);
+                GUI.canv.DrawFilledCircle(X, Y, 6, HoverColor);
                 if (MouseManager.MouseState == MouseState.Left)
                     OnClick(0);
             }
-            else GUI.canv.DrawFilledCircle(NormalColor, X, Y, 6);
+            else GUI.canv.DrawFilledCircle(X, Y, 6, NormalColor);
         }
 
         public override bool CheckHover()

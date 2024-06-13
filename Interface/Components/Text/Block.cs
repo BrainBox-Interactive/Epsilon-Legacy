@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PrismAPI.Graphics;
 
 namespace Epsilon.Interface.Components.Text
 {
@@ -27,26 +22,28 @@ namespace Epsilon.Interface.Components.Text
         {
             base.Update();
             GUI.canv.DrawRectangle(
-                OutlineColor,
                 X - 1,
                 Y - 1,
-                Width + 1,
-                Height + 1
+                (ushort)(Width + 1),
+                (ushort)(Height + 1),
+                0,
+                OutlineColor
             );
             GUI.canv.DrawFilledRectangle(
-                NormalColor,
                 X,
                 Y,
-                Width,
-                Height
+                (ushort)Width,
+                (ushort)Height,
+                0,
+                NormalColor
             );
 
             GUI.canv.DrawString(
+                X + 8,
+                Y + (Height / 2 - GUI.fsy / 2) + 1,
                 Text,
                 GUI.dFont,
-                TextColor,
-                X + 8,
-                Y + (Height / 2 - GUI.dFont.Height / 2) + 1
+                TextColor
             );
         }
     }

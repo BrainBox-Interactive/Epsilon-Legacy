@@ -2,9 +2,11 @@
 using Epsilon.Applications.System;
 using Epsilon.System.Critical.Processing;
 using System;
-using System.Drawing;
+using PrismAPI.Graphics;
 using System.Linq;
 using Console = System.Console;
+using System.Drawing;
+using Color = PrismAPI.Graphics.Color;
 
 namespace Epsilon.Interface.System.Shell.Screen
 {
@@ -15,32 +17,34 @@ namespace Epsilon.Interface.System.Shell.Screen
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.boColor,
                 x,
                 y - 1,
-                w,
-                1
+                (ushort)w,
+                1,
+                0,
+                GUI.colors.boColor
             );
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.bColor,
                 x,
                 y,
-                w,
-                h
+                (ushort)w,
+                (ushort)h,
+                0,
+                GUI.colors.bColor
             );
 
             // Menu Button
             GUI.canv.DrawFilledCircle(
-                Color.LightGray,
                 wData.Position.X + 35,
                 wData.Position.Y + 15,
-                21
+                21,
+                Color.LightGray
             );
             GUI.canv.DrawFilledCircle(
-                Color.White,
                 wData.Position.X + 35,
                 wData.Position.Y + 15,
-                20
+                20,
+                Color.White
             );
 
             if (GUI.mx >= wData.Position.X + (35 - 20)
@@ -52,10 +56,10 @@ namespace Epsilon.Interface.System.Shell.Screen
                     // TODO: If click then open and
                     // different hover, else hover
                     GUI.canv.DrawFilledCircle(
-                        Color.LightGray,
                         wData.Position.X + 35,
                         wData.Position.Y + 15,
-                        20
+                        20,
+                        Color.LightGray
                     );
 
                     if (MouseManager.MouseState == MouseState.Left
@@ -63,7 +67,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                         Manager.Start(new ControlMenu {
                             wData = new WindowData {
                                 Moveable = false,
-                                Position = new Rectangle(
+                                Position = new Rectangle (
                                     0,
                                     GUI.height - (32 + 460),
                                     350,

@@ -23,7 +23,7 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Default.bmp")]
         public static byte[] RawDefaultCursor;
 
-        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.arial.ttf")]
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.zap-vga16.psf")]
         public static byte[] RawDefaultFont;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Startup.wav")]

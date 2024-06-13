@@ -5,11 +5,7 @@ using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
 using System.Collections.Generic;
 using System;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.Serialization;
+using PrismAPI.Graphics;
 
 namespace Epsilon.Applications.Base
 {

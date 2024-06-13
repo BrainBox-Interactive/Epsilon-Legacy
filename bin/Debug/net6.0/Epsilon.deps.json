@@ -11,7 +11,8 @@
           "Cosmos.Build": "0.1.0-localbuild20240611062641",
           "Cosmos.Debug.Kernel": "0.1.0-localbuild20240611062657",
           "Cosmos.Plugs": "0.1.0-localbuild20240611062657",
-          "Cosmos.System2": "0.1.0-localbuild20240611062657"
+          "Cosmos.System2": "0.1.0-localbuild20240611062657",
+          "PrismAPI": "1.0.0"
         },
         "runtime": {
           "Epsilon.dll": {}
@@ -108,6 +109,27 @@
             "fileVersion": "10.0.0.0"
           }
         }
+      },
+      "PrismAPI/1.0.0": {
+        "dependencies": {
+          "Cosmos.HAL2": "0.1.0-localbuild20240611062657",
+          "Cosmos.System2": "0.1.0-localbuild20240611062657",
+          "TinyMath": "1.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/PrismAPI.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "TinyMath/1.0.1": {
+        "runtime": {
+          "lib/net6.0/TinyMath.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
       }
     }
   },
@@ -172,6 +194,20 @@
       "sha512": "sha512-Dq5sEKX2wo8j96HApTKuHIWYnzCi5jZa+jS0L5fVNGresiT/hvtkQE5ZUSObz2+XmcnTZBJUZ/PkPBL4iYmxvQ==",
       "path": "il2cpu.api/0.1.0-localbuild20240611062657",
       "hashPath": "il2cpu.api.0.1.0-localbuild20240611062657.nupkg.sha512"
+    },
+    "PrismAPI/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RbkECpD4gsya9yipi43iuSnjpXNfFymE5lmIKuWKn9mhmvAg0Z27IxYWE4tDbDl3zmH4pgmlPkWaQEkpboK68w==",
+      "path": "prismapi/1.0.0",
+      "hashPath": "prismapi.1.0.0.nupkg.sha512"
+    },
+    "TinyMath/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PUlZnV23BNExMoFe/qQstJ4qMl+UWjyECXqoVQfKErSNNBY6bmfcmoUdrHFZw5xe9cPa8QwqZunwee/YBh862g==",
+      "path": "tinymath/1.0.1",
+      "hashPath": "tinymath.1.0.1.nupkg.sha512"
     }
   }
 }

@@ -49,11 +49,11 @@ namespace Epsilon.Applications.System
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             GUI.canv.DrawString(
+                x + 10,
+                y + 5 + this.w.tSize,
                 Content,
                 GUI.dFont,
-                GUI.colors.txtColor,
-                x + 10,
-                y + 5 + this.w.tSize
+                GUI.colors.txtColor
             );
 
             int fh = this.w.tSize + h;

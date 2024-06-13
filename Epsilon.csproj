@@ -13,7 +13,7 @@
         <StartCosmosGDB>False</StartCosmosGDB>
         <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
         <CosmosDebugPort>Serial: COM1</CosmosDebugPort>
-        <Launch>Bochs</Launch>
+        <Launch>VMware</Launch>
         <Profile>VMware</Profile>
         <Description>Use VMware Player or Workstation to deploy and debug.</Description>
         <PxeInterface>192.168.0.8</PxeInterface>
@@ -28,6 +28,9 @@
       <None Remove="System\Resources\Audio\Shutdown.wav" />
       <None Remove="System\Resources\Audio\Startup.wav" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
+      <None Remove="System\Resources\Fonts\Malgun_Gothic_32x.psf" />
+      <None Remove="System\Resources\Fonts\zap-ext-light24.psf" />
+      <None Remove="System\Resources\Fonts\zap-vga16.psf" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Profile\Default.bmp" />
       <None Remove="System\Resources\Images\Setup.bmp" />
@@ -41,6 +44,7 @@
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Plugs" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="PrismAPI" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -48,6 +52,12 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\arial.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Fonts\Malgun_Gothic_32x.psf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Fonts\zap-vga16.psf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
@@ -76,6 +86,12 @@
 
     <ItemGroup>
       <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="System\Resources\Fonts\zap-ext-light24.psf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>

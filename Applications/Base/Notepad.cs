@@ -1,14 +1,7 @@
-﻿using Cosmos.HAL.BlockDevice.Ports;
-using Cosmos.System;
+﻿using Cosmos.System;
 using Epsilon.Interface;
-using Epsilon.Interface.Components;
-using Epsilon.Interface.Components.Buttons;
-using Epsilon.Interface.Components.Titlebar.Base;
-using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
-using System;
-using System.Drawing;
-using System.Numerics;
+using PrismAPI.Graphics;
 
 namespace Epsilon.Applications.Base
 {
@@ -51,20 +44,21 @@ namespace Epsilon.Applications.Base
             int w = wData.Position.Width, h = wData.Position.Height;
             int fh = this.w.tSize + h;
             GUI.canv.DrawString(
+                x + 10,
+                y + 5 + this.w.tSize,
                 Content,
                 GUI.dFont,
-                GUI.colors.txtColor,
-                x + 10,
-                y + 5 + this.w.tSize
+                GUI.colors.txtColor
             );
 
             if (Manager.toUpdate == this)
                 GUI.canv.DrawFilledRectangle(
-                    Color.White,
-                    x + (Content.Length + 1) * GUI.dFont.Width + 4,
-                    y + 5 + this.w.tSize + (GUI.dFont.Height / 2),
-                    GUI.dFont.Width,
-                    GUI.dFont.Height / 4
+                    x + (Content.Length + 1) * GUI.fsx + 4,
+                    y + 5 + this.w.tSize + (GUI.fsy / 2),
+                    GUI.fsx,
+                    (ushort)(GUI.fsy / 4),
+                    0,
+                    Color.White
                 );
         }
     }

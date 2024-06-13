@@ -1,13 +1,13 @@
 ﻿using Cosmos.System;
-using Cosmos.System.Graphics;
-using Cosmos.System.Graphics.Fonts;
 using Epsilon.Applications.System;
 using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.Interface.System.Shell.Screen;
 using System.Drawing;
-using Epsilon.Applications.Base;
-using Epsilon.System;
+using PrismAPI.Hardware.GPU;
+using Font = PrismAPI.Graphics.Fonts.Font;
+using Epsilon.System.Resources;
+using PrismAPI.Graphics;
 
 namespace Epsilon.Interface
 {
@@ -18,11 +18,16 @@ namespace Epsilon.Interface
             height = 768,
             mx = 0,
             my = 0;
-        public static SVGAIICanvas canv;
-        public static PCScreenFont dFont
-            = PCScreenFont.Default;
+        public static Display canv;
+        public static Font dFont
+            = Font.Fallback;
 
-        public static Bitmap wp, crs;
+        public static ushort fsx = dFont.MeasureString(" "),
+            fsy = dFont.Size;
+
+        public static Canvas wp
+            = Image.FromBitmap(Files.Raw1024x768Wallpaper),
+            crs = Image.FromBitmap(Files.RawDefaultCursor);
         public static Colors colors = new();
         public static Process cProc;
 
@@ -31,11 +36,7 @@ namespace Epsilon.Interface
 
         public static void Start()
         {
-            canv = new SVGAIICanvas(new Mode(
-                (uint)width,
-                (uint)height,
-                ColorDepth.ColorDepth32
-            ));
+            canv = Display.GetDisplay((ushort)width, (ushort)height);
 
             MouseManager.ScreenWidth = (uint)width;
             MouseManager.ScreenHeight = (uint)height;
@@ -159,51 +160,53 @@ namespace Epsilon.Interface
         public static void Update()
         {
             mx = (int)MouseManager.X; my = (int)MouseManager.Y;
+            canv.Clear(PrismAPI.Graphics.Color.LightGray);
 
             // Back layer
-            canv.DrawImage(wp, 0, 0);
+            canv.DrawImage(0, 0, wp, false);
 
             // Debug, draw string with all processes name
-            canv.DrawString("Current Processes:", dFont, colors.txtColor, 0, 24);
-            for (int i = 0; i < Manager.pList.Count; i++)
-            {
-                canv.DrawString("[" + Manager.pList[i].Name + "]",
-                    dFont,
-                    colors.txtColor,
-                    0,
-                    24 + dFont.Height * (Manager.pList.Count - i)
-                );
-            }
+            //canv.DrawString(0, 24, "Current Processes:", dFont, colors.txtColor);
+            //for (int i = 0; i < Manager.pList.Count; i++)
+            //{
+            //    canv.DrawString(
+            //        0,
+            //        24 + fsy * (Manager.pList.Count - i),
+            //        "[" + Manager.pList[i].Name + "]",
+            //        dFont,
+            //        colors.txtColor
+            //    );
+            //}
 
-            canv.DrawString("P:curProc", dFont, colors.txtColor, 0, dFont.Height * 12);
-            if (cProc != null)
-                canv.DrawString("[" + cProc.Name + "]",
-                    dFont,
-                    colors.txtColor,
-                    0,
-                    dFont.Height * 13
-                );
-            else
-                canv.DrawString("[NO PROCESS]",
-                    dFont,
-                    colors.txtColor,
-                    0,
-                    dFont.Height * 13
-                );
+            //canv.DrawString(0, fsy * 12, "P:curProc", dFont, colors.txtColor);
+            //if (cProc != null)
+            //    canv.DrawString(
+            //        0,
+            //        fsy * 13,
+            //        "[" + cProc.Name + "]",
+            //        dFont,
+            //        colors.txtColor
+            //    );
+            //else
+            //    canv.DrawString(
+            //        0,
+            //        fsy * 13,
+            //        "[NO PROCESS]",
+            //        dFont,
+            //        colors.txtColor
+            //    );
 
-            canv.DrawString("LhC:" + Kernel.lastHCol, dFont, colors.txtColor, 0, dFont.Height * 15);
-            canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, dFont.Height * 16);
-            canv.DrawString("c:" + clicked, dFont, colors.txtColor, 0, dFont.Height * 18);
+            //canv.DrawString(0, fsy * 15, "LhC:" + Kernel.lastHCol, dFont, colors.txtColor);
+            canv.DrawString(0, fsy * 16, "FPS:" + Kernel._fps, dFont, colors.txtColor);
+            //canv.DrawString(0, fsy * 18, "c:" + clicked, dFont, colors.txtColor);
 
-            canv.DrawString("Build Information:", dFont, colors.txtColor, width - dFont.Width * "Build Information:".Length, height - (32 + dFont.Height * 2));
+            canv.DrawString(width - dFont.MeasureString("Build Information:"), height - (32 + fsy * 2), "Build Information:", dFont, colors.txtColor);
             canv.DrawString(
-                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 1",
+                width - dFont.MeasureString("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2"),
+                height - (32 + fsy),
+                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2",
                 dFont,
-                colors.txtColor,
-                width - dFont.Width
-                * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 1")
-                .Length,
-                height - (32 + dFont.Height)
+                colors.txtColor
             );
 
             // Middle layer
@@ -211,7 +214,7 @@ namespace Epsilon.Interface
             Manager.Update();
 
             // Front layer
-            canv.DrawImageAlpha(crs, (int)MouseManager.X, (int)MouseManager.Y);
+            canv.DrawImage((int)MouseManager.X, (int)MouseManager.Y, crs, true);
 
             // Conditions
             if (MouseManager.MouseState == MouseState.Left) clicked = true;
@@ -238,7 +241,7 @@ namespace Epsilon.Interface
             }
 
             // Obligatory update to display
-            canv.Display();
+            canv.Update();
         }
     }
 }
