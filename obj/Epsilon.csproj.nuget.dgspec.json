@@ -23,6 +23,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Users\\User\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+          "C:\\Users\\User\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

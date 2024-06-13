@@ -14,11 +14,11 @@ namespace Epsilon.Interface
     public static class GUI
     {
         // TODO: IMPORTANT!! MAKE AND USE IsInFront() FUNCTION!!!
-        public static int width = 1024,
-            height = 768,
+        public static int width = 640,
+            height = 480,
             mx = 0,
             my = 0;
-        public static SVGAIICanvas canv;
+        public static Canvas canv;
         public static PCScreenFont dFont
             = PCScreenFont.Default;
 
@@ -93,16 +93,16 @@ namespace Epsilon.Interface
                     Name = "Control Bar"
                 });
 
-            //Manager.Start(new Setup
-            //{
-            //    wData = new WindowData
-            //    {
-            //        Position = new Rectangle(0, 0, width, height),
-            //        Moveable = false
-            //    },
-            //    Name = "Epsilon Setup",
-            //    Special = true
-            //});
+            Manager.Start(new Setup
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(0, 0, width, height),
+                    Moveable = false
+                },
+                Name = "Epsilon Setup",
+                Special = true
+            });
         }
 
         static int ofs = 5;
@@ -197,11 +197,11 @@ namespace Epsilon.Interface
 
             canv.DrawString("Build Information:", dFont, colors.txtColor, width - dFont.Width * "Build Information:".Length, height - (32 + dFont.Height * 2));
             canv.DrawString(
-                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 1",
+                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2",
                 dFont,
                 colors.txtColor,
                 width - dFont.Width
-                * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 1")
+                * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2")
                 .Length,
                 height - (32 + dFont.Height)
             );

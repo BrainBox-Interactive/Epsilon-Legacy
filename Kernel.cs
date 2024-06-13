@@ -16,7 +16,7 @@ namespace Epsilon
     public class Kernel : Sys.Kernel
     {
         public static string curPath = @"0:\",
-            version = "a.0014";
+            version = "1.0_alpha-bluelagoon";
         public static CosmosVFS vfs;
         public static bool isGUI;
 

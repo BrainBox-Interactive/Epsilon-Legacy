@@ -55,12 +55,8 @@ namespace Epsilon.Interface.System.Shell.Screen
             GUI.canv.DrawString(
                 "Settings",
                 GUI.dFont,
-                Color.LightBlue,
-
-                x + w - 12
-                - ((user + " - ").Length * GUI.dFont.Width)
-                - ("Settings".Length * GUI.dFont.Width),
-
+                Color.PowderBlue,
+                x + w - ("Settings".Length * GUI.dFont.Width + 8),
                 y + (mts / 2 - GUI.dFont.Height / 2)
             );
 
