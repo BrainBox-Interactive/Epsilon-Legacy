@@ -2,6 +2,7 @@
 using Cosmos.System.Graphics;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
+using System.Drawing;
 
 namespace Epsilon.Interface.System.Shell.Screen
 {
@@ -19,7 +20,7 @@ namespace Epsilon.Interface.System.Shell.Screen
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             GUI.canv.DrawRectangle(
-                GUI.colors.moColor,
+                GUI.colors.tboColor,
                 x - 1, y - 1,
                 w + 1, h + 1
             );
@@ -40,11 +41,26 @@ namespace Epsilon.Interface.System.Shell.Screen
                 x,
                 y
             );
+
+            string user = "Live User";
             GUI.canv.DrawString(
-                "Live User",
+                user + " - ",
                 GUI.dFont,
                 GUI.colors.txtColor,
                 x + mts + 12,
+                y + (mts / 2 - GUI.dFont.Height / 2)
+            );
+
+            // TODO: hyperlink
+            GUI.canv.DrawString(
+                "Settings",
+                GUI.dFont,
+                Color.LightBlue,
+
+                x + w - 12
+                - ((user + " - ").Length * GUI.dFont.Width)
+                - ("Settings".Length * GUI.dFont.Width),
+
                 y + (mts / 2 - GUI.dFont.Height / 2)
             );
 

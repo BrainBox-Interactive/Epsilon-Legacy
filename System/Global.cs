@@ -2,7 +2,7 @@
 {
     public static class Global
     {
-        public static bool topBarActivated = false;
+        public static bool topBarActivated = true;
         public static bool controlBarActivated = true;
     }
 }

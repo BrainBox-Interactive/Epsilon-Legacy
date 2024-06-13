@@ -14,6 +14,9 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.1024x768.bmp")]
         public static byte[] Raw1024x768Wallpaper;
 
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Setup.bmp")]
+        public static byte[] RawSetupImage;
+
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Profile.Default.bmp")]
         public static byte[] RawDefaultPFP;
 

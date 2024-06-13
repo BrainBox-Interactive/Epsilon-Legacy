@@ -1,38 +1,39 @@
-﻿using Epsilon.Interface.Components;
-using Epsilon.Interface;
+﻿using Epsilon.Interface;
 using Epsilon.System.Critical.Processing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
+using Cosmos.System.Graphics;
+using Epsilon.System.Resources;
+using Epsilon.Interface.Components;
 
 namespace Epsilon.Applications.System
 {
     public class Setup : Process
     {
-        Window w;
+        Bitmap setupImg = new(Files.RawSetupImage);
+        Button next;
 
         public override void Start()
         {
             base.Start();
-            this.w = new();
-
-            int x = wData.Position.X, y = wData.Position.Y;
-            int w = wData.Position.Width, h = wData.Position.Height;
-            int fh = this.w.tSize + h;
-
-            this.w.StartAPI(this);
+            next = new(
+                546, 441,
+                67, 24,
+                GUI.colors.btColor,
+                GUI.colors.bthColor,
+                "Next"
+            );
         }
 
         public override void Run()
         {
-            this.w.DrawT(this); this.w.DrawB(this);
-
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
-            int fh = this.w.tSize + h;
+
+            GUI.canv.DrawImage(
+                setupImg,
+                0, 0
+            );
+
+            next.Update();
         }
     }
 }

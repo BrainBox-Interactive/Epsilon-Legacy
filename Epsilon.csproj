@@ -13,12 +13,15 @@
         <StartCosmosGDB>False</StartCosmosGDB>
         <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
         <CosmosDebugPort>Serial: COM1</CosmosDebugPort>
-        <Launch>VMware</Launch>
+        <Launch>Bochs</Launch>
         <Profile>VMware</Profile>
         <Description>Use VMware Player or Workstation to deploy and debug.</Description>
         <PxeInterface>192.168.0.8</PxeInterface>
         <VMWareEdition>Workstation</VMWareEdition>
         <DebugEnabled>False</DebugEnabled>
+        <RemoveBootDebugOutput>True</RemoveBootDebugOutput>
+        <CompressionType>Gzip</CompressionType>
+        <UseUEFI>True</UseUEFI>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,6 +30,7 @@
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Profile\Default.bmp" />
+      <None Remove="System\Resources\Images\Setup.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\1024x768.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\640x480.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Default.bmp" />
@@ -50,6 +54,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Profile\Default.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Setup.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\1024x768.bmp">

@@ -54,15 +54,6 @@ namespace Epsilon.Interface
                 button = false
             });
 
-            //Manager.Start(new Setup {
-            //    wData = new WindowData {
-            //        Position = new Rectangle(width / 2 - 720 / 2, height / 2 - 650 / 2, 720, 650),
-            //        Moveable = false
-            //    },
-            //    Name = "Epsilon Setup",
-            //    Special = true
-            //});
-
             //Manager.Start(new Notepad {
             //    wData = new WindowData {
             //        Position = new Rectangle(400, 100, 450, 475),
@@ -101,6 +92,17 @@ namespace Epsilon.Interface
                     Special = false,
                     Name = "Control Bar"
                 });
+
+            //Manager.Start(new Setup
+            //{
+            //    wData = new WindowData
+            //    {
+            //        Position = new Rectangle(0, 0, width, height),
+            //        Moveable = false
+            //    },
+            //    Name = "Epsilon Setup",
+            //    Special = true
+            //});
         }
 
         static int ofs = 5;
