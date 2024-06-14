@@ -4,7 +4,6 @@ namespace Epsilon.Interface.Components.Titlebar.Base
 {
     public class CloseButton : TitlebarButton
     {
-        public Process p;
         public CloseButton(int x, int y, Process process)
             : base(x, y, process, GUI.colors.qbColor, GUI.colors.qbhColor) {
             p = process;

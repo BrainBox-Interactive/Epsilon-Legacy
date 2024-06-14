@@ -14,14 +14,14 @@ namespace Epsilon.Interface.System
         public Color boColor = Color.FromArgb(255, 40, 40, 40);
 
         public Color btColor = Color.FromArgb(255, 200, 200, 200);
-        public Color btsColor = Color.FromArgb(255, 140, 140, 140);
+        public Color btcColor = Color.FromArgb(255, 175, 175, 175);
         public Color bthColor = Color.FromArgb(255, 255, 255, 255);
-        public Color btshColor = Color.FromArgb(255, 190, 190, 190);
         public Color btxtColor = Color.FromArgb(255, 0, 0, 0);
 
         public Color mnbColor;
+        public Color mnbhColor;
         public Color mxbColor;
-
+        public Color mxbhColor;
         public Color qbColor = Color.FromArgb(255, 230, 80, 20);
         public Color qbhColor = Color.FromArgb(255, 190, 40, 0);
     }

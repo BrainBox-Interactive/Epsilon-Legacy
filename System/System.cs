@@ -14,9 +14,9 @@ public static class System
     public static void OnBoot()
     {
         Kernel.isGUI = true;
-        SetUpImages();
         GUI.Start();
-        PlayAudio(Files.RawStartupAudio);
+        SetUpImages();
+        // PlayAudio(Files.RawStartupAudio);
     }
 
     private static void SetUpImages()

@@ -58,15 +58,8 @@ namespace Epsilon.Interface.System
                 && GUI.mx <= x + width
                 && GUI.my >= y
                 && GUI.my <= y + height)
-            {
-                GUI.canv.DrawFilledRectangle(GUI.colors.btshColor, x + 1, y + 1, width - 1, height - 1);
                 GUI.canv.DrawFilledRectangle(GUI.colors.bthColor, x + 1, y + 1, width - 2, height - 2);
-            }
-            else
-            {
-                GUI.canv.DrawFilledRectangle(GUI.colors.btsColor, x + 1, y + 1, width - 1, height - 1);
-                GUI.canv.DrawFilledRectangle(GUI.colors.btColor, x + 1, y + 1, width - 2, height - 2);
-            }
+            else GUI.canv.DrawFilledRectangle(GUI.colors.btColor, x + 1, y + 1, width - 2, height - 2);
 
             GUI.canv.DrawString(content, GUI.dFont, GUI.colors.btxtColor,
                 x + (width / 2 - GUI.dFont.Width * content.Length / 2),

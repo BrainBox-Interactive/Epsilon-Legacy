@@ -44,28 +44,28 @@ namespace Epsilon.Applications.Base
             tb = new(x, y + this.w.tSize, w, 20, "Calculator", Color.White, Color.Black, Color.Black);
 
             int div3 = w / 3;
-            one = new(x, y + this.w.tSize + 20 + (bh * 0), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, "1");
-            two = new(x + div3, y + this.w.tSize + 20 + (bh * 0), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "2");
-            three = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 0), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "3");
+            one = new(x, y + this.w.tSize + 20 + (bh * 0), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "1");
+            two = new(x + div3, y + this.w.tSize + 20 + (bh * 0), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "2");
+            three = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 0), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "3");
 
-            four = new(x, y + this.w.tSize + 20 + (bh * 1), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, "4");
-            five = new(x + div3, y + this.w.tSize + 20 + (bh * 1), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "5");
-            six = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 1), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "6");
+            four = new(x, y + this.w.tSize + 20 + (bh * 1), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "4");
+            five = new(x + div3, y + this.w.tSize + 20 + (bh * 1), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "5");
+            six = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 1), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "6");
 
-            seven = new(x, y + this.w.tSize + 20 + (bh * 2), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, "7");
-            eight = new(x + div3, y + this.w.tSize + 20 + (bh * 2), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "8");
-            nine = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 2), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "9");
-            zero = new(x + div3, y + this.w.tSize + 20 + (bh * 3), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, "0");
+            seven = new(x, y + this.w.tSize + 20 + (bh * 2), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "7");
+            eight = new(x + div3, y + this.w.tSize + 20 + (bh * 2), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "8");
+            nine = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 2), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "9");
+            zero = new(x + div3, y + this.w.tSize + 20 + (bh * 3), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "0");
 
             int div4 = w / 4;
-            plus = new(x, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, "+");
-            minus = new(x + div4, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, "-");
-            times = new(x + (div4 * 2), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, "*");
-            div = new(x + (div4 * 3), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, "/");
+            plus = new(x, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "+");
+            minus = new(x + div4, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "-");
+            times = new(x + (div4 * 2), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "*");
+            div = new(x + (div4 * 3), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "/");
 
-            bksp = new(x, y + this.w.tSize + 20 + (bh * 4) + sbh, div3, sbh, GUI.colors.btColor, GUI.colors.bthColor, "<");
-            clear = new(x + div3, y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, "x");
-            enter = new(x + (div3 * 2), y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, "=");
+            bksp = new(x, y + this.w.tSize + 20 + (bh * 4) + sbh, div3, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "<");
+            clear = new(x + div3, y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "x");
+            enter = new(x + (div3 * 2), y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "=");
         }
 
         public override void Run()      

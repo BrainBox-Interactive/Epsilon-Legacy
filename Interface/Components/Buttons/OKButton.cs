@@ -14,7 +14,7 @@ namespace Epsilon.Interface.Components.Buttons
 
         public OKButton(int x, int y, Process process) : base(x, y,
             32, 16,
-            GUI.colors.btColor, GUI.colors.bthColor,
+            GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
             "OK"
         ) {
             p = process;

@@ -28,23 +28,25 @@ namespace Epsilon
 
         protected override void BeforeRun()
         {
-            Console.SetWindowSize(90, 30);
-            Console.OutputEncoding = Sys.ExtendedASCII.CosmosEncodingProvider
-                .Instance.GetEncoding(437);
-
-            isGUI = false;
+            System.System.OnBoot();
             vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(vfs, true);
-            Thread.Sleep(2000);
+            if (!isGUI)
+            {
+                Console.SetWindowSize(90, 30);
+                Console.OutputEncoding = Sys.ExtendedASCII.CosmosEncodingProvider
+                    .Instance.GetEncoding(437);
+                Thread.Sleep(2000);
 
-            Console.Clear();
-            Thread.Sleep(750);
+                Console.Clear();
+                Thread.Sleep(750);
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Epsilon Kernel - " + version);
-            Console.WriteLine("June 2024 version // Experimental version\n");
-            Console.ForegroundColor = ConsoleColor.White;
-            //System.System.PlayAudio(Files.RawStartupAudio);
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Epsilon Kernel - " + version);
+                Console.WriteLine("June 2024 version // Experimental version\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                //System.System.PlayAudio(Files.RawStartupAudio);
+            }
         }
 
         public static KeyEvent k;

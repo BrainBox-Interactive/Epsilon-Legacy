@@ -8,8 +8,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 {
     public class ControlMenu : Process
     {
-        static int r = 6,
-            by;
+        static int r = 6;
 
         static int cbofs = (r / 2) * 2
                 - ((r / 2) - (r + 6)),

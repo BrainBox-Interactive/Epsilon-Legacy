@@ -19,6 +19,7 @@ namespace Epsilon.Applications.System
                 67, 24,
                 GUI.colors.btColor,
                 GUI.colors.bthColor,
+                GUI.colors.btcColor,
                 "Next"
             );
         }

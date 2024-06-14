@@ -18,7 +18,7 @@ namespace Epsilon.Interface
             height = 480,
             mx = 0,
             my = 0;
-        public static Canvas canv;
+        public static VBECanvas canv;
         public static PCScreenFont dFont
             = PCScreenFont.Default;
 
@@ -31,12 +31,6 @@ namespace Epsilon.Interface
 
         public static void Start()
         {
-            canv = new SVGAIICanvas(new Mode(
-                (uint)width,
-                (uint)height,
-                ColorDepth.ColorDepth32
-            ));
-
             MouseManager.ScreenWidth = (uint)width;
             MouseManager.ScreenHeight = (uint)height;
             MouseManager.X = (uint)width / 2;
@@ -105,7 +99,6 @@ namespace Epsilon.Interface
             });
         }
 
-        static int ofs = 5;
         static Window w = new();
         public static void Move()
         {
