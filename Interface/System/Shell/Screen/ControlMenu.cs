@@ -12,7 +12,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 
         static int cbofs = (r / 2) * 2
                 - ((r / 2) - (r + 6)),
-            mts = 24;
+            mts = 24, bsx = 96;
 
         public override void Run()
         {
@@ -31,8 +31,15 @@ namespace Epsilon.Interface.System.Shell.Screen
             );
             GUI.canv.DrawFilledRectangle(
                 GUI.colors.mColor,
+                x + bsx, y + mts,
+                w - bsx, h - mts
+            );
+
+            // PLACEHOLDER, WILL BE REPLACED WITH IMAGE
+            GUI.canv.DrawFilledRectangle(
+                GUI.colors.moColor,
                 x, y + mts,
-                w, h - mts
+                bsx, h - mts
             );
 
             GUI.canv.DrawImage(

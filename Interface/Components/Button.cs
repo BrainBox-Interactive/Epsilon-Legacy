@@ -17,6 +17,8 @@ namespace Epsilon.Interface.Components
         public Color ClickColor { get; set; }
         public string Content { get; set; }
 
+        public Color OutlineColor { get; set; } = Color.Black;
+
         // public Action onClick { get; set; }
 
         public Button(int x, int y, int width, int height, Color nColor, Color hColor, Color cColor, string content)
@@ -36,7 +38,7 @@ namespace Epsilon.Interface.Components
         {
             base.Update();
 
-            GUI.canv.DrawRectangle(Color.Black, X, Y, Width, Height);
+            GUI.canv.DrawRectangle(OutlineColor, X, Y, Width, Height);
             if (CheckHover())
             {
                 if (MouseManager.MouseState == MouseState.Left)

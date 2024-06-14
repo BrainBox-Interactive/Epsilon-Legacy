@@ -21,7 +21,7 @@
         <DebugEnabled>False</DebugEnabled>
         <RemoveBootDebugOutput>True</RemoveBootDebugOutput>
         <CompressionType>Gzip</CompressionType>
-        <UseUEFI>False</UseUEFI>
+        <UseUEFI>True</UseUEFI>
         <CompileVBEMultiboot>False</CompileVBEMultiboot>
         <OptimizationLevel>1</OptimizationLevel>
         <VBEResolution>800x600x32</VBEResolution>
@@ -36,6 +36,7 @@
       <None Remove="System\Resources\Images\Setup.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\1024x768.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\640x480.bmp" />
+      <None Remove="System\Resources\Images\Wallpapers\Alpha.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Default.bmp" />
     </ItemGroup>
 
@@ -48,6 +49,9 @@
 
     <ItemGroup>
       <EmbeddedResource Include="System\Resources\Audio\Shutdown.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\arial.ttf">
@@ -68,6 +72,9 @@
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\640x480.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Wallpapers\Alpha.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\Default.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
@@ -75,12 +82,7 @@
 
     <ItemGroup>
       <Folder Include="Applications\Widgets\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
+      <Folder Include="System\Critical\NewFolder\" />
     </ItemGroup>
 
 </Project>

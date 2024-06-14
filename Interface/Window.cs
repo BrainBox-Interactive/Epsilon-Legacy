@@ -9,39 +9,46 @@ namespace Epsilon.Interface
     public class Window
     {
         public int tSize = 24;
-
-        static int r = 6,
-            ofs,
-            by;
-
-        int cbofs = (r / 2) * 2
-                - ((r / 2) - (r + 4));
         CloseButton b_close;
+        DummyButton b_1, b_2, b_3;
 
         public void StartAPI(Process p)
         {
-            ofs = tSize / 2 - (r / 2) / 2 + (r / 4);
             b_close = new(
-                p.wData.Position.X
-                + p.wData.Position.Width
-                - cbofs,
-                by,
+                p.wData.Position.X + p.wData.Position.Width - 12,
+                p.wData.Position.Y + tSize - 24,
+                p
+            );
+            b_1 = new(
+                p.wData.Position.X + p.wData.Position.Width - 24,
+                p.wData.Position.Y + tSize - 12,
+                p
+            );
+            b_2 = new(
+                p.wData.Position.X + p.wData.Position.Width - 24,
+                p.wData.Position.Y + tSize - 24,
+                p
+            );
+            b_3 = new(
+                p.wData.Position.X + p.wData.Position.Width - 12,
+                p.wData.Position.Y + tSize - 12,
                 p
             );
         }
 
         public void DrawT(Process p)
         {
-            by = p.wData.Position.Y + ofs;
-            b_close.X = p.wData.Position.X + p.wData.Position.Width - cbofs;
-            b_close.Y = by;
+            b_close.X = p.wData.Position.X + p.wData.Position.Width - 12; b_close.Y = p.wData.Position.Y + tSize - 24;
+            b_1.X = p.wData.Position.X + p.wData.Position.Width - 24; b_1.Y = p.wData.Position.Y + tSize - 12;
+            b_2.X = p.wData.Position.X + p.wData.Position.Width - 24; b_2.Y = p.wData.Position.Y + tSize - 24;
+            b_3.X = p.wData.Position.X + p.wData.Position.Width - 12; b_3.Y = p.wData.Position.Y + tSize - 12;
 
             // Outline
             GUI.canv.DrawRectangle(
                 GUI.colors.tboColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y - 1,
-                p.wData.Position.Width + 1,
+                p.Name.Length * GUI.dFont.Width + 17,
                 tSize + 1
             );
 
@@ -50,7 +57,7 @@ namespace Epsilon.Interface
                 GUI.colors.tbColor,
                 p.wData.Position.X,
                 p.wData.Position.Y,
-                p.wData.Position.Width,
+                p.Name.Length * GUI.dFont.Width + 16,
                 tSize
             );
 
@@ -65,6 +72,9 @@ namespace Epsilon.Interface
             );
 
             b_close.Update();
+            b_1.Update();
+            b_2.Update();
+            b_3.Update();
         }
 
         public void DrawB(Process p)
@@ -73,9 +83,9 @@ namespace Epsilon.Interface
             GUI.canv.DrawRectangle(
                 GUI.colors.moColor,
                 p.wData.Position.X - 1,
-                p.wData.Position.Y + tSize,
+                p.wData.Position.Y + tSize - 1,
                 p.wData.Position.Width + 1,
-                p.wData.Position.Height - tSize
+                p.wData.Position.Height - tSize + 1
             );
 
             // Window Bottom

@@ -8,6 +8,7 @@ using Epsilon.Interface.System.Shell.Screen;
 using System.Drawing;
 using Epsilon.Applications.Base;
 using Epsilon.System;
+using System;
 
 namespace Epsilon.Interface
 {
@@ -129,7 +130,7 @@ namespace Epsilon.Interface
                 {
                     if (!p.wData.Moveable) continue;
                     if (mx >= p.wData.Position.X
-                        && mx <= p.wData.Position.X + p.wData.Position.Width)
+                        && mx <= p.wData.Position.X + p.Name.Length * dFont.Width + 16)
                     {
                         if (my >= p.wData.Position.Y
                             && my <= p.wData.Position.Y + w.tSize)

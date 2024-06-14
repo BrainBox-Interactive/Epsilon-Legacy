@@ -6,6 +6,7 @@ namespace Epsilon.Interface.System
     {
         public Color mColor = Color.FromArgb(255, 50, 50, 50);
         public Color moColor = Color.FromArgb(255, 35, 35, 35);
+        public Color mooColor = Color.FromArgb(255, 20, 20, 20);
         public Color tbColor = Color.FromArgb(255, 40, 40, 40);
         public Color tboColor = Color.FromArgb(255, 25, 25, 25);
         public Color txtColor = Color.FromArgb(255, 255, 255, 255);
@@ -23,6 +24,7 @@ namespace Epsilon.Interface.System
         public Color mxbColor;
         public Color mxbhColor;
         public Color qbColor = Color.FromArgb(255, 230, 80, 20);
-        public Color qbhColor = Color.FromArgb(255, 190, 40, 0);
+        public Color qbhColor = Color.FromArgb(255, 255, 150, 100);
+        public Color qboColor = Color.FromArgb(255, 160, 0, 0);
     }
 }

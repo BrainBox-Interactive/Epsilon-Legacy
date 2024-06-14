@@ -27,26 +27,29 @@ namespace Epsilon.Interface.System.Shell.Screen
                 x, y
             );
 
-            int cx = 0;
+            //int cx = 0;
+            int tbx = 0;
             for (int i = 0; i < Manager.pList.Count; i++)
             {
                 if (Manager.pList[i].Name != "Control Bar"
                     && Manager.pList[i].Name != "Top Bar"
                     && Manager.pList[i].Name != "Control Menu")
                 {
+                    int s = Manager.pList[i].Name.Length * GUI.dFont.Width;
                     GUI.canv.DrawFilledRectangle(
                         GUI.colors.tboColor,
-                        (x + 128) * cx + 8 * cx, y,
-                        128, h
+                        tbx + (8 * i), y,
+                        s, h
                     );
 
                     GUI.canv.DrawString(
                         Manager.pList[i].Name,
                         GUI.dFont,
                         GUI.colors.txtColor,
-                        (x + 128) * cx + 8 * cx, y
+                        tbx + (8 * i), y
                     );
-                    cx++;
+                    tbx += Manager.pList[i].Name.Length * GUI.dFont.Width;
+                    //cx++;
                 }
             }
 

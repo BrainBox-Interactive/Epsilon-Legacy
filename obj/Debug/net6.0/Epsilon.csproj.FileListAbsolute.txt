@@ -20,3 +20,4 @@ C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.dll
 C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\refint\Epsilon.dll
 C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\Epsilon.pdb
 C:\Users\User\Documents\Project\Epsilon\Epsilon\obj\Debug\net6.0\ref\Epsilon.dll
+C:\Users\User\Documents\Project\Epsilon\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\Alpha.bmp

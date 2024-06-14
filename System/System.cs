@@ -16,12 +16,12 @@ public static class System
         Kernel.isGUI = true;
         GUI.Start();
         SetUpImages();
-        // PlayAudio(Files.RawStartupAudio);
+        PlayAudio(Files.RawStartupAudio);
     }
 
     private static void SetUpImages()
     {
-        GUI.wp = new Bitmap(Files.Raw1024x768Wallpaper);
+        GUI.wp = new Bitmap(Files.RawAlphaWallpaper);
         GUI.crs = new Bitmap(Files.RawDefaultCursor);
     }
 
@@ -29,17 +29,24 @@ public static class System
     {
         if (!VMTools.IsVMWare)
         {
-            var mixer = new AudioMixer();
-            var audioStream = MemoryAudioStream.FromWave(stream);
-            var driver = AC97.Initialize(bufferSize: 4096);
-            mixer.Streams.Add(audioStream);
-
-            var audioManager = new AudioManager()
+            try
             {
-                Stream = mixer,
-                Output = driver
-            };
-            audioManager.Enable();
+                var mixer = new AudioMixer();
+                var audioStream = MemoryAudioStream.FromWave(stream);
+                var driver = AC97.Initialize(bufferSize: 4096);
+                mixer.Streams.Add(audioStream);
+
+                var audioManager = new AudioManager()
+                {
+                    Stream = mixer,
+                    Output = driver
+                };
+                audioManager.Enable();
+            }
+            catch
+            {
+                s.Console.Beep(600, 100);
+            }
         }
         else s.Console.Beep(600, 100);
     }

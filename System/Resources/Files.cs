@@ -11,6 +11,10 @@ namespace Epsilon.System.Resources
     {
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.Default.bmp")]
         public static byte[] RawDefaultWallpaper;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.Alpha.bmp")]
+        public static byte[] RawAlphaWallpaper;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.640x480.bmp")]
+        public static byte[] Raw640x480Wallpaper;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.1024x768.bmp")]
         public static byte[] Raw1024x768Wallpaper;
 
