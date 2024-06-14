@@ -20,11 +20,11 @@
         <VMWareEdition>Workstation</VMWareEdition>
         <DebugEnabled>False</DebugEnabled>
         <RemoveBootDebugOutput>True</RemoveBootDebugOutput>
-        <CompressionType>None</CompressionType>
+        <CompressionType>Gzip</CompressionType>
         <UseUEFI>False</UseUEFI>
-        <CompileVBEMultiboot>True</CompileVBEMultiboot>
+        <CompileVBEMultiboot>False</CompileVBEMultiboot>
         <OptimizationLevel>1</OptimizationLevel>
-        <VBEResolution>640x480x32</VBEResolution>
+        <VBEResolution>800x600x32</VBEResolution>
     </PropertyGroup>
 
     <ItemGroup>

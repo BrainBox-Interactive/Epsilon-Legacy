@@ -14,11 +14,11 @@ namespace Epsilon.Interface
     public static class GUI
     {
         // TODO: IMPORTANT!! MAKE AND USE IsInFront() FUNCTION!!!
-        public static int width = 640,
-            height = 480,
+        public static int width,
+            height,
             mx = 0,
             my = 0;
-        public static VBECanvas canv;
+        public static Canvas canv;
         public static PCScreenFont dFont
             = PCScreenFont.Default;
 
@@ -31,6 +31,9 @@ namespace Epsilon.Interface
 
         public static void Start()
         {
+            canv = FullScreenCanvas.GetFullScreenCanvas();
+            width = (int)canv.Mode.Width; height = (int)canv.Mode.Height;
+
             MouseManager.ScreenWidth = (uint)width;
             MouseManager.ScreenHeight = (uint)height;
             MouseManager.X = (uint)width / 2;
@@ -70,7 +73,7 @@ namespace Epsilon.Interface
             if (Epsilon.System.Global.topBarActivated)
                 Manager.Start(new TopBar {
                     wData = new WindowData {
-                        Position = new Rectangle(0, 0, width, 24),
+                        Position = new Rectangle(0, 0, (int)width, 24),
                         Moveable = false
                     },
                     Special = false,
@@ -80,23 +83,23 @@ namespace Epsilon.Interface
             if (Epsilon.System.Global.controlBarActivated)
                 Manager.Start(new ControlBar {
                     wData = new WindowData {
-                        Position = new Rectangle(0, height - 32, width, 32),
+                        Position = new Rectangle(0, (int)height - 32, (int)width, 32),
                         Moveable = false
                     },
                     Special = false,
                     Name = "Control Bar"
                 });
 
-            Manager.Start(new Setup
-            {
-                wData = new WindowData
-                {
-                    Position = new Rectangle(0, 0, width, height),
-                    Moveable = false
-                },
-                Name = "Epsilon Setup",
-                Special = true
-            });
+            //Manager.Start(new Setup
+            //{
+            //    wData = new WindowData
+            //    {
+            //        Position = new Rectangle(0, 0, (int)width, (int)height),
+            //        Moveable = false
+            //    },
+            //    Name = "Epsilon Setup",
+            //    Special = true
+            //});
         }
 
         static Window w = new();
@@ -188,15 +191,15 @@ namespace Epsilon.Interface
             canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, dFont.Height * 16);
             canv.DrawString("c:" + clicked, dFont, colors.txtColor, 0, dFont.Height * 18);
 
-            canv.DrawString("Build Information:", dFont, colors.txtColor, width - dFont.Width * "Build Information:".Length, height - (32 + dFont.Height * 2));
+            canv.DrawString("Build Information:", dFont, colors.txtColor, (int)width - dFont.Width * "Build Information:".Length, (int)height - (32 + dFont.Height * 2));
             canv.DrawString(
                 "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2",
                 dFont,
                 colors.txtColor,
-                width - dFont.Width
+                (int)width - dFont.Width
                 * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2")
                 .Length,
-                height - (32 + dFont.Height)
+                (int)height - (32 + dFont.Height)
             );
 
             // Middle layer

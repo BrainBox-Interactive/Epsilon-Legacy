@@ -43,7 +43,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 
             string user = "Live User";
             GUI.canv.DrawString(
-                user + " - ",
+                user,
                 GUI.dFont,
                 GUI.colors.txtColor,
                 x + mts + 12,
@@ -54,7 +54,7 @@ namespace Epsilon.Interface.System.Shell.Screen
             GUI.canv.DrawString(
                 "Settings",
                 GUI.dFont,
-                Color.PowderBlue,
+                Color.LightGray,
                 x + w - ("Settings".Length * GUI.dFont.Width + 8),
                 y + (mts / 2 - GUI.dFont.Height / 2)
             );
