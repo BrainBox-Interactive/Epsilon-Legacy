@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj": {}
+    "C:\\Users\\iplux\\source\\repos\\Epsilon\\Epsilon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj": {
+    "C:\\Users\\iplux\\source\\repos\\Epsilon\\Epsilon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj",
+        "projectUniqueName": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Epsilon.csproj",
         "projectName": "Epsilon",
-        "projectPath": "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\Epsilon.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\Project\\Epsilon\\Epsilon\\obj\\",
+        "projectPath": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Epsilon.csproj",
+        "packagesPath": "C:\\Users\\iplux\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iplux\\source\\repos\\Epsilon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iplux\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\User\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
-          "C:\\Users\\User\\Downloads": {},
+          "C:\\Users\\iplux\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,12 +86,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -48,7 +48,7 @@ namespace Epsilon.Interface
                 GUI.colors.tboColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y - 1,
-                p.Name.Length * GUI.dFont.Width + 17,
+                p.Name.Length * GUI.dFont.Width + 16 * 2 + 8 + 1,
                 tSize + 1
             );
 
@@ -57,16 +57,24 @@ namespace Epsilon.Interface
                 GUI.colors.tbColor,
                 p.wData.Position.X,
                 p.wData.Position.Y,
-                p.Name.Length * GUI.dFont.Width + 16,
+                p.Name.Length * GUI.dFont.Width + 16 * 2 + 8,
                 tSize
             );
+
+            if (p.wData.Icon != null)
+                GUI.canv.DrawImageAlpha(
+                    p.wData.Icon,
+                    p.wData.Position.X + 8,
+                    p.wData.Position.Y + tSize / 2
+                    - (int)p.wData.Icon.Height / 2
+                );
 
             // Title
             GUI.canv.DrawString(
                 p.Name,
                 GUI.dFont,
                 GUI.colors.txtColor,
-                p.wData.Position.X + 8,
+                p.wData.Position.X + (int)p.wData.Icon.Width + 8 * 2,
                 p.wData.Position.Y + tSize / 2
                 - GUI.dFont.Height / 2
             );

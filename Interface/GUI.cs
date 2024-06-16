@@ -27,7 +27,8 @@ namespace Epsilon.Interface
         public static Colors colors = new();
         public static Process cProc;
 
-        public static bool clicked = false;
+        public static bool clicked = false,
+            crsChanged = false;
         static int ox = 0, oy = 0;
 
         public static void Start()
@@ -208,7 +209,8 @@ namespace Epsilon.Interface
             Manager.Update();
 
             // Front layer
-            canv.DrawImageAlpha(crs, (int)MouseManager.X, (int)MouseManager.Y);
+            canv.DrawImageAlpha(crs, (int)MouseManager.X - 9, (int)MouseManager.Y - 9);
+            if (!crsChanged && crs != ESystem.dc) crs = ESystem.dc;
 
             // Conditions
             if (MouseManager.MouseState == MouseState.Left) clicked = true;

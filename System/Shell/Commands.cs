@@ -156,7 +156,7 @@ namespace Epsilon.System.Shell
                         break;
 
                     case "gui":
-                        System.OnBoot();
+                        ESystem.OnBoot();
                         break;
 
                     case "set":

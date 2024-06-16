@@ -8,10 +8,14 @@ namespace Epsilon.Interface.System.Shell.Screen
         {
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
-            GUI.canv.DrawFilledRectangle(
+            //GUI.canv.DrawFilledRectangle(
+            //    GUI.colors.tboColor,
+            //    x, y + 1,
+            //    w, 1
+            //);
+            GUI.canv.DrawLine(
                 GUI.colors.tboColor,
-                x, y + 1,
-                w, 1
+                x, y + 1, x + w, y + 1
             );
 
             GUI.canv.DrawFilledRectangle(
@@ -27,8 +31,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 x, y
             );
 
-            //int cx = 0;
-            int tbx = 0;
+            int tbx = 0, cx = 0;
             for (int i = 0; i < Manager.pList.Count; i++)
             {
                 if (Manager.pList[i].Name != "Control Bar"
@@ -38,7 +41,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                     int s = Manager.pList[i].Name.Length * GUI.dFont.Width;
                     GUI.canv.DrawFilledRectangle(
                         GUI.colors.tboColor,
-                        tbx + (8 * i), y,
+                        tbx + (8 * cx), y,
                         s, h
                     );
 
@@ -46,10 +49,10 @@ namespace Epsilon.Interface.System.Shell.Screen
                         Manager.pList[i].Name,
                         GUI.dFont,
                         GUI.colors.txtColor,
-                        tbx + (8 * i), y
+                        tbx + (8 * cx), y
                     );
                     tbx += Manager.pList[i].Name.Length * GUI.dFont.Width;
-                    //cx++;
+                    cx++;
                 }
             }
 

@@ -1,5 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.Interface.System;
+using Epsilon.System.Critical.Processing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,10 +19,10 @@ namespace Epsilon.Interface.Components
         public string Content { get; set; }
 
         public Color OutlineColor { get; set; } = Color.Black;
+        public Action Action { get; set; } = delegate() { Dummy(); };
 
-        // public Action onClick { get; set; }
-
-        public Button(int x, int y, int width, int height, Color nColor, Color hColor, Color cColor, string content)
+        public Button(int x, int y, int width, int height,
+            Color nColor, Color hColor, Color cColor, string content, Action action = null)
             : base(x, y, width, height)
         {
             X = x;
@@ -32,7 +33,10 @@ namespace Epsilon.Interface.Components
             HoverColor = hColor;
             ClickColor = cColor;
             Content = content;
+            if (action != null) Action = action;
         }
+
+        public static void Dummy() { }
 
         public override void Update()
         {
@@ -40,11 +44,12 @@ namespace Epsilon.Interface.Components
 
             GUI.canv.DrawRectangle(OutlineColor, X, Y, Width, Height);
             if (CheckHover())
-            {
                 if (MouseManager.MouseState == MouseState.Left)
+                {
                     GUI.canv.DrawFilledRectangle(ClickColor, X + 1, Y + 1, Width - 1, Height - 1);
+                    if (!GUI.clicked) OnClick(0);
+                }
                 else GUI.canv.DrawFilledRectangle(HoverColor, X + 1, Y + 1, Width - 1, Height - 1);
-            }
             else GUI.canv.DrawFilledRectangle(NormalColor, X + 1, Y + 1, Width - 1, Height - 1);
 
             GUI.canv.DrawString(Content, GUI.dFont, GUI.colors.btxtColor,
@@ -54,6 +59,19 @@ namespace Epsilon.Interface.Components
         }
 
         public override void OnClick(int mIndex)
-            => base.OnClick(mIndex);
+        {
+            base.OnClick(mIndex);
+            Action.Invoke();
+        }
+
+        public override bool CheckHover()
+        {
+            if (GUI.mx >= X + 1
+                && GUI.mx <= X + Width - 1
+                && GUI.my >= Y + 1
+                && GUI.my <= Y + Height - 1)
+                return true;
+            return false;
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Cosmos.System;
 using Cosmos.System.Graphics;
+using Epsilon.Interface.Components.Buttons;
+using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
 using System.Drawing;
@@ -8,11 +10,29 @@ namespace Epsilon.Interface.System.Shell.Screen
 {
     public class ControlMenu : Process
     {
-        static int r = 6;
+        static int mts = 24, bsx = 96;
+        static Hyperlink settings;
+        static ProfilePicture picture;
 
-        static int cbofs = (r / 2) * 2
-                - ((r / 2) - (r + 6)),
-            mts = 24, bsx = 96;
+        public override void Start()
+        {
+            base.Start();
+
+            int x = wData.Position.X, y = wData.Position.Y;
+            int w = wData.Position.Width, h = wData.Position.Height;
+            settings = new(
+                x + w - ("Settings".Length * GUI.dFont.Width + 8),
+                y + (mts / 2 - GUI.dFont.Height / 2),
+                Color.LightGray,
+                Color.LightGray,
+                "Settings",
+                delegate() { Remove(); }
+            );
+            picture = new(
+                x, y, new Bitmap(Files.RawDefaultPFP),
+                delegate () { Remove(); }
+            );
+        }
 
         public override void Run()
         {
@@ -42,11 +62,8 @@ namespace Epsilon.Interface.System.Shell.Screen
                 bsx, h - mts
             );
 
-            GUI.canv.DrawImage(
-                new Bitmap(Files.RawDefaultPFP),
-                x,
-                y
-            );
+            picture.X = x; picture.Y = y;
+            picture.Update();
 
             string user = "Live User";
             GUI.canv.DrawString(
@@ -57,14 +74,9 @@ namespace Epsilon.Interface.System.Shell.Screen
                 y + (mts / 2 - GUI.dFont.Height / 2)
             );
 
-            // TODO: hyperlink
-            GUI.canv.DrawString(
-                "Settings",
-                GUI.dFont,
-                Color.LightGray,
-                x + w - ("Settings".Length * GUI.dFont.Width + 8),
-                y + (mts / 2 - GUI.dFont.Height / 2)
-            );
+            settings.X = x + w - ("Settings".Length * GUI.dFont.Width + 8);
+            settings.Y = y + (mts / 2 - GUI.dFont.Height / 2);
+            settings.Update();
 
             // if clicks off the menu
             if (GUI.mx < x

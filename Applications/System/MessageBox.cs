@@ -1,13 +1,6 @@
-﻿using Cosmos.HAL.BlockDevice.Ports;
-using Cosmos.System;
-using Epsilon.Interface;
+﻿using Epsilon.Interface;
 using Epsilon.Interface.Components;
-using Epsilon.Interface.Components.Buttons;
-using Epsilon.Interface.Components.Titlebar.Base;
-using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
-using System;
-using System.Numerics;
 
 namespace Epsilon.Applications.System
 {
@@ -15,7 +8,7 @@ namespace Epsilon.Applications.System
     {
         public bool button;
         public string Content = "Default Window Text";
-        OKButton b_button;
+        Button b_button;
         Window w;
 
         public override void Start()
@@ -29,7 +22,11 @@ namespace Epsilon.Applications.System
             b_button = new(
                 x + ((w / 2) - 16),
                 y + (fh - 32 - 13),
-                this
+                32, 16,
+                GUI.colors.btColor,
+                GUI.colors.bthColor,
+                GUI.colors.btcColor,
+                "OK", delegate() { Remove(); }
             );
 
             this.w.StartAPI(this);

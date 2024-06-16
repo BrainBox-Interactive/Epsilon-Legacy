@@ -26,6 +26,11 @@ namespace Epsilon.System.Resources
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Default.bmp")]
         public static byte[] RawDefaultCursor;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Hand.bmp")]
+        public static byte[] RawHandCursor;
+
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Icons.Default.bmp")]
+        public static byte[] RawDefaultIcon;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.arial.ttf")]
         public static byte[] RawDefaultFont;

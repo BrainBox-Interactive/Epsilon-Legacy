@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cosmos.System.Graphics;
+using Epsilon.System.Resources;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -27,6 +29,7 @@ namespace Epsilon.System.Critical.Processing
                 Y = 0,
                 Width = 100,
                 Height = 100
-        }; public bool Moveable = true;
+        }; public Bitmap Icon = new(Files.RawDefaultIcon);
+        public bool Moveable = true;
     }
 }

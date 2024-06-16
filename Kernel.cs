@@ -28,7 +28,7 @@ namespace Epsilon
 
         protected override void BeforeRun()
         {
-            System.System.OnBoot();
+            System.ESystem.OnBoot();
             vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(vfs, true);
             if (!isGUI)

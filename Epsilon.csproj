@@ -28,10 +28,21 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Applications\Widgets\**" />
+      <Compile Remove="System\Critical\NewFolder\**" />
+      <EmbeddedResource Remove="Applications\Widgets\**" />
+      <EmbeddedResource Remove="System\Critical\NewFolder\**" />
+      <None Remove="Applications\Widgets\**" />
+      <None Remove="System\Critical\NewFolder\**" />
+    </ItemGroup>
+
+    <ItemGroup>
       <None Remove="System\Resources\Audio\Shutdown.wav" />
       <None Remove="System\Resources\Audio\Startup.wav" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
+      <None Remove="System\Resources\Images\Cursors\Hand.bmp" />
+      <None Remove="System\Resources\Images\Icons\Default.bmp" />
       <None Remove="System\Resources\Images\Profile\Default.bmp" />
       <None Remove="System\Resources\Images\Setup.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\1024x768.bmp" />
@@ -60,6 +71,12 @@
       <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Cursors\Hand.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Icons\Default.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Profile\Default.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
@@ -78,11 +95,6 @@
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\Default.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Applications\Widgets\" />
-      <Folder Include="System\Critical\NewFolder\" />
     </ItemGroup>
 
 </Project>
