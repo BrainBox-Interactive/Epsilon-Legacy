@@ -28,9 +28,9 @@ namespace Epsilon
 
         protected override void BeforeRun()
         {
-            System.ESystem.OnBoot();
             vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(vfs, true);
+            System.ESystem.OnBoot();
             if (!isGUI)
             {
                 Console.SetWindowSize(90, 30);

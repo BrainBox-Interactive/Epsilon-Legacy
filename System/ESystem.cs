@@ -6,6 +6,7 @@ using Cosmos.System.Audio.IO;
 using Epsilon.System.Resources;
 using Cosmos.System;
 using s = System;
+using System.IO;
 
 namespace Epsilon.System;
 
@@ -20,8 +21,12 @@ public static class ESystem
 
     public static void OnBoot()
     {
-        Kernel.isGUI = true;
+        if (!Directory.Exists("0:\\Epsilon")) Directory.CreateDirectory("0:\\Epsilon");
+        if (!Directory.Exists("0:\\Epsilon\\Settings")) Directory.CreateDirectory("0:\\Epsilon\\Settings");
+        if (!Directory.Exists("0:\\Epsilon\\Settings\\User")) Directory.CreateDirectory("0:\\Epsilon\\Settings\\User");
+
         GUI.Start();
+        Kernel.isGUI = true;
         SetUpImages();
         PlayAudio(Files.RawStartupAudio);
 

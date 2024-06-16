@@ -6,7 +6,7 @@ using Epsilon.Interface.Components;
 
 namespace Epsilon.Applications.System
 {
-    public class Setup : Process
+    public class PSetup : Process
     {
         Bitmap setupImg = new(Files.RawSetupImage);
         Button next;

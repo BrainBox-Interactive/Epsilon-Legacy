@@ -1,4 +1,4 @@
-# Epsilon
+# EpsilonS
  
 
 ```math
@@ -12,5 +12,5 @@ pencil for highlight cursor graphic (thank you notice,)
 - window icon (V)
 - textbox (V)
 - overhaul calculator + buttons with actions (~)
-- login screen, accounts, check for existing file (Login Details file)
+- login screen, accounts, check for existing file (Login Details file) (~)
 - setup

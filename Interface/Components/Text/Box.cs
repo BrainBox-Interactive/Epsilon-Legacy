@@ -13,14 +13,18 @@ namespace Epsilon.Interface.Components.Text
     {
         public Color BackColor { get; set; }
         public Color TextColor { get; set; }
-        public string Content { get; set; }
+        public string Content { get; set; } = String.Empty;
+        public bool Password = false;
+        public string Placeholder { get; set; }
 
-        public Box(int x, int y, int width, int height, Color bColor, Color tColor)
+        public Box(int x, int y, int width, int height,
+            Color bColor, Color tColor, string placeholder)
             : base(x, y, width, height)
         {
             X = x; Y = y;
             Width = width; Height = height;
             BackColor = bColor; TextColor = tColor;
+            Placeholder = placeholder;
         }
 
         bool isFocused = false,
@@ -37,16 +41,23 @@ namespace Epsilon.Interface.Components.Text
                 Width, Height
             );
 
+            if (Placeholder != "" && Content == "")
+                GUI.canv.DrawString(Placeholder, GUI.dFont, Color.Gray,
+                    X + 8, Y + Height / 2 - GUI.dFont.Height / 2);
+
+            if (!Password) GUI.canv.DrawString(Content, GUI.dFont, TextColor,
+                X + 8, Y + Height / 2 - GUI.dFont.Height / 2);
+            else GUI.canv.DrawString(new string('*', Content.Length), GUI.dFont, TextColor,
+                X + 8, Y + Height / 2 - GUI.dFont.Height / 2);
+
             if (MouseManager.MouseState == MouseState.Left
-                && !GUI.clicked)
-                if (CheckHover()) isFocused = true;
-                else isFocused = false;
+                && !GUI.clicked && isFocused && !CheckHover())
+                isFocused = false;
 
             if (isFocused)
             {
-                GUI.canv.DrawFilledRectangle(TextColor, X + 8 + GUI.dFont.Width * (Content.Length + 1),
-                    Y + Height / 2 + GUI.dFont.Height / 2, 1, GUI.dFont.Height);
-                if (!isPressed)
+                DrawBlinkingCursor();
+                if (!isPressed && Kernel.IsKeyPressed)
                     if (Kernel.k.Key == ConsoleKeyEx.Backspace
                     && Content.Length > 0)
                         Content = Content.Substring(0, Content.Length - 1);
@@ -55,9 +66,28 @@ namespace Epsilon.Interface.Components.Text
                         && Content.Length > -1)
                         Content += Kernel.k.KeyChar;
             } isPressed = Kernel.IsKeyPressed;
+        }
 
-            GUI.canv.DrawString(Content, GUI.dFont, TextColor,
-                X + 8, Y + Height / 2 + GUI.dFont.Height / 2);
+        public override void OnClick(int mIndex)
+        {
+            base.OnClick(mIndex);
+            if (mIndex == 0)
+                if (CheckHover()) isFocused = true;
+                else if (isFocused) isFocused = false;
+        }
+
+        //int timer = 0;
+        public void DrawBlinkingCursor()
+        {
+            //if (timer < 5000)
+            //    GUI.canv.DrawFilledRectangle(TextColor, X + 8 + GUI.dFont.Width * Content.Length,
+            //        Y + Height / 2 - GUI.dFont.Height / 2, 1, GUI.dFont.Height);
+            //else if (timer >= 10000) timer = 0;
+            //timer++;
+
+            // TODO: make it actually BLINK
+            GUI.canv.DrawFilledRectangle(TextColor, X + 8 + GUI.dFont.Width * Content.Length,
+                Y + Height / 2 - GUI.dFont.Height / 2, 1, GUI.dFont.Height);
         }
     }
 }

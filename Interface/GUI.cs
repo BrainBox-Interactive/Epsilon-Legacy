@@ -9,6 +9,8 @@ using System.Drawing;
 using Epsilon.Applications.Base;
 using Epsilon.System;
 using System;
+using System.IO;
+using Epsilon.Applications.System.Setup;
 
 namespace Epsilon.Interface
 {
@@ -42,16 +44,16 @@ namespace Epsilon.Interface
             MouseManager.Y = (uint)height / 2;
 
             // Processes
-            Manager.Start(new MessageBox {
-                wData = new WindowData {
-                    Position = new Rectangle(100, 100, 200, 50),
-                    Moveable = true
-                },
-                Name = "Message Box Test",
-                Content = "Hello World!",
-                Special = false,
-                button = false
-            });
+            //Manager.Start(new MessageBox {
+            //    wData = new WindowData {
+            //        Position = new Rectangle(100, 100, 200, 50),
+            //        Moveable = true
+            //    },
+            //    Name = "Message Box Test",
+            //    Content = "Hello World!",
+            //    Special = false,
+            //    button = false
+            //});
 
             //Manager.Start(new Notepad {
             //    wData = new WindowData {
@@ -62,14 +64,16 @@ namespace Epsilon.Interface
             //    Name = "Notepad"
             //});
 
-            //Manager.Start(new Calculator {
-            //    wData = new WindowData {
-            //        Position = new Rectangle(400, 100, 256, 200),
-            //        Moveable = true
-            //    },
-            //    Special = false,
-            //    Name = "Calculator"
-            //});
+            Manager.Start(new Calculator
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(400, 100, 256, 200),
+                    Moveable = true
+                },
+                Special = false,
+                Name = "Calculator"
+            });
 
             // TODO: deprecate special windowdata parameter
             if (Epsilon.System.Global.topBarActivated)
@@ -102,6 +106,19 @@ namespace Epsilon.Interface
             //    Name = "Epsilon Setup",
             //    Special = true
             //});
+
+            // Login Details Epsilon Encryption System . Config
+            //if (!File.Exists("0:\\Epsilon\\Settings\\User\\ldeencs.cfg"))
+            //    Manager.Start(new OOBE
+            //    {
+            //        wData = new WindowData
+            //        {
+            //            Position = new Rectangle(0, 0, (int)width, (int)height),
+            //            Moveable = false
+            //        },
+            //        Name = "Finish your Installation",
+            //        Special = true
+            //    });
         }
 
         static Window w = new();

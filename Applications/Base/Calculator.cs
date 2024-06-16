@@ -19,12 +19,8 @@ namespace Epsilon.Applications.Base
         Window w;
         Block tb;
 
-        Button one, two, three,
-            four, five, six,
-            seven, eight, nine,
-            zero,
-            plus, minus, times, div,
-            bksp, clear, enter;
+        Button[] numberButtons;
+        Button plus, minus, times, div, bksp, clear, enter;
 
         string c = "";
         bool clicked = false;
@@ -44,18 +40,22 @@ namespace Epsilon.Applications.Base
             tb = new(x, y + this.w.tSize, w, 20, "Calculator", Color.White, Color.Black, Color.Black);
 
             int div3 = w / 3;
-            one = new(x, y + this.w.tSize + 20 + (bh * 0), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "1");
-            two = new(x + div3, y + this.w.tSize + 20 + (bh * 0), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "2");
-            three = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 0), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "3");
-
-            four = new(x, y + this.w.tSize + 20 + (bh * 1), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "4");
-            five = new(x + div3, y + this.w.tSize + 20 + (bh * 1), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "5");
-            six = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 1), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "6");
-
-            seven = new(x, y + this.w.tSize + 20 + (bh * 2), div3, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "7");
-            eight = new(x + div3, y + this.w.tSize + 20 + (bh * 2), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "8");
-            nine = new(x + div3 * 2, y + this.w.tSize + 20 + (bh * 2), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "9");
-            zero = new(x + div3, y + this.w.tSize + 20 + (bh * 3), div3 + 1, bh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "0");
+            numberButtons = new Button[10];
+            for (int i = 0; i < 10; i++)
+            {
+                int row = i == 0 ? 3 : (i - 1) / 3;
+                int col = i == 0 ? 1 : (i - 1) % 3;
+                numberButtons[i] = new Button(
+                    x + col * div3,
+                    y + this.w.tSize + 20 + (bh * row),
+                    div3 + (col == 2 ? 1 : 0),
+                    bh,
+                    GUI.colors.btColor,
+                    GUI.colors.bthColor,
+                    GUI.colors.btcColor,
+                    i.ToString()
+                );
+            }
 
             int div4 = w / 4;
             plus = new(x, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "+");
@@ -68,25 +68,21 @@ namespace Epsilon.Applications.Base
             enter = new(x + (div3 * 2), y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "=");
         }
 
-        public override void Run()      
+        public override void Run()
         {
             w.DrawT(this); w.DrawB(this);
             tb.X = wData.Position.X; tb.Y = wData.Position.Y + w.tSize; tb.Text = c;
             tb.Update();
 
             int div3 = wData.Position.Width / 3;
-            one.X = wData.Position.X; one.Y = wData.Position.Y + w.tSize + 20; one.Update();
-            two.X = wData.Position.X + div3; two.Y = wData.Position.Y + w.tSize + 20; two.Update();
-            three.X = wData.Position.X + div3 * 2 + 1; three.Y = wData.Position.Y + w.tSize + 20; three.Update();
-
-            four.X = wData.Position.X; four.Y = wData.Position.Y + w.tSize + 20 + (bh * 1); four.Update();
-            five.X = wData.Position.X + div3; five.Y = wData.Position.Y + w.tSize + 20 + (bh * 1); five.Update();
-            six.X = wData.Position.X + div3 * 2 + 1; six.Y = wData.Position.Y + w.tSize + 20 + (bh * 1); six.Update();
-
-            seven.X = wData.Position.X; seven.Y = wData.Position.Y + w.tSize + 20 + (bh * 2); seven.Update();
-            eight.X = wData.Position.X + div3; eight.Y = wData.Position.Y + w.tSize + 20 + (bh * 2); eight.Update();
-            nine.X = wData.Position.X + div3 * 2 + 1; nine.Y = wData.Position.Y + w.tSize + 20 + (bh * 2); nine.Update();
-            zero.X = wData.Position.X + div3; zero.Y = wData.Position.Y + w.tSize + 20 + (bh * 3); zero.Update();
+            for (int i = 0; i < 10; i++)
+            {
+                int row = i == 0 ? 3 : (i - 1) / 3;
+                int col = i == 0 ? 1 : (i - 1) % 3;
+                numberButtons[i].X = wData.Position.X + col * div3;
+                numberButtons[i].Y = wData.Position.Y + w.tSize + 20 + (bh * row);
+                numberButtons[i].Update();
+            }
 
             int div4 = wData.Position.Width / 4;
             plus.X = wData.Position.X; plus.Y = wData.Position.Y + w.tSize + 20 + (bh * 4); plus.Update();
@@ -99,40 +95,28 @@ namespace Epsilon.Applications.Base
             enter.X = wData.Position.X + (div3 * 2) + 1; enter.Y = wData.Position.Y + w.tSize + 20 + (bh * 4) + sbh; enter.Update();
 
             if (MouseManager.MouseState == MouseState.Left
-                && Manager.toUpdate == this
-                && !GUI.clicked
-                && !clicked)
+                && !GUI.clicked)
                 OnClick();
-
-            if (MouseManager.MouseState == MouseState.None
-                && clicked)
-                clicked = false;
         }
 
         bool _result = false;
         public void OnClick()
         {
-            clicked = true;
-            if (_result)
+            if (_result
+                && !enter.CheckHover())
             {
-                c = "";
+                c = string.Empty;
                 _result = false;
             }
 
-            if (one.CheckHover()) c += '1';
-            else if (two.CheckHover()) c += '2';
-            else if (three.CheckHover()) c += '3';
+            for (int i = 0; i < 10; i++)
+                if (numberButtons[i].CheckHover())
+                {
+                    c += i.ToString();
+                    return;
+                }
 
-            else if (four.CheckHover()) c += '4';
-            else if (five.CheckHover()) c += '5';
-            else if (six.CheckHover()) c += '6';
-
-            else if (seven.CheckHover()) c += '7';
-            else if (eight.CheckHover()) c += '8';
-            else if (nine.CheckHover()) c += '9';
-            else if (zero.CheckHover()) c += '0';
-
-            else if (plus.CheckHover()) c += '+';
+            if (plus.CheckHover()) c += '+';
             else if (minus.CheckHover()) c += '-';
             else if (times.CheckHover()) c += '*';
             else if (div.CheckHover()) c += '/';
@@ -141,21 +125,18 @@ namespace Epsilon.Applications.Base
             {
                 try
                 {
-                    // Evaluate the expression in c using the SimpleEvaluator
                     var result = Evaluator.Evaluate(c);
                     c = result.ToString();
                     _result = true;
                 }
                 catch (Exception ex)
                 {
-                    // Handle any errors that occur during the computation
                     c = ex.ToString();
                     _result = true;
                 }
             }
             else if (clear.CheckHover()) c = "";
-            else if (bksp.CheckHover()
-                && c.Length > 0) c = c.Remove(c.Length - 1);
+            else if (bksp.CheckHover() && c.Length > 0) c = c.Remove(c.Length - 1);
         }
     }
 
