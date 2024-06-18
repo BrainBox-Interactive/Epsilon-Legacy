@@ -31,7 +31,11 @@ namespace Epsilon.Interface.System.Shell.Screen
             );
             picture = new(
                 x, y, new Bitmap(Files.RawDefaultPFP),
-                delegate () { Remove(); }
+                delegate ()
+                {
+                    // TODO: user / shutdown option menu
+                    Remove();
+                }
             );
         }
 
@@ -70,7 +74,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 ESystem.CurrentUser,
                 GUI.dFont,
                 GUI.colors.txtColor,
-                x + mts + 12,
+                x + mts + 8,
                 y + (mts / 2 - GUI.dFont.Height / 2)
             );
 

@@ -43,15 +43,33 @@ namespace Epsilon.Applications.System.Setup
                 {
                     try
                     {
-                        string[] lines = new string[2];
-                        lines[0] = username.Content.Trim();
-                        lines[1] = password.Content.Trim();
-                        File.Create(ESystem.LoginInfoPath);
-                        File.WriteAllLines(ESystem.LoginInfoPath,
-                            lines);
-                        ESystem.CurrentUser = lines[0];
-                        Remove();
-                        ESystem.LogIn();
+                        if (username.Content.Trim() != "Guest")
+                        {
+                            string[] lines = new string[2];
+                            lines[0] = username.Content.Trim();
+                            lines[1] = password.Content.Trim();
+                            File.Create(ESystem.LoginInfoPath);
+                            File.WriteAllLines(ESystem.LoginInfoPath,
+                                lines);
+                            ESystem.CurrentUser = lines[0];
+                            Remove();
+                            ESystem.LogIn();
+                        } else
+                            Manager.Start(new MessageBox
+                            {
+                                wData = new WindowData
+                                {
+                                    Position = new Rectangle(GUI.width / 2 -
+                                (int)((("Please choose another username.").Length * GUI.dFont.Width + 16) / 2),
+                                GUI.height / 2 - (int)(75 / 2) + wData.Position.Height + 32,
+                                ("Please choose another username.").Length * GUI.dFont.Width + 16, 75),
+                                    Moveable = true
+                                },
+                                Name = "Error",
+                                Content = "Please choose another username.",
+                                Special = false,
+                                Button = true
+                            });
                     }
                     catch (Exception ex)
                     {

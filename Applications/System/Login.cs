@@ -58,6 +58,11 @@ namespace Epsilon.Applications.System
                 Remove();
                 ESystem.LogIn();
             }
+            else if (username.Content.Trim() == "Guest")
+            {
+                Remove();
+                ESystem.LogIn(true);
+            }
             else
             {
                 Manager.Start(new MessageBox

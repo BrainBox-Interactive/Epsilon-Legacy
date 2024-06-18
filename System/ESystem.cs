@@ -12,6 +12,8 @@ using Epsilon.Interface.System.Shell.Screen;
 using Epsilon.System.Critical.Processing;
 using System.Drawing;
 using System.Threading;
+using Cosmos.System.Graphics.Fonts;
+using Epsilon.Applications.System;
 
 namespace Epsilon.System;
 
@@ -90,8 +92,30 @@ public static class ESystem
         else s.Console.Beep(600, 25);
     }
 
-    public static void LogIn()
+    public static void LogIn(bool GuestMode = false)
     {
+        if (GuestMode)
+        {
+            CurrentUser = "Guest";
+            Manager.Start(new MessageBox
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(GUI.width / 2 -
+                    (("You are in guest mode, any modification you bring will not be retained.".Length
+                    * GUI.dFont.Width) + 16) / 2,
+                    GUI.height / 2 - (int)(75 / 2),
+                    ("You are in guest mode, any modification you bring will not be retained.".Length
+                    * GUI.dFont.Width) + 16, 75),
+                    Moveable = true
+                },
+                Name = "Guest Mode",
+                Content = "You are in guest mode, any modification you bring will not be retained.",
+                Special = false,
+                Button = true
+            });
+        }
+
         if (Global.topBarActivated)
             Manager.Start(new TopBar
             {

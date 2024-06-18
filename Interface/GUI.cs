@@ -58,24 +58,8 @@ namespace Epsilon.Interface
                     Special = true
                 });
             else if (VMTools.IsVirtualBox)
-            {
                 // TODO: guest mode wallpaper
-                Manager.Start(new MessageBox
-                {
-                    wData = new WindowData
-                    {
-                        Position = new Rectangle(width / 2 - (("You are in guest mode, any modification you bring will not be retained.".Length * dFont.Width) + 16) / 2,
-                        height / 2 - (int)(75 / 2),
-                        ("You are in guest mode, any modification you bring will not be retained.".Length * dFont.Width) + 16, 75),
-                        Moveable = true
-                    },
-                    Name = "Guest Mode",
-                    Content = "You are in guest mode, any modification you bring will not be retained.",
-                    Special = false,
-                    Button = true
-                });
-                ESystem.LogIn();
-            }
+                ESystem.LogIn(true);
             else
                 Manager.Start(new Login
                 {
