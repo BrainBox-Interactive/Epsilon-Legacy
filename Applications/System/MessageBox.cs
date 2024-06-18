@@ -1,12 +1,14 @@
 ﻿using Epsilon.Interface;
 using Epsilon.Interface.Components;
+using Epsilon.System;
 using Epsilon.System.Critical.Processing;
+using Epsilon.System.Resources;
 
 namespace Epsilon.Applications.System
 {
     public class MessageBox : Process
     {
-        public bool button;
+        public bool Button = true;
         public string Content = "Default Window Text";
         Button b_button;
         Window w;
@@ -30,6 +32,7 @@ namespace Epsilon.Applications.System
             );
 
             this.w.StartAPI(this);
+            ESystem.PlayAudio(Files.RawErrorAudio);
         }
 
         public override void Remove()
@@ -41,7 +44,7 @@ namespace Epsilon.Applications.System
 
         public override void Run()
         {
-            this.w.DrawT(this); this.w.DrawB(this);
+            this.w.DrawB(this); this.w.DrawT(this);
 
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
@@ -54,7 +57,7 @@ namespace Epsilon.Applications.System
             );
 
             int fh = this.w.tSize + h;
-            if (button && b_button != null)
+            if (Button && b_button != null)
             {
                 b_button.X = x + ((w / 2) - 16);
                 b_button.Y = y + (fh - 32 - 13);

@@ -1,0 +1,101 @@
+﻿using Cosmos.System.Graphics;
+using Epsilon.Interface;
+using Epsilon.Interface.Components;
+using Epsilon.Interface.Components.Text;
+using Epsilon.Interface.System.Shell.Screen;
+using Epsilon.System;
+using Epsilon.System.Critical.Processing;
+using Epsilon.System.Resources;
+using System.Drawing;
+using System.IO;
+using System.Threading;
+
+namespace Epsilon.Applications.System
+{
+    public class Login : Process
+    {
+        string[] logInfo;
+        string ustr, pstr;
+        Bitmap b = new Bitmap(Files.RawTEPBanner);
+        Box username, password;
+        Window win;
+        Button ok;
+
+        public override void Start()
+        {
+            base.Start();
+
+            logInfo = File.ReadAllLines(ESystem.LoginInfoPath);
+            ustr = logInfo[0];
+            pstr = logInfo[1];
+
+            win = new();
+            win.StartAPI(this, false);
+
+            username = new(wData.Position.X, wData.Position.Y + win.tSize + (int)b.Height,
+                256, 24, Color.White, Color.Black, "Username"
+            );
+            password = new(wData.Position.X, wData.Position.Y + win.tSize + 24 + (int)b.Height,
+                256, 24, Color.White, Color.Black, "Password"
+            ); password.Password = true;
+            ok = new(wData.Position.X + wData.Position.Width / 2 - 32,
+                wData.Position.Y + win.tSize + 1 + 24 * 2 + (int)b.Height + 2,
+                64, 24, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "Login",
+                delegate () { CheckLogin(); });
+
+            wData.Position.Width = (int)b.Width;
+            wData.Position.X = GUI.width / 2 - wData.Position.Width / 2;
+            wData.Position.Height = wData.Position.Y + win.tSize + 1 + 24 * 2 + (int)b.Height + 24 + 4 * 2;
+            wData.Position.Y = GUI.height / 2 - wData.Position.Height / 2;
+        }
+
+        public void CheckLogin()
+        {
+            if (username.Content.Trim() == ustr.Trim()
+                && password.Content.Trim() == pstr.Trim())
+            {
+                ESystem.CurrentUser = username.Content.Trim();
+                Remove();
+                ESystem.LogIn();
+            }
+            else
+            {
+                Manager.Start(new MessageBox
+                {
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(GUI.width / 2 -
+                        (int)(("The login information given is incorrect.".Length * GUI.dFont.Width + 16) / 2),
+                                GUI.height / 2 - (int)(75 / 2) + wData.Position.Height + 32,
+                                "The login information given is incorrect.".Length * GUI.dFont.Width + 16, 75),
+                        Moveable = true
+                    },
+                    Name = "Error",
+                    Content = "The login information given is incorrect.",
+                    Special = false,
+                    Button = true
+                });
+                return;
+            }
+        }
+
+        public override void Run()
+        {
+            base.Run();
+            win.DrawB(this); win.DrawT(this, false);
+            GUI.canv.DrawImage(b, wData.Position.X, wData.Position.Y + win.tSize + 1);
+
+            username.X = wData.Position.X;
+            username.Y = wData.Position.Y + win.tSize + 1 + (int)b.Height;
+            username.Update();
+
+            password.X = wData.Position.X;
+            password.Y = wData.Position.Y + win.tSize + 1 + 24 + (int)b.Height;
+            password.Update();
+
+            ok.X = wData.Position.X + wData.Position.Width / 2 - 32;
+            ok.Y = wData.Position.Y + win.tSize + 1 + 24 * 2 + (int)b.Height + 4;
+            ok.Update();
+        }
+    }
+}

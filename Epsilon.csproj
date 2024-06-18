@@ -37,14 +37,17 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="System\Resources\Audio\Error.wav" />
       <None Remove="System\Resources\Audio\Shutdown.wav" />
       <None Remove="System\Resources\Audio\Startup.wav" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
+      <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Cursors\Hand.bmp" />
       <None Remove="System\Resources\Images\Icons\Default.bmp" />
       <None Remove="System\Resources\Images\Profile\Default.bmp" />
       <None Remove="System\Resources\Images\Setup.bmp" />
+      <None Remove="System\Resources\Images\TEP_Banner.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\1024x768.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\640x480.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Alpha.bmp" />
@@ -59,6 +62,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Include="System\Resources\Audio\Error.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Audio\Shutdown.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
@@ -66,6 +72,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\arial.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Fonts\zap-ext-light16.psf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
@@ -81,6 +90,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Setup.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\TEP_Banner.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Wallpapers\1024x768.bmp">

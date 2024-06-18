@@ -20,6 +20,8 @@ namespace Epsilon.System.Resources
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Setup.bmp")]
         public static byte[] RawSetupImage;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.TEP_Banner.bmp")]
+        public static byte[] RawTEPBanner;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Profile.Default.bmp")]
         public static byte[] RawDefaultPFP;
@@ -32,12 +34,14 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Icons.Default.bmp")]
         public static byte[] RawDefaultIcon;
 
-        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.arial.ttf")]
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.zap-ext-light16.psf")]
         public static byte[] RawDefaultFont;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Startup.wav")]
         public static byte[] RawStartupAudio;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Shutdown.wav")]
         public static byte[] RawShutdownAudio;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Error.wav")]
+        public static byte[] RawErrorAudio;
     }
 }

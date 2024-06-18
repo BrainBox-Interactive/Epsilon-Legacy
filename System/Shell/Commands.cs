@@ -51,20 +51,7 @@ namespace Epsilon.System.Shell
                                     break;
 
                                 case "fmt":
-                                    if (Kernel.vfs.Disks[0].Partitions.Count > 0)
-                                        for (int i = 0; i < Kernel.vfs.Disks[0].Partitions.Count; i++)
-                                            Kernel.vfs.Disks[0].DeletePartition(i);
-                                    Kernel.vfs.Disks[0].Clear();
-
-                                    Kernel.vfs.Disks[0].CreatePartition(
-                                        (int)(Kernel.vfs.Disks[0].Size / (1024 * 1024))
-                                    );
-                                    Kernel.vfs.Disks[0].FormatPartition(0, "FAT32");
-
-                                    Log.Info("Formatted disk");
-                                    Log.Warning("Rebooting in 3 seconds...");
-                                    Thread.Sleep(3000);
-                                    Cosmos.System.Power.Reboot();
+                                    ESystem.Format();
                                     break;
 
                                 case "ls":
@@ -74,7 +61,7 @@ namespace Epsilon.System.Shell
                                     if (dirs.Length > 0) Log.Info("Directories (" + dirs.Length + "):");
                                     for (int i = 0; i < dirs.Length; i++)
                                         Console.WriteLine("- " + dirs[i].Replace(Kernel.curPath + "\\", ""));
-                                    Console.WriteLine();
+                                    if (dirs.Length > 0) Console.WriteLine();
 
                                     if (files.Length > 0) Log.Info("Files (" + files.Length + "):");
                                     Console.ForegroundColor = ConsoleColor.White;
@@ -139,11 +126,19 @@ namespace Epsilon.System.Shell
                                     // change directory
                                     if (str.Length > 2)
                                         // check if // or \\
-                                        if (str[2] == ".." && Kernel.curPath != "0:\\"
-                                            && Directory.Exists(Kernel.curPath.Substring(0, Kernel.curPath.LastIndexOf('\\'))))
-                                            Kernel.curPath = Kernel.curPath.Substring(0, Kernel.curPath.LastIndexOf('\\')) + '\\';
-                                        else if (Directory.Exists(Kernel.curPath + str[2]))
+                                        if (str[2] == ".." && Kernel.curPath != "0:\\")
+                                            if (Kernel.curPath.EndsWith("\\")
+                                                && Directory.Exists(Kernel.curPath.Substring(0,
+                                                Kernel.curPath.Remove(Kernel.curPath.LastIndexOf('\\')).LastIndexOf('\\'))))
+                                                Kernel.curPath = Kernel.curPath.Substring(0, Kernel.curPath.LastIndexOf('\\')) + '\\';
+                                            else if (Directory.Exists(Kernel.curPath.Substring(0, Kernel.curPath.LastIndexOf('\\'))))
+                                                Kernel.curPath = Kernel.curPath.Substring(0, Kernel.curPath.LastIndexOf('\\')) + '\\';
+                                        else if (Kernel.curPath.EndsWith("\\")
+                                                && Directory.Exists(Kernel.curPath + str[2]))
                                             Kernel.curPath = Kernel.curPath + str[2];
+                                        else if (!Kernel.curPath.EndsWith("\\")
+                                                && Directory.Exists(Kernel.curPath + "\\" + str[2]))
+                                            Kernel.curPath = Kernel.curPath + "\\" + str[2];
                                         else
                                             Log.Error("Directory not found: " + str[2] + " in " + Kernel.curPath);
                                     else

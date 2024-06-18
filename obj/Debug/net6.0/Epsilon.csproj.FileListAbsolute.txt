@@ -46,3 +46,6 @@ C:\Users\iplux\source\repos\Epsilon\obj\Debug\net6.0\Epsilon.pdb
 C:\Users\iplux\source\repos\Epsilon\obj\Debug\net6.0\ref\Epsilon.dll
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Cursors\Hand.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Icons\Default.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Audio\Error.wav
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\TEP_Banner.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\zap-ext-light16.psf

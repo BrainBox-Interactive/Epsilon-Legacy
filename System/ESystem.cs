@@ -7,6 +7,11 @@ using Epsilon.System.Resources;
 using Cosmos.System;
 using s = System;
 using System.IO;
+using Epsilon.System.Debug;
+using Epsilon.Interface.System.Shell.Screen;
+using Epsilon.System.Critical.Processing;
+using System.Drawing;
+using System.Threading;
 
 namespace Epsilon.System;
 
@@ -19,20 +24,33 @@ public static class ESystem
     public static Bitmap dc = new Bitmap(Files.RawDefaultCursor),
         hc = new Bitmap(Files.RawHandCursor);
 
+    public static string Drive = "0:\\",
+        SystemPath = Drive + "Epsilon\\",
+        SettingsPath = SystemPath + "Settings\\",
+        LoginInfoPath = SettingsPath + "User\\LDE2Susr.cfg";
+
+    public static string CurrentUser;
+
     public static void OnBoot()
     {
-        if (!Directory.Exists("0:\\Epsilon")) Directory.CreateDirectory("0:\\Epsilon");
-        if (!Directory.Exists("0:\\Epsilon\\Settings")) Directory.CreateDirectory("0:\\Epsilon\\Settings");
-        if (!Directory.Exists("0:\\Epsilon\\Settings\\User")) Directory.CreateDirectory("0:\\Epsilon\\Settings\\User");
+        s.Console.Clear();
+        if (VMTools.IsVirtualBox) Drive = "1:\\";
+        SystemPath = Drive + "Epsilon\\";
 
+        if (Kernel.vfs.GetDisks()[0].Partitions.Count < 1) Format();
+        if (!Directory.Exists(SystemPath)) CreateDirectory(SystemPath);
+        if (!Directory.Exists(SettingsPath)) CreateDirectory(SettingsPath);
+        if (!Directory.Exists(SettingsPath + "User")) CreateDirectory(SettingsPath + "User");
+
+        Log.Info("Launching GUI Interface");
         GUI.Start();
         Kernel.isGUI = true;
         SetUpImages();
-        PlayAudio(Files.RawStartupAudio);
 
         if (!VMTools.IsVMWare)
         {
-            try {
+            try
+            {
                 mixer = new AudioMixer();
                 driver = AC97.Initialize(bufferSize: 4096);
                 audioManager = new AudioManager()
@@ -41,7 +59,18 @@ public static class ESystem
                     Output = driver
                 };
                 audioManager.Enable();
-            } catch { s.Console.Beep(600, 75); }
+            }
+            catch { }
+        }
+    }
+
+    public static void CreateDirectory(string path)
+    {
+        // hack that should be figured out later
+        if (!VMTools.IsVirtualBox)
+        {
+            Log.Info("Creating folder: " + path);
+            Directory.CreateDirectory(path);
         }
     }
 
@@ -57,7 +86,54 @@ public static class ESystem
             try {
                 var audioStream = MemoryAudioStream.FromWave(stream);
                 mixer.Streams.Add(audioStream);
-            } catch { s.Console.Beep(600, 75); }
-        else s.Console.Beep(600, 75);
+            } catch { s.Console.Beep(600, 25); }
+        else s.Console.Beep(600, 25);
+    }
+
+    public static void LogIn()
+    {
+        if (Global.topBarActivated)
+            Manager.Start(new TopBar
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(0, 0, (int)GUI.width, 24),
+                    Moveable = false
+                },
+                Special = false,
+                Name = "Top Bar"
+            });
+
+        if (Global.controlBarActivated)
+            Manager.Start(new ControlBar
+            {
+                wData = new WindowData
+                {
+                    Position = new Rectangle(0, (int)GUI.height - 32, (int)GUI.width, 32),
+                    Moveable = false
+                },
+                Special = false,
+                Name = "Control Bar"
+            });
+
+        PlayAudio(Files.RawStartupAudio);
+    }
+
+    public static void Format()
+    {
+        if (Kernel.vfs.Disks[0].Partitions.Count > 0)
+            for (int i = 0; i < Kernel.vfs.Disks[0].Partitions.Count; i++)
+                Kernel.vfs.Disks[0].DeletePartition(i);
+        Kernel.vfs.Disks[0].Clear();
+
+        Kernel.vfs.Disks[0].CreatePartition(
+            (int)(Kernel.vfs.Disks[0].Size / (1024 * 1024))
+        );
+        Kernel.vfs.Disks[0].FormatPartition(0, "FAT32");
+
+        Log.Info("Formatted disk");
+        Log.Warning("Rebooting in 3 seconds...");
+        Thread.Sleep(3000);
+        Power.Reboot();
     }
 }

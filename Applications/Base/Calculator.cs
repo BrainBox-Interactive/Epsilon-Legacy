@@ -70,7 +70,7 @@ namespace Epsilon.Applications.Base
 
         public override void Run()
         {
-            w.DrawT(this); w.DrawB(this);
+            w.DrawB(this); w.DrawT(this);
             tb.X = wData.Position.X; tb.Y = wData.Position.Y + w.tSize; tb.Text = c;
             tb.Update();
 
@@ -95,19 +95,27 @@ namespace Epsilon.Applications.Base
             enter.X = wData.Position.X + (div3 * 2) + 1; enter.Y = wData.Position.Y + w.tSize + 20 + (bh * 4) + sbh; enter.Update();
 
             if (MouseManager.MouseState == MouseState.Left
-                && !GUI.clicked)
+                && !GUI.clicked && !clicked)
                 OnClick();
+
+            if (MouseManager.MouseState == MouseState.None
+                && clicked)
+                clicked = false;
         }
 
         bool _result = false;
         public void OnClick()
         {
             if (_result
-                && !enter.CheckHover())
+                && !enter.CheckHover()
+                && GUI.mx >= wData.Position.X
+                && GUI.mx <= wData.Position.X + wData.Position.Width
+                && GUI.my >= wData.Position.Y
+                && GUI.my <= wData.Position.Y + wData.Position.Height)
             {
                 c = string.Empty;
                 _result = false;
-            }
+            } clicked = true;
 
             for (int i = 0; i < 10; i++)
                 if (numberButtons[i].CheckHover())

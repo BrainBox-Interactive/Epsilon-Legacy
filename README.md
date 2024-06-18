@@ -11,6 +11,12 @@ pencil for highlight cursor graphic (thank you notice,)
 - make profile pic clickable (V)
 - window icon (V)
 - textbox (V)
-- overhaul calculator + buttons with actions (~)
+- overhaul calculator + buttons with actions (V)
 - login screen, accounts, check for existing file (Login Details file) (~)
+- menu buttons (shutdown, restart, programs, etc...)
 - setup
+
+Minimum:
+128 MB of memory
+1 processor
+512 MB of storage

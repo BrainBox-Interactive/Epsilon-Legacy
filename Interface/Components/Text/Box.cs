@@ -16,15 +16,19 @@ namespace Epsilon.Interface.Components.Text
         public string Content { get; set; } = String.Empty;
         public bool Password = false;
         public string Placeholder { get; set; }
+        public string AcceptedCharacters
+            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\'\n\t ,;:!?$*&()=";
+        public bool Multiline { get; set; }
 
         public Box(int x, int y, int width, int height,
-            Color bColor, Color tColor, string placeholder)
+            Color bColor, Color tColor, string placeholder, bool multiline = false)
             : base(x, y, width, height)
         {
             X = x; Y = y;
             Width = width; Height = height;
             BackColor = bColor; TextColor = tColor;
             Placeholder = placeholder;
+            Multiline = multiline;
         }
 
         bool isFocused = false,
@@ -59,12 +63,18 @@ namespace Epsilon.Interface.Components.Text
                 DrawBlinkingCursor();
                 if (!isPressed && Kernel.IsKeyPressed)
                     if (Kernel.k.Key == ConsoleKeyEx.Backspace
-                    && Content.Length > 0)
+                        && Content.Length > 0)
                         Content = Content.Substring(0, Content.Length - 1);
+                    else if (Kernel.k.Key == ConsoleKeyEx.Tab
+                        && (Content.Length * GUI.dFont.Width) < (Width - (GUI.dFont.Width * 2)))
+                        Content += "    ";
+                    //else if (Kernel.k.Key == ConsoleKeyEx.Enter)
+                        //Content += '\n';
                     else if (Kernel.k.Key != ConsoleKeyEx.Backspace && Kernel.k.Key != ConsoleKeyEx.Enter
-                        && Kernel.k.Key != ConsoleKeyEx.OEM102 && Kernel.k.Key != ConsoleKeyEx.OEM5
-                        && Content.Length > -1)
-                        Content += Kernel.k.KeyChar;
+                        && Content.Length > -1 && (Content.Length * GUI.dFont.Width) < (Width - GUI.dFont.Width * 2))
+                        if ((int)Kernel.k.KeyChar >= 32
+                            && (int)Kernel.k.KeyChar <= 127)
+                            Content += Kernel.k.KeyChar;
             } isPressed = Kernel.IsKeyPressed;
         }
 

@@ -2,6 +2,7 @@
 using Cosmos.System.Graphics;
 using Epsilon.Interface.Components.Buttons;
 using Epsilon.Interface.Components.Text;
+using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
 using System.Drawing;
@@ -65,9 +66,8 @@ namespace Epsilon.Interface.System.Shell.Screen
             picture.X = x; picture.Y = y;
             picture.Update();
 
-            string user = "Live User";
             GUI.canv.DrawString(
-                user,
+                ESystem.CurrentUser,
                 GUI.dFont,
                 GUI.colors.txtColor,
                 x + mts + 12,

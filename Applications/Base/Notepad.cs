@@ -25,7 +25,7 @@ namespace Epsilon.Applications.Base
 
         public override void Run()
         {
-            this.w.DrawT(this); this.w.DrawB(this);
+            this.w.DrawB(this); this.w.DrawT(this);
 
             if (Kernel.IsKeyPressed && !isPressed
                 && Manager.toUpdate == this)

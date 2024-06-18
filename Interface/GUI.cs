@@ -11,6 +11,7 @@ using Epsilon.System;
 using System;
 using System.IO;
 using Epsilon.Applications.System.Setup;
+using Epsilon.System.Resources;
 
 namespace Epsilon.Interface
 {
@@ -23,7 +24,7 @@ namespace Epsilon.Interface
             my = 0;
         public static Canvas canv;
         public static PCScreenFont dFont
-            = PCScreenFont.Default;
+            = PCScreenFont.LoadFont(Files.RawDefaultFont);
 
         public static Bitmap wp, crs;
         public static Colors colors = new();
@@ -44,81 +45,48 @@ namespace Epsilon.Interface
             MouseManager.Y = (uint)height / 2;
 
             // Processes
-            //Manager.Start(new MessageBox {
-            //    wData = new WindowData {
-            //        Position = new Rectangle(100, 100, 200, 50),
-            //        Moveable = true
-            //    },
-            //    Name = "Message Box Test",
-            //    Content = "Hello World!",
-            //    Special = false,
-            //    button = false
-            //});
-
-            //Manager.Start(new Notepad {
-            //    wData = new WindowData {
-            //        Position = new Rectangle(400, 100, 450, 475),
-            //        Moveable = true
-            //    },
-            //    Special = false,
-            //    Name = "Notepad"
-            //});
-
-            Manager.Start(new Calculator
-            {
-                wData = new WindowData
-                {
-                    Position = new Rectangle(400, 100, 256, 200),
-                    Moveable = true
-                },
-                Special = false,
-                Name = "Calculator"
-            });
-
-            // TODO: deprecate special windowdata parameter
-            if (Epsilon.System.Global.topBarActivated)
-                Manager.Start(new TopBar {
-                    wData = new WindowData {
-                        Position = new Rectangle(0, 0, (int)width, 24),
-                        Moveable = false
-                    },
-                    Special = false,
-                    Name = "Top Bar"
-                });
-
-            if (Epsilon.System.Global.controlBarActivated)
-                Manager.Start(new ControlBar {
-                    wData = new WindowData {
-                        Position = new Rectangle(0, (int)height - 32, (int)width, 32),
-                        Moveable = false
-                    },
-                    Special = false,
-                    Name = "Control Bar"
-                });
-
-            //Manager.Start(new Setup
-            //{
-            //    wData = new WindowData
-            //    {
-            //        Position = new Rectangle(0, 0, (int)width, (int)height),
-            //        Moveable = false
-            //    },
-            //    Name = "Epsilon Setup",
-            //    Special = true
-            //});
-
             // Login Details Epsilon Encryption System . Config
-            //if (!File.Exists("0:\\Epsilon\\Settings\\User\\ldeencs.cfg"))
-            //    Manager.Start(new OOBE
-            //    {
-            //        wData = new WindowData
-            //        {
-            //            Position = new Rectangle(0, 0, (int)width, (int)height),
-            //            Moveable = false
-            //        },
-            //        Name = "Finish your Installation",
-            //        Special = true
-            //    });
+            if (!File.Exists(ESystem.LoginInfoPath)) //&& !VMTools.IsVirtualBox)
+                Manager.Start(new OOBE
+                {
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(0, 0, (int)width, (int)height),
+                        Moveable = false
+                    },
+                    Name = "Finish your Installation",
+                    Special = true
+                });
+            else if (VMTools.IsVirtualBox)
+            {
+                // TODO: guest mode wallpaper
+                Manager.Start(new MessageBox
+                {
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(width / 2 - (("You are in guest mode, any modification you bring will not be retained.".Length * dFont.Width) + 16) / 2,
+                        height / 2 - (int)(75 / 2),
+                        ("You are in guest mode, any modification you bring will not be retained.".Length * dFont.Width) + 16, 75),
+                        Moveable = true
+                    },
+                    Name = "Guest Mode",
+                    Content = "You are in guest mode, any modification you bring will not be retained.",
+                    Special = false,
+                    Button = true
+                });
+                ESystem.LogIn();
+            }
+            else
+                Manager.Start(new Login
+                {
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(0, 0, (int)width, (int)height),
+                        Moveable = false
+                    },
+                    Name = "Log into Epsilon",
+                    Special = true
+                });
         }
 
         static Window w = new();
@@ -212,11 +180,11 @@ namespace Epsilon.Interface
 
             canv.DrawString("Build Information:", dFont, colors.txtColor, (int)width - dFont.Width * "Build Information:".Length, (int)height - (32 + dFont.Height * 2));
             canv.DrawString(
-                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2",
+                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 3",
                 dFont,
                 colors.txtColor,
                 (int)width - dFont.Width
-                * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 2")
+                * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 3")
                 .Length,
                 (int)height - (32 + dFont.Height)
             );
@@ -243,7 +211,7 @@ namespace Epsilon.Interface
                     Name = "mbPNb::" + Manager.pList.Count,
                     Content = "process" + Manager.pList.Count + " || Cpt=" + Manager.toUpdate,
                     Special = false,
-                    button = true
+                    Button = true
                 });
                 clicked = true;
             }

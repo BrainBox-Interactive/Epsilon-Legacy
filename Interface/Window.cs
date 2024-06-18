@@ -12,37 +12,35 @@ namespace Epsilon.Interface
         CloseButton b_close;
         DummyButton b_1, b_2, b_3;
 
-        public void StartAPI(Process p)
+        public void StartAPI(Process p, bool button = true)
         {
-            b_close = new(
-                p.wData.Position.X + p.wData.Position.Width - 12,
-                p.wData.Position.Y + tSize - 24,
-                p
-            );
-            b_1 = new(
-                p.wData.Position.X + p.wData.Position.Width - 24,
-                p.wData.Position.Y + tSize - 12,
-                p
-            );
-            b_2 = new(
-                p.wData.Position.X + p.wData.Position.Width - 24,
-                p.wData.Position.Y + tSize - 24,
-                p
-            );
-            b_3 = new(
-                p.wData.Position.X + p.wData.Position.Width - 12,
-                p.wData.Position.Y + tSize - 12,
-                p
-            );
+            if (button)
+            {
+                b_close = new(
+                    p.wData.Position.X + p.wData.Position.Width - 12,
+                    p.wData.Position.Y + tSize - 24,
+                    p
+                );
+                b_1 = new(
+                    p.wData.Position.X + p.wData.Position.Width - 24,
+                    p.wData.Position.Y + tSize - 12,
+                    p
+                );
+                b_2 = new(
+                    p.wData.Position.X + p.wData.Position.Width - 24,
+                    p.wData.Position.Y + tSize - 24,
+                    p
+                );
+                b_3 = new(
+                    p.wData.Position.X + p.wData.Position.Width - 12,
+                    p.wData.Position.Y + tSize - 12,
+                    p
+                );
+            }
         }
 
-        public void DrawT(Process p)
+        public void DrawT(Process p, bool button = true)
         {
-            b_close.X = p.wData.Position.X + p.wData.Position.Width - 12; b_close.Y = p.wData.Position.Y + tSize - 24;
-            b_1.X = p.wData.Position.X + p.wData.Position.Width - 24; b_1.Y = p.wData.Position.Y + tSize - 12;
-            b_2.X = p.wData.Position.X + p.wData.Position.Width - 24; b_2.Y = p.wData.Position.Y + tSize - 24;
-            b_3.X = p.wData.Position.X + p.wData.Position.Width - 12; b_3.Y = p.wData.Position.Y + tSize - 12;
-
             // Outline
             GUI.canv.DrawRectangle(
                 GUI.colors.tboColor,
@@ -79,10 +77,16 @@ namespace Epsilon.Interface
                 - GUI.dFont.Height / 2
             );
 
-            b_close.Update();
-            b_1.Update();
-            b_2.Update();
-            b_3.Update();
+            if (button)
+            {
+                b_close.X = p.wData.Position.X + p.wData.Position.Width - 12; b_close.Y = p.wData.Position.Y + tSize - 24;
+                b_1.X = p.wData.Position.X + p.wData.Position.Width - 24; b_1.Y = p.wData.Position.Y + tSize - 12;
+                b_2.X = p.wData.Position.X + p.wData.Position.Width - 24; b_2.Y = p.wData.Position.Y + tSize - 24;
+                b_3.X = p.wData.Position.X + p.wData.Position.Width - 12; b_3.Y = p.wData.Position.Y + tSize - 12;
+
+                b_close.Update(); b_1.Update();
+                b_2.Update(); b_3.Update();
+            }
         }
 
         public void DrawB(Process p)
