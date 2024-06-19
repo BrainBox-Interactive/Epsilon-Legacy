@@ -46,6 +46,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Cosmares": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            },
             "Cosmos.Build": {
               "target": "Package",
               "version": "[0.0.0-*, )",

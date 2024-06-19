@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Cosmares/1.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Cosmos.Plugs": "0.1.0-localbuild20240530030415",
+          "Cosmos.System2": "0.1.0-localbuild20240530030415",
+          "System.IO.Hashing": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Cosmares.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Cosmares.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Cosmos.Build/0.1.0-localbuild20240616123120": {
         "type": "package",
         "build": {
@@ -117,10 +135,40 @@
         "runtime": {
           "lib/netstandard2.0/IL2CPU.API.dll": {}
         }
+      },
+      "System.IO.Hashing/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
       }
     }
   },
   "libraries": {
+    "Cosmares/1.1.2": {
+      "sha512": "HRjSWSHSmHCKB9JmF4PZ6zG0CI+bM85/SyByYb9PHDXotJm6kn6lxMwr5TFxTVLk7gjHLhqf/JV7/JUuwjJrTw==",
+      "type": "package",
+      "path": "cosmares/1.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "cosmares.1.1.2.nupkg.sha512",
+        "cosmares.nuspec",
+        "lib/net6.0/Cosmares.dll",
+        "lib/net6.0/Cosmares.xml"
+      ]
+    },
     "Cosmos.Build/0.1.0-localbuild20240616123120": {
       "sha512": "OVkTM4VT1Y3yMb6HQEkO/MPPIfpXPq73b7vtT2aE3O+GhMhA5LH6ctoQnIg3Ik10F9rwuKKaCQ//XTIOAgeLtg==",
       "type": "package",
@@ -573,10 +621,41 @@
         "il2cpu.api.nuspec",
         "lib/netstandard2.0/IL2CPU.API.dll"
       ]
+    },
+    "System.IO.Hashing/8.0.0": {
+      "sha512": "ne1843evDugl0md7Fjzy6QjJrzsjh46ZKbhf8GwBXb5f/gw97J4bxMs0NQKifDuThh/f0bZ0e62NPl1jzTuRqA==",
+      "type": "package",
+      "path": "system.io.hashing/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Hashing.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets",
+        "lib/net462/System.IO.Hashing.dll",
+        "lib/net462/System.IO.Hashing.xml",
+        "lib/net6.0/System.IO.Hashing.dll",
+        "lib/net6.0/System.IO.Hashing.xml",
+        "lib/net7.0/System.IO.Hashing.dll",
+        "lib/net7.0/System.IO.Hashing.xml",
+        "lib/net8.0/System.IO.Hashing.dll",
+        "lib/net8.0/System.IO.Hashing.xml",
+        "lib/netstandard2.0/System.IO.Hashing.dll",
+        "lib/netstandard2.0/System.IO.Hashing.xml",
+        "system.io.hashing.8.0.0.nupkg.sha512",
+        "system.io.hashing.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Cosmares >= 1.1.2",
       "Cosmos.Build >= 0.0.0-*",
       "Cosmos.Debug.Kernel >= 0.0.0-*",
       "Cosmos.Plugs >= 0.0.0-*",
@@ -628,6 +707,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Cosmares": {
+            "target": "Package",
+            "version": "[1.1.2, )"
+          },
           "Cosmos.Build": {
             "target": "Package",
             "version": "[0.0.0-*, )",

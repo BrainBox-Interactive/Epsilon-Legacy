@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Epsilon/1.0.0": {
         "dependencies": {
+          "Cosmares": "1.1.2",
           "Cosmos.Build": "0.1.0-localbuild20240616123120",
           "Cosmos.Debug.Kernel": "0.1.0-localbuild20240616123138",
           "Cosmos.Plugs": "0.1.0-localbuild20240616123138",
@@ -15,6 +16,19 @@
         },
         "runtime": {
           "Epsilon.dll": {}
+        }
+      },
+      "Cosmares/1.1.2": {
+        "dependencies": {
+          "Cosmos.Plugs": "0.1.0-localbuild20240616123138",
+          "Cosmos.System2": "0.1.0-localbuild20240616123138",
+          "System.IO.Hashing": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Cosmares.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
         }
       },
       "Cosmos.Build/0.1.0-localbuild20240616123120": {},
@@ -108,6 +122,14 @@
             "fileVersion": "10.0.0.0"
           }
         }
+      },
+      "System.IO.Hashing/8.0.0": {
+        "runtime": {
+          "lib/net6.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
       }
     }
   },
@@ -116,6 +138,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Cosmares/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HRjSWSHSmHCKB9JmF4PZ6zG0CI+bM85/SyByYb9PHDXotJm6kn6lxMwr5TFxTVLk7gjHLhqf/JV7/JUuwjJrTw==",
+      "path": "cosmares/1.1.2",
+      "hashPath": "cosmares.1.1.2.nupkg.sha512"
     },
     "Cosmos.Build/0.1.0-localbuild20240616123120": {
       "type": "package",
@@ -172,6 +201,13 @@
       "sha512": "sha512-by9VFKdF+TfElim1B73NS9vCAqeD+zQGKuPNDFACPBnx4jiJDPxpZUx7JBUw3OY36wxv+k24yr8Lp3dFx3WAhA==",
       "path": "il2cpu.api/0.1.0-localbuild20240616123138",
       "hashPath": "il2cpu.api.0.1.0-localbuild20240616123138.nupkg.sha512"
+    },
+    "System.IO.Hashing/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ne1843evDugl0md7Fjzy6QjJrzsjh46ZKbhf8GwBXb5f/gw97J4bxMs0NQKifDuThh/f0bZ0e62NPl1jzTuRqA==",
+      "path": "system.io.hashing/8.0.0",
+      "hashPath": "system.io.hashing.8.0.0.nupkg.sha512"
     }
   }
 }

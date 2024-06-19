@@ -40,6 +40,7 @@
       <None Remove="System\Resources\Audio\Error.wav" />
       <None Remove="System\Resources\Audio\Shutdown.wav" />
       <None Remove="System\Resources\Audio\Startup.wav" />
+      <None Remove="System\Resources\Epsilon.iso" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Fonts\ter-powerline-v16n.psf" />
       <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
@@ -58,6 +59,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Cosmares" Version="1.1.2" />
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
@@ -72,6 +74,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Epsilon.iso">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\arial.ttf">
