@@ -12,9 +12,10 @@ pencil for highlight cursor graphic (thank you notice,)
 - window icon (V)
 - textbox (V)
 - overhaul calculator + buttons with actions (V)
-- login screen, accounts, check for existing file (Login Details file) (~)
-- menu buttons (shutdown, restart, programs, etc...)
+- login screen, accounts, check for existing file (Login Details file) (V)
+- menu buttons (shutdown, restart, programs, etc...) (~)
 - setup
+- overhaul notepad
 
 Minimum:
 128 MB of memory

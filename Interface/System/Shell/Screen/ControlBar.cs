@@ -10,6 +10,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 {
     public class ControlBar : Process
     {
+        ControlMenu cMenu;
         public override void Run()
         {
             int x = wData.Position.X, y = wData.Position.Y;
@@ -59,20 +60,28 @@ namespace Epsilon.Interface.System.Shell.Screen
                     );
 
                     if (MouseManager.MouseState == MouseState.Left
-                        && !Manager.IsRunning("Control Menu"))
-                        Manager.Start(new ControlMenu {
-                            wData = new WindowData {
-                                Moveable = false,
-                                Position = new Rectangle(
-                                    0,
-                                    GUI.height - (32 + 460),
-                                    350,
-                                    450
-                                )
-                            },
-                            Name = "Control Menu",
-                            Special = true
-                        });
+                        && !GUI.clicked)
+                        if (!Manager.IsRunning("Control Menu"))
+                            Manager.Start(cMenu = new ControlMenu
+                            {
+                                wData = new WindowData
+                                {
+                                    Moveable = false,
+                                    Position = new Rectangle(
+                                        0,
+                                        GUI.height - (32 + 460),
+                                        350,
+                                        450
+                                    )
+                                },
+                                Name = "Control Menu",
+                                Special = true
+                            });
+                        else if (Manager.IsRunning("Control Menu"))
+                        {
+                            cMenu.Remove();
+                            cMenu = null;
+                        }
                 }
             }
 

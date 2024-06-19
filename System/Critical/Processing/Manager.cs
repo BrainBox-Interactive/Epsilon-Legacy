@@ -53,5 +53,15 @@ namespace Epsilon.System.Critical.Processing
                     return true;
             return false;
         }
+
+        public static bool IsFrontTU()
+        {
+            if (GUI.mx >= toUpdate.wData.Position.X
+                && GUI.mx <= toUpdate.wData.Position.X + toUpdate.wData.Position.Width
+                && GUI.my >= toUpdate.wData.Position.Y
+                && GUI.my <= toUpdate.wData.Position.Y + toUpdate.wData.Position.Height)
+                return true;
+            return false;
+        }
     }
 }

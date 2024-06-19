@@ -1,4 +1,5 @@
-﻿using Cosmos.System.Graphics.Fonts;
+﻿using Cosmos.System;
+using Cosmos.System.Graphics.Fonts;
 using Epsilon.Interface.Components.Titlebar.Base;
 using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
@@ -93,7 +94,7 @@ namespace Epsilon.Interface
         {
             // Outline
             GUI.canv.DrawRectangle(
-                GUI.colors.moColor,
+                GUI.colors.tboColor,
                 p.wData.Position.X - 1,
                 p.wData.Position.Y + tSize - 1,
                 p.wData.Position.Width + 1,
@@ -108,6 +109,11 @@ namespace Epsilon.Interface
                 p.wData.Position.Width,
                 p.wData.Position.Height - tSize
             );
+
+            if (MouseManager.MouseState == MouseState.Left
+                && !GUI.clicked)
+                if (!Manager.IsFrontTU())
+                    Manager.toUpdate = p;
         }
     }
 }

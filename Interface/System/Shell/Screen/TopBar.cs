@@ -37,7 +37,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 if (Manager.pList[i].Name != "Control Bar"
                     && Manager.pList[i].Name != "Top Bar"
                     && Manager.pList[i].Name != "Control Menu"
-                    && (tbx + (8 * cx)) < GUI.width - (tbx + (8 * cx)))
+                    && (tbx + (8 * cx)) < GUI.width - Manager.pList[i].Name.Length * GUI.dFont.Width)
                 {
                     int s = Manager.pList[i].Name.Length * GUI.dFont.Width;
                     GUI.canv.DrawFilledRectangle(

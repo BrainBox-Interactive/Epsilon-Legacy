@@ -28,6 +28,7 @@ namespace Epsilon.Applications.System
             logInfo = File.ReadAllLines(ESystem.LoginInfoPath);
             ustr = logInfo[0];
             pstr = logInfo[1];
+            ESystem.CurrentUser = null;
 
             win = new();
             win.StartAPI(this, false);
@@ -58,13 +59,18 @@ namespace Epsilon.Applications.System
                 Remove();
                 ESystem.LogIn();
             }
-            else if (username.Content.Trim() == "Guest")
+            else if (username.Content.Trim() == "Guest"
+                || username.Content.Trim() == "")
             {
                 Remove();
                 ESystem.LogIn(true);
             }
             else
             {
+                foreach (Process p in Manager.pList)
+                    if (p.Name == "Error")
+                        return;
+
                 Manager.Start(new MessageBox
                 {
                     wData = new WindowData
@@ -80,7 +86,6 @@ namespace Epsilon.Applications.System
                     Special = false,
                     Button = true
                 });
-                return;
             }
         }
 

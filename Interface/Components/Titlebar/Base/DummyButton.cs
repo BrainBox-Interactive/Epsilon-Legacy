@@ -21,7 +21,8 @@ namespace Epsilon.Interface.Components.Titlebar.Base
         {
             base.Update();
             if (CheckHover())
-                if (MouseManager.MouseState == MouseState.Left)
+                if (MouseManager.MouseState == MouseState.Left
+                    && !GUI.clicked)
                     OnClick(0);
         }
 

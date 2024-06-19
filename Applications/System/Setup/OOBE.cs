@@ -74,7 +74,7 @@ namespace Epsilon.Applications.System.Setup
                     catch (Exception ex)
                     {
                         foreach (Process p in Manager.pList)
-                            if (p.Name == "Error!")
+                            if (p.Name == "Error")
                                 return;
 
                         Manager.Start(new MessageBox

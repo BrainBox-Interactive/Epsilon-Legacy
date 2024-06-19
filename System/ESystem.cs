@@ -14,6 +14,8 @@ using System.Drawing;
 using System.Threading;
 using Cosmos.System.Graphics.Fonts;
 using Epsilon.Applications.System;
+using System;
+using Epsilon.Applications.Base;
 
 namespace Epsilon.System;
 
@@ -92,8 +94,15 @@ public static class ESystem
         else s.Console.Beep(600, 25);
     }
 
+    public static TopBar tBar;
+    public static ControlBar cBar;
     public static void LogIn(bool GuestMode = false)
     {
+        foreach (Process p in Manager.pList)
+            if (p.Name == "Control Bar"
+                || p.Name == "Top Bar")
+                return;
+
         if (GuestMode)
         {
             CurrentUser = "Guest";
@@ -117,7 +126,7 @@ public static class ESystem
         }
 
         if (Global.topBarActivated)
-            Manager.Start(new TopBar
+            Manager.Start(tBar = new TopBar
             {
                 wData = new WindowData
                 {
@@ -129,7 +138,7 @@ public static class ESystem
             });
 
         if (Global.controlBarActivated)
-            Manager.Start(new ControlBar
+            Manager.Start(cBar = new ControlBar
             {
                 wData = new WindowData
                 {
@@ -159,5 +168,32 @@ public static class ESystem
         Log.Warning("Rebooting in 3 seconds...");
         Thread.Sleep(3000);
         Power.Reboot();
+    }
+
+    public static void LogOff()
+    {
+        foreach (Process p in Manager.pList)
+            if (p.Name == "Log into Epsilon")
+                return;
+
+        CurrentUser = null;
+        
+        Manager.Start(new Login
+        {
+            wData = new WindowData
+            {
+                Position = new Rectangle(0, 0, (int)GUI.width, (int)GUI.height),
+                Moveable = false
+            },
+            Name = "Log into Epsilon",
+            Special = true
+        });
+
+        tBar.Remove(); cBar.Remove();
+        // TODO: not make it crash the entire fucking system
+        if (Manager.pList.Count > 0)
+            foreach (Process p in Manager.pList)
+                if (p.Name != "Log into Epsilon")
+                    p.Remove();
     }
 }

@@ -57,7 +57,7 @@ namespace Epsilon.Applications.Base
                 );
             }
 
-            int div4 = w / 4;
+            int div4 = w / 4 + 1;
             plus = new(x, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "+");
             minus = new(x + div4, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "-");
             times = new(x + (div4 * 2), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "*");
@@ -84,7 +84,7 @@ namespace Epsilon.Applications.Base
                 numberButtons[i].Update();
             }
 
-            int div4 = wData.Position.Width / 4;
+            int div4 = wData.Position.Width / 4 + 1;
             plus.X = wData.Position.X; plus.Y = wData.Position.Y + w.tSize + 20 + (bh * 4); plus.Update();
             minus.X = wData.Position.X + div4; minus.Y = wData.Position.Y + w.tSize + 20 + (bh * 4); minus.Update();
             times.X = wData.Position.X + (div4 * 2); times.Y = wData.Position.Y + w.tSize + 20 + (bh * 4); times.Update();

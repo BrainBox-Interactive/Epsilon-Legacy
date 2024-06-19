@@ -17,14 +17,13 @@ namespace Epsilon.Interface
 {
     public static class GUI
     {
-        // TODO: IMPORTANT!! MAKE AND USE IsInFront() FUNCTION!!!
         public static int width,
             height,
             mx = 0,
             my = 0;
         public static Canvas canv;
         public static PCScreenFont dFont
-            = PCScreenFont.LoadFont(Files.RawDefaultFont);
+            = PCScreenFont.LoadFont(Files.RawPowerlineFont);
 
         public static Bitmap wp, crs;
         public static Colors colors = new();
@@ -46,7 +45,7 @@ namespace Epsilon.Interface
 
             // Processes
             // Login Details Epsilon Encryption System . Config
-            if (!File.Exists(ESystem.LoginInfoPath)) //&& !VMTools.IsVirtualBox)
+            if (!File.Exists(ESystem.LoginInfoPath) && !VMTools.IsVirtualBox)
                 Manager.Start(new OOBE
                 {
                     wData = new WindowData
@@ -105,18 +104,16 @@ namespace Epsilon.Interface
                         if (my >= p.wData.Position.Y
                             && my <= p.wData.Position.Y + w.tSize)
                         {
+                            if (Manager.IsFrontTU() && Manager.toUpdate != p) return;
                             if (Manager.spList.Count <= 1)
                             {
                                 cProc = p;
-                                // if (p.wData.Position.X <= 0 || mx > p.wData.Position.Width / 2)
-                                //if ((p.wData.Position.X >= 0 - ofs || mx > p.wData.Position.Width / 2)
-                                //    && (p.wData.Position.X <= width - p.wData.Position.Width + ofs
-                                //    || mx > p.wData.Position.Width / 2))
                                 ox = mx - p.wData.Position.X;
                                 oy = my - p.wData.Position.Y;
                             }
                         }
                     }
+                    // DONE
                 }
             }
 
@@ -142,9 +139,9 @@ namespace Epsilon.Interface
                 );
             }
 
-            canv.DrawString("P:curProc", dFont, colors.txtColor, 0, dFont.Height * 12);
-            if (cProc != null)
-                canv.DrawString("[" + cProc.Name + "]",
+            canv.DrawString("P:toUpdate", dFont, colors.txtColor, 0, dFont.Height * 12);
+            if (Manager.toUpdate != null)
+                canv.DrawString("[" + Manager.toUpdate.Name + "]",
                     dFont,
                     colors.txtColor,
                     0,

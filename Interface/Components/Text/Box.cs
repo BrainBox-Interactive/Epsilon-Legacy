@@ -78,6 +78,16 @@ namespace Epsilon.Interface.Components.Text
             } isPressed = Kernel.IsKeyPressed;
         }
 
+        public override bool CheckHover()
+        {
+            if (GUI.mx >= X + 1
+                && GUI.mx <= X + Width - 1
+                && GUI.my >= Y + 1
+                && GUI.my <= Y + Height - 1)
+                return true;
+            return false;
+        }
+
         public override void OnClick(int mIndex)
         {
             base.OnClick(mIndex);

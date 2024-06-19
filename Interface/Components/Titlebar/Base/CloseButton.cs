@@ -20,7 +20,8 @@ namespace Epsilon.Interface.Components.Titlebar.Base
         {
             base.Update();
             if (CheckHover())
-                if (MouseManager.MouseState == MouseState.Left)
+                if (MouseManager.MouseState == MouseState.Left
+                    && !GUI.clicked)
                     OnClick(0);
         }
 
@@ -29,8 +30,7 @@ namespace Epsilon.Interface.Components.Titlebar.Base
             base.OnClick(mIndex);
             if (mIndex == 0
                 && this != null
-                && GUI.cProc == null
-                && GUI.clicked)
+                && GUI.cProc == null)
                 p.Remove();
         }
     }
