@@ -46,11 +46,6 @@ public static class ESystem
         if (!Directory.Exists(SettingsPath)) CreateDirectory(SettingsPath);
         if (!Directory.Exists(SettingsPath + "User")) CreateDirectory(SettingsPath + "User");
 
-        Log.Info("Launching GUI Interface");
-        GUI.Start();
-        Kernel.isGUI = true;
-        SetUpImages();
-
         if (!VMTools.IsVMWare)
         {
             try
@@ -66,6 +61,11 @@ public static class ESystem
             }
             catch { }
         }
+
+        Log.Info("Launching GUI Interface");
+        GUI.Start();
+        Kernel.isGUI = true;
+        SetUpImages();
     }
 
     public static void CreateDirectory(string path)

@@ -83,11 +83,11 @@ namespace Epsilon
                 }
                 catch (Exception ex)
                 {
-                    Interface.GUI.canv.Disable();
+                    if (!VMTools.IsVirtualBox) Interface.GUI.canv.Disable();
                     Manager.pList.Clear();
                     Heap.Collect();
                     Crash.Message(ex);
-                    isGUI = false;
+                    if (!VMTools.IsVirtualBox) isGUI = false;
                 }
             else
             {

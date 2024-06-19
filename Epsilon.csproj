@@ -43,6 +43,7 @@
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Fonts\ter-powerline-v16n.psf" />
       <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
+      <None Remove="System\Resources\Images\Buttons\CB_idle.bmp" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Cursors\Hand.bmp" />
       <None Remove="System\Resources\Images\Icons\Default.bmp" />
@@ -80,6 +81,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\zap-ext-light16.psf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Buttons\CB_idle.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">

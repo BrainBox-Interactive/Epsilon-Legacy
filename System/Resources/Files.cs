@@ -28,6 +28,9 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Profile.Default.bmp")]
         public static byte[] RawDefaultPFP;
 
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Buttons.CB_idle.bmp")]
+        public static byte[] RawIdleCButton;
+
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Default.bmp")]
         public static byte[] RawDefaultCursor;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Hand.bmp")]

@@ -40,6 +40,7 @@ namespace Epsilon.System.Critical.Processing
         public static void Start(Process p)
         {
             pList.Add(p);
+            toUpdate = p;
             p.Start();
         }
 

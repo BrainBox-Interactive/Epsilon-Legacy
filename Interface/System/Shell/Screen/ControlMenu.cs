@@ -179,7 +179,7 @@ namespace Epsilon.Interface.System.Shell.Screen
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             GUI.canv.DrawRectangle(
-                GUI.colors.tboColor,
+                GUI.colors.mooColor,
                 x - 1, y - 1,
                 w + 1, h + 1
             );
