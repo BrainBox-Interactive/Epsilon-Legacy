@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cosmos.System.Graphics.Fonts;
+using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -65,6 +67,29 @@ namespace Epsilon.Interface.System
                 x + (width / 2 - GUI.dFont.Width * content.Length / 2),
                 y + (height / 2 - GUI.dFont.Height / 2) + 1
             );
+        }
+
+        // Simple String, TODO: rich text component
+        static List<string> stringsToDraw = new();
+        static int index, lineIndex, ofs = GUI.dFont.Height + 2;
+        static string AcceptedCharacters
+            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\'\n\t ,;:!?$*&()=";
+        public static void DrawString(int x, int y, Color color, string text)
+        {
+            index = 0; lineIndex = 0;
+            stringsToDraw.Clear();
+            stringsToDraw.Add(string.Empty);
+            foreach (char c in text)
+                if (c == '\n')
+                {
+                    lineIndex++;
+                    stringsToDraw.Add(string.Empty);
+                }
+                else if (AcceptedCharacters.Contains(c))
+                    stringsToDraw[lineIndex] += c;
+            for (int i = 0; i < stringsToDraw.Count; i++)
+                GUI.canv.DrawString(stringsToDraw[i], GUI.dFont, Color.White,
+                    x + 32, y + 64 + 8 + ofs * i);
         }
     }
 }
