@@ -31,70 +31,36 @@ namespace Epsilon
             vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(vfs, true);
             System.ESystem.OnBoot();
-            if (!isGUI)
-            {
-                Console.SetWindowSize(90, 30);
-                Console.OutputEncoding = Sys.ExtendedASCII.CosmosEncodingProvider
-                    .Instance.GetEncoding(437);
-                Thread.Sleep(2000);
-
-                Console.Clear();
-                Thread.Sleep(750);
-
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Epsilon Kernel - " + version);
-                Console.WriteLine("June 2024 version // Experimental version\n");
-                Console.ForegroundColor = ConsoleColor.White;
-                //System.System.PlayAudio(Files.RawStartupAudio);
-            }
         }
 
         public static KeyEvent k;
         public static bool IsKeyPressed;
         protected override void Run()
         {
-            if (isGUI)
-                try
-                {
-                    if (lastHCol < 15) {
-                        Interface.GUI.Update();
-
-                        if (_deltaT != RTC.Second)
-                        {
-                            _fps = _frames;
-                            _frames = 0;
-                            _deltaT = RTC.Second;
-                        }
-                        _frames++;
-
-                        k = null;
-                        IsKeyPressed = KeyboardManager.TryReadKey(out k);
-                        if (IsKeyPressed)
-                        {
-                            if (k.Key == ConsoleKeyEx.F11)
-                            {
-                                Interface.GUI.canv.Disable();
-                                Manager.pList.Clear();
-                                Console.Clear();
-                                isGUI = false;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (!VMTools.IsVirtualBox) Interface.GUI.canv.Disable();
-                    Manager.pList.Clear();
-                    Heap.Collect();
-                    Crash.Message(ex);
-                    if (!VMTools.IsVirtualBox) isGUI = false;
-                }
-            else
+            try
             {
-                Console.ResetColor();
-                Console.Write(curPath + "> ");
-                var input = Console.ReadLine();
-                Commands.Run(input);
+                if (lastHCol < 15) {
+                    Interface.GUI.Update();
+
+                    if (_deltaT != RTC.Second)
+                    {
+                        _fps = _frames;
+                        _frames = 0;
+                        _deltaT = RTC.Second;
+                    }
+                    _frames++;
+
+                    k = null;
+                    IsKeyPressed = KeyboardManager.TryReadKey(out k);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (!VMTools.IsVirtualBox) Interface.GUI.canv.Disable();
+                Manager.pList.Clear();
+                Heap.Collect();
+                Crash.Message(ex);
+                if (!VMTools.IsVirtualBox) isGUI = false;
             }
 
             if (lastHCol >= 50)
