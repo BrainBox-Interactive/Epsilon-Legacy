@@ -13,8 +13,8 @@ pencil for highlight cursor graphic (thank you notice,)
 - textbox (V)
 - overhaul calculator + buttons with actions (V)
 - login screen, accounts, check for existing file (Login Details file) (V)
-- menu buttons (shutdown, restart, programs, etc...) (~)
-- setup
+- menu buttons (shutdown, restart, programs, etc...) (V)
+- setup (~)
 - overhaul notepad
 
 Minimum:
