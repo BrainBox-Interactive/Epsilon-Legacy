@@ -31,7 +31,7 @@ namespace Epsilon.Interface.Components.Text
                 .ToList();
             up = new(x + width - 16, y, 16, 16,
                 GUI.colors.btColor, GUI.colors.bthColor,
-                GUI.colors.btcColor, "^",
+                GUI.colors.btcColor, "/\\",
                 delegate() {
                     if (!clicked && cSect > 0) {
                         cSect--;
@@ -41,7 +41,7 @@ namespace Epsilon.Interface.Components.Text
                 });
             down = new(x + width - 16, y + height - 16,
                 16, 16, GUI.colors.btColor, GUI.colors.bthColor,
-                GUI.colors.btcColor, "v",
+                GUI.colors.btcColor, "\\/",
                 delegate () {
                     if (!clicked) {
                         cSect++;
@@ -57,7 +57,7 @@ namespace Epsilon.Interface.Components.Text
 
         List<string> stringsToDraw = new List<string>();
         string AcceptedCharacters
-            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\' .,;:!?$*&()=";
+            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\' /\\.,;:!?$*&()=";
         private void ProcessStrings()
         {
             stringsToDraw.Clear();
@@ -86,12 +86,17 @@ namespace Epsilon.Interface.Components.Text
             GUI.canv.DrawFilledRectangle(Color.White, X, Y,
                 Width, Height);
 
+            GUI.canv.DrawFilledRectangle(Color.Gray,
+                X + Width - 16, Y + up.Height, 16, Height - up.Height - down.Height);
+            GUI.canv.DrawLine(Color.Black, X + Width - 16, Y + up.Height,
+                X + Width - 16, Y + up.Height + Height - down.Height);
             up.X = X + Width - 16; up.Y = Y;
             up.Update();
             down.X = X + Width - 16; down.Y = Y + Height - 16;
             down.Update();
-            GUI.canv.DrawString(cSect.ToString(),
-                GUI.dFont, Color.White, X, Y + Height);
+
+            GUI.canv.DrawString("Page " + (cSect + 1).ToString(),
+                GUI.dFont, Color.White, X, Y + Height + 4);
 
             if (MouseManager.MouseState == MouseState.None)
                 clicked = false;
