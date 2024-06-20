@@ -13,7 +13,7 @@ namespace Epsilon.Interface.Components.Text
     {
         public Color BackColor { get; set; }
         public Color TextColor { get; set; }
-        public string Content { get; set; } = String.Empty;
+        public string Content { get; set; } = string.Empty;
         public bool Password = false;
         public string Placeholder { get; set; }
         public string AcceptedCharacters

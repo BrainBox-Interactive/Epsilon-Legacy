@@ -6,6 +6,7 @@ using Epsilon.Interface.Components;
 using System.Drawing;
 using System.Collections.Generic;
 using Cosmos.System;
+using Epsilon.System;
 
 namespace Epsilon.Applications.System.Setup
 {
@@ -16,7 +17,7 @@ namespace Epsilon.Applications.System.Setup
         Button next;
         string nButton = "Next";
         int currentPage = 0;
-        static int ncWidth = GUI.dFont.Width * 9;
+        static int ncWidth = GUI.dFont.Width * 9 + 2;
         string[] strings = {
 @$"Welcome to the Epsilon setup wizard!
 This tool is designed to assist you in installing Epsilon
@@ -28,7 +29,24 @@ Please click the 'Next' button when you are ready to begin.
 Important! Using this tool will erase all data on your hard drive.
 Please back up any important data before proceeding. Use with caution.
 ",
-@"License Agreement:",
+
+@$"Please read the following terms and conditions carefully.
+If you do not accept the terms and conditions, please exit the setup tool.
+
+{new string('-', ncWidth)}
+
+1. Introduction
+
+    Welcome to Epsilon, an open-source operating system based on the
+Cosmos kernel and developed by BrainBox Interactive. By using Epsilon,
+you agree to comply with and be bound by the following terms and conditions.
+Please review them carefully.
+
+2. Company Information
+
+    Company Name: BrainBox Interactive
+    Company Address: TBD
+",
 @"Page 3",
 @"Page 4"
         };
@@ -46,25 +64,63 @@ Please back up any important data before proceeding. Use with caution.
                 GUI.colors.bthColor,
                 GUI.colors.btcColor,
                 nButton,
-                delegate()
-                {
-                    if (!clicked
-                        && currentPage < strings.Length - 1)
-                    {
-                        currentPage++;
-                        ProcessStrings();
-                    }
-                    clicked = true;
-                }
+                delegate() { NextPage(); }
             );
-            cbox = new(32, 441, "Test", Color.White, Color.White, false);
+            cbox = new(24, 445,
+                "I accept the terms and conditions", false);
             currentPage = 0;
             ProcessStrings();
         }
 
+        private void NextPage()
+        {
+            if (!clicked)
+            {
+                switch (currentPage)
+                {
+                    default:
+                        if (!clicked
+                            && currentPage < strings.Length - 1)
+                        {
+                            currentPage++;
+                            ProcessStrings();
+                            ESystem.PlayAudio(Files.RawPageTurnAudio);
+                        }
+                        break;
+
+                    case 1:
+                        string s = "Please accept the terms and conditions.";
+                        if (cbox.Checked && !clicked
+                            && currentPage < strings.Length - 1)
+                        {
+                            currentPage++;
+                            ProcessStrings();
+                            ESystem.PlayAudio(Files.RawPageTurnAudio);
+                        }
+                        else if (!clicked && !cbox.Checked
+                            && currentPage < strings.Length - 1)
+                            Manager.Start(new MessageBox
+                            {
+                                wData =
+                                {
+                                    Position = new(GUI.width / 2 - s.Length * GUI.dFont.Width / 2,
+                                    GUI.height / 2 - (32 + GUI.dFont.Height) / 2, s.Length * GUI.dFont.Width + 16,
+                                    32 + GUI.dFont.Height*2),
+                                    Moveable = true,
+                                },
+                                Button = true,
+                                Content = s,
+                                Name = "License Agreement",
+                                Special = true
+                            });
+                        break;
+                }
+            }
+            clicked = true;
+        }
+
         int ofs = GUI.dFont.Height + 2;
         List<string> stringsToDraw = new List<string>();
-
         private void ProcessStrings()
         {
             stringsToDraw.Clear();
@@ -72,8 +128,7 @@ Please back up any important data before proceeding. Use with caution.
             int lineIndex = 0;
 
             foreach (char c in strings[currentPage])
-                if (c == '\n')
-                {
+                if (c == '\n') {
                     lineIndex++;
                     stringsToDraw.Add(string.Empty);
                 }
@@ -96,18 +151,25 @@ Please back up any important data before proceeding. Use with caution.
             );
             GUI.canv.DrawString(Kernel._fps.ToString(),
                 GUI.dFont, Color.White, 0, 0);
+            GUI.canv.DrawString(currentPage.ToString(),
+                GUI.dFont, Color.White, 0, GUI.dFont.Height);
 
             if (strings.Length > currentPage)
-            {
                 for (int i = 0; i < stringsToDraw.Count; i++)
                     if (!string.IsNullOrWhiteSpace(stringsToDraw[i]))
                         GUI.canv.DrawString(stringsToDraw[i],
-                            GUI.dFont, Color.White, x + 32,
-                            y + 64 + 8 + ofs * i);
-            }
+                            GUI.dFont, Color.White, 24,
+                            64 + 8 + ofs * i);
             next.Update();
-            cbox.X = 32; cbox.Y = 441;
-            cbox.Update();
+            
+            switch (currentPage)
+            {
+                case 1:
+                    cbox.Update();
+                    break;
+            }
+
+            // TODO: stuff
         }
     }
 }

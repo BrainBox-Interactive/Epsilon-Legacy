@@ -55,6 +55,7 @@ public static class ESystem
         GUI.Start();
         Kernel.isGUI = true;
         SetUpImages();
+        PlayAudio(Files.RawPageTurnAudio);
     }
 
     public static void CreateDirectory(string path)

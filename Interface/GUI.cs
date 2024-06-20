@@ -1,13 +1,9 @@
 ﻿using Cosmos.System;
 using Cosmos.System.Graphics;
 using Cosmos.System.Graphics.Fonts;
-using Epsilon.Applications.System;
 using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
 using Epsilon.System;
-using System;
-using System.IO;
 using Epsilon.Applications.System.Setup;
 using Epsilon.System.Resources;
 

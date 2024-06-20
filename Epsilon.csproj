@@ -38,6 +38,7 @@
 
     <ItemGroup>
       <None Remove="System\Resources\Audio\Error.wav" />
+      <None Remove="System\Resources\Audio\PageTurn.wav" />
       <None Remove="System\Resources\Audio\Shutdown.wav" />
       <None Remove="System\Resources\Audio\Startup.wav" />
       <None Remove="System\Resources\Epsilon.iso" />
@@ -68,6 +69,9 @@
 
     <ItemGroup>
       <EmbeddedResource Include="System\Resources\Audio\Error.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Audio\PageTurn.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Audio\Shutdown.wav">

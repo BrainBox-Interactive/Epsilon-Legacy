@@ -50,6 +50,8 @@ namespace Epsilon.System.Resources
         public static byte[] RawShutdownAudio;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.Error.wav")]
         public static byte[] RawErrorAudio;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Audio.PageTurn.wav")]
+        public static byte[] RawPageTurnAudio;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Epsilon.iso")]
         public static byte[] RawISO;
