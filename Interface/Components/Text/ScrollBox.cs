@@ -7,7 +7,7 @@ using System.Reflection.Metadata;
 
 namespace Epsilon.Interface.Components.Text
 {
-    public class ScrollBox : Component
+    public class Scrollbox : Component
     {
         public string Content { get; set; }
         String str;
@@ -19,7 +19,7 @@ namespace Epsilon.Interface.Components.Text
         bool clicked = false;
 
         List<string> temp;
-        public ScrollBox(int x, int y, int width, int height, string content)
+        public Scrollbox(int x, int y, int width, int height, string content)
             : base(x, y, width, height)
         {
             X = x; Y = y;

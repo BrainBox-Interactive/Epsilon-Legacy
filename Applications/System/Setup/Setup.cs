@@ -80,7 +80,7 @@ on the copyright of Epsilon or BrainBox Interactive.
 
 ------------------------------------------------------------------
 ";
-        ScrollBox sbox;
+        Scrollbox sbox;
 
         public override void Start()
         {
