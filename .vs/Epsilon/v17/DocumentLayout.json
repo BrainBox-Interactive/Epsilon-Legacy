@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\iplux\\source\\repos\\Epsilon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\applications\\system\\setup\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\setup\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\system\\resources\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\resources\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,34 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\applications\\system\\setup\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\setup\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\iplux\\source\\repos\\epsilon\\system\\critical\\processing\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,94 +106,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GUI.cs",
-              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\GUI.cs",
-              "RelativeDocumentMoniker": "Interface\\GUI.cs",
-              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\GUI.cs",
-              "RelativeToolTip": "Interface\\GUI.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwA4AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T22:54:03.599Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "Setup.cs",
+              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Applications\\System\\Setup\\Setup.cs",
+              "RelativeDocumentMoniker": "Applications\\System\\Setup\\Setup.cs",
+              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Applications\\System\\Setup\\Setup.cs",
+              "RelativeToolTip": "Applications\\System\\Setup\\Setup.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAQwIkAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T18:39:21.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ScrollBox.cs",
+              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\ScrollBox.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Text\\ScrollBox.cs",
+              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\ScrollBox.cs",
+              "RelativeToolTip": "Interface\\Components\\Text\\ScrollBox.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAUwCYAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:16:46.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Checkbox.cs",
+              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Checkbox.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Checkbox.cs",
+              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Checkbox.cs",
+              "RelativeToolTip": "Interface\\Components\\Checkbox.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAmwDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:16:18.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Button.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Button.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Button.cs",
               "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Button.cs",
               "RelativeToolTip": "Interface\\Components\\Button.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAkwE0AAAAAAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAwwCIAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T13:40:54.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "String.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\String.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Text\\String.cs",
               "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\String.cs",
               "RelativeToolTip": "Interface\\Components\\Text\\String.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAiwDcAAAABAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowBwAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T13:25:02.921Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ScrollBox.cs",
-              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\ScrollBox.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Text\\ScrollBox.cs",
-              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\ScrollBox.cs",
-              "RelativeToolTip": "Interface\\Components\\Text\\ScrollBox.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAIwEsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:14:14.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Setup.cs",
-              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Applications\\System\\Setup\\Setup.cs",
-              "RelativeDocumentMoniker": "Applications\\System\\Setup\\Setup.cs",
-              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Applications\\System\\Setup\\Setup.cs",
-              "RelativeToolTip": "Applications\\System\\Setup\\Setup.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAowGsAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T11:50:53.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Checkbox.cs",
-              "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Checkbox.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Checkbox.cs",
-              "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Checkbox.cs",
-              "RelativeToolTip": "Interface\\Components\\Checkbox.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACMAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T12:22:56.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "Process.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\Critical\\Processing\\Process.cs",
               "RelativeDocumentMoniker": "System\\Critical\\Processing\\Process.cs",
@@ -210,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "Drawing.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\System\\Drawing.cs",
               "RelativeDocumentMoniker": "Interface\\System\\Drawing.cs",
@@ -222,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "ProfilePicture.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Buttons\\ProfilePicture.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Buttons\\ProfilePicture.cs",
@@ -234,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "ESystem.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\ESystem.cs",
               "RelativeDocumentMoniker": "System\\ESystem.cs",
@@ -247,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "Colors.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\System\\Colors.cs",
               "RelativeDocumentMoniker": "Interface\\System\\Colors.cs",
@@ -259,20 +245,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Files.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\Resources\\Files.cs",
               "RelativeDocumentMoniker": "System\\Resources\\Files.cs",
               "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\Resources\\Files.cs",
               "RelativeToolTip": "System\\Resources\\Files.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAqwDUAAAAuAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAqwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T23:51:45.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -284,20 +270,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "Box.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\Box.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Text\\Box.cs",
               "ToolTip": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Text\\Box.cs",
               "RelativeToolTip": "Interface\\Components\\Text\\Box.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAiwA8AAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T22:50:45.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "Manager.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\Critical\\Processing\\Manager.cs",
               "RelativeDocumentMoniker": "System\\Critical\\Processing\\Manager.cs",
@@ -309,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "LICENSE",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\LICENSE",
               "RelativeDocumentMoniker": "LICENSE",
@@ -321,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Component.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Component.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Component.cs",
@@ -333,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "Window.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Window.cs",
               "RelativeDocumentMoniker": "Interface\\Window.cs",
@@ -345,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Kernel.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Kernel.cs",
               "RelativeDocumentMoniker": "Kernel.cs",
@@ -358,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "Epsilon",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Epsilon.csproj",
               "RelativeDocumentMoniker": "Epsilon.csproj",
@@ -369,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "DummyButton.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
@@ -381,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "MessageBox.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Applications\\System\\MessageBox.cs",
               "RelativeDocumentMoniker": "Applications\\System\\MessageBox.cs",
@@ -393,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Commands.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\Shell\\Commands.cs",
               "RelativeDocumentMoniker": "System\\Shell\\Commands.cs",
@@ -405,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "TitlebarButton.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\Interface\\Components\\Titlebar\\TitlebarButton.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\TitlebarButton.cs",
@@ -417,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\iplux\\source\\repos\\Epsilon\\System\\Global.cs",
               "RelativeDocumentMoniker": "System\\Global.cs",

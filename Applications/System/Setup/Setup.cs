@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using Cosmos.System;
 using Epsilon.System;
+using Epsilon.Interface.Components.Text;
 
 namespace Epsilon.Applications.System.Setup
 {
@@ -34,18 +35,6 @@ Please back up any important data before proceeding. Use with caution.
 If you do not accept the terms and conditions, please exit the setup tool.
 
 {new string('-', ncWidth)}
-
-1. Introduction
-
-    Welcome to Epsilon, an open-source operating system based on the
-Cosmos kernel and developed by BrainBox Interactive. By using Epsilon,
-you agree to comply with and be bound by the following terms and conditions.
-Please review them carefully.
-
-2. Company Information
-
-    Company Name: BrainBox Interactive
-    Company Address: TBD
 ",
 @"Page 3",
 @"Page 4"
@@ -53,6 +42,45 @@ Please review them carefully.
         string AcceptedCharacters
             = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\' .,;:!?$*&()=";
         bool clicked = false;
+        string tc =
+$@"1. Introduction
+
+    Welcome to Epsilon, an open-source operating system based on the
+Cosmos kernel and developed by BrainBox Interactive. By using Epsilon,
+you agree to comply with and be bound by the following terms and
+conditions.
+Please review them carefully.
+
+------------------------------------------------------------------
+
+2. Company Information
+
+    Company Name: BrainBox Interactive
+    Company Address: TBD
+
+------------------------------------------------------------------
+
+3. Description of Epsilon
+
+    Epsilon is an open-source operating system designed to be fast
+and efficient. It is currently in its very early stages of
+development. Epsilon is built on the Cosmos kernel and is
+available for use under the terms set forth in this document.
+
+------------------------------------------------------------------
+
+4. License and Use
+
+Epsilon is free to use for both personal and commercial purposes.
+By using Epsilon, you agree to the following conditions:
+
+    - You may not sell Epsilon or any derivative works for a price.
+    - You must not engage in any activities that infringe
+on the copyright of Epsilon or BrainBox Interactive.
+
+------------------------------------------------------------------
+";
+        ScrollBox sbox;
 
         public override void Start()
         {
@@ -68,6 +96,8 @@ Please review them carefully.
             );
             cbox = new(24, 445,
                 "I accept the terms and conditions", false);
+            sbox = new(24, 54+GUI.dFont.Height+8*2+16,
+                GUI.width - (24 * 2), 208, tc);
             currentPage = 0;
             ProcessStrings();
         }
@@ -104,8 +134,9 @@ Please review them carefully.
                                 wData =
                                 {
                                     Position = new(GUI.width / 2 - s.Length * GUI.dFont.Width / 2,
-                                    GUI.height / 2 - (32 + GUI.dFont.Height) / 2, s.Length * GUI.dFont.Width + 16,
-                                    32 + GUI.dFont.Height*2),
+                                    GUI.height / 2 - (32 + GUI.dFont.Height) / 2,
+                                    s.Length * GUI.dFont.Width + 16,
+                                    32 + GUI.dFont.Height * 2 + 16),
                                     Moveable = true,
                                 },
                                 Button = true,
@@ -166,6 +197,7 @@ Please review them carefully.
             {
                 case 1:
                     cbox.Update();
+                    sbox.Update();
                     break;
             }
 

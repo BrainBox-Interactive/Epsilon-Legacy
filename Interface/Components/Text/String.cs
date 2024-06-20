@@ -9,7 +9,7 @@ namespace Epsilon.Interface.Components.Text
         public string Text { get; set; }
         public Color Color { get; set; }
 
-        string AcceptedCharacters
+        public string AcceptedCharacters
             = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\' .,;:!?$*&()=";
 
         public String(int x, int y, string text, Color color)
@@ -26,7 +26,7 @@ namespace Epsilon.Interface.Components.Text
         }
 
         int ofs = GUI.dFont.Height + 2;
-        List<string> stringsToDraw = new List<string>();
+        public List<string> stringsToDraw = new List<string>();
         private void ProcessStrings()
         {
             stringsToDraw.Clear();
