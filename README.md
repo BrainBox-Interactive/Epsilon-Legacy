@@ -1,8 +1,4 @@
-# EpsilonS
- 
-
-```math
-\ce{$\unicode[goombafont; color:red; pointer-events: none; z-index: -10; position: fixed; top: 0; left: 0; height: 100vh; object-fit: cover; background-size: cover; width: 130vw; opacity: 0.2; background: url('https://raw.githubusercontent.com/ipluxteamx/ipluxteamx/main/1lu31x1angtb1.jpg');]{x0000}$}
+# Epsilon
 
 notes:
 pencil for highlight cursor graphic (thank you notice,)
@@ -18,6 +14,7 @@ pencil for highlight cursor graphic (thank you notice,)
 - overhaul notepad
 
 Minimum:
-128 MB of memory
+43 MB of memory
+4 MB of video memory
 1 processor
-512 MB of storage
+16 MB of storage
