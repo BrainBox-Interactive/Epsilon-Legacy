@@ -26,7 +26,8 @@ public static class ESystem
     public static AudioManager audioManager;
 
     public static Bitmap dc = new Bitmap(Files.RawDefaultCursor),
-        hc = new Bitmap(Files.RawHandCursor);
+        hc = new Bitmap(Files.RawHandCursor),
+        wc = new Bitmap(Files.RawWriteCursor);
 
     public static string Drive = "0:\\",
         SystemPath = Drive + "Epsilon\\",

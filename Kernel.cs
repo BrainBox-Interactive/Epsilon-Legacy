@@ -28,6 +28,7 @@ namespace Epsilon
 
         protected override void BeforeRun()
         {
+            Cosmos.HAL.Global.PIT.T0Frequency = 1000;
             vfs = new CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(vfs, true);
             System.ESystem.OnBoot();

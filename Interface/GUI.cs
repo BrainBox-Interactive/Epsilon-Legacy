@@ -9,6 +9,7 @@ using Epsilon.System;
 using System.IO;
 using Epsilon.Applications.System.Setup;
 using Epsilon.System.Resources;
+using Cosmos.System.Coroutines;
 
 namespace Epsilon.Interface
 {
@@ -125,36 +126,36 @@ namespace Epsilon.Interface
             canv.DrawImage(wp, 0, 0);
 
             // Debug, draw string with all processes name
-            canv.DrawString("Current Processes:", dFont, colors.txtColor, 0, 24);
-            for (int i = 0; i < Manager.pList.Count; i++)
-            {
-                canv.DrawString("[" + Manager.pList[i].Name + "]",
-                    dFont,
-                    colors.txtColor,
-                    0,
-                    24 + dFont.Height * (Manager.pList.Count - i)
-                );
-            }
+            //canv.DrawString("Current Processes:", dFont, colors.txtColor, 0, 24);
+            //for (int i = 0; i < Manager.pList.Count; i++)
+            //{
+            //    canv.DrawString("[" + Manager.pList[i].Name + "]",
+            //        dFont,
+            //        colors.txtColor,
+            //        0,
+            //        24 + dFont.Height * (Manager.pList.Count - i)
+            //    );
+            //}
 
-            canv.DrawString("P:toUpdate", dFont, colors.txtColor, 0, dFont.Height * 12);
-            if (Manager.toUpdate != null)
-                canv.DrawString("[" + Manager.toUpdate.Name + "]",
-                    dFont,
-                    colors.txtColor,
-                    0,
-                    dFont.Height * 13
-                );
-            else
-                canv.DrawString("[NO PROCESS]",
-                    dFont,
-                    colors.txtColor,
-                    0,
-                    dFont.Height * 13
-                );
+            //canv.DrawString("P:toUpdate", dFont, colors.txtColor, 0, dFont.Height * 12);
+            //if (Manager.toUpdate != null)
+            //    canv.DrawString("[" + Manager.toUpdate.Name + "]",
+            //        dFont,
+            //        colors.txtColor,
+            //        0,
+            //        dFont.Height * 13
+            //    );
+            //else
+            //    canv.DrawString("[NO PROCESS]",
+            //        dFont,
+            //        colors.txtColor,
+            //        0,
+            //        dFont.Height * 13
+            //    );
 
-            canv.DrawString("LhC:" + Kernel.lastHCol, dFont, colors.txtColor, 0, dFont.Height * 15);
-            canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, dFont.Height * 16);
-            canv.DrawString("c:" + clicked, dFont, colors.txtColor, 0, dFont.Height * 18);
+            //canv.DrawString("LhC:" + Kernel.lastHCol, dFont, colors.txtColor, 0, dFont.Height * 15);
+            canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, 32);
+            //canv.DrawString("c:" + clicked, dFont, colors.txtColor, 0, dFont.Height * 18);
 
             canv.DrawString("Build Information:", dFont, colors.txtColor, (int)width - dFont.Width * "Build Information:".Length, (int)height - (32 + dFont.Height * 2));
             canv.DrawString(

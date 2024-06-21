@@ -1,4 +1,5 @@
 ﻿using Cosmos.System;
+using Epsilon.System;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -57,6 +58,12 @@ namespace Epsilon.Interface.Components.Text
             if (MouseManager.MouseState == MouseState.Left
                 && !GUI.clicked && isFocused && !CheckHover())
                 isFocused = false;
+
+            if (CheckHover())
+            {
+                GUI.crsChanged = true;
+                GUI.crs = ESystem.wc;
+            } else if (GUI.crsChanged) GUI.crsChanged = false;
 
             if (isFocused)
             {

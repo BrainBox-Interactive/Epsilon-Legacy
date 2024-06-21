@@ -22,7 +22,7 @@
         <RemoveBootDebugOutput>True</RemoveBootDebugOutput>
         <CompressionType>Gzip</CompressionType>
         <UseUEFI>True</UseUEFI>
-        <CompileVBEMultiboot>True</CompileVBEMultiboot>
+        <CompileVBEMultiboot>False</CompileVBEMultiboot>
         <OptimizationLevel>1</OptimizationLevel>
         <VBEResolution>800x600x32</VBEResolution>
         <Timeout>5</Timeout>
@@ -49,6 +49,7 @@
       <None Remove="System\Resources\Images\Buttons\CB_idle.bmp" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Cursors\Hand.bmp" />
+      <None Remove="System\Resources\Images\Cursors\Write.bmp" />
       <None Remove="System\Resources\Images\Icons\Default.bmp" />
       <None Remove="System\Resources\Images\MenuBanner.bmp" />
       <None Remove="System\Resources\Images\Profile\Default.bmp" />
@@ -62,6 +63,7 @@
 
     <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="Cosmos.Coroutines" Version="1.0.1" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Plugs" Version="0-*" NoWarn="NU1604" />
@@ -99,6 +101,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Hand.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Cursors\Write.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Icons\Default.bmp">

@@ -53,6 +53,10 @@
                 "NU1604"
               ]
             },
+            "Cosmos.Coroutines": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "Cosmos.Debug.Kernel": {
               "target": "Package",
               "version": "[0.0.0-*, )",

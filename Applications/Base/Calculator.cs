@@ -15,7 +15,7 @@ namespace Epsilon.Applications.Base
 {
     public class Calculator : Process
     {
-        public string Content = "";
+        public string Content = string.Empty;
         Window w;
         Block tb;
 
@@ -117,6 +117,25 @@ namespace Epsilon.Applications.Base
                 _result = false;
             } clicked = true;
 
+            if (enter.CheckHover())
+            {
+                try
+                {
+                    var result = Evaluator.Evaluate(c);
+                    c = result.ToString();
+                    _result = true;
+                }
+                catch (Exception)
+                {
+                    c = "Invalid result ";
+                    _result = true;
+                }
+            }
+            else if (clear.CheckHover()) c = "";
+            else if (bksp.CheckHover() && c.Length > 0) c = c.Remove(c.Length - 1);
+
+            if (c.Length > (wData.Position.Width - 1) / GUI.dFont.Width) return;
+
             for (int i = 0; i < 10; i++)
                 if (numberButtons[i].CheckHover())
                 {
@@ -128,23 +147,6 @@ namespace Epsilon.Applications.Base
             else if (minus.CheckHover()) c += '-';
             else if (times.CheckHover()) c += '*';
             else if (div.CheckHover()) c += '/';
-
-            else if (enter.CheckHover())
-            {
-                try
-                {
-                    var result = Evaluator.Evaluate(c);
-                    c = result.ToString();
-                    _result = true;
-                }
-                catch (Exception ex)
-                {
-                    c = ex.ToString();
-                    _result = true;
-                }
-            }
-            else if (clear.CheckHover()) c = "";
-            else if (bksp.CheckHover() && c.Length > 0) c = c.Remove(c.Length - 1);
         }
     }
 

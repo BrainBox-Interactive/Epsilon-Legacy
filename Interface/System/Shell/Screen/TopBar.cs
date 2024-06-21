@@ -4,20 +4,13 @@ namespace Epsilon.Interface.System.Shell.Screen
 {
     public class TopBar : Process
     {
+        int x, y, w, h;
         public override void Run()
         {
-            int x = wData.Position.X, y = wData.Position.Y;
-            int w = wData.Position.Width, h = wData.Position.Height;
-            //GUI.canv.DrawFilledRectangle(
-            //    GUI.colors.tboColor,
-            //    x, y + 1,
-            //    w, 1
-            //);
-            GUI.canv.DrawLine(
-                GUI.colors.tboColor,
-                x, y + 1, x + w, y + 1
-            );
-
+            x = wData.Position.X; y = wData.Position.Y;
+            w = wData.Position.Width; h = wData.Position.Height;
+            GUI.canv.DrawLine(GUI.colors.mooColor,
+                x, y + 1, x + w, y + 1);
             GUI.canv.DrawFilledRectangle(
                 GUI.colors.tbColor,
                 x, y,

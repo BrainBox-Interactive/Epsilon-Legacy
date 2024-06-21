@@ -198,12 +198,12 @@ namespace Epsilon.Interface.System.Shell.Screen
             GUI.canv.DrawImage(
                 banner, x, y + mts
             );
-            GUI.canv.DrawLine(
-                GUI.colors.moColor,
+            GUI.canv.DrawLine(GUI.colors.moColor,
                 x + (int)banner.Width, y + mts,
                 x + (int)banner.Width,
-                y + mts + (int)banner.Height
-            );
+                y + mts + (int)banner.Height);
+            GUI.canv.DrawLine(GUI.colors.mooColor,
+                x, y + mts, x + w, y + mts);
 
             picture.X = x; picture.Y = y;
             picture.Update();
@@ -229,10 +229,14 @@ namespace Epsilon.Interface.System.Shell.Screen
             calculator.Update();
 
             // if clicks off the menu
-            if (GUI.mx < x
+            if ((GUI.mx < x
                 || GUI.mx > x + w
                 || GUI.my < y
                 || GUI.my > y + h)
+                && (GUI.mx < 3 + 11
+                    && GUI.mx > 3 + 11 + 41
+                    && GUI.my < (GUI.height - 32) - 17 + 11
+                    && GUI.my > (GUI.height - 32) - 17 + (11 + 41)))
                 if (MouseManager.MouseState == MouseState.Left
                     && !GUI.clicked)
                     Manager.pList.Remove(this);

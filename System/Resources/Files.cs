@@ -39,6 +39,8 @@ namespace Epsilon.System.Resources
         public static byte[] RawDefaultCursor;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Hand.bmp")]
         public static byte[] RawHandCursor;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Write.bmp")]
+        public static byte[] RawWriteCursor;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Icons.Default.bmp")]
         public static byte[] RawDefaultIcon;
