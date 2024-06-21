@@ -30,6 +30,10 @@ namespace Epsilon.System.Resources
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Buttons.CB_idle.bmp")]
         public static byte[] RawIdleCButton;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Buttons.CB_hover.bmp")]
+        public static byte[] RawHoverCButton;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Buttons.CB_click.bmp")]
+        public static byte[] RawClickCButton;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Default.bmp")]
         public static byte[] RawDefaultCursor;

@@ -17,7 +17,7 @@ namespace Epsilon.Interface.Components.Text
         public bool Password = false;
         public string Placeholder { get; set; }
         public string AcceptedCharacters
-            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\'\n\t ,;:!?$*&()=";
+            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\'\n\t /\\,;:!?$*&()=";
         public bool Multiline { get; set; }
 
         public Box(int x, int y, int width, int height,

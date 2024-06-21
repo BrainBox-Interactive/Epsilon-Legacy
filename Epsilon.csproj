@@ -22,9 +22,10 @@
         <RemoveBootDebugOutput>True</RemoveBootDebugOutput>
         <CompressionType>Gzip</CompressionType>
         <UseUEFI>True</UseUEFI>
-        <CompileVBEMultiboot>False</CompileVBEMultiboot>
+        <CompileVBEMultiboot>True</CompileVBEMultiboot>
         <OptimizationLevel>1</OptimizationLevel>
         <VBEResolution>800x600x32</VBEResolution>
+        <Timeout>5</Timeout>
     </PropertyGroup>
 
     <ItemGroup>
@@ -43,6 +44,8 @@
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Fonts\ter-powerline-v16n.psf" />
       <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
+      <None Remove="System\Resources\Images\Buttons\CB_click.bmp" />
+      <None Remove="System\Resources\Images\Buttons\CB_hover.bmp" />
       <None Remove="System\Resources\Images\Buttons\CB_idle.bmp" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Cursors\Hand.bmp" />
@@ -81,6 +84,12 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\zap-ext-light16.psf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Buttons\CB_click.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Buttons\CB_hover.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Buttons\CB_idle.bmp">

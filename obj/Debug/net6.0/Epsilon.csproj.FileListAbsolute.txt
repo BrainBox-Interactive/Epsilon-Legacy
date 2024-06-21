@@ -52,3 +52,5 @@ C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Fonts\ter-
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\MenuBanner.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\TEPBanner.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons\CB_idle.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons\CB_hover.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons\CB_click.bmp

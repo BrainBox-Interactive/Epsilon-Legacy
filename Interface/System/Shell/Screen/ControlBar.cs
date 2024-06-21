@@ -13,18 +13,21 @@ namespace Epsilon.Interface.System.Shell.Screen
     public class ControlBar : Process
     {
         ControlMenu cMenu;
-        Bitmap idleCB = new(Files.RawIdleCButton);
+        Bitmap curImage;
+        Bitmap idleCB = new(Files.RawIdleCButton),
+            hoverCB = new(Files.RawHoverCButton),
+            clickCB = new(Files.RawClickCButton);
         public override void Run()
         {
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
-            GUI.canv.DrawFilledRectangle(
-                GUI.colors.boColor,
-                x,
-                y - 1,
-                w,
-                1
-            );
+            //GUI.canv.DrawFilledRectangle(
+            //    GUI.colors.boColor,
+            //    x,
+            //    y - 1,
+            //    w,
+            //    1
+            //);
             GUI.canv.DrawFilledRectangle(
                 GUI.colors.bColor,
                 x,
@@ -33,29 +36,11 @@ namespace Epsilon.Interface.System.Shell.Screen
                 h
             );
 
-            // Menu Button
-            //GUI.canv.DrawFilledCircle(
-            //    Color.LightGray,
-            //    wData.Position.X + 35,
-            //    wData.Position.Y + 15,
-            //    21
-            //);
-            //GUI.canv.DrawFilledCircle(
-            //    Color.White,
-            //    wData.Position.X + 35,
-            //    wData.Position.Y + 15,
-            //    20
-            //);
-            GUI.canv.DrawImageAlpha(
-                idleCB, wData.Position.X + 15,
-                wData.Position.Y - 5
-            );
-
-            if (GUI.mx >= wData.Position.X + (35 - 20)
-                && GUI.mx <= wData.Position.X + (35 + 20))
+            if (GUI.mx >= wData.Position.X + (3 + 11)
+                && GUI.mx <= wData.Position.X + (3 + 11 + 41))
             {
-                if (GUI.my >= wData.Position.Y + (15 - 20)
-                    && GUI.my <= wData.Position.Y + (15 + 20))
+                if (GUI.my >= wData.Position.Y - 17 + 11
+                    && GUI.my <= wData.Position.Y - 17 + (11 + 41))
                 {
                     // TODO: If click then open and
                     // different hover, else hover
@@ -65,35 +50,46 @@ namespace Epsilon.Interface.System.Shell.Screen
                     //    wData.Position.Y + 15,
                     //    20
                     //);
+                    if (curImage != hoverCB) curImage = hoverCB;
 
-                    if (MouseManager.MouseState == MouseState.Left
-                        && !GUI.clicked)
-                        if (!Manager.IsRunning("Control Menu")) {
-                            Manager.Start(cMenu = new ControlMenu
+                    if (MouseManager.MouseState == MouseState.Left)
+                    {
+                        if (curImage != clickCB) curImage = clickCB;
+                        if (!GUI.clicked)
+                            if (!Manager.IsRunning("Control Menu"))
                             {
-                                wData = new WindowData
+                                Manager.Start(cMenu = new ControlMenu
                                 {
-                                    Moveable = false,
-                                    Position = new Rectangle(
-                                        0,
-                                        GUI.height - (32 + 460),
-                                        350,
-                                        450
-                                    )
-                                },
-                                Name = "Control Menu",
-                                Special = true
-                            });
-                            GUI.clicked = true;
-                        }
-                        else if (Manager.IsRunning("Control Menu"))
-                        {
-                            cMenu.Remove();
-                            cMenu = null;
-                            GUI.clicked = true;
-                        }
-                }
-            }
+                                    wData = new WindowData
+                                    {
+                                        Moveable = false,
+                                        Position = new Rectangle(
+                                            0,
+                                            GUI.height - (32 + 460),
+                                            350,
+                                            450
+                                        )
+                                    },
+                                    Name = "Control Menu",
+                                    Special = true
+                                });
+                                GUI.clicked = true;
+                            }
+                            else if (Manager.IsRunning("Control Menu"))
+                            {
+                                cMenu.Remove();
+                                cMenu = null;
+                                GUI.clicked = true;
+                            }
+                    }
+                } else if (curImage != idleCB) curImage = idleCB;
+            } else if (curImage != idleCB) curImage = idleCB;
+
+            // Menu Button
+            GUI.canv.DrawImageAlpha(
+                curImage, wData.Position.X + 3,
+                wData.Position.Y - 17
+            );
 
             // CLASS DONE
             // Control Bar class, 2024
