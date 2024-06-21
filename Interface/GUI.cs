@@ -102,7 +102,7 @@ namespace Epsilon.Interface
                         if (my >= p.wData.Position.Y
                             && my <= p.wData.Position.Y + w.tSize)
                         {
-                            if (Manager.IsFrontTU() && Manager.toUpdate != p) return;
+                            if (Manager.IsFrontTU(p) && Manager.toUpdate != p) return;
                             if (Manager.spList.Count <= 1)
                             {
                                 cProc = p;

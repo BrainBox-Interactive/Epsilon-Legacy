@@ -1,4 +1,5 @@
 ﻿using Epsilon.System;
+using Epsilon.System.Critical.Processing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,14 +15,16 @@ namespace Epsilon.Interface.Components.Text
         public Color OutlineColor { get; set; }
         public Color TextColor { get; set; }
         public string Text { get; set; }
+        public Process Process { get; set; }
 
         public Block(int x, int y, int width, int height, string text,
-            Color nColor, Color oColor, Color tColor) : base(x, y, width, height)
+            Color nColor, Color oColor, Color tColor, Process p) : base(x, y, width, height)
         {
             NormalColor = nColor;
             OutlineColor = oColor;
             TextColor = tColor;
             Text = text;
+            Process = p;
         }
 
         public override void Update()
@@ -50,7 +53,8 @@ namespace Epsilon.Interface.Components.Text
                 Y + (Height / 2 - GUI.dFont.Height / 2) + 1
             );
 
-            if (CheckHover())
+            if (CheckHover()
+                && !Manager.IsFrontTU(Process))
             {
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.wc;

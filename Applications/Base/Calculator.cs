@@ -5,11 +5,7 @@ using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
 using System.Collections.Generic;
 using System;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.Serialization;
 
 namespace Epsilon.Applications.Base
 {
@@ -37,7 +33,8 @@ namespace Epsilon.Applications.Base
             int fh = this.w.tSize + h;
 
             this.w.StartAPI(this);
-            tb = new(x, y + this.w.tSize, w, 20, "Calculator", Color.White, Color.Black, Color.Black);
+            tb = new(x, y + this.w.tSize, w, 20, "Calculator",
+                Color.White, Color.Black, Color.Black, this);
 
             int div3 = w / 3;
             numberButtons = new Button[10];
@@ -53,19 +50,19 @@ namespace Epsilon.Applications.Base
                     GUI.colors.btColor,
                     GUI.colors.bthColor,
                     GUI.colors.btcColor,
-                    i.ToString()
+                    i.ToString(), this
                 );
             }
 
             int div4 = w / 4 + 1;
-            plus = new(x, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "+");
-            minus = new(x + div4, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "-");
-            times = new(x + (div4 * 2), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "*");
-            div = new(x + (div4 * 3), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "/");
+            plus = new(x, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "+", this);
+            minus = new(x + div4, y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "-", this);
+            times = new(x + (div4 * 2), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "*", this);
+            div = new(x + (div4 * 3), y + this.w.tSize + 20 + (bh * 4), div4, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "/", this);
 
-            bksp = new(x, y + this.w.tSize + 20 + (bh * 4) + sbh, div3, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "<");
-            clear = new(x + div3, y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "x");
-            enter = new(x + (div3 * 2), y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "=");
+            bksp = new(x, y + this.w.tSize + 20 + (bh * 4) + sbh, div3, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "<", this);
+            clear = new(x + div3, y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "x", this);
+            enter = new(x + (div3 * 2), y + this.w.tSize + 20 + (bh * 4) + sbh, div3 + 1, sbh, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "=", this);
         }
 
         public override void Run()

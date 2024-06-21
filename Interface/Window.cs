@@ -112,7 +112,7 @@ namespace Epsilon.Interface
 
             if (MouseManager.MouseState == MouseState.Left
                 && !GUI.clicked)
-                if (!Manager.IsFrontTU())
+                if (!Manager.IsFrontTU(p))
                     Manager.toUpdate = p;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.System;
+using Epsilon.System.Critical.Processing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,9 +21,11 @@ namespace Epsilon.Interface.Components.Text
         public string AcceptedCharacters
             = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\'\n\t /\\,;:!?$*&()=";
         public bool Multiline { get; set; }
+        public Process Process { get; set; }
 
         public Box(int x, int y, int width, int height,
-            Color bColor, Color tColor, string placeholder, bool multiline = false)
+            Color bColor, Color tColor, string placeholder,
+            Process p, bool multiline = false)
             : base(x, y, width, height)
         {
             X = x; Y = y;
@@ -30,6 +33,7 @@ namespace Epsilon.Interface.Components.Text
             BackColor = bColor; TextColor = tColor;
             Placeholder = placeholder;
             Multiline = multiline;
+            Process = p;
         }
 
         bool isFocused = false,
@@ -59,7 +63,8 @@ namespace Epsilon.Interface.Components.Text
                 && !GUI.clicked && isFocused && !CheckHover())
                 isFocused = false;
 
-            if (CheckHover())
+            if (CheckHover()
+                && !Manager.IsFrontTU(Process))
             {
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.wc;

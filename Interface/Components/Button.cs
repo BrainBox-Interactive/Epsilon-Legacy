@@ -19,10 +19,12 @@ namespace Epsilon.Interface.Components
         public string Content { get; set; }
 
         public Color OutlineColor { get; set; } = Color.Black;
+        public Process Process { get; set; }
         public Action Action { get; set; } = delegate() { Dummy(); };
 
         public Button(int x, int y, int width, int height,
-            Color nColor, Color hColor, Color cColor, string content, Action action = null)
+            Color nColor, Color hColor, Color cColor, string content,
+            Process p, Action action = null)
             : base(x, y, width, height)
         {
             X = x;
@@ -33,6 +35,7 @@ namespace Epsilon.Interface.Components
             HoverColor = hColor;
             ClickColor = cColor;
             Content = content;
+            Process = p;
             if (action != null) Action = action;
         }
 
@@ -43,7 +46,7 @@ namespace Epsilon.Interface.Components
             base.Update();
 
             GUI.canv.DrawRectangle(OutlineColor, X, Y, Width, Height);
-            if (CheckHover())
+            if (CheckHover() && !Manager.IsFrontTU(Process))
                 if (MouseManager.MouseState == MouseState.Left)
                 {
                     GUI.canv.DrawFilledRectangle(ClickColor, X + 1, Y + 1, Width - 1, Height - 1);

@@ -31,7 +31,7 @@ namespace Epsilon.Interface.System.Shell.Screen
             div3 = (wData.Position.Width - 6) / 3;
             lgo = new(wData.Position.X + 2, wData.Position.Y + win.tSize,
                 div3, 24, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
-                "Log off", delegate () { Remove();
+                "Log off", this, delegate () { Remove();
                     try
                     {
                         foreach (Process p in Manager.pList)
@@ -60,10 +60,10 @@ namespace Epsilon.Interface.System.Shell.Screen
                 });
             shtd = new(wData.Position.X + 2*2 + div3, wData.Position.Y + win.tSize,
                 div3, 24, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
-                "Shutdown", delegate () { Remove(); Power.Shutdown(); });
+                "Shutdown", this, delegate () { Remove(); Power.Shutdown(); });
             rst = new(wData.Position.X + 2*3 + div3*2, wData.Position.Y + win.tSize,
                 div3, 24, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
-                "Restart", delegate () { Remove(); Power.Reboot(); });
+                "Restart", this, delegate () { Remove(); Power.Reboot(); });
         }
 
         public override void Run()
@@ -133,7 +133,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 y + mts + 8, (w - bsx)/2 - 8*2, 32,
                 GUI.colors.btColor, GUI.colors.bthColor,
                 GUI.colors.btcColor,
-                "Notepad", delegate()
+                "Notepad", this, delegate()
                 {
                     if (!spawned)
                         Manager.Start(new Notepad()
@@ -155,7 +155,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 y + mts + 8, (w - bsx) / 2 - 8 * 2, 32,
                 GUI.colors.btColor, GUI.colors.bthColor,
                 GUI.colors.btcColor,
-                "Calculator", delegate ()
+                "Calculator", this, delegate ()
                 {
                     if (!spawned)
                         Manager.Start(new Calculator()

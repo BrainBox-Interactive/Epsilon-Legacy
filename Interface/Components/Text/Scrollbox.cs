@@ -1,5 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.System;
+using Epsilon.System.Critical.Processing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,6 +13,7 @@ namespace Epsilon.Interface.Components.Text
     {
         public string Content { get; set; }
         public bool Editable { get; set; }
+        public Process Process { get; set; }
 
         String str;
         Button up, down;
@@ -23,7 +25,7 @@ namespace Epsilon.Interface.Components.Text
 
         List<string> temp;
         public Scrollbox(int x, int y, int width, int height, string content,
-            bool editable = false)
+            Process p, bool editable = false)
             : base(x, y, width, height)
         {
             X = x; Y = y;
@@ -31,12 +33,13 @@ namespace Epsilon.Interface.Components.Text
             Height = height;
             Content = content;
             Editable = editable;
+            Process = p;
 
             temp = Content.Split('\n')
                 .ToList();
             up = new(x + width - 24, y, 24, 24,
                 GUI.colors.btColor, GUI.colors.bthColor,
-                GUI.colors.btcColor, "/\\",
+                GUI.colors.btcColor, "/\\", p,
                 delegate () {
                     if (!clicked && cSect > 0)
                     {
@@ -47,7 +50,7 @@ namespace Epsilon.Interface.Components.Text
                 });
             down = new(x + width - 24, y + height - 24,
                 16, 16, GUI.colors.btColor, GUI.colors.bthColor,
-                GUI.colors.btcColor, "\\/",
+                GUI.colors.btcColor, "\\/", p,
                 delegate () {
                     if (!clicked)
                     {
@@ -111,7 +114,8 @@ namespace Epsilon.Interface.Components.Text
                 && !GUI.clicked && isFocused && !CheckHover())
                 isFocused = false;
 
-            if (CheckHover())
+            if (CheckHover()
+                && !Manager.IsFrontTU(Process))
             {
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.wc;

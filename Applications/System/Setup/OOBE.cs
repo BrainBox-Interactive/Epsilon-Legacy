@@ -27,19 +27,19 @@ namespace Epsilon.Applications.System.Setup
             win.StartAPI(this, false);
 
             username = new(wData.Position.X, wData.Position.Y + win.tSize + (int)b.Height,
-                256, 24, Color.White, Color.Black, "Username"
+                256, 24, Color.White, Color.Black, "Username", this
             );
             password = new(wData.Position.X, wData.Position.Y + win.tSize + 24 + (int)b.Height,
-                256, 24, Color.White, Color.Black, "Password"
+                256, 24, Color.White, Color.Black, "Password", this
             ); password.Password = true;
             c_password = new(wData.Position.X, wData.Position.Y + win.tSize + 24*2 + (int)b.Height,
-                256, 24, Color.White, Color.Black, "Confirm Password"
+                256, 24, Color.White, Color.Black, "Confirm Password", this
             ); c_password.Password = true;
 
             ok = new(wData.Position.X + wData.Position.Width / 2 - 32,
                 wData.Position.Y + win.tSize + 1 + 24 * 3 + (int)b.Height + 2,
                 64, 24, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "OK",
-                delegate ()
+                this, delegate ()
                 {
                     try
                     {

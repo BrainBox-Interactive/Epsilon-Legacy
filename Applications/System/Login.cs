@@ -2,13 +2,11 @@
 using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
-using Epsilon.Interface.System.Shell.Screen;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 
 namespace Epsilon.Applications.System
 {
@@ -34,15 +32,15 @@ namespace Epsilon.Applications.System
             win.StartAPI(this, false);
 
             username = new(wData.Position.X, wData.Position.Y + win.tSize + (int)b.Height,
-                256, 24, Color.White, Color.Black, "Username"
+                256, 24, Color.White, Color.Black, "Username", this
             );
             password = new(wData.Position.X, wData.Position.Y + win.tSize + 24 + (int)b.Height,
-                256, 24, Color.White, Color.Black, "Password"
+                256, 24, Color.White, Color.Black, "Password", this
             ); password.Password = true;
             ok = new(wData.Position.X + wData.Position.Width / 2 - 32,
                 wData.Position.Y + win.tSize + 1 + 24 * 2 + (int)b.Height + 2,
                 64, 24, GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor, "Login",
-                delegate () { CheckLogin(); });
+                this, delegate () { CheckLogin(); });
 
             wData.Position.Width = (int)b.Width;
             wData.Position.X = GUI.width / 2 - wData.Position.Width / 2;
