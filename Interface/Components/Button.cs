@@ -63,6 +63,7 @@ namespace Epsilon.Interface.Components
 
         public override void OnClick(int mIndex)
         {
+            if (Manager.IsFrontTU(Process)) return;
             base.OnClick(mIndex);
             Action.Invoke();
         }
