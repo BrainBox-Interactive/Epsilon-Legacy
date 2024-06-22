@@ -1,6 +1,7 @@
 ﻿using Cosmos.System;
 using Cosmos.System.Graphics;
 using Epsilon.System;
+using Epsilon.System.Critical.Processing;
 using System;
 using System.Drawing;
 
@@ -10,14 +11,17 @@ namespace Epsilon.Interface.Components.Buttons
     {
         public Bitmap PFP { get; set; }
         public Action Action { get; set; }
+        public Process Process { get; set; }
 
-        public ProfilePicture(int x, int y, Bitmap bitmap, Action action)
+        public ProfilePicture(int x, int y, Bitmap bitmap,
+            Action action, Process process)
             : base(x, y, (int)bitmap.Width, (int)bitmap.Height)
         {
             X = x; Y = y;
             Width = (int)bitmap.Width; Height = (int)bitmap.Height;
             PFP = bitmap;
             Action = action;
+            Process = process;
         }
 
         public override void Update()
@@ -28,7 +32,8 @@ namespace Epsilon.Interface.Components.Buttons
                 PFP, X, Y
             );
 
-            if (CheckHover())
+            if (CheckHover()
+                && !Manager.IsFrontTU(Process))
             {
                 GUI.canv.DrawRectangle(
                     Color.DarkGray,

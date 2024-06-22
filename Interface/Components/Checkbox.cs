@@ -1,4 +1,5 @@
 ﻿using Cosmos.System;
+using Epsilon.System.Critical.Processing;
 using System.Drawing;
 
 namespace Epsilon.Interface.Components
@@ -7,6 +8,7 @@ namespace Epsilon.Interface.Components
     {
         public string Text { get; set; }
         public bool Checked { get; set; }
+        public Process Process { get; set; }
 
         public Color CheckColor { get; set; } = Color.White;
         public Color CheckHoverColor { get; set; } = Color.LightGray;
@@ -14,12 +16,13 @@ namespace Epsilon.Interface.Components
         public Color TextColor { get; set; } = GUI.colors.txtColor;
 
         public Checkbox(int x, int y, string text,
-            bool initialState = false)
+            Process p, bool initialState = false)
             : base(x, y, 16, 16)
         {
             X = x; Y = y;
             Text = text;
             Checked = initialState;
+            Process = p;
         }
 
         private const int ofs = 5;
@@ -28,7 +31,8 @@ namespace Epsilon.Interface.Components
         {
             base.Update();
             GUI.canv.DrawRectangle(Color.Black, X, Y, Width, Height);
-            if (CheckHover())
+            if (CheckHover()
+                && !Manager.IsFrontTU(Process))
                 GUI.canv.DrawFilledRectangle(CheckHoverColor, X + 1, Y + 1,
                     Width - 1, Height - 1);
             else GUI.canv.DrawFilledRectangle(CheckColor, X + 1, Y + 1,
@@ -38,7 +42,8 @@ namespace Epsilon.Interface.Components
             if (Checked) GUI.canv.DrawFilledRectangle(Color.Black, X + ofs, Y + ofs,
                 Width - (ofs * 2 - 1), Height - (ofs * 2 - 1));
             if (MouseManager.MouseState == MouseState.Left
-                && CheckHover())
+                && CheckHover()
+                && !Manager.IsFrontTU(Process))
             {
                 if (!GUI.clicked)
                 {

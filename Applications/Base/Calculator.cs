@@ -103,6 +103,8 @@ namespace Epsilon.Applications.Base
         bool _result = false;
         public void OnClick()
         {
+            if (Manager.IsFrontTU(this)) return;
+
             if (_result
                 && !enter.CheckHover()
                 && GUI.mx >= wData.Position.X

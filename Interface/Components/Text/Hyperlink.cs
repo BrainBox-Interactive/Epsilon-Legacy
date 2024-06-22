@@ -1,5 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.System;
+using Epsilon.System.Critical.Processing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,20 +16,24 @@ namespace Epsilon.Interface.Components.Text
         public Color HoverColor { get; set; }
         public string Text { get; set; }
         public Action Action { get; set; }
+        public Process Process { get; set; }
 
-        public Hyperlink(int x, int y, Color nColor, Color hColor, string text, Action action)
+        public Hyperlink(int x, int y, Color nColor, Color hColor, string text,
+            Action action, Process process)
             : base(x, y, text.Length * GUI.dFont.Width, GUI.dFont.Height)
         {
             X = x; Y = y;
             NormalColor = nColor; HoverColor = hColor;
             Text = text;
             Action = action;
+            Process = process;
         }
 
         public override void Update()
         {
             base.Update();
-            if (CheckHover())
+            if (CheckHover()
+                && !Manager.IsFrontTU(Process))
             {
                 GUI.canv.DrawString(
                     Text, GUI.dFont,

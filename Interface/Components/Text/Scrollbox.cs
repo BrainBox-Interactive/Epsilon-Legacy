@@ -129,7 +129,8 @@ namespace Epsilon.Interface.Components.Text
             if (MouseManager.MouseState == MouseState.None)
                 clicked = false;
 
-            if (isFocused && Editable)
+            if (isFocused && Editable
+                && !Manager.IsFrontTU(Process))
             {
                 // TODO: wr cursor & next-prev page key
                 //GUI.canv.DrawFilledRectangle(Color.Black,

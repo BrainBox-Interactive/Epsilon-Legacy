@@ -106,7 +106,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 Color.LightGray,
                 Color.LightGray,
                 "Settings",
-                delegate() { Remove(); }
+                delegate() { Remove(); }, this
             );
             picture = new(
                 x, y, new Bitmap(Files.RawDefaultPFP),
@@ -126,7 +126,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                         });
                     spawned = true;
                     Remove();
-                }
+                }, this
             );
 
             notepad = new(x + bsx + 8,
