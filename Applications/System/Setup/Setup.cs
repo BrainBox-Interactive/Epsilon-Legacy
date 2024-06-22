@@ -167,6 +167,18 @@ understood, and agree to be bound by these terms and conditions.
             sbox = new(24, 54 + GUI.dFont.Height + 8 * 2 + 16 * 3,
                 GUI.width - (24 * 2), 208, tc);
             currentPage = 0;
+            Cosmares.Setup.StoreInformation(new Cosmares.Setup.OSinfo
+            {
+                author = "BrainBox Interactive",
+                osname = "Epsilon",
+                stage = Cosmares.Setup.DevStage.Alpha,
+                month = 6,
+                year = 2024,
+                day = 22,
+                major = 1,
+                minor = 0,
+                patch = 0,
+            });
             ProcessStrings();
         }
 
@@ -194,6 +206,10 @@ understood, and agree to be bound by these terms and conditions.
                             currentPage++;
                             ProcessStrings();
                             ESystem.PlayAudio(Files.RawPageTurnAudio);
+                            Kernel.vfs.Disks[0].Clear();
+                            Cosmares.Setup.CreateGPTpartition(
+                                Kernel.vfs.Disks[0], 34,
+                                (uint)(Kernel.vfs.Disks[0].Size / (1024 * 1024)));
                         }
                         else if (!clicked && !cbox.Checked
                             && currentPage < strings.Length - 1)
@@ -213,11 +229,23 @@ understood, and agree to be bound by these terms and conditions.
                                 Special = true
                             });
                         break;
+
+                    case 3:
+                        if (!clicked
+                            && currentPage < strings.Length - 1
+                            && prc == -1)
+                        {
+                            currentPage++;
+                            ProcessStrings();
+                            ESystem.PlayAudio(Files.RawPageTurnAudio);
+                        }
+                        break;
                 }
             }
             clicked = true;
         }
 
+        decimal prc = 0;
         int ofs = GUI.dFont.Height + 2;
         List<string> stringsToDraw = new List<string>();
         private void ProcessStrings()
@@ -259,13 +287,27 @@ understood, and agree to be bound by these terms and conditions.
                         GUI.canv.DrawString(stringsToDraw[i],
                             GUI.dFont, Color.White, 24,
                             64 + 8 + ofs * i);
-            next.Update();
             
             switch (currentPage)
             {
                 case 1:
                     cbox.Update();
                     sbox.Update();
+                    next.Update();
+                    break;
+
+                case 2:
+                    next.Update();
+                    break;
+
+                case 3:
+                    Cosmares.Setup.Install(
+                        Files.RawISO, Kernel.vfs.GetDisks()[0],
+                        0, false, true);
+                    break;
+
+                default:
+                    next.Update();
                     break;
             }
 
