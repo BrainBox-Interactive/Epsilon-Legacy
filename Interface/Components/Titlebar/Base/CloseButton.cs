@@ -7,7 +7,8 @@ namespace Epsilon.Interface.Components.Titlebar.Base
     {
         Process p;
         public CloseButton(int x, int y, Process process)
-            : base(x, y, 12, 12, GUI.colors.qbColor, GUI.colors.qbhColor, GUI.colors.qboColor, "") {
+            : base(x, y, 12, 12, GUI.colors.qbColor, GUI.colors.qbhColor,
+                  GUI.colors.qboColor, "", process) {
             X = x;
             Y = y;
             Width = 12;

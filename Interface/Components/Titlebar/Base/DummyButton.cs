@@ -8,7 +8,8 @@ namespace Epsilon.Interface.Components.Titlebar.Base
     {
         Process p;
         public DummyButton(int x, int y, Process process)
-            : base(x, y, 12, 12, Color.Gray, Color.LightGray, Color.DarkGray, "") {
+            : base(x, y, 12, 12, Color.Gray, Color.LightGray,
+                  Color.DarkGray, "", process) {
             X = x;
             Y = y;
             Width = 12;

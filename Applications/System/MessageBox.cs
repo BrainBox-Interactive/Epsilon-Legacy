@@ -28,7 +28,8 @@ namespace Epsilon.Applications.System
                 GUI.colors.btColor,
                 GUI.colors.bthColor,
                 GUI.colors.btcColor,
-                "OK", delegate() { Remove(); }
+                "OK", this,
+                delegate() { Remove(); }
             );
 
             this.w.StartAPI(this);

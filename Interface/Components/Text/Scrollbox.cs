@@ -37,7 +37,7 @@ namespace Epsilon.Interface.Components.Text
 
             temp = Content.Split('\n')
                 .ToList();
-            up = new(x + width - 24, y, 24, 24,
+            up = new(x + width - 16, y, 16, 16,
                 GUI.colors.btColor, GUI.colors.bthColor,
                 GUI.colors.btcColor, "/\\", p,
                 delegate () {
@@ -48,7 +48,7 @@ namespace Epsilon.Interface.Components.Text
                     }
                     clicked = true;
                 });
-            down = new(x + width - 24, y + height - 24,
+            down = new(x + width - 16, y + height - 16,
                 16, 16, GUI.colors.btColor, GUI.colors.bthColor,
                 GUI.colors.btcColor, "\\/", p,
                 delegate () {
@@ -78,7 +78,6 @@ namespace Epsilon.Interface.Components.Text
             {
                 if (line >= lPerSect) break;
                 string s = temp[i];
-                if (string.IsNullOrEmpty(s)) continue;
                 foreach (char c in s)
                     if (!AcceptedCharacters.Contains(c))
                         s = s.Replace(c, ' ');
@@ -99,23 +98,28 @@ namespace Epsilon.Interface.Components.Text
                 Width, Height);
 
             GUI.canv.DrawFilledRectangle(Color.Gray,
-                X + Width - 24, Y + up.Height, 24, Height - up.Height - down.Height);
-            GUI.canv.DrawLine(Color.Black, X + Width - 24, Y + up.Height,
-                X + Width - 24, Y + up.Height + Height - down.Height);
-            up.X = X + Width - 24; up.Y = Y;
+                X + Width - 16, Y + up.Height, 16, Height - up.Height - down.Height);
+            GUI.canv.DrawLine(Color.Black, X + Width - 16, Y + up.Height,
+                X + Width - 16, Y + up.Height + Height - down.Height);
+            up.X = X + Width - 16; up.Y = Y;
             up.Update();
-            down.X = X + Width - 24; down.Y = Y + Height - 24;
+            down.X = X + Width - 16; down.Y = Y + Height - 16;
             down.Update();
 
-            GUI.canv.DrawString("Page " + (cSect + 1).ToString(),
-                GUI.dFont, Color.White, X, Y + Height + 4);
+            if (isFocused && Editable
+                && cSect == temp.Count / lPerSect)
+                GUI.canv.DrawString(
+                    "Page " + (cSect + 1).ToString() + " - Writing",
+                    GUI.dFont, Color.White, X, Y + Height + 4);
+            else GUI.canv.DrawString("Page " + (cSect + 1).ToString(),
+                    GUI.dFont, Color.White, X, Y + Height + 4);
 
             if (MouseManager.MouseState == MouseState.Left
                 && !GUI.clicked && isFocused && !CheckHover())
                 isFocused = false;
 
-            if (CheckHover()
-                && !Manager.IsFrontTU(Process))
+            if (CheckHover() && isFocused
+                && Editable && !Manager.IsFrontTU(Process))
             {
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.wc;
@@ -127,48 +131,56 @@ namespace Epsilon.Interface.Components.Text
 
             if (isFocused && Editable)
             {
-                DrawBlinkingCursor();
-                if (!isPressed && Kernel.IsKeyPressed)
+                // TODO: wr cursor & next-prev page key
+                //GUI.canv.DrawFilledRectangle(Color.Black,
+                //    X + (temp[temp.Count - 1].Length * GUI.dFont.Width) + GUI.dFont.Width + 2,
+                //    Y + ofs * stringsToDraw.Count * GUI.dFont.Height,// - (GUI.dFont.Height / 2),
+                //    1, GUI.dFont.Height);
+
+                if (!isPressed && Kernel.IsKeyPressed
+                    && cSect == temp.Count / (lPerSect + 1))
+                {
                     if (Kernel.k.Key == ConsoleKeyEx.Backspace
                         && Content.Length > 0)
+                    {
                         Content = Content.Substring(0, Content.Length - 1);
+                        temp = Content.Split('\n')
+                            .ToList();
+                        //if (temp.Count < lPerSect * (cSect-1)
+                        //    && cSect > 0) cSect--;
+                    }
                     else if (Kernel.k.Key == ConsoleKeyEx.Tab
                         && (Content.Length * GUI.dFont.Width) < (Width - (GUI.dFont.Width * 2)))
                         Content += "    ";
-                    //else if (Kernel.k.Key == ConsoleKeyEx.Enter)
-                    //Content += '\n';
+                    else if (Kernel.k.Key == ConsoleKeyEx.Enter)
+                    {
+                        Content += '\n';
+                        temp = Content.Split('\n')
+                            .ToList();
+                        //if ((cSect + 1) * lPerSect < (temp.Count - 1)) cSect++;
+                    }
                     else if (Kernel.k.Key != ConsoleKeyEx.Backspace && Kernel.k.Key != ConsoleKeyEx.Enter
-                        && Content.Length > -1 && (Content.Length * GUI.dFont.Width) < (Width - GUI.dFont.Width * 2))
-                        if ((int)Kernel.k.KeyChar >= 32
-                            && (int)Kernel.k.KeyChar <= 127)
+                        && Content.Length > -1
+                        && (temp[temp.Count - 1].Length * GUI.dFont.Width) < ((Width - 16) - GUI.dFont.Width * 2))
+                        if (Kernel.k.KeyChar >= 32
+                            && Kernel.k.KeyChar <= 127)
                             Content += Kernel.k.KeyChar;
+                    temp = Content.Split('\n')
+                        .ToList();
+                    ProcessStrings();
+                }
             } isPressed = Kernel.IsKeyPressed;
 
             for (int i = 0; i < stringsToDraw.Count; i++)
-                if (!string.IsNullOrWhiteSpace(stringsToDraw[i]))
                     GUI.canv.DrawString(stringsToDraw[i],
                         GUI.dFont, Color.Black, X + 8,
                         Y - 12 + ofs * i);
         }
 
-        public void DrawBlinkingCursor()
-        {
-            //if (timer < 5000)
-            //    GUI.canv.DrawFilledRectangle(TextColor, X + 8 + GUI.dFont.Width * Content.Length,
-            //        Y + Height / 2 - GUI.dFont.Height / 2, 1, GUI.dFont.Height);
-            //else if (timer >= 10000) timer = 0;
-            //timer++;
-
-            // TODO: make it actually BLINK
-            GUI.canv.DrawFilledRectangle(GUI.colors.txtColor,
-                X + 8 + GUI.dFont.Width * Content.Length,
-                Y + Height / 2 - GUI.dFont.Height / 2, 1, GUI.dFont.Height);
-        }
-
         public override bool CheckHover()
         {
             if (GUI.mx >= X
-                && GUI.mx <= X + Width
+                && GUI.mx <= X + Width - 16
                 && GUI.my >= Y
                 && GUI.my <= Y + Height)
                 return true;
