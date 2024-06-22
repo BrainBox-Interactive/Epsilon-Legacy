@@ -4,7 +4,7 @@ namespace Epsilon.Interface.System
 {
     public class Colors
     {
-        public Color mColor = Color.FromArgb(255, 50, 50, 50);
+        public Color mColor = Color.FromArgb(255, 65, 65, 65);
         public Color moColor = Color.FromArgb(255, 35, 35, 35);
         public Color mooColor = Color.FromArgb(255, 10, 10, 10);
         public Color tbColor = Color.FromArgb(255, 40, 40, 40);

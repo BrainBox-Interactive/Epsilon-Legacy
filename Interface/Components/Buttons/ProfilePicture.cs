@@ -35,10 +35,10 @@ namespace Epsilon.Interface.Components.Buttons
             if (CheckHover()
                 && !Manager.IsFrontTU(Process))
             {
-                GUI.canv.DrawRectangle(
-                    Color.DarkGray,
-                    X, Y, Width, Height
-                );
+                //GUI.canv.DrawRectangle(
+                //    Color.DarkGray,
+                //    X, Y, Width, Height
+                //);
 
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.hc;

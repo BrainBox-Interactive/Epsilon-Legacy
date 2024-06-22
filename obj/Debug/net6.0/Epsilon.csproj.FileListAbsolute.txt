@@ -55,3 +55,7 @@ C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\But
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons\CB_hover.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons\CB_click.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Cursors\Write.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\Alpha-2.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_click.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_hover.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_idle.bmp

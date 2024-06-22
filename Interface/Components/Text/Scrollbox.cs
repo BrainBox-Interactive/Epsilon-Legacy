@@ -77,18 +77,14 @@ namespace Epsilon.Interface.Components.Text
             for (int i = lPerSect * cSect; i < temp.Count; i++)
             {
                 if (line >= lPerSect) break;
-                string s = temp[i];
-                foreach (char c in s)
-                    if (!AcceptedCharacters.Contains(c))
-                        s = s.Replace(c, ' ');
-                temp[i] = s;
-                stringsToDraw.Add(s);
+                stringsToDraw.Add(temp[i]);
                 line++;
             }
         }
 
         bool isFocused = false,
             isPressed = false;
+        public string state = string.Empty;
         public override void Update()
         {
             base.Update();
@@ -107,12 +103,15 @@ namespace Epsilon.Interface.Components.Text
             down.Update();
 
             if (isFocused && Editable
-                && cSect == temp.Count / lPerSect)
-                GUI.canv.DrawString(
-                    "Page " + (cSect + 1).ToString() + " - Writing",
-                    GUI.dFont, Color.White, X, Y + Height + 4);
-            else GUI.canv.DrawString("Page " + (cSect + 1).ToString(),
-                    GUI.dFont, Color.White, X, Y + Height + 4);
+                && cSect == temp.Count / (lPerSect + 1)
+                && !Manager.IsFrontTU(Process))
+                //GUI.canv.DrawString(
+                //    "Page " + (cSect + 1).ToString() + " - Writing",
+                //    GUI.dFont, Color.White, X, Y + Height + 4);
+                state = "Page " + (cSect + 1).ToString() + " - Writing";
+            else state = "Page " + (cSect + 1).ToString();
+            GUI.canv.DrawString(state, GUI.dFont,
+                Color.White, X + 8, Y + Height + 4);
 
             if (MouseManager.MouseState == MouseState.Left
                 && !GUI.clicked && isFocused && !CheckHover())
@@ -132,11 +131,12 @@ namespace Epsilon.Interface.Components.Text
             if (isFocused && Editable
                 && !Manager.IsFrontTU(Process))
             {
-                // TODO: wr cursor & next-prev page key
-                //GUI.canv.DrawFilledRectangle(Color.Black,
-                //    X + (temp[temp.Count - 1].Length * GUI.dFont.Width) + GUI.dFont.Width + 2,
-                //    Y + ofs * stringsToDraw.Count * GUI.dFont.Height,// - (GUI.dFont.Height / 2),
-                //    1, GUI.dFont.Height);
+                // TODO: next-prev page key input block
+                GUI.canv.DrawLine(Color.Black,
+                    X + (temp[temp.Count - 1].Length * GUI.dFont.Width) + GUI.dFont.Width + 1,
+                    Y + ofs * (stringsToDraw.Count - 1) - GUI.dFont.Height + 4,
+                    X + (temp[temp.Count - 1].Length * GUI.dFont.Width) + GUI.dFont.Width + 1,
+                    Y + ofs * (stringsToDraw.Count - 1) + 2);
 
                 if (!isPressed && Kernel.IsKeyPressed
                     && cSect == temp.Count / (lPerSect + 1))
@@ -144,17 +144,19 @@ namespace Epsilon.Interface.Components.Text
                     if (Kernel.k.Key == ConsoleKeyEx.Backspace
                         && Content.Length > 0)
                     {
+                        //if (temp[temp.Count - 1].Length + Content.Split('\n').Count() < 1) cSect--;
                         Content = Content.Substring(0, Content.Length - 1);
                         temp = Content.Split('\n')
                             .ToList();
-                        //if (temp.Count < lPerSect * (cSect-1)
-                        //    && cSect > 0) cSect--;
+                        //if (temp.Count > ())
                     }
                     else if (Kernel.k.Key == ConsoleKeyEx.Tab
                         && (Content.Length * GUI.dFont.Width) < (Width - (GUI.dFont.Width * 2)))
                         Content += "    ";
                     else if (Kernel.k.Key == ConsoleKeyEx.Enter)
                     {
+                        if (temp.Count >= lPerSect * (cSect + 1) + (cSect == 0 ? 0 : cSect + 1))
+                            cSect++;
                         Content += '\n';
                         temp = Content.Split('\n')
                             .ToList();
@@ -166,6 +168,10 @@ namespace Epsilon.Interface.Components.Text
                         if (Kernel.k.KeyChar >= 32
                             && Kernel.k.KeyChar <= 127)
                             Content += Kernel.k.KeyChar;
+                    else if (Kernel.k.Key != ConsoleKeyEx.Backspace && Kernel.k.Key != ConsoleKeyEx.Enter
+                        && Content.Length > -1
+                        && (temp[temp.Count - 1].Length * GUI.dFont.Width) >= ((Width - 16) - GUI.dFont.Width * 2))
+                            Content += '\n' + Kernel.k.KeyChar;
                     temp = Content.Split('\n')
                         .ToList();
                     ProcessStrings();
@@ -187,12 +193,17 @@ namespace Epsilon.Interface.Components.Text
                 return true;
             return false;
         }
-
+        
         public override void OnClick(int mIndex)
         {
             base.OnClick(mIndex);
             if (mIndex == 0)
-                if (CheckHover()) isFocused = true;
+                if (CheckHover())
+                {
+                    isFocused = true;
+                    cSect = temp.Count / lPerSect;
+                    ProcessStrings();
+                }
                 else if (isFocused) isFocused = false;
         }
     }

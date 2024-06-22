@@ -1,10 +1,14 @@
-﻿using Epsilon.System.Critical.Processing;
+﻿using Cosmos.System.Graphics;
+using Epsilon.System.Critical.Processing;
+using Epsilon.System.Resources;
+using System.Drawing;
 
 namespace Epsilon.Interface.System.Shell.Screen
 {
     public class TopBar : Process
     {
         int x, y, w, h;
+
         public override void Run()
         {
             x = wData.Position.X; y = wData.Position.Y;
@@ -16,6 +20,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 x, y,
                 w, h
             );
+            //GUI.canv.DrawImage(tb, x, y);
 
             GUI.canv.DrawString(
                 "TopBar",
@@ -32,20 +37,20 @@ namespace Epsilon.Interface.System.Shell.Screen
                     && Manager.pList[i].Name != "Control Menu"
                     && (tbx + (8 * cx)) < GUI.width - Manager.pList[i].Name.Length * GUI.dFont.Width)
                 {
-                    int s = Manager.pList[i].Name.Length * GUI.dFont.Width;
-                    GUI.canv.DrawFilledRectangle(
-                        GUI.colors.tboColor,
-                        tbx + (8 * cx), y,
-                        s, h
-                    );
+                    int s = Manager.pList[i].Name.Length * GUI.dFont.Width
+                        + (int)Manager.pList[i].wData.Icon.Width;
+                    GUI.canv.DrawFilledRectangle(Color.Black,
+                        tbx + (8 * cx),
+                        y, s, h);
 
-                    GUI.canv.DrawString(
-                        Manager.pList[i].Name,
+                    GUI.canv.DrawImageAlpha(
+                        Manager.pList[i].wData.Icon, tbx + (8 * cx), y);
+                    GUI.canv.DrawString(Manager.pList[i].Name,
                         GUI.dFont,
                         GUI.colors.txtColor,
-                        tbx + (8 * cx), y
-                    );
-                    tbx += Manager.pList[i].Name.Length * GUI.dFont.Width;
+                        tbx + (8 * cx) + (int)Manager.pList[i].wData.Icon.Width,
+                        y);
+                    tbx += s;
                     cx++;
                 }
             }

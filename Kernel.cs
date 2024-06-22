@@ -10,6 +10,8 @@ using Epsilon.System.Critical;
 using Cosmos.System;
 using Console = System.Console;
 using Epsilon.System.Resources;
+using System.Drawing;
+using Epsilon.Interface;
 
 namespace Epsilon
 {
@@ -84,11 +86,19 @@ namespace Epsilon
                 }
                 catch (Exception ex)
                 {
-                    if (!VMTools.IsVirtualBox) Interface.GUI.canv.Disable();
                     Manager.pList.Clear();
                     Heap.Collect();
-                    Crash.Message(ex);
-                    if (!VMTools.IsVirtualBox) isGUI = false;
+                    Manager.Start(new ErrorHandler
+                    {
+                        wData = new WindowData
+                        {
+                            Position = new Rectangle(0, 0, (int)GUI.width, (int)GUI.height),
+                            Moveable = false
+                        },
+                        Name = "Error Handler",
+                        Special = true,
+                        Message = ex.ToString()
+                    });
                 }
             else
             {

@@ -2,6 +2,7 @@
 using Epsilon.Interface.System.Shell.Screen;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace Epsilon.System.Critical.Processing
         public static Process toUpdate;
 
         public static List<Process> spList
+            = new List<Process>();
+        static List<Process> importantPList
             = new List<Process>();
         public static void Update()
         {
@@ -35,11 +38,16 @@ namespace Epsilon.System.Critical.Processing
             else toUpdate = null;
             foreach (Process sp in spList)
                 sp.Run();
+            foreach (Process p in importantPList)
+                p.Run();
         }
 
         public static void Start(Process p)
         {
-            pList.Add(p);
+            if (p.Name == "Control Bar"
+                || p.Name == "Top Bar")
+                importantPList.Add(p);
+            else pList.Add(p);
             toUpdate = p;
             p.Start();
         }
@@ -57,7 +65,8 @@ namespace Epsilon.System.Critical.Processing
 
         public static bool IsFrontTU(Process p)
         {
-            if (toUpdate == p) return false;
+            if (toUpdate == p
+                || toUpdate == null) return false;
             if (GUI.mx >= toUpdate.wData.Position.X
                 && GUI.mx <= toUpdate.wData.Position.X + toUpdate.wData.Position.Width
                 && GUI.my >= toUpdate.wData.Position.Y

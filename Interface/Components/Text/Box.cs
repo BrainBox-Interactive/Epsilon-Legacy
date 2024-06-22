@@ -36,7 +36,7 @@ namespace Epsilon.Interface.Components.Text
             Process = p;
         }
 
-        bool isFocused = false,
+        public bool isFocused = false,
             isPressed = false;
         public override void Update()
         {

@@ -11,7 +11,16 @@ pencil for highlight cursor graphic (thank you notice,)
 - login screen, accounts, check for existing file (Login Details file) (V)
 - menu buttons (shutdown, restart, programs, etc...) (V)
 - prototype setup (V)
-- overhaul notepad (~)
+- overhaul notepad (V)
+- limine wp (V)
+- boot screen (~)
+- error / crash handler (V)
+- save notepad file (~)
+- basic tmanager
+- terminal
+- advanced tmanager (graphs?)
+- file manager
+- image viewer
 
 Minimum:
 43 MB of memory

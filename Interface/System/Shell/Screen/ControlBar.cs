@@ -1,6 +1,7 @@
 ﻿using Cosmos.System;
 using Cosmos.System.Graphics;
 using Epsilon.Applications.System;
+using Epsilon.Interface.Components;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
@@ -11,63 +12,65 @@ using Console = System.Console;
 
 namespace Epsilon.Interface.System.Shell.Screen
 {
-    public class ControlBar : Process
+    public class ControlButton : Component
     {
-        ControlMenu cMenu;
         Bitmap curImage;
         Bitmap idleCB = new(Files.RawIdleCButton),
             hoverCB = new(Files.RawHoverCButton),
             clickCB = new(Files.RawClickCButton);
+        ControlMenu cMenu;
+        Process Process { get; set; }
         bool clicked = false;
 
-        int x, y, w, h;
-        public override void Run()
+        public ControlButton(int x, int y, Process p) : base(x, y,
+            (int)new Bitmap(Files.RawIdleCButton).Width,
+            (int)new Bitmap(Files.RawIdleCButton).Height)
         {
-            x = wData.Position.X; y = wData.Position.Y;
-            w = wData.Position.Width; h = wData.Position.Height;
-            GUI.canv.DrawLine(GUI.colors.mooColor,
-                x, y - 1, x + w, y - 1);
-            GUI.canv.DrawFilledRectangle(
-                GUI.colors.bColor, x, y, w, h);
+            Process = p;
+            X = x; Y = y;
+        }
 
-            if (GUI.mx >= wData.Position.X - 3 + 11
-                && GUI.mx <= wData.Position.X - 3 + (11 + 41))
+        public override void Update()
+        {
+            base.Update();
+            if (CheckHover())
             {
-                if (GUI.my >= wData.Position.Y - 17 + 11
-                    && GUI.my <= wData.Position.Y - 17 + (11 + 41))
-                {
-                    GUI.crsChanged = true;
-                    GUI.crs = ESystem.hc;
-                    if (curImage != hoverCB) curImage = hoverCB;
+                GUI.crsChanged = true;
+                GUI.crs = ESystem.hc;
+                if (curImage != hoverCB) curImage = hoverCB;
 
-                    if (MouseManager.MouseState == MouseState.Left)
+                if (MouseManager.MouseState == MouseState.Left)
+                {
+                    if (curImage != clickCB) curImage = clickCB;
+                    if (!clicked && !GUI.clicked
+                        && !Manager.IsRunning("Control Menu"))
                     {
-                        if (curImage != clickCB) curImage = clickCB;
-                        if (!clicked && !GUI.clicked)
+                        Manager.Start(cMenu = new ControlMenu
                         {
-                            Manager.Start(cMenu = new ControlMenu
+                            wData = new WindowData
                             {
-                                wData = new WindowData
-                                {
-                                    Moveable = false,
-                                    Position = new Rectangle(
-                                        0,
-                                        GUI.height - (32 + 460),
-                                        350,
-                                        450
-                                    )
-                                },
-                                Name = "Control Menu",
-                                Special = true
-                            });
-                            clicked = true;
-                        }
+                                Moveable = false,
+                                Position = new Rectangle(
+                                    0,
+                                    GUI.height - (32 + 450),
+                                    350,
+                                    450
+                                )
+                            },
+                            Name = "Control Menu",
+                            Special = false
+                        });
+                        clicked = true;
                     }
-                } else {
+                }
+                else
+                {
                     if (curImage != idleCB) curImage = idleCB;
                     if (GUI.crsChanged) GUI.crsChanged = false;
                 }
-            } else {
+            }
+            else
+            {
                 if (curImage != idleCB) curImage = idleCB;
                 if (GUI.crsChanged) GUI.crsChanged = false;
             }
@@ -76,13 +79,41 @@ namespace Epsilon.Interface.System.Shell.Screen
                 clicked = false;
 
             // Menu Button
-            GUI.canv.DrawImageAlpha(
-                curImage, wData.Position.X - 3,
-                wData.Position.Y - 17
-            );
+            GUI.canv.DrawImageAlpha(curImage, X, Y);
+        }
 
-            // CLASS DONE
-            // Control Bar class, 2024
+        public override bool CheckHover()
+        {
+            if (GUI.mx >= X + 11
+                && GUI.mx <= X + Width - 11
+                && GUI.my >= Y + 11
+                && GUI.my <= Y + Height - 11)
+                return true;
+            return false;
+        }
+    }
+
+    public class ControlBar : Process
+    {
+        int x, y, w, h;
+        ControlButton c;
+
+        public override void Start()
+        {
+            base.Start();
+            c = new ControlButton(x, y, this);
+        }
+
+        public override void Run()
+        {
+            x = wData.Position.X; y = wData.Position.Y;
+            w = wData.Position.Width; h = wData.Position.Height;
+            GUI.canv.DrawLine(GUI.colors.mooColor,
+                x, y - 1, x + w, y - 1);
+            GUI.canv.DrawFilledRectangle(
+                GUI.colors.bColor, x, y, w, h);
+            c.X = x + 3; c.Y = y - 17;
+            c.Update();
         }
     }
 }

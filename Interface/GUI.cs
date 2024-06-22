@@ -10,6 +10,7 @@ using System.IO;
 using Epsilon.Applications.System.Setup;
 using Epsilon.System.Resources;
 using Cosmos.System.Coroutines;
+using Epsilon.System.Critical;
 
 namespace Epsilon.Interface
 {
@@ -118,6 +119,7 @@ namespace Epsilon.Interface
             // DONE
         }
 
+        public static bool DrawCursor = true;
         public static void Update()
         {
             mx = (int)MouseManager.X; my = (int)MouseManager.Y;
@@ -137,18 +139,18 @@ namespace Epsilon.Interface
             //    );
             //}
 
-            //canv.DrawString("P:toUpdate", dFont, colors.txtColor, 0, dFont.Height * 12);
+            //canv.DrawString("P:toUpdate", dFont, colors.ttxtColor, 0, dFont.Height * 12);
             //if (Manager.toUpdate != null)
             //    canv.DrawString("[" + Manager.toUpdate.Name + "]",
             //        dFont,
-            //        colors.txtColor,
+            //        colors.ttxtColor,
             //        0,
             //        dFont.Height * 13
             //    );
             //else
             //    canv.DrawString("[NO PROCESS]",
             //        dFont,
-            //        colors.txtColor,
+            //        colors.ttxtColor,
             //        0,
             //        dFont.Height * 13
             //    );
@@ -173,8 +175,11 @@ namespace Epsilon.Interface
             Manager.Update();
 
             // Front layer
-            canv.DrawImageAlpha(crs, (int)MouseManager.X - 9, (int)MouseManager.Y - 9);
-            if (!crsChanged && crs != ESystem.dc) crs = ESystem.dc;
+            if (DrawCursor)
+            {
+                canv.DrawImageAlpha(crs, (int)MouseManager.X - 9, (int)MouseManager.Y - 9);
+                if (!crsChanged && crs != ESystem.dc) crs = ESystem.dc;
+            }
 
             // Conditions
             if (MouseManager.MouseState == MouseState.Left) clicked = true;

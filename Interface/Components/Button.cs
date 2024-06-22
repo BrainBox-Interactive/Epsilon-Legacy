@@ -46,8 +46,9 @@ namespace Epsilon.Interface.Components
             base.Update();
 
             GUI.canv.DrawRectangle(OutlineColor, X, Y, Width, Height);
-            if (CheckHover() && !Manager.IsFrontTU(Process))
-                if (MouseManager.MouseState == MouseState.Left)
+            if (CheckHover())
+                if (MouseManager.MouseState == MouseState.Left
+                    && !Manager.IsFrontTU(Process))
                 {
                     GUI.canv.DrawFilledRectangle(ClickColor, X + 1, Y + 1, Width - 1, Height - 1);
                     if (!GUI.clicked) OnClick(0);

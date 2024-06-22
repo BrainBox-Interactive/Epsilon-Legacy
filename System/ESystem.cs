@@ -126,6 +126,12 @@ public static class ESystem
             });
         }
 
+        SpawnBars();
+        PlayAudio(Files.RawStartupAudio);
+    }
+
+    public static void SpawnBars()
+    {
         if (Global.topBarActivated)
             Manager.Start(tBar = new TopBar
             {
@@ -149,8 +155,6 @@ public static class ESystem
                 Special = false,
                 Name = "Control Bar"
             });
-
-        PlayAudio(Files.RawStartupAudio);
     }
 
     public static void Format()
