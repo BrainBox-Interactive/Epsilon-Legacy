@@ -233,8 +233,8 @@ namespace Epsilon.Interface.System.Shell.Screen
                 || GUI.mx > x + w
                 || GUI.my < y
                 || GUI.my > y + h)
-                && !(GUI.mx >= 3 + 11
-                    && GUI.mx <= 3 + 11 + 41
+                && !(GUI.mx >= -3 + 11
+                    && GUI.mx <= -3 + 11 + 41
                     && GUI.my >= (GUI.height - 32) - 17 + 11
                     && GUI.my <= (GUI.height - 32) - 17 + (11 + 41)))
                 if (MouseManager.MouseState == MouseState.Left

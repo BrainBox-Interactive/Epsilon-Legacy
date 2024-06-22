@@ -30,8 +30,8 @@ namespace Epsilon.Interface.System.Shell.Screen
             GUI.canv.DrawFilledRectangle(
                 GUI.colors.bColor, x, y, w, h);
 
-            if (GUI.mx >= wData.Position.X + (3 + 11)
-                && GUI.mx <= wData.Position.X + (3 + 11 + 41))
+            if (GUI.mx >= wData.Position.X - 3 + 11
+                && GUI.mx <= wData.Position.X - 3 + (11 + 41))
             {
                 if (GUI.my >= wData.Position.Y - 17 + 11
                     && GUI.my <= wData.Position.Y - 17 + (11 + 41))
@@ -77,7 +77,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 
             // Menu Button
             GUI.canv.DrawImageAlpha(
-                curImage, wData.Position.X + 3,
+                curImage, wData.Position.X - 3,
                 wData.Position.Y - 17
             );
 
