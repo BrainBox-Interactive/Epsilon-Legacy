@@ -25,6 +25,11 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.MenuBanner.bmp")]
         public static byte[] RawMenuBanner;
 
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Bars.CBar.bmp")]
+        public static byte[] RawCBar;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Bars.TBar.bmp")]
+        public static byte[] RawTBar;
+
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Profile.Default.bmp")]
         public static byte[] RawDefaultPFP;
 

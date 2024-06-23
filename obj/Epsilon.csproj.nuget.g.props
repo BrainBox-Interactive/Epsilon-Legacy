@@ -13,9 +13,9 @@
     <SourceRoot Include="C:\Users\iplux\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20240622124708\build\Cosmos.Build.props" Condition="Exists('$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20240622124708\build\Cosmos.Build.props')" />
+    <Import Project="$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20240623120936\build\Cosmos.Build.props" Condition="Exists('$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20240623120936\build\Cosmos.Build.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgCosmos_Build Condition=" '$(PkgCosmos_Build)' == '' ">C:\Users\iplux\.nuget\packages\cosmos.build\0.1.0-localbuild20240622124708</PkgCosmos_Build>
+    <PkgCosmos_Build Condition=" '$(PkgCosmos_Build)' == '' ">C:\Users\iplux\.nuget\packages\cosmos.build\0.1.0-localbuild20240623120936</PkgCosmos_Build>
   </PropertyGroup>
 </Project>

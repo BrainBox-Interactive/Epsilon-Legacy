@@ -45,6 +45,8 @@
       <None Remove="System\Resources\Fonts\ter-powerline-v16n.psf" />
       <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
       <None Remove="System\Resources\Images\Bar.bmp" />
+      <None Remove="System\Resources\Images\Bars\CBar.bmp" />
+      <None Remove="System\Resources\Images\Bars\TBar.bmp" />
       <None Remove="System\Resources\Images\Buttons_o\CB_click.bmp" />
       <None Remove="System\Resources\Images\Buttons_o\CB_hover.bmp" />
       <None Remove="System\Resources\Images\Buttons_o\CB_idle.bmp" />
@@ -68,6 +70,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Include="System\Resources\Images\Bars\CBar.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Bars\TBar.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Buttons_o\CB_click.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>

@@ -17,7 +17,7 @@ namespace Epsilon.System.Critical.Processing
 
         public static List<Process> spList
             = new List<Process>();
-        static List<Process> importantPList
+        public static List<Process> importantPList
             = new List<Process>();
         public static void Update()
         {
@@ -54,6 +54,14 @@ namespace Epsilon.System.Critical.Processing
 
         public static void Stop(Process p)
             => pList.Remove(p);
+
+        public static void ClearAll()
+        {
+            toUpdate = null;
+            pList.Clear();
+            spList.Clear();
+            importantPList.Clear();
+        }
 
         public static bool IsRunning(string pName)
         {

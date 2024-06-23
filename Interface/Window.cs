@@ -1,5 +1,6 @@
 ﻿using Cosmos.System;
 using Cosmos.System.Graphics.Fonts;
+using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Titlebar.Base;
 using Epsilon.Interface.System;
 using Epsilon.System.Critical.Processing;
@@ -10,7 +11,7 @@ namespace Epsilon.Interface
     public class Window
     {
         public int tSize = 24;
-        CloseButton b_close;
+        Button b_close;
         MinButton b_1;
         InfoButton b_2;
         MaxButton b_3;
@@ -22,8 +23,18 @@ namespace Epsilon.Interface
                 b_close = new(
                     p.wData.Position.X + p.wData.Position.Width - 12,
                     p.wData.Position.Y + tSize - 24,
-                    p
+                    12, 12,
+                    GUI.colors.qbColor, GUI.colors.qbhColor,
+                    GUI.colors.qboColor,
+                    "", p, delegate()
+                    {
+                        if (GUI.cProc == null
+                            && !Manager.IsFrontTU(p))
+                            p.Remove();
+                    }
                 );
+                b_close.OutlineColor = GUI.colors.qboColor;
+
                 b_1 = new(
                     p.wData.Position.X + p.wData.Position.Width - 24,
                     p.wData.Position.Y + tSize - 12,

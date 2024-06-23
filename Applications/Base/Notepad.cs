@@ -1,7 +1,10 @@
-﻿using Epsilon.Interface;
+﻿using Epsilon.Applications.System;
+using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
+using Epsilon.System;
 using Epsilon.System.Critical.Processing;
+using System;
 using System.Drawing;
 
 namespace Epsilon.Applications.Base
@@ -29,19 +32,60 @@ namespace Epsilon.Applications.Base
 
             b = new(x, y + this.w.tSize, w - 64 * 2, ofs - 1,
                 Color.White, Color.Black, "Filepath", this);
-            s = new(x + w - 64, y + this.w.tSize, 64, ofs - 1,
+            s = new(x + w - 64, y + this.w.tSize - 1, 64, ofs,
                 GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
-                "Save", this, delegate() { });
-            o = new(x + w - 64 * 2, y + this.w.tSize, 64, ofs - 1,
+                "Save", this, delegate()
+                {
+                    try
+                    {
+                        ESystem.WriteFile(b.Content, sb.Content);
+                        Manager.Start(new MessageBox
+                        {
+                            wData =
+                            {
+                                Position = new(
+                                    GUI.width / 2 - ("File " + b.Content + " has been successfully saved.").Length / 2,
+                                    GUI.height / 2 - 60 / 2, 300, 60),
+                                Icon = wData.Icon,
+                                Moveable = true
+                            },
+                            Content = "File " + b.Content + " has been successfully saved.",
+                            Name = "Saved",
+                            Special = false,
+                            Button = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        Manager.Start(new MessageBox
+                        {
+                            wData =
+                            {
+                                Position = new(
+                                    GUI.width / 2 - ex.ToString().Length / 2,
+                                    GUI.height / 2 - 60 / 2, 300, 60),
+                                Icon = wData.Icon,
+                                Moveable = true
+                            },
+                            Content = ex.ToString(),
+                            Name = "Error",
+                            Special = false,
+                            Button = true
+                        });
+                    }
+                });
+            o = new(x + w - 64 * 2, y + this.w.tSize - 1, 64, ofs,
                 GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
-                "Open", this, delegate () { });
+                "Open", this, delegate () {
+                    sb.Content = ESystem.ReadFile(b.Content);
+                });
 
             this.w.StartAPI(this);
         }
 
         public override void Run()
         {
-            w.DrawB(this);
+            w.DrawB(this); w.DrawT(this);
 
             GUI.canv.DrawRectangle(
                 GUI.colors.tboColor, wData.Position.X - 1,
@@ -59,8 +103,12 @@ namespace Epsilon.Applications.Base
             b.X = wData.Position.X;
             b.Y = wData.Position.Y + w.tSize;
             b.Update();
-
-            w.DrawT(this);
+            s.X = wData.Position.X + wData.Position.Width - 64;
+            s.Y = wData.Position.Y + w.tSize - 1;
+            s.Update();
+            o.X = wData.Position.X + wData.Position.Width - 64 * 2;
+            o.Y = wData.Position.Y + w.tSize - 1;
+            o.Update();
         }
     }
 }

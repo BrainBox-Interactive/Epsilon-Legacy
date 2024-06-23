@@ -97,11 +97,13 @@ namespace Epsilon.Interface.System.Shell.Screen
     {
         int x, y, w, h;
         ControlButton c;
+        Bitmap cBar = new(Files.RawCBar);
 
         public override void Start()
         {
             base.Start();
             c = new ControlButton(x, y, this);
+            cBar.Resize((uint)GUI.width, 32);
         }
 
         public override void Run()
@@ -112,6 +114,8 @@ namespace Epsilon.Interface.System.Shell.Screen
                 x, y - 1, x + w, y - 1);
             GUI.canv.DrawFilledRectangle(
                 GUI.colors.bColor, x, y, w, h);
+            //GUI.canv.DrawImageAlpha(cBar, x, y);
+            //GUI.canv.DrawImage(cBar, x, y);
             c.X = x + 3; c.Y = y - 17;
             c.Update();
         }

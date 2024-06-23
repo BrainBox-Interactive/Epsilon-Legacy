@@ -13,13 +13,15 @@ pencil for highlight cursor graphic (thank you notice,)
 - prototype setup (V)
 - overhaul notepad (V)
 - limine wp (V)
-- boot screen (~)
 - error / crash handler (V)
-- save notepad file (~)
-- basic tmanager
+- save notepad file (V)
+- basic tmanager (~)
+- limit / confine window dragging
+- performance mode (ex: disable images on bars, etc...)
 - terminal
 - advanced tmanager (graphs?)
 - file manager
+- boot screen
 - image viewer
 
 Minimum:

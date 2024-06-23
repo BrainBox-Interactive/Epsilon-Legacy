@@ -125,6 +125,9 @@ namespace Epsilon.Interface
             mx = (int)MouseManager.X; my = (int)MouseManager.Y;
 
             // Back layer
+            //canv.DrawFilledRectangle(Color.DarkGray, 0, 0, width, height);
+            //canv.DrawImage(wp, (int)(width / 2 - wp.Width / 2),
+            //    (int)(height / 2 - wp.Height / 2));
             canv.DrawImage(wp, 0, 0);
 
             // Debug, draw string with all processes name

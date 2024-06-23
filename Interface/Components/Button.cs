@@ -41,6 +41,7 @@ namespace Epsilon.Interface.Components
 
         public static void Dummy() { }
 
+        bool clicked = false;
         public override void Update()
         {
             base.Update();
@@ -51,10 +52,17 @@ namespace Epsilon.Interface.Components
                     && !Manager.IsFrontTU(Process))
                 {
                     GUI.canv.DrawFilledRectangle(ClickColor, X + 1, Y + 1, Width - 1, Height - 1);
-                    if (!GUI.clicked) OnClick(0);
+                    if (!clicked) clicked = true;
                 }
                 else GUI.canv.DrawFilledRectangle(HoverColor, X + 1, Y + 1, Width - 1, Height - 1);
             else GUI.canv.DrawFilledRectangle(NormalColor, X + 1, Y + 1, Width - 1, Height - 1);
+
+            if (MouseManager.MouseState == MouseState.None
+                && clicked)
+            {
+                OnClick(0);
+                clicked = false;
+            }
 
             GUI.canv.DrawString(Content, GUI.dFont, GUI.colors.btxtColor,
                 X + (Width / 2 - GUI.dFont.Width * Content.Length / 2),

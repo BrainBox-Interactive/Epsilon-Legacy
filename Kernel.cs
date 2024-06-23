@@ -86,7 +86,7 @@ namespace Epsilon
                 }
                 catch (Exception ex)
                 {
-                    Manager.pList.Clear();
+                    Manager.ClearAll();
                     Heap.Collect();
                     Manager.Start(new ErrorHandler
                     {
@@ -108,7 +108,7 @@ namespace Epsilon
                 Commands.Run(input);
             }
 
-            if (lastHCol >= 50)
+            if (lastHCol >= 13)
             {
                 Heap.Collect();
                 lastHCol = 0;

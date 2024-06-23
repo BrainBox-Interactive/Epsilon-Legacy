@@ -91,7 +91,6 @@ namespace Epsilon.Interface.System.Shell.Screen
         Hyperlink settings;
         ProfilePicture picture;
         Button notepad, calculator;
-        Bitmap banner = new(Files.RawMenuBanner);
         bool spawned = false;
 
         public override void Start()
@@ -196,12 +195,12 @@ namespace Epsilon.Interface.System.Shell.Screen
             );
 
             GUI.canv.DrawImage(
-                banner, x, y + mts
+                ESystem.banner, x, y + mts
             );
             GUI.canv.DrawLine(GUI.colors.moColor,
-                x + (int)banner.Width, y + mts,
-                x + (int)banner.Width,
-                y + mts + (int)banner.Height);
+                x + (int)ESystem.banner.Width, y + mts,
+                x + (int)ESystem.banner.Width,
+                y + mts + (int)ESystem.banner.Height);
             GUI.canv.DrawLine(GUI.colors.mooColor,
                 x, y + mts, x + w, y + mts);
 

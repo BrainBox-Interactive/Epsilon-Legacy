@@ -59,3 +59,5 @@ C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wal
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_click.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_hover.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_idle.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Bars\CBar.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Bars\TBar.bmp

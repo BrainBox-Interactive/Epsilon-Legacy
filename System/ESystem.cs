@@ -28,6 +28,7 @@ public static class ESystem
     public static Bitmap dc = new Bitmap(Files.RawDefaultCursor),
         hc = new Bitmap(Files.RawHandCursor),
         wc = new Bitmap(Files.RawWriteCursor);
+    public static Bitmap banner = new(Files.RawMenuBanner);
 
     public static string Drive = "0:\\",
         SystemPath = Drive + "Epsilon\\",
@@ -79,9 +80,32 @@ public static class ESystem
         }
     }
 
+    public static void WriteFile(string path, string? contents)
+    {
+        // hack that should be figured out later
+        if (!VMTools.IsVirtualBox)
+        {
+            Log.Info("Writing file: " + path);
+            File.WriteAllText(path, contents);
+        }
+    }
+
+    public static string? ReadFile(string path)
+    {
+        // hack that should be figured out later
+        if (!VMTools.IsVirtualBox)
+        {
+            Log.Info("Reading file: " + path);
+            return File.ReadAllText(path);
+        }
+        return null;
+    }
+
     private static void SetUpImages()
     {
-        GUI.wp = new Bitmap(Files.RawAlphaWallpaper);
+        Bitmap wp = new Bitmap(Files.RawAlphaWallpaper);
+        wp.Resize((uint)GUI.width, (uint)GUI.height);
+        GUI.wp = wp;
         GUI.crs = new Bitmap(Files.RawDefaultCursor);
     }
 

@@ -7,7 +7,14 @@ namespace Epsilon.Interface.System.Shell.Screen
 {
     public class TopBar : Process
     {
+        Bitmap tb = new Bitmap(Files.RawTBar);
         int x, y, w, h;
+
+        public override void Start()
+        {
+            base.Start();
+            tb.Resize((uint)GUI.width, 24);
+        }
 
         public override void Run()
         {
