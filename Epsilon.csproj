@@ -1,12 +1,37 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project InitialTargets="GetVersion" Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <!--<RuntimeIdentifier>cosmos</RuntimeIdentifier>-->
         <Platform>cosmos</Platform>
         <SupportsX86Intrinsics>false</SupportsX86Intrinsics>
+      <DefineConstants>TRACE;NOASYNC</DefineConstants>
         <SelfContained>True</SelfContained>
     </PropertyGroup>
+
+  <!-- AuraOS, thank you -->
+    <PropertyGroup>
+      <Year>$([System.DateTime]::Now.ToString("yyyy"))</Year>
+      <Month>$([System.DateTime]::Now.ToString("MM"))</Month>
+      <Day>$([System.DateTime]::Now.ToString("dd"))</Day>
+      <Time>$([System.DateTime]::Now.ToString("HHmm"))</Time>
+      <Lines>
+        <![CDATA[
+          namespace Epsilon.Properties
+          {
+            public class VersionInfo
+            {
+                public static string revision = "$(Day)$(Month)$(Year)[$(Time)]"%3b
+            }
+          }
+          ]]>
+      </Lines>
+      <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+  <Target Name="GetVersion">
+    <WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(Lines)" Overwrite="true" />
+  </Target>
 
     <PropertyGroup>
         <EnableGDB>False</EnableGDB>
@@ -25,7 +50,7 @@
         <CompileVBEMultiboot>False</CompileVBEMultiboot>
         <OptimizationLevel>1</OptimizationLevel>
         <VBEResolution>800x600x32</VBEResolution>
-        <Timeout>5</Timeout>
+        <Timeout></Timeout>
     </PropertyGroup>
 
     <ItemGroup>
@@ -41,6 +66,8 @@
       <None Remove="System\Resources\Audio\Error.wav" />
       <None Remove="System\Resources\Audio\Shutdown.wav" />
       <None Remove="System\Resources\Audio\Startup.wav" />
+      <None Remove="System\Resources\Audio\Startup_o.wav" />
+      <None Remove="System\Resources\Audio\Warning.wav" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
       <None Remove="System\Resources\Fonts\ter-powerline-v16n.psf" />
       <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
@@ -55,6 +82,9 @@
       <None Remove="System\Resources\Images\Buttons\CB_idle.bmp" />
       <None Remove="System\Resources\Images\Cursors\Default.bmp" />
       <None Remove="System\Resources\Images\Cursors\Hand.bmp" />
+      <None Remove="System\Resources\Images\Cursors\Move.bmp" />
+      <None Remove="System\Resources\Images\Cursors\Move.png" />
+      <None Remove="System\Resources\Images\Cursors\Moving.bmp" />
       <None Remove="System\Resources\Images\Cursors\Write.bmp" />
       <None Remove="System\Resources\Images\Icons\Default.bmp" />
       <None Remove="System\Resources\Images\MenuBanner.bmp" />
@@ -67,9 +97,16 @@
       <None Remove="System\Resources\Images\Wallpapers\Alpha-2.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Alpha.bmp" />
       <None Remove="System\Resources\Images\Wallpapers\Default.bmp" />
+      <None Remove="System\Resources\Images\Wallpapers\Test.bmp" />
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Audio\Warning.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Bars\CBar.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
@@ -80,6 +117,15 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Buttons_o\CB_hover.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Cursors\Moving.bmp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Images\Wallpapers\Test.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>
@@ -99,7 +145,7 @@
       <EmbeddedResource Include="System\Resources\Audio\Shutdown.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-      <EmbeddedResource Include="System\Resources\Audio\Startup.wav">
+      <EmbeddedResource Include="System\Resources\Audio\Startup_o.wav">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Fonts\arial.ttf">
@@ -121,9 +167,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Buttons\CB_idle.bmp">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
-      <EmbeddedResource Include="System\Resources\Images\Cursors\Default.bmp">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Cursors\Hand.bmp">

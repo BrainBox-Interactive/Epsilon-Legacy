@@ -15,17 +15,35 @@ pencil for highlight cursor graphic (thank you notice,)
 - limine wp (V)
 - error / crash handler (V)
 - save notepad file (V)
-- basic tmanager (~)
-- limit / confine window dragging
-- performance mode (ex: disable images on bars, etc...)
+- basic tmanager (V)
+- basic listing fman (V)
+- settings (~)
+- flesh out profile menu (~)
+- error sound setting for message box
+- play shutdown sound
+- disabled state for components
+- implement utf-8
 - terminal
+- control bar quick icons
+- guest mode wallpaper
 - advanced tmanager (graphs?)
+- message box with multiple options (ex: yes ; no)
+- limit / confine window dragging
 - file manager
 - boot screen
 - image viewer
+- maze game (w/ gui framework game compatibility)
+- network connectivity
+- simple html parser / browser (Globetrotter) (name found by notice!!)
+- ttf support
+- video viewer
+- minesweeper
+- games (?)
 
-Minimum:
-43 MB of memory
+Minimum (VBE):
+44 MB of memory
 4 MB of video memory
 1 processor
 16 MB of storage
+
+TODO: for SVGAII

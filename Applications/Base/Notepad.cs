@@ -1,4 +1,5 @@
-﻿using Epsilon.Applications.System;
+﻿using Cosmos.System;
+using Epsilon.Applications.System;
 using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
@@ -6,12 +7,14 @@ using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using System;
 using System.Drawing;
+using System.IO;
 
 namespace Epsilon.Applications.Base
 {
     public class Notepad : Process
     {
-        public string Content = "";
+        public string Content = string.Empty,
+            Path = string.Empty;
         Window w;
         Scrollbox sb;
         Box b;
@@ -22,6 +25,11 @@ namespace Epsilon.Applications.Base
         {
             base.Start();
             this.w = new();
+            Name = "Notepad";
+            wData.Position.Width = 400;
+            wData.Position.Height = 300;
+            if (Path != string.Empty)
+                Content = File.ReadAllText(Path);
 
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
@@ -29,32 +37,16 @@ namespace Epsilon.Applications.Base
 
             sb = new(x, y + ofs + this.w.tSize, w, h - ofs,
                 "", this, true);
+            if (!VMTools.IsVirtualBox) sb.ChangeContent(Content);
 
             b = new(x, y + this.w.tSize, w - 64 * 2, ofs - 1,
                 Color.White, Color.Black, "Filepath", this);
+            if (Path != string.Empty) b.Content = Path;
             s = new(x + w - 64, y + this.w.tSize - 1, 64, ofs,
                 GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
                 "Save", this, delegate()
                 {
-                    try
-                    {
-                        ESystem.WriteFile(b.Content, sb.Content);
-                        Manager.Start(new MessageBox
-                        {
-                            wData =
-                            {
-                                Position = new(
-                                    GUI.width / 2 - ("File " + b.Content + " has been successfully saved.").Length / 2,
-                                    GUI.height / 2 - 75 / 2, 300, 75),
-                                Icon = wData.Icon,
-                                Moveable = true
-                            },
-                            Content = "File " + b.Content + " has been successfully saved.",
-                            Name = "Saved",
-                            Special = false,
-                            Button = true
-                        });
-                    }
+                    try { ESystem.WriteFile(b.Content, sb.Content, true); }
                     catch (Exception ex)
                     {
                         Manager.Start(new MessageBox
@@ -62,8 +54,10 @@ namespace Epsilon.Applications.Base
                             wData =
                             {
                                 Position = new(
-                                    GUI.width / 2 - ex.ToString().Length / 2,
-                                    GUI.height / 2 - 75 / 2, 300, 75),
+                                    GUI.width / 2
+                                    - (ex.ToString().Length * GUI.dFont.Width + 16) / 2,
+                                    GUI.height / 2 - 75 / 2,
+                                    (ex.ToString().Length * GUI.dFont.Width + 16), 75),
                                 Icon = wData.Icon,
                                 Moveable = true
                             },
@@ -77,9 +71,28 @@ namespace Epsilon.Applications.Base
             o = new(x + w - 64 * 2, y + this.w.tSize - 1, 64, ofs,
                 GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
                 "Open", this, delegate () {
-                    sb.Content = ESystem.ReadFile(b.Content);
+                    try { sb.ChangeContent(ESystem.ReadFile(b.Content)); }
+                    catch (Exception ex)
+                    {
+                        Manager.Start(new MessageBox
+                        {
+                            wData =
+                            {
+                                Position = new(
+                                    GUI.width / 2
+                                    - (ex.ToString().Length * GUI.dFont.Width + 16) / 2,
+                                    GUI.height / 2 - 75 / 2,
+                                    (ex.ToString().Length * GUI.dFont.Width + 16), 75),
+                                Icon = wData.Icon,
+                                Moveable = true
+                            },
+                            Content = ex.ToString(),
+                            Name = "Error",
+                            Special = false,
+                            Button = true
+                        });
+                    }
                 });
-
             this.w.StartAPI(this);
         }
 

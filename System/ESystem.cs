@@ -16,6 +16,8 @@ using Cosmos.System.Graphics.Fonts;
 using Epsilon.Applications.System;
 using System;
 using Epsilon.Applications.Base;
+using Epsilon.Applications.System.Performance;
+using Epsilon.Applications.FS;
 
 namespace Epsilon.System;
 
@@ -27,7 +29,12 @@ public static class ESystem
 
     public static Bitmap dc = new Bitmap(Files.RawDefaultCursor),
         hc = new Bitmap(Files.RawHandCursor),
-        wc = new Bitmap(Files.RawWriteCursor);
+        wc = new Bitmap(Files.RawWriteCursor),
+        mc = new Bitmap(Files.RawMoveCursor);
+    public static Bitmap idleCB = new(Files.RawIdleCButton),
+        hoverCB = new(Files.RawHoverCButton),
+        clickCB = new(Files.RawClickCButton);
+
     public static Bitmap banner = new(Files.RawMenuBanner);
 
     public static string Drive = "0:\\",
@@ -68,6 +75,16 @@ public static class ESystem
         GUI.Start();
         Kernel.isGUI = true;
         SetUpImages();
+        //Manager.Start(new Bokensha("0:\\")
+        //{
+        //    wData = new WindowData
+        //    {
+        //        Position = new(0, 0, 250, 400),
+        //        Moveable = true
+        //    },
+        //    Name = "Bokensha",
+        //    Special = false
+        //});
     }
 
     public static void CreateDirectory(string path)
@@ -80,13 +97,31 @@ public static class ESystem
         }
     }
 
-    public static void WriteFile(string path, string? contents)
+    public static void WriteFile(string path, string? contents,
+        bool msg = false)
     {
         // hack that should be figured out later
         if (!VMTools.IsVirtualBox)
         {
             Log.Info("Writing file: " + path);
             File.WriteAllText(path, contents);
+            if (msg)
+                Manager.Start(new MessageBox
+                {
+                    wData =
+                    {
+                        Position = new(
+                            GUI.width / 2 -
+                            (("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16) / 2,
+                            GUI.height / 2 - 75 / 2,
+                            ("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16, 75),
+                        Moveable = true
+                    },
+                    Content = "File " + path + " has been successfully saved.",
+                    Name = "Saved",
+                    Special = false,
+                    Button = true
+                });
         }
     }
 
@@ -121,7 +156,7 @@ public static class ESystem
 
     public static TopBar tBar;
     public static ControlBar cBar;
-    public static void LogIn(bool GuestMode = false)
+    public static void LogIn(bool GuestMode = false, bool GuestModeMB = true)
     {
         foreach (Process p in Manager.pList)
             if (p.Name == "Control Bar"
@@ -131,23 +166,24 @@ public static class ESystem
         if (GuestMode)
         {
             CurrentUser = "Guest";
-            Manager.Start(new MessageBox
-            {
-                wData = new WindowData
+            if (GuestModeMB) 
+                Manager.Start(new MessageBox
                 {
-                    Position = new Rectangle(GUI.width / 2 -
-                    (("You are in guest mode, any modification you bring will not be retained.".Length
-                    * GUI.dFont.Width) + 16) / 2,
-                    GUI.height / 2 - (int)(75 / 2),
-                    ("You are in guest mode, any modification you bring will not be retained.".Length
-                    * GUI.dFont.Width) + 16, 75),
-                    Moveable = true
-                },
-                Name = "Guest Mode",
-                Content = "You are in guest mode, any modification you bring will not be retained.",
-                Special = false,
-                Button = true
-            });
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(GUI.width / 2 -
+                        (("You are in guest mode, any modification you bring will not be retained.".Length
+                        * GUI.dFont.Width) + 16) / 2,
+                        GUI.height / 2 - (int)(75 / 2),
+                        ("You are in guest mode, any modification you bring will not be retained.".Length
+                        * GUI.dFont.Width) + 16, 75),
+                        Moveable = true
+                    },
+                    Name = "Guest Mode",
+                    Content = "You are in guest mode, any modification you bring will not be retained.",
+                    Special = false,
+                    Button = true
+                });
         }
 
         SpawnBars();
@@ -204,6 +240,7 @@ public static class ESystem
         foreach (Process p in Manager.pList)
             if (p.Name == "Log into Epsilon")
                 return;
+        Manager.importantPList.Clear();
 
         CurrentUser = null;
         

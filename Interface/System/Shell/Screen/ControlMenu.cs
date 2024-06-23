@@ -1,7 +1,9 @@
 ﻿using Cosmos.System;
 using Cosmos.System.Graphics;
 using Epsilon.Applications.Base;
+using Epsilon.Applications.FS;
 using Epsilon.Applications.System;
+using Epsilon.Applications.System.Performance;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Buttons;
 using Epsilon.Interface.Components.Text;
@@ -70,17 +72,19 @@ namespace Epsilon.Interface.System.Shell.Screen
         {
             base.Run();
             win.DrawB(this); win.DrawT(this);
+            GUI.canv.DrawImage(ESystem.banner,
+                wData.Position.X, wData.Position.Y + win.tSize);
 
             lgo.X = wData.Position.X + 2;
-            lgo.Y = wData.Position.Y + win.tSize + 4;
+            lgo.Y = wData.Position.Y + win.tSize + (int)ESystem.banner.Height + 4;
             lgo.Update();
 
             shtd.X = wData.Position.X + 2 + (div3 + 1);
-            shtd.Y = wData.Position.Y + win.tSize + 4;
+            shtd.Y = wData.Position.Y + win.tSize + (int)ESystem.banner.Height + 4;
             shtd.Update();
 
             rst.X = wData.Position.X + 2 + (div3 + 1) * 2;
-            rst.Y = wData.Position.Y + win.tSize + 4;
+            rst.Y = wData.Position.Y + win.tSize + (int)ESystem.banner.Height + 4;
             rst.Update();
         }
     }
@@ -90,7 +94,8 @@ namespace Epsilon.Interface.System.Shell.Screen
         int mts = 24, bsx = 96;
         Hyperlink settings;
         ProfilePicture picture;
-        Button notepad, calculator;
+        Button notepad, calculator,
+            pManager, bokensha;
         bool spawned = false;
 
         public override void Start()
@@ -135,7 +140,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 "Notepad", this, delegate()
                 {
                     if (!spawned)
-                        Manager.Start(new Notepad()
+                        Manager.Start(new Notepad
                         {
                             wData = new WindowData
                             {
@@ -157,7 +162,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 "Calculator", this, delegate ()
                 {
                     if (!spawned)
-                        Manager.Start(new Calculator()
+                        Manager.Start(new Calculator
                         {
                             wData = new WindowData
                             {
@@ -166,6 +171,52 @@ namespace Epsilon.Interface.System.Shell.Screen
                                 Moveable = true
                             },
                             Name = "Calculator",
+                            Special = false
+                        });
+                    spawned = true;
+                    Remove();
+                });
+
+            pManager = new(x + bsx + 8,
+               y + mts + 8 + 32, (w - bsx) / 2 - 8 * 2, 32,
+               GUI.colors.btColor, GUI.colors.bthColor,
+               GUI.colors.btcColor,
+               "P. Manager", this, delegate ()
+               {
+                   if (!spawned
+                       && !Manager.IsRunning("Process Manager"))
+                       Manager.Start(new PManager
+                       {
+                           wData =
+                           {
+                                Position = new(GUI.width / 2 - 400 / 2,
+                                GUI.height / 2 - 400 / 2,
+                                400, 400),
+                                Moveable = true
+                           },
+                           Name = "Process Manager",
+                           Special = false
+                       });
+                   spawned = true;
+                   Remove();
+               });
+
+            bokensha = new(x + bsx + 8 * 2 + ((w - bsx) / 2 - 8 * 2),
+                y + mts + 8 + 32, (w - bsx) / 2 - 8 * 2, 32,
+                GUI.colors.btColor, GUI.colors.bthColor,
+                GUI.colors.btcColor,
+                "Bokensha", this, delegate ()
+                {
+                    if (!spawned)
+                        Manager.Start(new Bokensha("0:\\")
+                        {
+                            wData = new WindowData
+                            {
+                                Position = new Rectangle(GUI.width / 2 - 200 / 2,
+                                GUI.height / 2 - 400 / 2, 200, 400),
+                                Moveable = true
+                            },
+                            Name = "Bokensha",
                             Special = false
                         });
                     spawned = true;
@@ -226,6 +277,13 @@ namespace Epsilon.Interface.System.Shell.Screen
             calculator.X = x + bsx + 8 * 2 + ((w - bsx) / 2 - 8 * 2) + 4;
             calculator.Y = y + mts + 8;
             calculator.Update();
+
+            pManager.X = x + bsx + 8 + 4; pManager.Y = y + mts + 32 + 8 * 2;
+            pManager.Update();
+
+            bokensha.X = x + bsx + 8 * 2 + ((w - bsx) / 2 - 8 * 2) + 4;
+            bokensha.Y = y + mts + 32 + 8 * 2;
+            bokensha.Update();
 
             // if clicks off the menu
             if ((GUI.mx < x

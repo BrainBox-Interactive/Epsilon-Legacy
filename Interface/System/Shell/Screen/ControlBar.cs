@@ -15,9 +15,6 @@ namespace Epsilon.Interface.System.Shell.Screen
     public class ControlButton : Component
     {
         Bitmap curImage;
-        Bitmap idleCB = new(Files.RawIdleCButton),
-            hoverCB = new(Files.RawHoverCButton),
-            clickCB = new(Files.RawClickCButton);
         ControlMenu cMenu;
         Process Process { get; set; }
         bool clicked = false;
@@ -37,11 +34,9 @@ namespace Epsilon.Interface.System.Shell.Screen
             {
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.hc;
-                if (curImage != hoverCB) curImage = hoverCB;
-
                 if (MouseManager.MouseState == MouseState.Left)
                 {
-                    if (curImage != clickCB) curImage = clickCB;
+                    if (curImage != ESystem.clickCB) curImage = ESystem.clickCB;
                     if (!clicked && !GUI.clicked
                         && !Manager.IsRunning("Control Menu"))
                     {
@@ -65,13 +60,13 @@ namespace Epsilon.Interface.System.Shell.Screen
                 }
                 else
                 {
-                    if (curImage != idleCB) curImage = idleCB;
+                    if (curImage != ESystem.idleCB) curImage = ESystem.idleCB;
                     if (GUI.crsChanged) GUI.crsChanged = false;
                 }
             }
             else
             {
-                if (curImage != idleCB) curImage = idleCB;
+                if (curImage != ESystem.idleCB) curImage = ESystem.idleCB;
                 if (GUI.crsChanged) GUI.crsChanged = false;
             }
 

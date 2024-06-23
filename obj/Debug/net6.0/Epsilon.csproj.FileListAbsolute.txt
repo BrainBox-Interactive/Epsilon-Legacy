@@ -61,3 +61,7 @@ C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\But
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Buttons_o\CB_idle.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Bars\CBar.bmp
 C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Bars\TBar.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Wallpapers\Test.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Images\Cursors\Moving.bmp
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Audio\Startup_o.wav
+C:\Users\iplux\source\repos\Epsilon\bin\Debug\net6.0\System\Resources\Audio\Warning.wav

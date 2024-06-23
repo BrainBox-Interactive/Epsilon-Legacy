@@ -68,7 +68,7 @@ namespace Epsilon.Interface.Components.Text
         List<string> stringsToDraw = new List<string>();
         string AcceptedCharacters
             = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-\"\' /\\.,;:!?$*&()=";
-        private void ProcessStrings()
+        public void ProcessStrings()
         {
             stringsToDraw.Clear();
             stringsToDraw.Add(string.Empty);
@@ -80,6 +80,14 @@ namespace Epsilon.Interface.Components.Text
                 stringsToDraw.Add(temp[i]);
                 line++;
             }
+        }
+
+        public void ChangeContent(string content)
+        {
+            Content = content;
+            temp = Content.Split('\n')
+                .ToList();
+            ProcessStrings();
         }
 
         bool isFocused = false,
@@ -124,9 +132,13 @@ namespace Epsilon.Interface.Components.Text
                 GUI.crs = ESystem.wc;
             }
             else if (GUI.crsChanged) GUI.crsChanged = false;
-
-            if (MouseManager.MouseState == MouseState.None)
-                clicked = false;
+            if (MouseManager.MouseState == MouseState.Left
+                && !GUI.clicked && !isFocused && CheckHover())
+            {
+                isFocused = true;
+                cSect = temp.Count / lPerSect;
+                ProcessStrings();
+            }
 
             if (isFocused && Editable
                 && !Manager.IsFrontTU(Process))
@@ -194,17 +206,17 @@ namespace Epsilon.Interface.Components.Text
             return false;
         }
         
-        public override void OnClick(int mIndex)
-        {
-            base.OnClick(mIndex);
-            if (mIndex == 0)
-                if (CheckHover())
-                {
-                    isFocused = true;
-                    cSect = temp.Count / lPerSect;
-                    ProcessStrings();
-                }
-                else if (isFocused) isFocused = false;
-        }
+        //public override void OnClick(int mIndex)
+        //{
+        //    base.OnClick(mIndex);
+        //    if (mIndex == 0)
+        //        if (CheckHover())
+        //        {
+        //            isFocused = true;
+        //            cSect = temp.Count / lPerSect;
+        //            ProcessStrings();
+        //        }
+        //        else if (isFocused) isFocused = false;
+        //}
     }
 }

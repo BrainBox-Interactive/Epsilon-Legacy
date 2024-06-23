@@ -1,4 +1,6 @@
-﻿using Cosmos.System.Graphics;
+﻿using Cosmos.System;
+using Cosmos.System.Graphics;
+using Epsilon.Applications.System.Performance;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
 using System.Drawing;
@@ -13,7 +15,9 @@ namespace Epsilon.Interface.System.Shell.Screen
         public override void Start()
         {
             base.Start();
-            tb.Resize((uint)GUI.width, 24);
+            wData.Position.Width = GUI.width;
+            wData.Position.Height = 24;
+            //tb.Resize((uint)GUI.width, 24);
         }
 
         public override void Run()
@@ -35,6 +39,23 @@ namespace Epsilon.Interface.System.Shell.Screen
                 GUI.colors.txtColor,
                 x, y
             );
+
+            if (MouseManager.MouseState == MouseState.Middle
+                && !GUI.clicked && !Manager.IsRunning("Process Manager")
+                && (GUI.mx >= x && GUI.mx <= x + w
+                && GUI.my >= y && GUI.my <= y + h))
+                Manager.Start(new PManager
+                {
+                    wData =
+                    {
+                        Position = new(GUI.width / 2 - 400 / 2,
+                        GUI.height / 2 - 400 / 2,
+                        400, 400),
+                        Moveable = true
+                    },
+                    Name = "Process Manager",
+                    Special = false
+                });
 
             int tbx = 0, cx = 0;
             for (int i = 0; i < Manager.pList.Count; i++)

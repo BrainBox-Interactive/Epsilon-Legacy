@@ -11,8 +11,8 @@ namespace Epsilon.Interface.System
         public Color tboColor = Color.FromArgb(255, 25, 25, 25);
         public Color txtColor = Color.FromArgb(255, 255, 255, 255);
 
-        public Color bColor = Color.FromArgb(255, 40, 40, 40);
-        public Color boColor = Color.FromArgb(255, 30, 30, 30);
+        public Color bColor = Color.FromArgb(255, 35, 35, 35);
+        public Color boColor = Color.FromArgb(255, 25, 25, 25);
 
         public Color btColor = Color.FromArgb(255, 200, 200, 200);
         public Color btcColor = Color.FromArgb(255, 175, 175, 175);

@@ -17,6 +17,8 @@ namespace Epsilon.System.Resources
         public static byte[] Raw640x480Wallpaper;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.1024x768.bmp")]
         public static byte[] Raw1024x768Wallpaper;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Wallpapers.Test.bmp")]
+        public static byte[] RawTestWallpaper;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Setup.bmp")]
         public static byte[] RawSetupImage;
@@ -46,6 +48,8 @@ namespace Epsilon.System.Resources
         public static byte[] RawHandCursor;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Write.bmp")]
         public static byte[] RawWriteCursor;
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Cursors.Moving.bmp")]
+        public static byte[] RawMoveCursor;
 
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Icons.Default.bmp")]
         public static byte[] RawDefaultIcon;

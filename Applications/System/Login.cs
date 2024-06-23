@@ -61,7 +61,24 @@ namespace Epsilon.Applications.System
                 || username.Content.Trim() == "")
             {
                 Remove();
-                ESystem.LogIn(true);
+                Manager.Start(new MessageBox
+                {
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(GUI.width / 2 -
+                        (("You are in guest mode, any modification you bring will not be retained.".Length
+                        * GUI.dFont.Width) + 16) / 2,
+                        GUI.height / 2 - (int)(75 / 2),
+                        ("You are in guest mode, any modification you bring will not be retained.".Length
+                        * GUI.dFont.Width) + 16, 75),
+                        Moveable = true
+                    },
+                    Name = "Guest Mode",
+                    Content = "You are in guest mode, any modification you bring will not be retained.",
+                    Special = false,
+                    Button = true,
+                    Action = delegate () { ESystem.LogIn(true, false); }
+                });
             }
             else
             {

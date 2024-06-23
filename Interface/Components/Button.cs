@@ -58,7 +58,7 @@ namespace Epsilon.Interface.Components
             else GUI.canv.DrawFilledRectangle(NormalColor, X + 1, Y + 1, Width - 1, Height - 1);
 
             if (MouseManager.MouseState == MouseState.None
-                && clicked)
+                && clicked && GUI.clicked)
             {
                 OnClick(0);
                 clicked = false;

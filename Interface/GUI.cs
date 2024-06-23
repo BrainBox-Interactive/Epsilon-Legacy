@@ -11,6 +11,7 @@ using Epsilon.Applications.System.Setup;
 using Epsilon.System.Resources;
 using Cosmos.System.Coroutines;
 using Epsilon.System.Critical;
+using Epsilon.Properties;
 
 namespace Epsilon.Interface
 {
@@ -57,7 +58,24 @@ namespace Epsilon.Interface
                 });
             else if (VMTools.IsVirtualBox)
                 // TODO: guest mode wallpaper
-                ESystem.LogIn(true);
+                Manager.Start(new MessageBox
+                {
+                    wData = new WindowData
+                    {
+                        Position = new Rectangle(GUI.width / 2 -
+                        (("You are in guest mode, any modification you bring will not be retained.".Length
+                        * GUI.dFont.Width) + 16) / 2,
+                        GUI.height / 2 - (int)(75 / 2),
+                        ("You are in guest mode, any modification you bring will not be retained.".Length
+                        * GUI.dFont.Width) + 16, 75),
+                        Moveable = true
+                    },
+                    Name = "Guest Mode",
+                    Content = "You are in guest mode, any modification you bring will not be retained.",
+                    Special = false,
+                    Button = true,
+                    Action = delegate() { ESystem.LogIn(true, false); }
+                });
             else
                 Manager.Start(new Login
                 {
@@ -79,6 +97,9 @@ namespace Epsilon.Interface
                 && cProc.wData.Moveable
                 && Manager.spList.Count <= 1)
             {
+                if (crs != ESystem.mc) crs = ESystem.mc;
+                crsChanged = true;
+
                 // TODO: do for all sides
                 // Currently hangs the system
                 //if ((cProc.wData.Position.X > 0 && mx < cProc.wData.Position.X  )
@@ -107,6 +128,7 @@ namespace Epsilon.Interface
                             if (Manager.spList.Count <= 1)
                             {
                                 cProc = p;
+                                Manager.toUpdate = p;
                                 ox = mx - p.wData.Position.X;
                                 oy = my - p.wData.Position.Y;
                             }
@@ -162,13 +184,15 @@ namespace Epsilon.Interface
             canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, 32);
             //canv.DrawString("c:" + clicked, dFont, colors.txtColor, 0, dFont.Height * 18);
 
-            canv.DrawString("Build Information:", dFont, colors.txtColor, (int)width - dFont.Width * "Build Information:".Length, (int)height - (32 + dFont.Height * 2));
+            canv.DrawString("Build Information:", dFont, colors.txtColor,
+                (int)width - dFont.Width * "Build Information:".Length,
+                (int)height - (32 + dFont.Height * 2));
             canv.DrawString(
-                "Epsilon v." + Kernel.version + " | June 2024 build, Milestone 3",
+                "Epsilon v." + Kernel.version + VersionInfo.revision,
                 dFont,
                 colors.txtColor,
                 (int)width - dFont.Width
-                * ("Epsilon v." + Kernel.version + " | June 2024 build, Milestone 3")
+                * ("Epsilon v." + Kernel.version + VersionInfo.revision)
                 .Length,
                 (int)height - (32 + dFont.Height)
             );
@@ -185,23 +209,10 @@ namespace Epsilon.Interface
             }
 
             // Conditions
-            if (MouseManager.MouseState == MouseState.Left) clicked = true;
-            else if (MouseManager.MouseState == MouseState.Middle && !clicked)
-            {
-                Manager.Start(new MessageBox
-                {
-                    wData = new WindowData
-                    {
-                        Position = new Rectangle(mx - 250 / 2, my - 75 / 4, 250, 75),
-                        Moveable = true
-                    },
-                    Name = "mbPNb::" + Manager.pList.Count,
-                    Content = "process" + Manager.pList.Count + " || Cpt=" + Manager.toUpdate,
-                    Special = false,
-                    Button = true
-                });
-                clicked = true;
-            }
+            if ((MouseManager.MouseState == MouseState.Left ||
+                MouseManager.MouseState == MouseState.Middle ||
+                MouseManager.MouseState == MouseState.Right)
+                && !clicked) clicked = true;
             else if (MouseManager.MouseState == MouseState.None && clicked)
             {
                 clicked = false;

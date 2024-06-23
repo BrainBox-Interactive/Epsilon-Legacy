@@ -33,16 +33,13 @@ namespace Epsilon.Interface.Components.Text
         {
             base.Update();
             if (CheckHover()
-                && !Manager.IsFrontTU(Process))
+                && !Manager.IsFrontTU(Process)
+                && GUI.cProc == null)
             {
                 GUI.canv.DrawString(
                     Text, GUI.dFont,
                     HoverColor, X, Y
                 );
-                //GUI.canv.DrawRectangle(
-                //    HoverColor, X, Y + GUI.dFont.Height - 3,
-                //    Text.Length * GUI.dFont.Width, 1
-                //);
                 GUI.canv.DrawLine(
                     HoverColor,
                     X, Y + GUI.dFont.Height - 3,
@@ -51,6 +48,7 @@ namespace Epsilon.Interface.Components.Text
                 );
                 GUI.crsChanged = true;
                 GUI.crs = ESystem.hc;
+                //Manager.toUpdate = Process;
 
                 if (MouseManager.MouseState == MouseState.Left
                     && !GUI.clicked)

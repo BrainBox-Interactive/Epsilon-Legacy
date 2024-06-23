@@ -101,6 +101,11 @@ namespace Epsilon.Interface
                 b_close.Update(); b_1.Update();
                 b_2.Update(); b_3.Update();
             }
+
+            if (MouseManager.MouseState == MouseState.Left
+                && !GUI.clicked)
+                if (!IsFrontTU(p))
+                    Manager.toUpdate = p;
         }
 
         public void DrawB(Process p)
@@ -125,8 +130,22 @@ namespace Epsilon.Interface
 
             if (MouseManager.MouseState == MouseState.Left
                 && !GUI.clicked)
-                if (!Manager.IsFrontTU(p))
+                if (!IsFrontTU(p))
                     Manager.toUpdate = p;
+        }
+
+        public bool IsFrontTU(Process p)
+        {
+            if (Manager.toUpdate == p
+                || Manager.toUpdate == null) return false;
+            if (GUI.mx >= Manager.toUpdate.wData.Position.X
+                && GUI.mx <= Manager.toUpdate.wData.Position.X
+                + Manager.toUpdate.wData.Position.Width
+                && GUI.my >= Manager.toUpdate.wData.Position.Y + tSize
+                && GUI.my <= Manager.toUpdate.wData.Position.Y
+                + Manager.toUpdate.wData.Position.Height - tSize)
+                return true;
+            return false;
         }
     }
 }

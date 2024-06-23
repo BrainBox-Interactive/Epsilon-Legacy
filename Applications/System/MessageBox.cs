@@ -3,6 +3,7 @@ using Epsilon.Interface.Components;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
+using System;
 
 namespace Epsilon.Applications.System
 {
@@ -12,6 +13,9 @@ namespace Epsilon.Applications.System
         public string Content = "Default Window Text";
         Button b_button;
         Window w;
+        public Action Action = delegate() { Dummy(); };
+
+        static void Dummy() { }
 
         public override void Start()
         {
@@ -29,7 +33,11 @@ namespace Epsilon.Applications.System
                 GUI.colors.bthColor,
                 GUI.colors.btcColor,
                 "OK", this,
-                delegate() { Remove(); }
+                delegate()
+                {
+                    Action.Invoke();
+                    Remove();
+                }
             );
 
             this.w.StartAPI(this);
