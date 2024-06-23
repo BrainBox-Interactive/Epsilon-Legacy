@@ -45,7 +45,7 @@ namespace Epsilon.Applications.Base
                             {
                                 Position = new(
                                     GUI.width / 2 - ("File " + b.Content + " has been successfully saved.").Length / 2,
-                                    GUI.height / 2 - 60 / 2, 300, 60),
+                                    GUI.height / 2 - 75 / 2, 300, 75),
                                 Icon = wData.Icon,
                                 Moveable = true
                             },
@@ -63,7 +63,7 @@ namespace Epsilon.Applications.Base
                             {
                                 Position = new(
                                     GUI.width / 2 - ex.ToString().Length / 2,
-                                    GUI.height / 2 - 60 / 2, 300, 60),
+                                    GUI.height / 2 - 75 / 2, 300, 75),
                                 Icon = wData.Icon,
                                 Moveable = true
                             },
