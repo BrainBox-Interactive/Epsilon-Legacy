@@ -17,13 +17,16 @@ pencil for highlight cursor graphic (thank you notice,)
 - save notepad file (V)
 - basic tmanager (V)
 - basic listing fman (V)
+- flesh out profile menu (V)
+- notepad threads for saving and opening (no system-wide freeze) (V)
 - settings (~)
-- flesh out profile menu (~)
 - error sound setting for message box
 - play shutdown sound
 - disabled state for components
+- paint
 - implement utf-8
 - terminal
+- impl multitasking
 - control bar quick icons
 - guest mode wallpaper
 - advanced tmanager (graphs?)

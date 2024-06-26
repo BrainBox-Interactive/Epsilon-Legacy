@@ -51,7 +51,10 @@ namespace Epsilon.Applications.FS
             foreach (string s in DirectoryStruct)
             {
                 if (!dhl.Exists(b => b.Text == s))
-                    dhl.Add(new(wData.Position.X,
+                {
+                    Thread aD = new(() =>
+                    {
+                        dhl.Add(new(wData.Position.X,
                         wData.Position.Y + win.tSize + ofs * index,
                         Color.LightGray, Color.LightGray, s, delegate ()
                         {
@@ -59,19 +62,28 @@ namespace Epsilon.Applications.FS
                             if (!dPath.EndsWith('\\')) dPath += '\\';
                             if (Directory.Exists(dPath + s)
                                 && !clicked)
-                                Manager.Start(new Bokensha(dPath + s)
+                            {
+                                Thread dO = new(() =>
                                 {
-                                    wData =
+                                    Manager.Start(new Bokensha(dPath + s)
                                     {
-                                        Position = new(wData.Position.X + wData.Position.Width / 4,
-                                        wData.Position.Y + wData.Position.Height / 4, GUI.width, GUI.height),
-                                        Moveable = true,
-                                    },
-                                    Name = s,
-                                    Special = false
+                                        wData =
+                                        {
+                                            Position = new(wData.Position.X + wData.Position.Width / 4,
+                                            wData.Position.Y + wData.Position.Height / 4, GUI.width, GUI.height),
+                                            Moveable = true,
+                                        },
+                                        Name = s,
+                                        Special = false
+                                    });
                                 });
+                                dO.Start();
+                            }
                             clicked = true;
                         }, this));
+                    });
+                    aD.Start();
+                }
                 else
                 {
                     dhl[i2].X = wData.Position.X + 4;
@@ -84,7 +96,10 @@ namespace Epsilon.Applications.FS
             foreach (string s in FileStruct)
             {
                 if (!fhl.Exists(b => b.Text == s))
-                    fhl.Add(new(wData.Position.X,
+                {
+                    Thread aD = new(() =>
+                    {
+                        fhl.Add(new(wData.Position.X,
                         wData.Position.Y + win.tSize + ofs * index,
                         Color.White, Color.White, s, delegate ()
                         {
@@ -109,6 +124,9 @@ namespace Epsilon.Applications.FS
                                 });
                             clicked = true;
                         }, this));
+                    });
+                    aD.Start();
+                }
                 else
                 {
                     fhl[i2].X = wData.Position.X + 4;

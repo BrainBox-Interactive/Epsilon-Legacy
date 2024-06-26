@@ -39,10 +39,10 @@ namespace Epsilon
                 Console.SetWindowSize(90, 30);
                 Console.OutputEncoding = Sys.ExtendedASCII.CosmosEncodingProvider
                     .Instance.GetEncoding(437);
-                Thread.Sleep(2000);
+                Sys.Thread.Sleep(2000);
 
                 Console.Clear();
-                Thread.Sleep(750);
+                Sys.Thread.Sleep(750);
 
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Epsilon Kernel - " + version);
@@ -60,7 +60,7 @@ namespace Epsilon
                 try
                 {
                     if (lastHCol < 15) {
-                        Interface.GUI.Update();
+                        GUI.Update();
 
                         if (_deltaT != RTC.Second)
                         {
@@ -108,7 +108,7 @@ namespace Epsilon
                 Commands.Run(input);
             }
 
-            if (lastHCol >= 13)
+            if (lastHCol >= 12)
             {
                 Heap.Collect();
                 lastHCol = 0;

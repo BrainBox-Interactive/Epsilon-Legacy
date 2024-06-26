@@ -1,11 +1,6 @@
-﻿using Epsilon.Interface;
-using Epsilon.Interface.System.Shell.Screen;
-using System;
+﻿using Cosmos.System;
+using Epsilon.Interface;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Epsilon.System.Critical.Processing
 {
@@ -50,6 +45,9 @@ namespace Epsilon.System.Critical.Processing
             else pList.Add(p);
             toUpdate = p;
             p.Start();
+            //Thread t = new(() =>
+            //{ p.Start(); });
+            //t.Start();
         }
 
         public static void Stop(Process p)

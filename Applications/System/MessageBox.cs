@@ -41,7 +41,11 @@ namespace Epsilon.Applications.System
             );
 
             this.w.StartAPI(this);
-            ESystem.PlayAudio(Files.RawErrorAudio);
+            //ESystem.PlayAudio(Files.RawErrorAudio);
+            Cosmos.System.Thread t =
+                new(() =>
+                { ESystem.PlayAudio(Files.RawErrorAudio); });
+            t.Start();
         }
 
         public override void Remove()

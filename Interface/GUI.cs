@@ -45,7 +45,7 @@ namespace Epsilon.Interface
 
             // Processes
             // Login Details Epsilon Encryption System . Config
-            if (!File.Exists(ESystem.LoginInfoPath) && !VMTools.IsVirtualBox)
+            if (!File.Exists(ESystem.LoginInfoPath))
                 Manager.Start(new OOBE
                 {
                     wData = new WindowData
@@ -55,26 +55,6 @@ namespace Epsilon.Interface
                     },
                     Name = "Finish your Installation",
                     Special = true
-                });
-            else if (VMTools.IsVirtualBox)
-                // TODO: guest mode wallpaper
-                Manager.Start(new MessageBox
-                {
-                    wData = new WindowData
-                    {
-                        Position = new Rectangle(GUI.width / 2 -
-                        (("You are in guest mode, any modification you bring will not be retained.".Length
-                        * GUI.dFont.Width) + 16) / 2,
-                        GUI.height / 2 - (int)(75 / 2),
-                        ("You are in guest mode, any modification you bring will not be retained.".Length
-                        * GUI.dFont.Width) + 16, 75),
-                        Moveable = true
-                    },
-                    Name = "Guest Mode",
-                    Content = "You are in guest mode, any modification you bring will not be retained.",
-                    Special = false,
-                    Button = true,
-                    Action = delegate() { ESystem.LogIn(true, false); }
                 });
             else
                 Manager.Start(new Login

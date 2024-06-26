@@ -19,13 +19,16 @@ namespace Epsilon.Interface.System.Shell.Screen
     {
         Window win;
         Button lgo, shtd, rst;
+        Bitmap b = new Bitmap(Files.RawTEPBanner);
         int div3;
 
         public override void Start()
         {
             base.Start();
-            wData.Position.Width = 240;
-            wData.Position.Height = 128;
+            wData.Position.Width = (int)b.Width;
+            wData.Position.Height = 120;
+            wData.Position.X = GUI.width / 2 - wData.Position.Width / 2;
+            wData.Position.Y = GUI.height / 2 - wData.Position.Height / 2;
 
             win = new();
             win.StartAPI(this);
@@ -39,7 +42,9 @@ namespace Epsilon.Interface.System.Shell.Screen
                         foreach (Process p in Manager.pList)
                             if (p.Name == "Log into Epsilon")
                                 return;
-                        ESystem.LogOff(); 
+                        Thread t
+                            = new(ESystem.LogOff);
+                        t.Start();
                     }
                     catch (Exception ex)
                     {
@@ -72,19 +77,19 @@ namespace Epsilon.Interface.System.Shell.Screen
         {
             base.Run();
             win.DrawB(this); win.DrawT(this);
-            GUI.canv.DrawImage(ESystem.banner,
-                wData.Position.X, wData.Position.Y + win.tSize);
+            GUI.canv.DrawImage(b, wData.Position.X,
+                wData.Position.Y + win.tSize);
 
             lgo.X = wData.Position.X + 2;
-            lgo.Y = wData.Position.Y + win.tSize + (int)ESystem.banner.Height + 4;
+            lgo.Y = wData.Position.Y + win.tSize + (int)b.Height + 4;
             lgo.Update();
 
             shtd.X = wData.Position.X + 2 + (div3 + 1);
-            shtd.Y = wData.Position.Y + win.tSize + (int)ESystem.banner.Height + 4;
+            shtd.Y = wData.Position.Y + win.tSize + (int)b.Height + 4;
             shtd.Update();
 
             rst.X = wData.Position.X + 2 + (div3 + 1) * 2;
-            rst.Y = wData.Position.Y + win.tSize + (int)ESystem.banner.Height + 4;
+            rst.Y = wData.Position.Y + win.tSize + (int)b.Height + 4;
             rst.Update();
         }
     }

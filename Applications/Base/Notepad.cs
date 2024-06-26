@@ -46,7 +46,14 @@ namespace Epsilon.Applications.Base
                 GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
                 "Save", this, delegate()
                 {
-                    try { ESystem.WriteFile(b.Content, sb.Content, true); }
+                    try
+                    {
+                        Thread save = new(() =>
+                        {
+                            ESystem.WriteFile(b.Content, sb.Content, true);
+                        });
+                        save.Start();
+                    }
                     catch (Exception ex)
                     {
                         Manager.Start(new MessageBox
@@ -71,7 +78,14 @@ namespace Epsilon.Applications.Base
             o = new(x + w - 64 * 2, y + this.w.tSize - 1, 64, ofs,
                 GUI.colors.btColor, GUI.colors.bthColor, GUI.colors.btcColor,
                 "Open", this, delegate () {
-                    try { sb.ChangeContent(ESystem.ReadFile(b.Content)); }
+                    try
+                    {
+                        Thread open = new(() =>
+                        {
+                            sb.ChangeContent(ESystem.ReadFile(b.Content));
+                        });
+                        open.Start();
+                    }
                     catch (Exception ex)
                     {
                         Manager.Start(new MessageBox

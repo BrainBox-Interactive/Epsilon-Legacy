@@ -18,6 +18,7 @@ using System;
 using Epsilon.Applications.Base;
 using Epsilon.Applications.System.Performance;
 using Epsilon.Applications.FS;
+using Cosmos.HAL.BlockDevice;
 
 namespace Epsilon.System;
 
@@ -47,29 +48,13 @@ public static class ESystem
     public static void OnBoot()
     {
         s.Console.Clear();
-        if (VMTools.IsVirtualBox) Drive = "1:\\";
+        //if (VMTools.IsVirtualBox) Drive = "1:\\";
         SystemPath = Drive + "Epsilon\\";
 
         if (Kernel.vfs.GetDisks()[0].Partitions.Count < 1) Format();
         if (!Directory.Exists(SystemPath)) CreateDirectory(SystemPath);
         if (!Directory.Exists(SettingsPath)) CreateDirectory(SettingsPath);
         if (!Directory.Exists(SettingsPath + "User")) CreateDirectory(SettingsPath + "User");
-
-        if (!VMTools.IsVMWare)
-        {
-            try
-            {
-                mixer = new AudioMixer();
-                driver = AC97.Initialize(bufferSize: 4096);
-                audioManager = new AudioManager()
-                {
-                    Stream = mixer,
-                    Output = driver
-                };
-                audioManager.Enable();
-            }
-            catch { }
-        }
 
         Log.Info("Launching GUI Interface");
         GUI.Start();
@@ -90,50 +75,50 @@ public static class ESystem
     public static void CreateDirectory(string path)
     {
         // hack that should be figured out later
-        if (!VMTools.IsVirtualBox)
-        {
-            Log.Info("Creating folder: " + path);
-            Directory.CreateDirectory(path);
-        }
+        //if (!VMTools.IsVirtualBox)
+        //{
+        Log.Info("Creating folder: " + path);
+        Directory.CreateDirectory(path);
+        //}
     }
 
     public static void WriteFile(string path, string? contents,
         bool msg = false)
     {
         // hack that should be figured out later
-        if (!VMTools.IsVirtualBox)
-        {
-            Log.Info("Writing file: " + path);
-            File.WriteAllText(path, contents);
-            if (msg)
-                Manager.Start(new MessageBox
+        //if (!VMTools.IsVirtualBox)
+        //{
+        Log.Info("Writing file: " + path);
+        File.WriteAllText(path, contents);
+        if (msg)
+            Manager.Start(new MessageBox
+            {
+                wData =
                 {
-                    wData =
-                    {
-                        Position = new(
-                            GUI.width / 2 -
-                            (("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16) / 2,
-                            GUI.height / 2 - 75 / 2,
-                            ("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16, 75),
-                        Moveable = true
-                    },
-                    Content = "File " + path + " has been successfully saved.",
-                    Name = "Saved",
-                    Special = false,
-                    Button = true
-                });
-        }
+                    Position = new(
+                        GUI.width / 2 -
+                        (("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16) / 2,
+                        GUI.height / 2 - 75 / 2,
+                        ("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16, 75),
+                    Moveable = true
+                },
+                Content = "File " + path + " has been successfully saved.",
+                Name = "Saved",
+                Special = false,
+                Button = true
+            });
+        //}
     }
 
     public static string? ReadFile(string path)
     {
         // hack that should be figured out later
-        if (!VMTools.IsVirtualBox)
-        {
-            Log.Info("Reading file: " + path);
-            return File.ReadAllText(path);
-        }
-        return null;
+        //if (!VMTools.IsVirtualBox)
+        //{
+        Log.Info("Reading file: " + path);
+        return File.ReadAllText(path);
+        //}
+        //return null;
     }
 
     private static void SetUpImages()
@@ -148,6 +133,14 @@ public static class ESystem
     {
         if (!VMTools.IsVMWare)
             try {
+                mixer = new AudioMixer();
+                driver = AC97.Initialize(bufferSize: 4096);
+                audioManager = new AudioManager()
+                {
+                    Stream = mixer,
+                    Output = driver
+                };
+                audioManager.Enable();
                 var audioStream = MemoryAudioStream.FromWave(stream);
                 mixer.Streams.Add(audioStream);
             } catch { s.Console.Beep(600, 25); }
@@ -187,7 +180,10 @@ public static class ESystem
         }
 
         SpawnBars();
-        PlayAudio(Files.RawStartupAudio);
+        Cosmos.System.Thread t =
+            new(() =>
+            { PlayAudio(Files.RawStartupAudio); });
+        t.Start();
     }
 
     public static void SpawnBars()
@@ -231,7 +227,7 @@ public static class ESystem
 
         Log.Info("Formatted disk");
         Log.Warning("Rebooting in 3 seconds...");
-        Thread.Sleep(3000);
+        s.Threading.Thread.Sleep(3000);
         Power.Reboot();
     }
 
