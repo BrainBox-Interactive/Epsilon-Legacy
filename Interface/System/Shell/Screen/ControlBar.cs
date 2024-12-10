@@ -14,7 +14,7 @@ namespace Epsilon.Interface.System.Shell.Screen
 {
     public class ControlButton : Component
     {
-        Bitmap curImage;
+        GrapeGL.Graphics.Canvas curImage;
         ControlMenu cMenu;
         Process Process { get; set; }
         bool clicked = false;
@@ -74,7 +74,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 clicked = false;
 
             // Menu Button
-            GUI.canv.DrawImageAlpha(curImage, X, Y);
+            GUI.canv.DrawImage(X, Y, curImage, true);
         }
 
         public override bool CheckHover()
@@ -105,12 +105,9 @@ namespace Epsilon.Interface.System.Shell.Screen
         {
             x = wData.Position.X; y = wData.Position.Y;
             w = wData.Position.Width; h = wData.Position.Height;
-            GUI.canv.DrawLine(GUI.colors.mooColor,
-                x, y - 1, x + w, y - 1);
+            GUI.canv.DrawLine(x, y - 1, x + w, y - 1, GUI.colors.mooColor);
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.bColor, x, y, w, h);
-            //GUI.canv.DrawImageAlpha(cBar, x, y);
-            //GUI.canv.DrawImage(cBar, x, y);
+                x, y, (ushort)w, (ushort)h, 0, GUI.colors.bColor);
             c.X = x + 3; c.Y = y - 17;
             c.Update();
         }

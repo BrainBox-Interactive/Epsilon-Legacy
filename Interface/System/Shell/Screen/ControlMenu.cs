@@ -1,5 +1,4 @@
 ﻿using Cosmos.System;
-using Cosmos.System.Graphics;
 using Epsilon.Applications.Base;
 using Epsilon.Applications.FS;
 using Epsilon.Applications.System;
@@ -10,8 +9,10 @@ using Epsilon.Interface.Components.Text;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
+using GrapeGL.Graphics;
 using System;
 using System.Drawing;
+using Color = GrapeGL.Graphics.Color;
 
 namespace Epsilon.Interface.System.Shell.Screen
 {
@@ -19,7 +20,7 @@ namespace Epsilon.Interface.System.Shell.Screen
     {
         Window win;
         Button lgo, shtd, rst;
-        Bitmap b = new Bitmap(Files.RawTEPBanner);
+        Canvas b = Image.FromBitmap(Files.RawTEPBanner);
         int div3;
 
         public override void Start()
@@ -130,7 +131,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 this
             );
             picture = new(
-                x, y, new Bitmap(Files.RawDefaultPFP),
+                x, y, Image.FromBitmap(Files.RawDefaultPFP),
                 delegate ()
                 {
                     if (!spawned)

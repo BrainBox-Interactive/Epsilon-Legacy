@@ -1,4 +1,7 @@
-﻿namespace GrapeGL.Compression;
+﻿using System;
+using System.Collections.Generic;
+
+namespace GrapeGL.Compression;
 
 /// <summary>
 /// public domain zlib decode

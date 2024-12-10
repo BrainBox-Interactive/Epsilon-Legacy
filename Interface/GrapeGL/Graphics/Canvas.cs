@@ -2,6 +2,7 @@
 using Cosmos.System.Graphics.Fonts;
 using GrapeGL.Graphics.Fonts;
 using GrapeGL.Graphics.Rasterizer;
+using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
 
@@ -348,6 +349,9 @@ public unsafe class Canvas
         }
     }
 
+    public void DrawFilledRectangle(Color Color, int X, int Y, int Width, int Height)
+        => DrawFilledRectangle(X, Y, (ushort)Width, (ushort)Height, 0, Color);
+
     /// <summary>
     /// Draws a non-filled rectangle from X and Y with the specified Width and Height.
     /// </summary>
@@ -377,6 +381,8 @@ public unsafe class Canvas
         DrawLine(X + Width, Y + Radius, Width + X, Y + Height - Radius, Color); // Right Line
         this[X + Width, Y + Height] = Color; // Bottom Right Corner
     }
+    public void DrawRectangle(Color Color, int X, int Y, int Width, int Height)
+        => DrawRectangle(X, Y, (ushort)Width, (ushort)Height, 0, Color);
 
     /// <summary>
     /// Draws a grid of mixed blocks where each block has a size and count, creates a pattern.
@@ -573,6 +579,8 @@ public unsafe class Canvas
             }
         }
     }
+    public void DrawFilledCircle(Color Color, int X, int Y, ushort Radius)
+        => DrawFilledCircle(X, Y, Radius, Color);
 
     /// <summary>
     /// Draws a non-filled circle where X and Y are the center of it.
@@ -724,6 +732,8 @@ public unsafe class Canvas
             }
         }
     }
+    public void DrawLine(Color Color, int X1, int Y1, int X2, int Y2)
+        => DrawLine(X1, Y1, X2, Y2, Color);
 
     #endregion
 
@@ -905,6 +915,10 @@ public unsafe class Canvas
             }
         }
     }
+    public void DrawImage(Canvas Image, int X, int Y)
+        => DrawImage(X, Y, Image, false);
+    public void DrawImageAlpha(Canvas Image, int X, int Y)
+        => DrawImage(X, Y, Image, true);
 
     #endregion
 
@@ -1084,6 +1098,8 @@ public unsafe class Canvas
             }
         }
     }
+    public void DrawString(string Text, AcfFontFace Font, Color Color, int X, int Y)
+        => DrawString(X, Y, Text, Font, Color, false);
 
     /// <summary>
     /// Draws a string of text at X and Y with a BitFont font.

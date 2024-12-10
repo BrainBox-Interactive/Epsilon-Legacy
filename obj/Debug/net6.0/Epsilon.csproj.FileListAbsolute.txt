@@ -109,3 +109,4 @@ C:\Users\USER\Epsilon-Legacy\bin\Debug\net6.0\Epsilon.deps.json
 C:\Users\USER\Epsilon-Legacy\bin\Debug\net6.0\Epsilon.dll
 C:\Users\USER\Epsilon-Legacy\bin\Debug\net6.0\Epsilon.pdb
 C:\Users\USER\Epsilon-Legacy\obj\Debug\net6.0\ref\Epsilon.dll
+C:\Users\USER\Epsilon-Legacy\bin\Debug\net6.0\System\Resources\Fonts\Cantarell.acf

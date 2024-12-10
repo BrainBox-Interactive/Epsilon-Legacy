@@ -2,12 +2,13 @@
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
+using GrapeGL.Graphics;
 
 namespace Epsilon.Interface.System
 {
     public class Startup : Process
     {
-        Bitmap b = new Bitmap(Files.RawTEPBanner);
+        GrapeGL.Graphics.Canvas b = GrapeGL.Graphics.Image.FromBitmap(Files.RawTEPBanner);
         Window win;
 
         public override void Start()

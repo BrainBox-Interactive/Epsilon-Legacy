@@ -1,6 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
+using GrapeGL.Graphics;
 
 namespace Epsilon.Interface.Components
 {
@@ -12,7 +12,7 @@ namespace Epsilon.Interface.Components
 
         public Color CheckColor { get; set; } = Color.White;
         public Color CheckHoverColor { get; set; } = Color.LightGray;
-        public Color CheckClickColor { get; set; } = Color.Gray;
+        public Color CheckClickColor { get; set; } = Color.DeepGray;
         public Color TextColor { get; set; } = GUI.colors.txtColor;
 
         public Checkbox(int x, int y, string text,

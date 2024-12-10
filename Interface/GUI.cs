@@ -12,6 +12,11 @@ using Epsilon.System.Resources;
 using Cosmos.System.Coroutines;
 using Epsilon.System.Critical;
 using Epsilon.Properties;
+using GrapeGL.Graphics;
+using Canvas = GrapeGL.Graphics.Canvas;
+using Image = GrapeGL.Graphics.Image;
+using GrapeGL.Graphics.Fonts;
+using GrapeGL.Hardware.GPU;
 
 namespace Epsilon.Interface
 {
@@ -21,11 +26,11 @@ namespace Epsilon.Interface
             height,
             mx = 0,
             my = 0;
-        public static Canvas canv;
-        public static PCScreenFont dFont
-            = PCScreenFont.LoadFont(Files.RawPowerlineFont);
+        public static Display canv;
+        public static AcfFontFace dFont
+            = new(new MemoryStream(Files.RawDefaultFont));
 
-        public static Bitmap wp, crs;
+        public static Canvas wp, crs;
         public static Colors colors = new();
         public static Process cProc;
 
@@ -35,11 +40,11 @@ namespace Epsilon.Interface
 
         public static void Start()
         {
-            canv = FullScreenCanvas.GetFullScreenCanvas();
-            width = (int)canv.Mode.Width; height = (int)canv.Mode.Height;
+            canv.Clear();
+            ushort width = canv.Width, height = canv.Height;
 
-            MouseManager.ScreenWidth = (uint)width;
-            MouseManager.ScreenHeight = (uint)height;
+            MouseManager.ScreenWidth = width;
+            MouseManager.ScreenHeight = height;
             MouseManager.X = (uint)width / 2;
             MouseManager.Y = (uint)height / 2;
 
@@ -90,7 +95,7 @@ namespace Epsilon.Interface
                 {
                     if (!p.wData.Moveable) continue;
                     if (mx >= p.wData.Position.X
-                        && mx <= p.wData.Position.X + p.Name.Length * dFont.Width + 16)
+                        && mx <= p.wData.Position.X + dFont.MeasureString(p.Name) + 16)
                     {
                         if (my >= p.wData.Position.Y
                             && my <= p.wData.Position.Y + w.tSize)
@@ -115,22 +120,21 @@ namespace Epsilon.Interface
         public static bool DrawCursor = true;
         public static void Update()
         {
+            canv.Clear(GrapeGL.Graphics.Color.Black);
             mx = (int)MouseManager.X; my = (int)MouseManager.Y;
 
             // Back layer
-            canv.DrawImage(wp, 0, 0);
-            canv.DrawString("FPS:" + Kernel._fps, dFont, colors.txtColor, 0, 32);
-            canv.DrawString("Build Information:", dFont, colors.txtColor,
-                (int)width - dFont.Width * "Build Information:".Length,
-                (int)height - (32 + dFont.Height * 2));
+            canv.DrawImage(0, 0, wp, false);
+            canv.DrawString(0, 32, "FPS:" + Kernel._fps, dFont, colors.txtColor);
+            canv.DrawString(width - dFont.MeasureString("Build Information:"),
+                height - (32 + dFont.GetHeight() * 2),
+                "Build Information:", dFont, colors.txtColor);
             canv.DrawString(
+                width - dFont.MeasureString("Epsilon v." + Kernel.version + VersionInfo.revision),
+                height - (32 + dFont.GetHeight()),
                 "Epsilon v." + Kernel.version + VersionInfo.revision,
                 dFont,
-                colors.txtColor,
-                (int)width - dFont.Width
-                * ("Epsilon v." + Kernel.version + VersionInfo.revision)
-                .Length,
-                (int)height - (32 + dFont.Height)
+                colors.txtColor
             );
 
             // Middle layer
@@ -140,7 +144,7 @@ namespace Epsilon.Interface
             // Front layer
             if (DrawCursor)
             {
-                canv.DrawImageAlpha(crs, (int)MouseManager.X - 9, (int)MouseManager.Y - 9);
+                canv.DrawImage((int)MouseManager.X - 9, (int)MouseManager.Y - 9, crs, true);
                 if (!crsChanged && crs != ESystem.dc) crs = ESystem.dc;
             }
 
@@ -156,7 +160,7 @@ namespace Epsilon.Interface
             }
 
             // Obligatory update to display
-            canv.Display();
+            canv.Update();
         }
     }
 }

@@ -5,7 +5,7 @@ using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
 using System.Collections.Generic;
 using System;
-using System.Drawing;
+using GrapeGL.Graphics;
 
 namespace Epsilon.Applications.Base
 {

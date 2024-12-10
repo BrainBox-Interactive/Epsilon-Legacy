@@ -1,10 +1,13 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using GrapeGL.Compression;
 
 namespace GrapeGL.Graphics;
 
-public unsafe static class Image
+public unsafe class Image
 {
     #region Structure
 
@@ -211,7 +214,7 @@ public unsafe static class Image
                 case "PLTE":
                     break;
                 case "IDAT":
-                    List<byte> Buffer = new();
+                    IList<byte> Buffer = new List<byte>();
                     Reader.BaseStream.Position += 2;
                     for (int i = 2; i < Length; i++)
                     {

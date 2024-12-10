@@ -2,6 +2,7 @@
 using Cosmos.System.Graphics;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
+using GrapeGL.Graphics;
 using System;
 using System.Drawing;
 
@@ -9,16 +10,16 @@ namespace Epsilon.Interface.Components.Buttons
 {
     public class ProfilePicture : Component
     {
-        public Bitmap PFP { get; set; }
+        public GrapeGL.Graphics.Canvas PFP { get; set; }
         public Action Action { get; set; }
         public Process Process { get; set; }
 
-        public ProfilePicture(int x, int y, Bitmap bitmap,
+        public ProfilePicture(int x, int y, GrapeGL.Graphics.Canvas bitmap,
             Action action, Process process)
-            : base(x, y, (int)bitmap.Width, (int)bitmap.Height)
+            : base(x, y, bitmap.Width, bitmap.Height)
         {
             X = x; Y = y;
-            Width = (int)bitmap.Width; Height = (int)bitmap.Height;
+            Width = bitmap.Width; Height = bitmap.Height;
             PFP = bitmap;
             Action = action;
             Process = process;

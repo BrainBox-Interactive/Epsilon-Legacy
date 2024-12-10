@@ -1,12 +1,13 @@
-﻿using Cosmos.System.Graphics;
-using Epsilon.Interface;
+﻿using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
+using GrapeGL.Graphics;
 using System.Drawing;
 using System.IO;
+using Color = GrapeGL.Graphics.Color;
 
 namespace Epsilon.Applications.System
 {
@@ -14,7 +15,7 @@ namespace Epsilon.Applications.System
     {
         string[] logInfo;
         string ustr, pstr;
-        Bitmap b = new Bitmap(Files.RawTEPBanner);
+        Canvas b = Image.FromBitmap(Files.RawTEPBanner);
         Box username, password;
         Window win;
         Button ok;

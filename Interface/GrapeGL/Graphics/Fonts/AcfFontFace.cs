@@ -176,7 +176,7 @@ public class AcfFontFace : FontFace
     public override string GetFamilyName() => _familyName;
 
     public override string GetStyleName() => _styleName;
-
+    
     public override int GetHeight() => _height;
 
     public override Glyph? GetGlyph(char c)
@@ -233,4 +233,15 @@ public class AcfFontFace : FontFace
     /// The glyphs of the font face in ASCII.
     /// </summary>
     private readonly Glyph[] _glyphs = new Glyph[256];
+
+
+    /// <summary>
+    /// Gets the width of a single space character in this font.
+    /// </summary>
+    public int Width => MeasureString(" ");
+
+    /// <summary>
+    /// Gets the height of the font face.
+    /// </summary>
+    public int Height => GetHeight();
 }

@@ -1,12 +1,8 @@
 ﻿using Cosmos.System;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
+using GrapeGL.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Epsilon.Interface.Components.Text
 {
@@ -20,7 +16,7 @@ namespace Epsilon.Interface.Components.Text
 
         public Hyperlink(int x, int y, Color nColor, Color hColor, string text,
             Action action, Process process)
-            : base(x, y, text.Length * GUI.dFont.Width, GUI.dFont.Height)
+            : base(x, y, GUI.dFont.MeasureString(text), GUI.dFont.GetHeight())
         {
             X = x; Y = y;
             NormalColor = nColor; HoverColor = hColor;
@@ -37,8 +33,8 @@ namespace Epsilon.Interface.Components.Text
                 && GUI.cProc == null)
             {
                 GUI.canv.DrawString(
-                    Text, GUI.dFont,
-                    HoverColor, X, Y
+                    X, Y, Text, GUI.dFont,
+                    HoverColor
                 );
                 GUI.canv.DrawLine(
                     HoverColor,

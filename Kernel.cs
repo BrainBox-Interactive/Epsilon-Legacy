@@ -72,7 +72,7 @@ namespace Epsilon
                         {
                             if (k.Key == ConsoleKeyEx.F11)
                             {
-                                Interface.GUI.canv.Disable();
+                                GUI.canv.Dispose();
                                 Manager.pList.Clear();
                                 Console.Clear();
                                 isGUI = false;

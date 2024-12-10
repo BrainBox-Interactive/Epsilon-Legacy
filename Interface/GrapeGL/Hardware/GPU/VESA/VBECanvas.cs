@@ -1,5 +1,6 @@
 ﻿using Cosmos.Core.Multiboot;
 using GrapeGL.Graphics;
+using System;
 
 namespace GrapeGL.Hardware.GPU.VESA;
 

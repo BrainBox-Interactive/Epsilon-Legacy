@@ -1,6 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
+using GrapeGL.Graphics;
 
 namespace Epsilon.Interface.Components.Titlebar.Base
 {
@@ -8,14 +8,14 @@ namespace Epsilon.Interface.Components.Titlebar.Base
     {
         Process p;
         public MinButton(int x, int y, Process process)
-            : base(x, y, 12, 12, Color.LimeGreen, Color.LightGreen,
-                  Color.ForestGreen, "", process) {
+            : base(x, y, 12, 12, Color.Green, Color.GoogleGreen,
+                  Color.FakeGrassGreen, "", process) {
             X = x;
             Y = y;
             Width = 12;
             Height = 12;
             p = process;
-            OutlineColor = Color.ForestGreen;
+            OutlineColor = Color.FakeGrassGreen;
         }
 
         public override void Update()

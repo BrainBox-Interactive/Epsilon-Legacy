@@ -1,9 +1,9 @@
 ﻿using Cosmos.System;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
+using GrapeGL.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata;
 
@@ -101,7 +101,7 @@ namespace Epsilon.Interface.Components.Text
             GUI.canv.DrawFilledRectangle(Color.White, X, Y,
                 Width, Height);
 
-            GUI.canv.DrawFilledRectangle(Color.Gray,
+            GUI.canv.DrawFilledRectangle(Color.DeepGray,
                 X + Width - 16, Y + up.Height, 16, Height - up.Height - down.Height);
             GUI.canv.DrawLine(Color.Black, X + Width - 16, Y + up.Height,
                 X + Width - 16, Y + up.Height + Height - down.Height);

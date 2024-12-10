@@ -1,7 +1,7 @@
 ﻿using Epsilon.Interface;
 using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
+using GrapeGL.Graphics;
 using System.Threading;
 
 namespace Epsilon.System.Critical

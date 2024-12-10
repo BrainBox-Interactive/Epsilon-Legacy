@@ -2,6 +2,7 @@
 using Cosmos.HAL;
 using Cosmos.HAL.Drivers.Video.SVGAII;
 using GrapeGL.Graphics;
+using System;
 
 namespace GrapeGL.Hardware.GPU.VMWare;
 

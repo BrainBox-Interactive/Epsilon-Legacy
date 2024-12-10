@@ -4,8 +4,8 @@ using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
 using Epsilon.System.Critical.Processing;
+using GrapeGL.Graphics;
 using System.Collections.Generic;
-using System.Drawing;
 
 namespace Epsilon.Applications.System.Performance
 {

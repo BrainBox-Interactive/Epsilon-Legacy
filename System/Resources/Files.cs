@@ -1,6 +1,8 @@
-﻿using IL2CPU.API.Attribs;
+﻿using GrapeGL.Graphics.Fonts;
+using IL2CPU.API.Attribs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +56,7 @@ namespace Epsilon.System.Resources
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Images.Icons.Default.bmp")]
         public static byte[] RawDefaultIcon;
 
-        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.zap-ext-light16.psf")]
+        [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.Cantarell.acf")]
         public static byte[] RawDefaultFont;
         [ManifestResourceStream(ResourceName = "Epsilon.System.Resources.Fonts.ter-powerline-v16n.psf")]
         public static byte[] RawPowerlineFont;

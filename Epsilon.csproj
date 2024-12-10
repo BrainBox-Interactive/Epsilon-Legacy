@@ -69,6 +69,7 @@
       <None Remove="System\Resources\Audio\Startup_o.wav" />
       <None Remove="System\Resources\Audio\Warning.wav" />
       <None Remove="System\Resources\Fonts\arial.ttf" />
+      <None Remove="System\Resources\Fonts\Cantarell.acf" />
       <None Remove="System\Resources\Fonts\ter-powerline-v16n.psf" />
       <None Remove="System\Resources\Fonts\zap-ext-light16.psf" />
       <None Remove="System\Resources\Images\Bar.bmp" />
@@ -105,6 +106,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Audio\Warning.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="System\Resources\Fonts\Cantarell.acf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <EmbeddedResource Include="System\Resources\Images\Bars\CBar.bmp">

@@ -67,7 +67,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                 {
                     int s = Manager.pList[i].Name.Length * GUI.dFont.Width
                         + (int)Manager.pList[i].wData.Icon.Width;
-                    GUI.canv.DrawFilledRectangle(Color.Black,
+                    GUI.canv.DrawFilledRectangle(GrapeGL.Graphics.Color.Black,
                         tbx + (8 * cx),
                         y, s, h);
 

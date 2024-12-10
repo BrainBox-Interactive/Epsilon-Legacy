@@ -1,9 +1,9 @@
 ﻿using Cosmos.System;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
+using GrapeGL.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -51,7 +51,7 @@ namespace Epsilon.Interface.Components.Text
             );
 
             if (Placeholder != "" && Content == "")
-                GUI.canv.DrawString(Placeholder, GUI.dFont, Color.Gray,
+                GUI.canv.DrawString(Placeholder, GUI.dFont, Color.DeepGray,
                     X + 8, Y + Height / 2 - GUI.dFont.Height / 2);
 
             if (!Password) GUI.canv.DrawString(Content, GUI.dFont, TextColor,

@@ -29,7 +29,8 @@ namespace Epsilon.System.Critical.Processing
                 Y = 0,
                 Width = 100,
                 Height = 100
-        }; public Bitmap Icon = new(Files.RawDefaultIcon);
+        }; public GrapeGL.Graphics.Canvas Icon
+            = GrapeGL.Graphics.Image.FromBitmap(Files.RawDefaultIcon);
         public bool Moveable = true;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Cosmos.System;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
+using GrapeGL.Graphics;
 
 namespace Epsilon.Interface.Components.Titlebar.Base
 {
@@ -8,14 +8,14 @@ namespace Epsilon.Interface.Components.Titlebar.Base
     {
         Process p;
         public MaxButton(int x, int y, Process process)
-            : base(x, y, 12, 12, Color.Gold, Color.LightGoldenrodYellow,
-                  Color.Goldenrod, "", process) {
+            : base(x, y, 12, 12, Color.Yellow, Color.LightYellow,
+                  Color.GoogleYellow, "", process) {
             X = x;
             Y = y;
             Width = 12;
             Height = 12;
             p = process;
-            OutlineColor = Color.Goldenrod;
+            OutlineColor = Color.GoogleYellow;
         }
 
         public override void Update()

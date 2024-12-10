@@ -3,6 +3,8 @@ using Cosmos.System;
 using GrapeGL.Graphics;
 using GrapeGL.Hardware.GPU.VESA;
 using GrapeGL.Hardware.GPU.VMWare;
+using System;
+using System.Threading;
 
 namespace GrapeGL.Hardware.GPU;
 

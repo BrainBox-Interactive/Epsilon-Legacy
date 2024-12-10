@@ -19,6 +19,9 @@ using Epsilon.Applications.Base;
 using Epsilon.Applications.System.Performance;
 using Epsilon.Applications.FS;
 using Cosmos.HAL.BlockDevice;
+using GrapeGL.Graphics;
+using Image = GrapeGL.Graphics.Image;
+using Canvas = GrapeGL.Graphics.Canvas;
 
 namespace Epsilon.System;
 
@@ -28,15 +31,15 @@ public static class ESystem
     public static AC97 driver;
     public static AudioManager audioManager;
 
-    public static Bitmap dc = new Bitmap(Files.RawDefaultCursor),
-        hc = new Bitmap(Files.RawHandCursor),
-        wc = new Bitmap(Files.RawWriteCursor),
-        mc = new Bitmap(Files.RawMoveCursor);
-    public static Bitmap idleCB = new(Files.RawIdleCButton),
-        hoverCB = new(Files.RawHoverCButton),
-        clickCB = new(Files.RawClickCButton);
+    public static Canvas dc = Image.FromBitmap(Files.RawDefaultCursor),
+        hc = Image.FromBitmap(Files.RawHandCursor),
+        wc = Image.FromBitmap(Files.RawWriteCursor),
+        mc = Image.FromBitmap(Files.RawMoveCursor);
+    public static Canvas idleCB = Image.FromBitmap(Files.RawIdleCButton),
+        hoverCB = Image.FromBitmap(Files.RawHoverCButton),
+        clickCB = Image.FromBitmap(Files.RawClickCButton);
 
-    public static Bitmap banner = new(Files.RawMenuBanner);
+    public static Canvas banner = Image.FromBitmap(Files.RawMenuBanner);
 
     public static string Drive = "0:\\",
         SystemPath = Drive + "Epsilon\\",
@@ -97,9 +100,9 @@ public static class ESystem
                 {
                     Position = new(
                         GUI.width / 2 -
-                        (("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16) / 2,
+                        (GUI.dFont.MeasureString("File " + path + " has been successfully saved.") + 16) / 2,
                         GUI.height / 2 - 75 / 2,
-                        ("File " + path + " has been successfully saved.").Length * GUI.dFont.Width + 16, 75),
+                        GUI.dFont.MeasureString("File " + path + " has been successfully saved.") + 16, 75),
                     Moveable = true
                 },
                 Content = "File " + path + " has been successfully saved.",
@@ -123,10 +126,9 @@ public static class ESystem
 
     private static void SetUpImages()
     {
-        Bitmap wp = new Bitmap(Files.RawAlphaWallpaper);
-        //wp.Resize((uint)GUI.width, (uint)GUI.height);
+        Canvas wp = Image.FromBitmap(Files.RawAlphaWallpaper);
         GUI.wp = wp;
-        GUI.crs = new Bitmap(Files.RawDefaultCursor);
+        GUI.crs = Image.FromBitmap(Files.RawHandCursor);
     }
 
     public static void PlayAudio(byte[] stream)
@@ -165,11 +167,9 @@ public static class ESystem
                     wData = new WindowData
                     {
                         Position = new Rectangle(GUI.width / 2 -
-                        (("You are in guest mode, any modification you bring will not be retained.".Length
-                        * GUI.dFont.Width) + 16) / 2,
+                        (GUI.dFont.MeasureString("You are in guest mode, any modification you bring will not be retained.") + 16) / 2,
                         GUI.height / 2 - (int)(75 / 2),
-                        ("You are in guest mode, any modification you bring will not be retained.".Length
-                        * GUI.dFont.Width) + 16, 75),
+                        GUI.dFont.MeasureString("You are in guest mode, any modification you bring will not be retained.") + 16, 75),
                         Moveable = true
                     },
                     Name = "Guest Mode",

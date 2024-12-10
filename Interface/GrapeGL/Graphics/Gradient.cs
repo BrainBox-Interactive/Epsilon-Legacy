@@ -1,4 +1,6 @@
-﻿namespace GrapeGL.Graphics;
+﻿using System;
+
+namespace GrapeGL.Graphics;
 
 /// <summary>
 /// Gradient class, used for generating gradients.

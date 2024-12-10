@@ -1,7 +1,7 @@
 ﻿using Cosmos.HAL;
 using Cosmos.System;
 using Epsilon.System.Critical.Processing;
-using System.Drawing;
+using GrapeGL.Graphics;
 
 namespace Epsilon.Interface.Components.Titlebar
 {

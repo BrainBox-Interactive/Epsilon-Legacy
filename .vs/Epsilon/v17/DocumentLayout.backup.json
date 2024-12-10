@@ -3,136 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\Epsilon-Legacy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\screen\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\screen\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\base\\notepad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\base\\notepad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\performance\\pmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\performance\\pmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\hardware\\gpu\\display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\hardware\\gpu\\display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\fs\\bokensha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\fs\\bokensha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\hardware\\gpu\\vmware\\svgaiicanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\hardware\\gpu\\vmware\\svgaiicanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\colors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\colors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\gradient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\gradient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\screen\\controlbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\screen\\controlbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\screen\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\screen\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\hardware\\gpu\\vesa\\vbecanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\hardware\\gpu\\vesa\\vbecanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\gui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\resources\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\resources\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\critical\\processing\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\critical\\processing\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\maxbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\maxbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\critical\\processing\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\critical\\processing\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\hyperlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\hyperlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\window.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\window.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\rasterizer\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\rasterizer\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\buttons\\profilepicture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\buttons\\profilepicture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\screen\\topbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\screen\\topbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\epsilon.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:epsilon.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\base\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\base\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\compression\\lzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\compression\\lzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\minbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\minbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\shell\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\shell\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\infobutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\infobutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\maxbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\maxbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\base\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\base\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\performance\\pmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\performance\\pmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\dummybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\dummybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\base\\notepad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\base\\notepad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\fs\\bokensha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\fs\\bokensha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\titlebarbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\titlebarbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\canvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\canvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\critical\\errorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -143,8 +95,128 @@
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\drawing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\dummybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\dummybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\box.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\esystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\setup\\oobe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\setup\\oobe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\scrollbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\checkbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\hyperlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\hyperlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\screen\\topbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\screen\\topbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\window.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\window.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\screen\\controlbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\screen\\controlbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\critical\\processing\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\critical\\processing\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\fonts\\acffontface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\fonts\\acffontface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\compression\\deflatestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\compression\\deflatestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\resources\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\resources\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\grapegl\\graphics\\fonts\\fontface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\grapegl\\graphics\\fonts\\fontface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\colors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\colors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\applications\\system\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:applications\\system\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\shell\\bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\shell\\bar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\critical\\processing\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\critical\\processing\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\epsilon.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:epsilon.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\shell\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:system\\shell\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\system\\critical\\crash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -153,18 +225,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\closebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\closebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\titlebar\\base\\infobutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\titlebar\\base\\infobutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\components\\text\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\components\\text\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\interface\\system\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|solutionrelative:interface\\system\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB758295-1750-407C-B15D-436B84839D0F}|Epsilon.csproj|c:\\users\\user\\epsilon-legacy\\license||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -178,41 +238,619 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "GUI.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GUI.cs",
               "RelativeDocumentMoniker": "Interface\\GUI.cs",
               "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GUI.cs",
               "RelativeToolTip": "Interface\\GUI.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwIYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAuwHoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T12:25:15.802Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 37,
               "Title": "ControlBar.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\ControlBar.cs",
               "RelativeDocumentMoniker": "Interface\\System\\Shell\\Screen\\ControlBar.cs",
               "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\ControlBar.cs",
               "RelativeToolTip": "Interface\\System\\Shell\\Screen\\ControlBar.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAQwG4AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T02:04:13.792Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SVGAIICanvas.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Hardware\\GPU\\VMWare\\SVGAIICanvas.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Hardware\\GPU\\VMWare\\SVGAIICanvas.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Hardware\\GPU\\VMWare\\SVGAIICanvas.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Hardware\\GPU\\VMWare\\SVGAIICanvas.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:25:51.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Gradient.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Gradient.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Gradient.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Gradient.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Gradient.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAYwEgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:25:45.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VBECanvas.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Hardware\\GPU\\VESA\\VBECanvas.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Hardware\\GPU\\VESA\\VBECanvas.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Hardware\\GPU\\VESA\\VBECanvas.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Hardware\\GPU\\VESA\\VBECanvas.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwCsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:25:21.749Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Display.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Hardware\\GPU\\Display.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Hardware\\GPU\\Display.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Hardware\\GPU\\Display.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Hardware\\GPU\\Display.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwBkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:25:16.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Triangle.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Rasterizer\\Triangle.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Rasterizer\\Triangle.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Rasterizer\\Triangle.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Rasterizer\\Triangle.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAQwFcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:24:13.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Filters.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Filters.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Filters.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Filters.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Filters.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAYwFMBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:24:03.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LZW.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Compression\\LZW.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Compression\\LZW.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Compression\\LZW.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Compression\\LZW.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAQwEAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:23:32.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Login.cs",
+              "RelativeDocumentMoniker": "Applications\\System\\Login.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Login.cs",
+              "RelativeToolTip": "Applications\\System\\Login.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:18:45.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InfoButton.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
+              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T10:59:58.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MaxButton.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
+              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T10:58:07.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ControlMenu.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\ControlMenu.cs",
+              "RelativeDocumentMoniker": "Interface\\System\\Shell\\Screen\\ControlMenu.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\ControlMenu.cs",
+              "RelativeToolTip": "Interface\\System\\Shell\\Screen\\ControlMenu.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAQwHIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T20:36:11.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProfilePicture.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Buttons\\ProfilePicture.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Buttons\\ProfilePicture.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Buttons\\ProfilePicture.cs",
+              "RelativeToolTip": "Interface\\Components\\Buttons\\ProfilePicture.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA8wBAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T01:35:00.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Calculator.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Calculator.cs",
+              "RelativeDocumentMoniker": "Applications\\Base\\Calculator.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Calculator.cs",
+              "RelativeToolTip": "Applications\\Base\\Calculator.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA1wCgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T00:44:16.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Performance\\PManager.cs",
+              "RelativeDocumentMoniker": "Applications\\System\\Performance\\PManager.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Performance\\PManager.cs",
+              "RelativeToolTip": "Applications\\System\\Performance\\PManager.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwDQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T01:33:47.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DummyButton.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
+              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T20:43:20.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MinButton.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MinButton.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\MinButton.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MinButton.cs",
+              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\MinButton.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T10:56:41.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Notepad.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Notepad.cs",
+              "RelativeDocumentMoniker": "Applications\\Base\\Notepad.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Notepad.cs",
+              "RelativeToolTip": "Applications\\Base\\Notepad.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAzwCoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T00:24:42.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Bokensha.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\FS\\Bokensha.cs",
+              "RelativeDocumentMoniker": "Applications\\FS\\Bokensha.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\FS\\Bokensha.cs",
+              "RelativeToolTip": "Applications\\FS\\Bokensha.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAkwDoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T15:27:58.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TitlebarButton.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\TitlebarButton.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\TitlebarButton.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\TitlebarButton.cs",
+              "RelativeToolTip": "Interface\\Components\\Titlebar\\TitlebarButton.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwB4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T16:18:34.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Canvas.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Canvas.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Canvas.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Canvas.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Canvas.cs",
+              "ViewState": "AgIAAAoCAAAAAAAAAAApwEYCAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T15:25:12.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ErrorHandler.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\ErrorHandler.cs",
+              "RelativeDocumentMoniker": "System\\Critical\\ErrorHandler.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\ErrorHandler.cs",
+              "RelativeToolTip": "System\\Critical\\ErrorHandler.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwDAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T17:39:24.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Drawing.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Drawing.cs",
+              "RelativeDocumentMoniker": "Interface\\System\\Drawing.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Drawing.cs",
+              "RelativeToolTip": "Interface\\System\\Drawing.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T01:54:51.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Box.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Box.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Box.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Box.cs",
+              "RelativeToolTip": "Interface\\Components\\Text\\Box.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T15:01:56.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Block.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Block.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Block.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Block.cs",
+              "RelativeToolTip": "Interface\\Components\\Text\\Block.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T23:09:44.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Settings.cs",
+              "RelativeDocumentMoniker": "Applications\\System\\Settings.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Settings.cs",
+              "RelativeToolTip": "Applications\\System\\Settings.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T21:42:49.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Startup.cs",
+              "RelativeDocumentMoniker": "Interface\\System\\Startup.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Startup.cs",
+              "RelativeToolTip": "Interface\\System\\Startup.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:18:18.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ESystem.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\ESystem.cs",
+              "RelativeDocumentMoniker": "System\\ESystem.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\ESystem.cs",
+              "RelativeToolTip": "System\\ESystem.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwCkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:54:13.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "OOBE.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Setup\\OOBE.cs",
+              "RelativeDocumentMoniker": "Applications\\System\\Setup\\OOBE.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Setup\\OOBE.cs",
+              "RelativeToolTip": "Applications\\System\\Setup\\OOBE.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAQwGQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T12:57:13.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Scrollbox.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Scrollbox.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Scrollbox.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Scrollbox.cs",
+              "RelativeToolTip": "Interface\\Components\\Text\\Scrollbox.cs",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAwwGcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:16:46.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "String.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\String.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Text\\String.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\String.cs",
+              "RelativeToolTip": "Interface\\Components\\Text\\String.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:25:02.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Component.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Component.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Component.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Component.cs",
+              "RelativeToolTip": "Interface\\Components\\Component.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:40:36.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Checkbox.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Checkbox.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Checkbox.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Checkbox.cs",
+              "RelativeToolTip": "Interface\\Components\\Checkbox.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:16:18.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Button.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Button.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Button.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Button.cs",
+              "RelativeToolTip": "Interface\\Components\\Button.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAiwA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T13:40:54.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Hyperlink.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Hyperlink.cs",
+              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Hyperlink.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Hyperlink.cs",
+              "RelativeToolTip": "Interface\\Components\\Text\\Hyperlink.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T22:16:46.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "TopBar.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\TopBar.cs",
+              "RelativeDocumentMoniker": "Interface\\System\\Shell\\Screen\\TopBar.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\TopBar.cs",
+              "RelativeToolTip": "Interface\\System\\Shell\\Screen\\TopBar.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAYwEkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T15:38:00.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Window.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Window.cs",
+              "RelativeDocumentMoniker": "Interface\\Window.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Window.cs",
+              "RelativeToolTip": "Interface\\Window.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAYwEwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:53:03.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Process.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\Processing\\Process.cs",
+              "RelativeDocumentMoniker": "System\\Critical\\Processing\\Process.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\Processing\\Process.cs",
+              "RelativeToolTip": "System\\Critical\\Processing\\Process.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAtwBkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T01:55:01.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AcfFontFace.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Fonts\\AcfFontFace.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Fonts\\AcfFontFace.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Fonts\\AcfFontFace.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Fonts\\AcfFontFace.cs",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAgwPUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:49:28.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "DeflateStream.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Compression\\DeflateStream.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Compression\\DeflateStream.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Compression\\DeflateStream.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Compression\\DeflateStream.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAQwMsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:53:56.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Color.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Color.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Color.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Color.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Color.cs",
+              "ViewState": "AgIAADMCAAAAAAAAAAA1wEECAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:59:54.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Kernel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Kernel.cs",
+              "RelativeDocumentMoniker": "Kernel.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Kernel.cs",
+              "RelativeToolTip": "Kernel.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwEoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T02:00:59.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Image.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Image.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Image.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Image.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Image.cs",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAYwN8AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:27:41.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "FontFace.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Fonts\\FontFace.cs",
+              "RelativeDocumentMoniker": "Interface\\GrapeGL\\Graphics\\Fonts\\FontFace.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\GrapeGL\\Graphics\\Fonts\\FontFace.cs",
+              "RelativeToolTip": "Interface\\GrapeGL\\Graphics\\Fonts\\FontFace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:40:53.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Files.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Resources\\Files.cs",
+              "RelativeDocumentMoniker": "System\\Resources\\Files.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Resources\\Files.cs",
+              "RelativeToolTip": "System\\Resources\\Files.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAADoAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T23:51:45.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
               "Title": "MessageBox.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\MessageBox.cs",
               "RelativeDocumentMoniker": "Applications\\System\\MessageBox.cs",
@@ -224,96 +862,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ControlMenu.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\ControlMenu.cs",
-              "RelativeDocumentMoniker": "Interface\\System\\Shell\\Screen\\ControlMenu.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\ControlMenu.cs",
-              "RelativeToolTip": "Interface\\System\\Shell\\Screen\\ControlMenu.cs",
-              "ViewState": "AgIAAGgAAADA//////8swHMAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 46,
+              "Title": "Colors.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Colors.cs",
+              "RelativeDocumentMoniker": "Interface\\System\\Colors.cs",
+              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Colors.cs",
+              "RelativeToolTip": "Interface\\System\\Colors.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T20:36:11.789Z"
+              "WhenOpened": "2024-06-23T21:39:44.816Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Login.cs",
-              "RelativeDocumentMoniker": "Applications\\System\\Login.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Login.cs",
-              "RelativeToolTip": "Applications\\System\\Login.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T13:18:45.514Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Bokensha.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\FS\\Bokensha.cs",
-              "RelativeDocumentMoniker": "Applications\\FS\\Bokensha.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\FS\\Bokensha.cs",
-              "RelativeToolTip": "Applications\\FS\\Bokensha.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T15:27:58.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PManager.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Performance\\PManager.cs",
-              "RelativeDocumentMoniker": "Applications\\System\\Performance\\PManager.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Performance\\PManager.cs",
-              "RelativeToolTip": "Applications\\System\\Performance\\PManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T01:33:47.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Settings.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Settings.cs",
-              "RelativeDocumentMoniker": "Applications\\System\\Settings.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\System\\Settings.cs",
-              "RelativeToolTip": "Applications\\System\\Settings.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBYAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T21:42:49.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Notepad.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Notepad.cs",
-              "RelativeDocumentMoniker": "Applications\\Base\\Notepad.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Notepad.cs",
-              "RelativeToolTip": "Applications\\Base\\Notepad.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAYwFAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T00:24:42.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 47,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-06-15T23:18:41.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2024-06-15T23:18:41.586Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 49,
               "Title": "Bar.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Bar.cs",
               "RelativeDocumentMoniker": "Interface\\System\\Shell\\Bar.cs",
@@ -325,91 +899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ESystem.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\ESystem.cs",
-              "RelativeDocumentMoniker": "System\\ESystem.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\ESystem.cs",
-              "RelativeToolTip": "System\\ESystem.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAYwLcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T22:54:13.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Colors.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Colors.cs",
-              "RelativeDocumentMoniker": "Interface\\System\\Colors.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Colors.cs",
-              "RelativeToolTip": "Interface\\System\\Colors.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T21:39:44.816Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Kernel.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Kernel.cs",
-              "RelativeDocumentMoniker": "Kernel.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Kernel.cs",
-              "RelativeToolTip": "Kernel.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwCsAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T02:00:59.668Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MaxButton.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
-              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\MaxButton.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBAAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T10:58:07.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Component.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Component.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Component.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Component.cs",
-              "RelativeToolTip": "Interface\\Components\\Component.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAiwDMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T22:40:36.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Button.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Button.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Button.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Button.cs",
-              "RelativeToolTip": "Interface\\Components\\Button.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAA9wDwAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:40:54.091Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Hyperlink.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Hyperlink.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Hyperlink.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Hyperlink.cs",
-              "RelativeToolTip": "Interface\\Components\\Text\\Hyperlink.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAuwDIAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T22:16:46.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 50,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Global.cs",
               "RelativeDocumentMoniker": "System\\Global.cs",
@@ -421,31 +911,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Scrollbox.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Scrollbox.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Scrollbox.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Scrollbox.cs",
-              "RelativeToolTip": "Interface\\Components\\Text\\Scrollbox.cs",
-              "ViewState": "AQIAAMwAAAAAAAAAAAAqwM4AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:16:46.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Checkbox.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Checkbox.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Checkbox.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Checkbox.cs",
-              "RelativeToolTip": "Interface\\Components\\Checkbox.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAUwBcAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:16:18.662Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 51,
               "Title": "Manager.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\Processing\\Manager.cs",
               "RelativeDocumentMoniker": "System\\Critical\\Processing\\Manager.cs",
@@ -457,79 +923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Window.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Window.cs",
-              "RelativeDocumentMoniker": "Interface\\Window.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Window.cs",
-              "RelativeToolTip": "Interface\\Window.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAuwGYAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T22:53:03.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "TopBar.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\TopBar.cs",
-              "RelativeDocumentMoniker": "Interface\\System\\Shell\\Screen\\TopBar.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Shell\\Screen\\TopBar.cs",
-              "RelativeToolTip": "Interface\\System\\Shell\\Screen\\TopBar.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAAC4AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T15:38:00.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "String.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\String.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Text\\String.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\String.cs",
-              "RelativeToolTip": "Interface\\Components\\Text\\String.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowBwAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:25:02.921Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "InfoButton.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
-              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\InfoButton.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T10:59:58.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Startup.cs",
-              "RelativeDocumentMoniker": "Interface\\System\\Startup.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Startup.cs",
-              "RelativeToolTip": "Interface\\System\\Startup.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAkwBkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T13:18:18.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Box.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Box.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Box.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Box.cs",
-              "RelativeToolTip": "Interface\\Components\\Text\\Box.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T15:01:56.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 54,
               "Title": "Crash.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\Crash.cs",
               "RelativeDocumentMoniker": "System\\Critical\\Crash.cs",
@@ -541,7 +935,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 52,
               "Title": "Epsilon.csproj",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Epsilon.csproj",
               "RelativeDocumentMoniker": "Epsilon.csproj",
@@ -553,103 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ErrorHandler.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\ErrorHandler.cs",
-              "RelativeDocumentMoniker": "System\\Critical\\ErrorHandler.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\ErrorHandler.cs",
-              "RelativeToolTip": "System\\Critical\\ErrorHandler.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAADkAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T17:39:24.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "MinButton.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MinButton.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\MinButton.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\MinButton.cs",
-              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\MinButton.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwBEAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T10:56:41.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Calculator.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Calculator.cs",
-              "RelativeDocumentMoniker": "Applications\\Base\\Calculator.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Applications\\Base\\Calculator.cs",
-              "RelativeToolTip": "Applications\\Base\\Calculator.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAArwCAAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T00:44:16.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Block.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Block.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Text\\Block.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Text\\Block.cs",
-              "RelativeToolTip": "Interface\\Components\\Text\\Block.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAuwDgAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T23:09:44.731Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Process.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\Processing\\Process.cs",
-              "RelativeDocumentMoniker": "System\\Critical\\Processing\\Process.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Critical\\Processing\\Process.cs",
-              "RelativeToolTip": "System\\Critical\\Processing\\Process.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T01:55:01.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Drawing.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Drawing.cs",
-              "RelativeDocumentMoniker": "Interface\\System\\Drawing.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\System\\Drawing.cs",
-              "RelativeToolTip": "Interface\\System\\Drawing.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T01:54:51.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ProfilePicture.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Buttons\\ProfilePicture.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Buttons\\ProfilePicture.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Buttons\\ProfilePicture.cs",
-              "RelativeToolTip": "Interface\\Components\\Buttons\\ProfilePicture.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T01:35:00.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Files.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Resources\\Files.cs",
-              "RelativeDocumentMoniker": "System\\Resources\\Files.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Resources\\Files.cs",
-              "RelativeToolTip": "System\\Resources\\Files.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T23:51:45.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 56,
               "Title": "LICENSE",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\LICENSE",
               "RelativeDocumentMoniker": "LICENSE",
@@ -661,7 +959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 55,
               "Title": "CloseButton.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\CloseButton.cs",
               "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\CloseButton.cs",
@@ -673,19 +971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "DummyButton.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
-              "RelativeDocumentMoniker": "Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
-              "ToolTip": "C:\\Users\\USER\\Epsilon-Legacy\\Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
-              "RelativeToolTip": "Interface\\Components\\Titlebar\\Base\\DummyButton.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T20:43:20.566Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 53,
               "Title": "Commands.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Epsilon-Legacy\\System\\Shell\\Commands.cs",
               "RelativeDocumentMoniker": "System\\Shell\\Commands.cs",

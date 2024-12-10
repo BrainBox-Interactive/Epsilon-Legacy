@@ -1,14 +1,15 @@
-﻿using Cosmos.System.Graphics;
-using Epsilon.Interface;
+﻿using Epsilon.Interface;
 using Epsilon.Interface.Components;
 using Epsilon.Interface.Components.Text;
 using Epsilon.System;
 using Epsilon.System.Critical.Processing;
 using Epsilon.System.Resources;
+using GrapeGL.Graphics;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Threading;
+using Color = GrapeGL.Graphics.Color;
 
 namespace Epsilon.Applications.System.Setup
 {
@@ -17,7 +18,7 @@ namespace Epsilon.Applications.System.Setup
     {
         Window win;
         Box username, password, c_password;
-        Bitmap b = new Bitmap(Files.RawTEPBanner);
+        Canvas b = Image.FromBitmap(Files.RawTEPBanner);
         Button ok;
 
         public override void Start()
