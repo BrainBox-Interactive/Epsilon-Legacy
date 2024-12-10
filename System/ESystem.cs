@@ -124,7 +124,7 @@ public static class ESystem
     private static void SetUpImages()
     {
         Bitmap wp = new Bitmap(Files.RawAlphaWallpaper);
-        wp.Resize((uint)GUI.width, (uint)GUI.height);
+        //wp.Resize((uint)GUI.width, (uint)GUI.height);
         GUI.wp = wp;
         GUI.crs = new Bitmap(Files.RawDefaultCursor);
     }
@@ -180,10 +180,7 @@ public static class ESystem
         }
 
         SpawnBars();
-        Cosmos.System.Thread t =
-            new(() =>
-            { PlayAudio(Files.RawStartupAudio); });
-        t.Start();
+        PlayAudio(Files.RawStartupAudio);
     }
 
     public static void SpawnBars()

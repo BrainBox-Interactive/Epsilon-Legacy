@@ -42,9 +42,7 @@ namespace Epsilon.Interface.System.Shell.Screen
                         foreach (Process p in Manager.pList)
                             if (p.Name == "Log into Epsilon")
                                 return;
-                        Thread t
-                            = new(ESystem.LogOff);
-                        t.Start();
+                        ESystem.LogOff();
                     }
                     catch (Exception ex)
                     {
@@ -115,7 +113,21 @@ namespace Epsilon.Interface.System.Shell.Screen
                 Color.LightGray,
                 Color.LightGray,
                 "Settings",
-                delegate() { Remove(); }, this
+                delegate() {
+                    Manager.Start(new Settings()
+                    {
+                        wData = new WindowData
+                        {
+                            Position = new Rectangle(GUI.width / 2 - 512 / 2,
+                            GUI.height / 2 - 512 / 2, 512, 512),
+                            Moveable = true
+                        },
+                        Name = "Settings",
+                        Special = false
+                    });
+                    Remove();
+                },
+                this
             );
             picture = new(
                 x, y, new Bitmap(Files.RawDefaultPFP),

@@ -52,7 +52,7 @@ namespace Epsilon.Applications.FS
             {
                 if (!dhl.Exists(b => b.Text == s))
                 {
-                    Thread aD = new(() =>
+                    try
                     {
                         dhl.Add(new(wData.Position.X,
                         wData.Position.Y + win.tSize + ofs * index,
@@ -63,26 +63,21 @@ namespace Epsilon.Applications.FS
                             if (Directory.Exists(dPath + s)
                                 && !clicked)
                             {
-                                Thread dO = new(() =>
+                                Manager.Start(new Bokensha(dPath + s)
                                 {
-                                    Manager.Start(new Bokensha(dPath + s)
+                                    wData =
                                     {
-                                        wData =
-                                        {
-                                            Position = new(wData.Position.X + wData.Position.Width / 4,
-                                            wData.Position.Y + wData.Position.Height / 4, GUI.width, GUI.height),
-                                            Moveable = true,
-                                        },
-                                        Name = s,
-                                        Special = false
-                                    });
+                                    Position = new(wData.Position.X + wData.Position.Width / 4,
+                                    wData.Position.Y + wData.Position.Height / 4, GUI.width, GUI.height),
+                                    Moveable = true,
+                                    },
+                                    Name = s,
+                                    Special = false
                                 });
-                                dO.Start();
                             }
                             clicked = true;
                         }, this));
-                    });
-                    aD.Start();
+                    } catch { }
                 }
                 else
                 {
@@ -97,7 +92,7 @@ namespace Epsilon.Applications.FS
             {
                 if (!fhl.Exists(b => b.Text == s))
                 {
-                    Thread aD = new(() =>
+                    try
                     {
                         fhl.Add(new(wData.Position.X,
                         wData.Position.Y + win.tSize + ofs * index,
@@ -124,8 +119,7 @@ namespace Epsilon.Applications.FS
                                 });
                             clicked = true;
                         }, this));
-                    });
-                    aD.Start();
+                    } catch { }
                 }
                 else
                 {

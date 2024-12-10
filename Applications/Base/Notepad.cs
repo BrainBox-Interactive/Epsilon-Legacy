@@ -48,11 +48,7 @@ namespace Epsilon.Applications.Base
                 {
                     try
                     {
-                        Thread save = new(() =>
-                        {
-                            ESystem.WriteFile(b.Content, sb.Content, true);
-                        });
-                        save.Start();
+                        ESystem.WriteFile(b.Content, sb.Content, true);
                     }
                     catch (Exception ex)
                     {
@@ -80,11 +76,7 @@ namespace Epsilon.Applications.Base
                 "Open", this, delegate () {
                     try
                     {
-                        Thread open = new(() =>
-                        {
-                            sb.ChangeContent(ESystem.ReadFile(b.Content));
-                        });
-                        open.Start();
+                        sb.ChangeContent(ESystem.ReadFile(b.Content));
                     }
                     catch (Exception ex)
                     {

@@ -98,7 +98,7 @@ namespace Epsilon.Interface.System.Shell.Screen
         {
             base.Start();
             c = new ControlButton(x, y, this);
-            cBar.Resize((uint)GUI.width, 32);
+            //cBar.Resize((uint)GUI.width, 32);
         }
 
         public override void Run()

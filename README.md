@@ -20,7 +20,6 @@ pencil for highlight cursor graphic (thank you notice,)
 - flesh out profile menu (V)
 - notepad threads for saving and opening (no system-wide freeze) (V)
 - settings (~)
-- error sound setting for message box
 - play shutdown sound
 - disabled state for components
 - paint
