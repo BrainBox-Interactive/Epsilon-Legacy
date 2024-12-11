@@ -33,14 +33,14 @@ namespace Epsilon.Interface.Components
             GUI.canv.DrawRectangle(Color.Black, X, Y, Width, Height);
             if (CheckHover()
                 && !Manager.IsFrontTU(Process))
-                GUI.canv.DrawFilledRectangle(CheckHoverColor, X + 1, Y + 1,
-                    Width - 1, Height - 1);
-            else GUI.canv.DrawFilledRectangle(CheckColor, X + 1, Y + 1,
-                Width - 1, Height - 1);
+                GUI.canv.DrawFilledRectangle(X + 1, Y + 1,
+                    (ushort)(Width - 1), (ushort)(Height - 1), 0, CheckHoverColor);
+            else GUI.canv.DrawFilledRectangle(X + 1, Y + 1,
+                (ushort)(Width - 1), (ushort)(Height - 1), 0, CheckColor);
             GUI.canv.DrawString(Text, GUI.dFont, TextColor, X + Width + 12,
                 Y + Height / 2 - GUI.dFont.Height / 2 + 1);
-            if (Checked) GUI.canv.DrawFilledRectangle(Color.Black, X + ofs, Y + ofs,
-                Width - (ofs * 2 - 1), Height - (ofs * 2 - 1));
+            if (Checked) GUI.canv.DrawFilledRectangle(X + ofs, Y + ofs,
+                (ushort)(Width - (ofs * 2 - 1)), (ushort)(Height - (ofs * 2 - 1)), 0, Color.Black);
             if (MouseManager.MouseState == MouseState.Left
                 && CheckHover()
                 && !Manager.IsFrontTU(Process))
@@ -50,8 +50,8 @@ namespace Epsilon.Interface.Components
                     if (!clicked) Checked = !Checked;
                     clicked = true;
                 }
-                GUI.canv.DrawFilledRectangle(CheckClickColor, X + 1, Y + 1,
-                    Width - 1, Height - 1);
+                GUI.canv.DrawFilledRectangle(X + 1, Y + 1,
+                    (ushort)(Width - 1), (ushort)(Height - 1), 0, CheckClickColor);
             }
             else if (MouseManager.MouseState == MouseState.None
                 && clicked)

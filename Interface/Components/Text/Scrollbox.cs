@@ -98,11 +98,11 @@ namespace Epsilon.Interface.Components.Text
             base.Update();
             GUI.canv.DrawRectangle(Color.Black, X - 1,
                 Y - 1, Width + 1, Height + 1);
-            GUI.canv.DrawFilledRectangle(Color.White, X, Y,
-                Width, Height);
+            GUI.canv.DrawFilledRectangle(X, Y,
+                (ushort)Width, (ushort)Height, 0, Color.White);
 
-            GUI.canv.DrawFilledRectangle(Color.DeepGray,
-                X + Width - 16, Y + up.Height, 16, Height - up.Height - down.Height);
+            GUI.canv.DrawFilledRectangle(X + Width - 16, Y + up.Height, 16,
+                (ushort)(Height - up.Height - down.Height), 0, Color.DeepGray);
             GUI.canv.DrawLine(Color.Black, X + Width - 16, Y + up.Height,
                 X + Width - 16, Y + up.Height + Height - down.Height);
             up.X = X + Width - 16; up.Y = Y;

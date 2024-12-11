@@ -33,11 +33,12 @@ namespace Epsilon.Interface.Components.Text
                 Height + 1
             );
             GUI.canv.DrawFilledRectangle(
-                NormalColor,
                 X,
                 Y,
-                Width,
-                Height
+                (ushort)Width,
+                (ushort)Height,
+                0,
+                NormalColor
             );
 
             GUI.canv.DrawString(

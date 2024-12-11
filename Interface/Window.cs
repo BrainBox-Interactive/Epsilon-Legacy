@@ -66,11 +66,11 @@ namespace Epsilon.Interface
 
             // Titlebar
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.tbColor,
                 p.wData.Position.X,
                 p.wData.Position.Y - 1,
-                p.Name.Length * GUI.dFont.Width + 16 * 2 + 8,
-                tSize
+                (ushort)(p.Name.Length * GUI.dFont.Width + 16 * 2 + 8),
+                (ushort)tSize, 0,
+                GUI.colors.tbColor
             );
 
             if (p.wData.Icon != null)
@@ -121,11 +121,11 @@ namespace Epsilon.Interface
 
             // Window Bottom
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.mColor,
                 p.wData.Position.X,
                 p.wData.Position.Y + tSize,
-                p.wData.Position.Width,
-                p.wData.Position.Height - tSize
+                (ushort)p.wData.Position.Width,
+                (ushort)(p.wData.Position.Height - tSize),
+                0, GUI.colors.mColor
             );
 
             if (MouseManager.MouseState == MouseState.Left

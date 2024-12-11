@@ -40,7 +40,7 @@ namespace Epsilon.Interface
 
         public static void Start()
         {
-            canv.Clear();
+            canv = Display.GetDisplay(1024, 768);
             ushort width = canv.Width, height = canv.Height;
 
             MouseManager.ScreenWidth = width;
@@ -66,7 +66,7 @@ namespace Epsilon.Interface
                 {
                     wData = new WindowData
                     {
-                        Position = new Rectangle(0, 0, (int)width, (int)height),
+                        Position = new Rectangle(500, 500, (int)width, (int)height),
                         Moveable = false
                     },
                     Name = "Log into Epsilon",
@@ -120,12 +120,12 @@ namespace Epsilon.Interface
         public static bool DrawCursor = true;
         public static void Update()
         {
-            canv.Clear(GrapeGL.Graphics.Color.Black);
+            canv.Clear(GrapeGL.Graphics.Color.Blue);
             mx = (int)MouseManager.X; my = (int)MouseManager.Y;
 
             // Back layer
             canv.DrawImage(0, 0, wp, false);
-            canv.DrawString(0, 32, "FPS:" + Kernel._fps, dFont, colors.txtColor);
+            canv.DrawString(0, 32, "FPS:" + canv.GetFPS(), dFont, colors.txtColor);
             canv.DrawString(width - dFont.MeasureString("Build Information:"),
                 height - (32 + dFont.GetHeight() * 2),
                 "Build Information:", dFont, colors.txtColor);

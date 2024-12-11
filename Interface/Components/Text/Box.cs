@@ -46,8 +46,9 @@ namespace Epsilon.Interface.Components.Text
                 Width + 1, Height + 1
             );
             GUI.canv.DrawFilledRectangle(
-                BackColor, X, Y,
-                Width, Height
+                X, Y,
+                (ushort)Width, (ushort)Height, 
+                0, BackColor
             );
 
             if (Placeholder != "" && Content == "")
@@ -118,8 +119,8 @@ namespace Epsilon.Interface.Components.Text
             //timer++;
 
             // TODO: make it actually BLINK
-            GUI.canv.DrawFilledRectangle(TextColor, X + 8 + GUI.dFont.Width * Content.Length,
-                Y + Height / 2 - GUI.dFont.Height / 2, 1, GUI.dFont.Height);
+            GUI.canv.DrawFilledRectangle(X + 8 + GUI.dFont.Width * Content.Length,
+                Y + Height / 2 - GUI.dFont.Height / 2, 1, (ushort)GUI.dFont.Height, 0, TextColor);
         }
     }
 }

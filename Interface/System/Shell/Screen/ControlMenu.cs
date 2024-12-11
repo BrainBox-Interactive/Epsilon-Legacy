@@ -253,14 +253,14 @@ namespace Epsilon.Interface.System.Shell.Screen
             );
 
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.moColor,
                 x, y,
-                w, mts
+                (ushort)w, (ushort)mts,
+                0, GUI.colors.moColor
             );
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.mColor,
                 x + bsx, y + mts,
-                w - bsx, h - mts
+                (ushort)(w - bsx), (ushort)(h - mts),
+                0, GUI.colors.mColor
             );
 
             GUI.canv.DrawImage(

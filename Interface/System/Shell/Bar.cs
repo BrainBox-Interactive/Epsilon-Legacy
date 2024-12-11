@@ -11,11 +11,12 @@ namespace Epsilon.Interface.System.Shell
             int x = wData.Position.X, y = wData.Position.Y;
             int w = wData.Position.Width, h = wData.Position.Height;
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.bColor,
                 x,
                 y,
-                w,
-                h
+                (ushort)w,
+                (ushort)h,
+                0,
+                GUI.colors.bColor
             );
         }
     }

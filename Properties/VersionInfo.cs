@@ -2,6 +2,6 @@ namespace Epsilon.Properties
           {
             public class VersionInfo
             {
-                public static string revision = "10122024[1734]";
+                public static string revision = "11122024[0843]";
             }
           }

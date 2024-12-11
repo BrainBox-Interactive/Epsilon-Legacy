@@ -349,9 +349,6 @@ public unsafe class Canvas
         }
     }
 
-    public void DrawFilledRectangle(Color Color, int X, int Y, int Width, int Height)
-        => DrawFilledRectangle(X, Y, (ushort)Width, (ushort)Height, 0, Color);
-
     /// <summary>
     /// Draws a non-filled rectangle from X and Y with the specified Width and Height.
     /// </summary>

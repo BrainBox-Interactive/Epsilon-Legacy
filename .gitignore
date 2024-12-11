@@ -7,3 +7,6 @@
 /obj/Debug
 /obj/Debug/net6.0
 /obj/Debug/net6.0/refint
+*.vsidx
+*.vsidx
+/.vs

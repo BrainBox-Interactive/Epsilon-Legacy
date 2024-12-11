@@ -27,9 +27,9 @@ namespace Epsilon.Interface.System.Shell.Screen
             GUI.canv.DrawLine(GUI.colors.mooColor,
                 x, y + 1, x + w, y + 1);
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.tbColor,
                 x, y,
-                w, h
+                (ushort)w, (ushort)h,
+                0, GUI.colors.tbColor
             );
             //GUI.canv.DrawImage(tb, x, y);
 
@@ -67,9 +67,11 @@ namespace Epsilon.Interface.System.Shell.Screen
                 {
                     int s = Manager.pList[i].Name.Length * GUI.dFont.Width
                         + (int)Manager.pList[i].wData.Icon.Width;
-                    GUI.canv.DrawFilledRectangle(GrapeGL.Graphics.Color.Black,
+                    GUI.canv.DrawFilledRectangle(
                         tbx + (8 * cx),
-                        y, s, h);
+                        y, (ushort)s, (ushort)h, 0,
+                        GrapeGL.Graphics.Color.Black
+                    );
 
                     GUI.canv.DrawImageAlpha(
                         Manager.pList[i].wData.Icon, tbx + (8 * cx), y);

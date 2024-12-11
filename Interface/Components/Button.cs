@@ -51,11 +51,11 @@ namespace Epsilon.Interface.Components
                 if (MouseManager.MouseState == MouseState.Left
                     && !Manager.IsFrontTU(Process))
                 {
-                    GUI.canv.DrawFilledRectangle(ClickColor, X + 1, Y + 1, Width - 1, Height - 1);
+                    GUI.canv.DrawFilledRectangle(X + 1, Y + 1, (ushort)(Width - 1), (ushort)(Height - 1), 0, ClickColor);
                     if (!clicked) clicked = true;
                 }
-                else GUI.canv.DrawFilledRectangle(HoverColor, X + 1, Y + 1, Width - 1, Height - 1);
-            else GUI.canv.DrawFilledRectangle(NormalColor, X + 1, Y + 1, Width - 1, Height - 1);
+                else GUI.canv.DrawFilledRectangle(X + 1, Y + 1, (ushort)(Width - 1), (ushort)(Height - 1), 0, HoverColor);
+            else GUI.canv.DrawFilledRectangle(X + 1, Y + 1, (ushort)(Width - 1), (ushort)(Height - 1), 0, NormalColor);
 
             if (MouseManager.MouseState == MouseState.None
                 && clicked && GUI.clicked)

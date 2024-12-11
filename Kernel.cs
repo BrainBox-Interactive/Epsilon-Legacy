@@ -106,7 +106,7 @@ namespace Epsilon
 
             if (lastHCol >= 12)
             {
-                Heap.Collect();
+                //Heap.Collect();
                 lastHCol = 0;
             } else lastHCol++;
         }

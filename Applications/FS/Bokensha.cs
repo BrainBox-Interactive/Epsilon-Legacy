@@ -67,9 +67,9 @@ namespace Epsilon.Applications.FS
                                 {
                                     wData =
                                     {
-                                    Position = new(wData.Position.X + wData.Position.Width / 4,
-                                    wData.Position.Y + wData.Position.Height / 4, GUI.width, GUI.height),
-                                    Moveable = true,
+                                        Position = new(wData.Position.X + wData.Position.Width / 4,
+                                        wData.Position.Y + wData.Position.Height / 4, GUI.width, GUI.height),
+                                        Moveable = true,
                                     },
                                     Name = s,
                                     Special = false

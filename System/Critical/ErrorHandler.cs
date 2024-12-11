@@ -28,9 +28,11 @@ namespace Epsilon.System.Critical
             //    if (p.Name != "Critical Error")
             //        p.Remove();
 
-            GUI.canv.DrawFilledRectangle(Color.Black,
+            GUI.canv.DrawFilledRectangle(
                 wData.Position.X, wData.Position.Y,
-                wData.Position.Width, wData.Position.Height);
+                (ushort)wData.Position.Width, (ushort)wData.Position.Height,
+                0, Color.Black
+            );
             Thread.Sleep(1000);
 
             GUI.DrawCursor = false;
@@ -46,9 +48,11 @@ press F1 to try to continue!", Color.White);
         {
             base.Run();
 
-            GUI.canv.DrawFilledRectangle(Color.Red,
+            GUI.canv.DrawFilledRectangle(
                 wData.Position.X, wData.Position.Y,
-                wData.Position.Width, wData.Position.Height);
+                (ushort)wData.Position.Width, (ushort)wData.Position.Height,
+                0, Color.Red
+            );
             String.Update();
 
             if (Kernel.IsKeyPressed

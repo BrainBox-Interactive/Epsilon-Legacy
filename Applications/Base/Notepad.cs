@@ -111,9 +111,9 @@ namespace Epsilon.Applications.Base
                 sb.Y + sb.Height - 1, sb.state.Length * GUI.dFont.Width + 16 + 1,
                 24 + 1);
             GUI.canv.DrawFilledRectangle(
-                GUI.colors.mColor, wData.Position.X,
-                sb.Y + sb.Height, sb.state.Length * GUI.dFont.Width + 16,
-                24);
+                wData.Position.X,
+                sb.Y + sb.Height, (ushort)(sb.state.Length * GUI.dFont.Width + 16),
+                24, 0, GUI.colors.mColor);
 
             sb.X = wData.Position.X;
             sb.Y = wData.Position.Y + w.tSize + ofs;
